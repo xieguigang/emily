@@ -5,3 +5,5 @@ obj/
 bin/
 assembly/
 .vs/emily/v17/DocumentLayout.json
+*.vsidx
+.vs/emily/v17/DocumentLayout.backup.json
