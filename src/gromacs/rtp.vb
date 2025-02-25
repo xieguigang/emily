@@ -73,5 +73,18 @@
     ''' </summary>
     Public Class rtp
 
+        Public Property residue As String
+        Public Property atoms As atom()
+
     End Class
+
+    Public Class atom
+
+        Public Property name As String
+        Public Property type As String
+        Public Property partial_charge As Double
+        Public Property mass As Double
+
+    End Class
+
 End Namespace
