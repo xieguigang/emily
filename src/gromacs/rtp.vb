@@ -71,10 +71,18 @@
     ''' accurate molecular dynamics simulations. It is typically located within the force field directory of GROMACS 
     ''' and can be edited with a text editor or generated using tools provided by GROMACS, such as `pdb2gmx`.
     ''' </summary>
-    Public Class rtp
+    Public Class rtpResidue
 
         Public Property residue As String
         Public Property atoms As atom()
+        Public Property bonds As bond()
+        Public Property impropers As improper()
+
+    End Class
+
+    Public Class improper
+
+        Public Property dihedral_angles As String()
 
     End Class
 
@@ -84,6 +92,19 @@
         Public Property type As String
         Public Property partial_charge As Double
         Public Property mass As Double
+
+    End Class
+
+    Public Class bond
+
+        Public Property u As String
+        Public Property v As String
+
+    End Class
+
+    Public Class rtp
+
+        Public Property residues As rtpResidue()
 
     End Class
 
