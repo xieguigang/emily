@@ -31,6 +31,8 @@ Namespace gromacs
                         atoms = residue_atoms(res)
 
                         If Not atom Like atoms Then
+                            Call $"Atom '{atom}' in residue '{res}' was not found in rtp entry '{res}' with {atoms.Count} atoms while sorting atoms.".Warning
+                            Call VBDebugger.EchoLine(line)
                             Continue For
                         End If
                     End If
