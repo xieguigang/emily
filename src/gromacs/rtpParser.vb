@@ -29,7 +29,11 @@ Namespace gromacs
             ' ;.+
             For Each line As String In From str As String
                                        In data
-                                       Select str.StringReplace(";.+", "")
+                                       Select str.StringReplace(";.+", "").Trim
+
+                If line.StringEmpty Then
+                    Continue For
+                End If
 
                 If line.IsPattern("\[.+\]") Then
                     parser = line.GetStackValue("[", "]").Trim
