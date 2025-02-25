@@ -77,6 +77,14 @@ Namespace gromacs
                         Throw New NotImplementedException(parser)
                 End Select
             Next
+
+            If Not residue Is Nothing Then
+                residue.atoms = atoms.PopAll
+                residue.bonds = bonds.PopAll
+                residue.impropers = impropers.PopAll
+
+                Yield residue
+            End If
         End Function
     End Module
 End Namespace
