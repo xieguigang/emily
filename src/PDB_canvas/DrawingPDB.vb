@@ -78,6 +78,7 @@ Public Class DrawingPDB : Inherits Plot
     Public Property penWidth As Integer = 10
     Public Property hideAtoms As Boolean = True
     Public Property DisplayAAID As Boolean = True
+    Public Property RenderStructureDetails As Boolean = True
 
     ReadOnly pdb As PDB
 
