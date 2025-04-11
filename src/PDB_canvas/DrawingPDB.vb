@@ -50,9 +50,8 @@ Imports Microsoft.VisualBasic.Imaging.Drawing2D
 Imports Microsoft.VisualBasic.Imaging.Drawing2D.Colors.Scaler
 Imports Microsoft.VisualBasic.Imaging.Drawing3D.Math3D
 Imports Microsoft.VisualBasic.Imaging.Driver
-Imports SMRUCC.genomics.Data.RCSB.PDB
 Imports Microsoft.VisualBasic.Scripting.Runtime
-
+Imports SMRUCC.genomics.Data.RCSB.PDB
 
 #If NET48 Then
 Imports Font = System.Drawing.Font
@@ -124,7 +123,7 @@ Public Class DrawingPDB : Inherits Plot
         Call g.DrawLine(Pens.Black, New Drawing3D.Point3D(0, 0, Max.Z * ScaleFactor).SpaceToGrid(XRotation, offset), New Drawing3D.Point3D(0, 0, Min.Z * ScaleFactor).SpaceToGrid(XRotation, offset)) ' Z
     End Sub
 
-    Private Sub __drawingOfAA(AA As AminoAcid, ByRef pt2d As PointF, offset As Point, Device As Graphics2D, DisplayAAID As Boolean, AAFont As Font, hideAtoms As Boolean)
+    Private Sub __drawingOfAA(AA As AminoAcid, ByRef pt2d As PointF, offset As Point, Device As IGraphics, DisplayAAID As Boolean, AAFont As Font, hideAtoms As Boolean)
         Dim Carbon As Keywords.AtomUnit = AA.Carbon
         Dim pt3d As New Drawing3D.Point3D(Carbon.Location.X * ScaleFactor, Carbon.Location.Y * ScaleFactor, Carbon.Location.Z * ScaleFactor)
         pt2d = pt3d.SpaceToGrid(xRotate:=XRotation, offset:=offset)

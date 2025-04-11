@@ -6,6 +6,7 @@ Imports SMRUCC.genomics.Data.RCSB.PDB
 Public Module test_file
 
     Sub Main()
+        Call Microsoft.VisualBasic.Drawing.SkiaDriver.Register()
         Call testDrawer()
     End Sub
 
