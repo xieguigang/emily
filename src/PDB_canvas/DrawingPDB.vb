@@ -68,11 +68,15 @@ Imports Brushes = Microsoft.VisualBasic.Imaging.Brushes
 ''' <summary>
 ''' Visualize the protein 3D structure from the PDB file.
 ''' </summary>
-Public Class DrawingPDB
+Public Class DrawingPDB : Inherits plot
 
     Public Property XRotation As Double = 60
     Public Property ScaleFactor As Double = 20
     Public Property penWidth As Integer = 10
+    Public Property hideAtoms As Boolean = True
+    Public Property DisplayAAID As Boolean = True
+
+    ReadOnly pdb As PDB
 
     Shared Sub New()
 #If NET8_0_OR_GREATER Then
@@ -80,21 +84,18 @@ Public Class DrawingPDB
 #End If
     End Sub
 
-    Sub New()
-
+    Sub New(pdb As PDB)
+        Me.pdb = pdb
     End Sub
 
     ''' <summary>
     ''' Drawing a protein structure from its pdb data.
     ''' </summary>
-    ''' <param name="PDB"></param>
-    ''' <param name="hideAtoms"></param>
-    ''' <param name="DisplayAAID"></param>
     ''' <returns></returns>
-    Public Function MolDrawing(PDB As PDB, Optional hideAtoms As Boolean = True, Optional DisplayAAID As Boolean = True) As GraphicsData
+    Public Function MolDrawing() As GraphicsData
         Dim Device As IGraphics = DriverLoad.CreateGraphicsDevice(New Size(3000, 3000))
         Dim offset As New Point(Device.Width / 2, Device.Height / 2)
-        Dim AASequence As AminoAcid() = PDB.AminoAcidSequenceData
+        Dim AASequence As AminoAcid() = pdb.AminoAcidSequenceData
         Dim PreAA As AminoAcid = AASequence.First
         Dim PrePoint As PointF
         Dim aas As String() = (From AA In AASequence Select AA.AA_ID Distinct).ToArray
@@ -113,8 +114,8 @@ Public Class DrawingPDB
             PrePoint = pt2d
         Next
 
-        Dim Max = PDB.MaxSpace
-        Dim Min = PDB.MinSpace
+        Dim Max = pdb.MaxSpace
+        Dim Min = pdb.MinSpace
 
         Call Device.DrawLine(Pens.Black, New Drawing3D.Point3D(Max.X * ScaleFactor, 0, 0).SpaceToGrid(XRotation, offset), New Drawing3D.Point3D(Min.Y * ScaleFactor, 0, 0).SpaceToGrid(XRotation, offset)) 'X
         Call Device.DrawLine(Pens.Black, New Drawing3D.Point3D(0, Max.Y * ScaleFactor, 0).SpaceToGrid(XRotation, offset), New Drawing3D.Point3D(0, Min.Y * ScaleFactor, 0).SpaceToGrid(XRotation, offset)) 'Y
