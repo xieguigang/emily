@@ -10,3 +10,7 @@ assembly/
 *.v2
 *.bin
 /src/.vs/PDB_molViews/v17/.suo
+
+
+tools/
+*.log
