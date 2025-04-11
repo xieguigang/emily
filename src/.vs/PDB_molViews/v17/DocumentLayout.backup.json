@@ -3,8 +3,8 @@
   "WorkspaceRootPath": "G:\\emily\\src\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{044E4D64-0949-4654-B8B1-522D81E4231A}|PDB_canvas\\PDB_canvas.vbproj|g:\\emily\\src\\pdb_canvas\\pdb_canvas.vbproj||{04B8AB82-A572-4FEF-95CE-5222444B6B64}|",
-      "RelativeMoniker": "D:0:0:{044E4D64-0949-4654-B8B1-522D81E4231A}|PDB_canvas\\PDB_canvas.vbproj|solutionrelative:pdb_canvas\\pdb_canvas.vbproj||{04B8AB82-A572-4FEF-95CE-5222444B6B64}|"
+      "AbsoluteMoniker": "D:0:0:{044E4D64-0949-4654-B8B1-522D81E4231A}|PDB_canvas\\PDB_canvas.vbproj|g:\\emily\\src\\pdb_canvas\\pdb_canvas.vbproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|",
+      "RelativeMoniker": "D:0:0:{044E4D64-0949-4654-B8B1-522D81E4231A}|PDB_canvas\\PDB_canvas.vbproj|solutionrelative:pdb_canvas\\pdb_canvas.vbproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|"
     }
   ],
   "DocumentGroupContainers": [
@@ -32,8 +32,9 @@
               "RelativeDocumentMoniker": "PDB_canvas\\PDB_canvas.vbproj",
               "ToolTip": "G:\\emily\\src\\PDB_canvas\\PDB_canvas.vbproj",
               "RelativeToolTip": "PDB_canvas\\PDB_canvas.vbproj",
+              "ViewState": "AgIAACEAAAAAAAAAAAAAAEUAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003380|",
-              "WhenOpened": "2025-04-11T05:33:50.511Z",
+              "WhenOpened": "2025-04-11T05:36:31.902Z",
               "EditorCaption": ""
             }
           ]
