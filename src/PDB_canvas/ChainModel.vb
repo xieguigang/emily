@@ -61,6 +61,22 @@ Imports Microsoft.VisualBasic.Language
 Imports Microsoft.VisualBasic.Serialization.JSON
 Imports SMRUCC.genomics.Data.RCSB.PDB
 
+#If NET48 Then
+Imports Font = System.Drawing.Font
+Imports Pen = System.Drawing.Pen
+Imports Brush = System.Drawing.Brush
+Imports Image = System.Drawing.Image
+Imports Pens = System.Drawing.Pens
+Imports Brushes = System.Drawing.Brushes
+#Else
+Imports Font = Microsoft.VisualBasic.Imaging.Font
+Imports Pen = Microsoft.VisualBasic.Imaging.Pen
+Imports Brush = Microsoft.VisualBasic.Imaging.Brush
+Imports Image = Microsoft.VisualBasic.Imaging.Image
+Imports Pens = Microsoft.VisualBasic.Imaging.Pens
+Imports Brushes = Microsoft.VisualBasic.Imaging.Brushes
+#End If
+
 ''' <summary>
 ''' 多肽链的绘图模型
 ''' </summary>
@@ -81,7 +97,7 @@ Public Class ChainModel
     Dim __chain As AA()
     Dim __central As Point3D
 
-    Sub New(PDB As PDB)
+    Sub New(PDB As PDB, penWidth As Single)
         Dim aas As String() =
             LinqAPI.Exec(Of String) <= From AA As AminoAcid
                                        In PDB.AminoAcidSequenceData
@@ -140,7 +156,7 @@ Public Class ChainModel
     ''' <param name="g"></param>
     ''' <param name="clientSize"></param>
     ''' <param name="vd">View distance</param>
-    Public Sub UpdateGraph(ByRef g As Graphics, clientSize As Size, vd As Integer)
+    Public Sub UpdateGraph(ByRef g As IGraphics, clientSize As Size, vd As Integer)
         Dim pre As Point = __draw(g, __first, clientSize, vd, _rotate)
 
 #Const DEBUG = 1
@@ -156,7 +172,7 @@ Public Class ChainModel
         Next
     End Sub
 
-    Private Function __draw(g As Graphics, aa As AA, client As Size, vd As Integer, rotate As Point3D) As Point
+    Private Function __draw(g As IGraphics, aa As AA, client As Size, vd As Integer, rotate As Point3D) As Point
         Dim pt3D As Point3D = aa.Point _
             .RotateX(_rotate.X).RotateY(_rotate.Y).RotateZ(_rotate.Z) _
             .Project(client.Width, client.Height, 256, vd)

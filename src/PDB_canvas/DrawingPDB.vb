@@ -42,8 +42,11 @@
 #End Region
 
 Imports System.Drawing
+Imports Microsoft.VisualBasic.Data.ChartPlots.Graphic
+Imports Microsoft.VisualBasic.Data.ChartPlots.Graphic.Canvas
 Imports Microsoft.VisualBasic.Drawing
 Imports Microsoft.VisualBasic.Imaging
+Imports Microsoft.VisualBasic.Imaging.Drawing2D
 Imports Microsoft.VisualBasic.Imaging.Drawing2D.Colors.Scaler
 Imports Microsoft.VisualBasic.Imaging.Drawing3D.Math3D
 Imports Microsoft.VisualBasic.Imaging.Driver
@@ -68,7 +71,7 @@ Imports Brushes = Microsoft.VisualBasic.Imaging.Brushes
 ''' <summary>
 ''' Visualize the protein 3D structure from the PDB file.
 ''' </summary>
-Public Class DrawingPDB : Inherits plot
+Public Class DrawingPDB : Inherits Plot
 
     Public Property XRotation As Double = 60
     Public Property ScaleFactor As Double = 20
@@ -84,17 +87,14 @@ Public Class DrawingPDB : Inherits plot
 #End If
     End Sub
 
-    Sub New(pdb As PDB)
+    Sub New(pdb As PDB, theme As Theme)
+        Call MyBase.New(theme)
+
         Me.pdb = pdb
     End Sub
 
-    ''' <summary>
-    ''' Drawing a protein structure from its pdb data.
-    ''' </summary>
-    ''' <returns></returns>
-    Public Function MolDrawing() As GraphicsData
-        Dim Device As IGraphics = DriverLoad.CreateGraphicsDevice(New Size(3000, 3000))
-        Dim offset As New Point(Device.Width / 2, Device.Height / 2)
+    Protected Overrides Sub PlotInternal(ByRef g As IGraphics, canvas As GraphicsRegion)
+        Dim offset As New Point(g.Width / 2, g.Height / 2)
         Dim AASequence As AminoAcid() = pdb.AminoAcidSequenceData
         Dim PreAA As AminoAcid = AASequence.First
         Dim PrePoint As PointF
@@ -103,13 +103,13 @@ Public Class DrawingPDB : Inherits plot
         Dim AAFont As New Font(FontFace.MicrosoftYaHei, 10)
         Dim pt2d As PointF
 
-        Call __drawingOfAA(PreAA, PrePoint, offset, Device, DisplayAAID, AAFont, hideAtoms) ' 绘制第一个碳原子
+        Call __drawingOfAA(PreAA, PrePoint, offset, g, DisplayAAID, AAFont, hideAtoms) ' 绘制第一个碳原子
 
         For Each Point As AminoAcid In AASequence
 
 
-            Call __drawingOfAA(Point, pt2d, offset, Device, DisplayAAID, AAFont, hideAtoms)
-            Call Device.DrawLine(AAColors(Point.AA_ID), pt2d, PrePoint)
+            Call __drawingOfAA(Point, pt2d, offset, g, DisplayAAID, AAFont, hideAtoms)
+            Call g.DrawLine(AAColors(Point.AA_ID), pt2d, PrePoint)
 
             PrePoint = pt2d
         Next
@@ -117,12 +117,10 @@ Public Class DrawingPDB : Inherits plot
         Dim Max = pdb.MaxSpace
         Dim Min = pdb.MinSpace
 
-        Call Device.DrawLine(Pens.Black, New Drawing3D.Point3D(Max.X * ScaleFactor, 0, 0).SpaceToGrid(XRotation, offset), New Drawing3D.Point3D(Min.Y * ScaleFactor, 0, 0).SpaceToGrid(XRotation, offset)) 'X
-        Call Device.DrawLine(Pens.Black, New Drawing3D.Point3D(0, Max.Y * ScaleFactor, 0).SpaceToGrid(XRotation, offset), New Drawing3D.Point3D(0, Min.Y * ScaleFactor, 0).SpaceToGrid(XRotation, offset)) 'Y
-        Call Device.DrawLine(Pens.Black, New Drawing3D.Point3D(0, 0, Max.Z * ScaleFactor).SpaceToGrid(XRotation, offset), New Drawing3D.Point3D(0, 0, Min.Z * ScaleFactor).SpaceToGrid(XRotation, offset)) 'Z
-
-        Return Device.ImageResource
-    End Function
+        Call g.DrawLine(Pens.Black, New Drawing3D.Point3D(Max.X * ScaleFactor, 0, 0).SpaceToGrid(XRotation, offset), New Drawing3D.Point3D(Min.Y * ScaleFactor, 0, 0).SpaceToGrid(XRotation, offset)) ' X
+        Call g.DrawLine(Pens.Black, New Drawing3D.Point3D(0, Max.Y * ScaleFactor, 0).SpaceToGrid(XRotation, offset), New Drawing3D.Point3D(0, Min.Y * ScaleFactor, 0).SpaceToGrid(XRotation, offset)) ' Y
+        Call g.DrawLine(Pens.Black, New Drawing3D.Point3D(0, 0, Max.Z * ScaleFactor).SpaceToGrid(XRotation, offset), New Drawing3D.Point3D(0, 0, Min.Z * ScaleFactor).SpaceToGrid(XRotation, offset)) ' Z
+    End Sub
 
     Private Sub __drawingOfAA(AA As AminoAcid, ByRef pt2d As PointF, offset As Point, Device As Graphics2D, DisplayAAID As Boolean, AAFont As Font, hideAtoms As Boolean)
         Dim Carbon As Keywords.AtomUnit = AA.Carbon
@@ -142,4 +140,16 @@ Public Class DrawingPDB : Inherits plot
             Call Device.DrawLine(Pens.Gray, pt22d, pt2d)
         Next
     End Sub
+
+    ''' <summary>
+    ''' Drawing a protein structure from its pdb data.
+    ''' </summary>
+    ''' <returns></returns>
+    Public Shared Function MolDrawing(pdb As PDB) As GraphicsData
+        Dim theme As New Theme
+        Dim canvas As New DrawingPDB(pdb, theme)
+        Dim canvas_size As Size
+
+        Return canvas.Plot(canvas_size)
+    End Function
 End Class

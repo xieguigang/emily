@@ -3,8 +3,19 @@
   "WorkspaceRootPath": "G:\\emily\\src\\",
   "Documents": [
     {
+      "AbsoluteMoniker": "D:0:0:{DEFB6092-3311-4AFA-9414-631E04054115}|PDB_molViews\\PDB_molViews.vbproj|g:\\emily\\src\\pdb_molviews\\canvas.vb||{2C015C70-C72C-11D0-88C3-00A0C9110049}",
+      "RelativeMoniker": "D:0:0:{DEFB6092-3311-4AFA-9414-631E04054115}|PDB_molViews\\PDB_molViews.vbproj|solutionrelative:pdb_molviews\\canvas.vb||{2C015C70-C72C-11D0-88C3-00A0C9110049}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{66E8C726-0036-41FB-23E2-9E3FADD00407}|..\\..\\GCModeller\\src\\runtime\\sciBASIC#\\gr\\Drawing-net4.8\\Drawing-net4.8.vbproj|g:\\gcmodeller\\src\\runtime\\scibasic#\\gr\\drawing-net4.8\\graphics\\graphics2d.vb||{2C015C70-C72C-11D0-88C3-00A0C9110049}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{044E4D64-0949-4654-B8B1-522D81E4231A}|PDB_canvas\\PDB_canvas.vbproj|g:\\emily\\src\\pdb_canvas\\drawingpdb.vb||{2C015C70-C72C-11D0-88C3-00A0C9110049}",
       "RelativeMoniker": "D:0:0:{044E4D64-0949-4654-B8B1-522D81E4231A}|PDB_canvas\\PDB_canvas.vbproj|solutionrelative:pdb_canvas\\drawingpdb.vb||{2C015C70-C72C-11D0-88C3-00A0C9110049}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{044E4D64-0949-4654-B8B1-522D81E4231A}|PDB_canvas\\PDB_canvas.vbproj|g:\\emily\\src\\pdb_canvas\\chainmodel.vb||{2C015C70-C72C-11D0-88C3-00A0C9110049}",
+      "RelativeMoniker": "D:0:0:{044E4D64-0949-4654-B8B1-522D81E4231A}|PDB_canvas\\PDB_canvas.vbproj|solutionrelative:pdb_canvas\\chainmodel.vb||{2C015C70-C72C-11D0-88C3-00A0C9110049}"
     }
   ],
   "DocumentGroupContainers": [
@@ -14,8 +25,21 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 2,
+          "SelectedChildIndex": 3,
           "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "Graphics2D.vb",
+              "DocumentMoniker": "G:\\GCModeller\\src\\runtime\\sciBASIC#\\gr\\Drawing-net4.8\\Graphics\\Graphics2D.vb",
+              "RelativeDocumentMoniker": "..\\..\\GCModeller\\src\\runtime\\sciBASIC#\\gr\\Drawing-net4.8\\Graphics\\Graphics2D.vb",
+              "ToolTip": "G:\\GCModeller\\src\\runtime\\sciBASIC#\\gr\\Drawing-net4.8\\Graphics\\Graphics2D.vb",
+              "RelativeToolTip": "..\\..\\GCModeller\\src\\runtime\\sciBASIC#\\gr\\Drawing-net4.8\\Graphics\\Graphics2D.vb",
+              "ViewState": "AgIAANQAAAAAAAAAAAApwOYAAAARAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003361|",
+              "WhenOpened": "2025-04-11T06:00:33.388Z",
+              "EditorCaption": ""
+            },
             {
               "$type": "Bookmark",
               "Name": "ST:0:0:{e506b91c-c606-466a-90a9-123d1d1e12b3}"
@@ -27,14 +51,40 @@
             {
               "$type": "Document",
               "DocumentIndex": 0,
+              "Title": "Canvas.vb",
+              "DocumentMoniker": "G:\\emily\\src\\PDB_molViews\\Canvas.vb",
+              "RelativeDocumentMoniker": "PDB_molViews\\Canvas.vb",
+              "ToolTip": "G:\\emily\\src\\PDB_molViews\\Canvas.vb",
+              "RelativeToolTip": "PDB_molViews\\Canvas.vb",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAC0AAAAOAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003361|",
+              "WhenOpened": "2025-04-11T05:59:36.95Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "ChainModel.vb",
+              "DocumentMoniker": "G:\\emily\\src\\PDB_canvas\\ChainModel.vb",
+              "RelativeDocumentMoniker": "PDB_canvas\\ChainModel.vb",
+              "ToolTip": "G:\\emily\\src\\PDB_canvas\\ChainModel.vb",
+              "RelativeToolTip": "PDB_canvas\\ChainModel.vb",
+              "ViewState": "AgIAAFIAAAAAAAAAAAAAAKoAAAAVAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003361|",
+              "WhenOpened": "2025-04-11T05:58:14.096Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
               "Title": "DrawingPDB.vb",
               "DocumentMoniker": "G:\\emily\\src\\PDB_canvas\\DrawingPDB.vb",
               "RelativeDocumentMoniker": "PDB_canvas\\DrawingPDB.vb",
               "ToolTip": "G:\\emily\\src\\PDB_canvas\\DrawingPDB.vb",
               "RelativeToolTip": "PDB_canvas\\DrawingPDB.vb",
-              "ViewState": "AgIAADsAAAAAAAAAAAAAAEwAAAAxAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAADUAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003361|",
-              "WhenOpened": "2025-04-11T05:41:53.796Z",
+              "WhenOpened": "2025-04-11T05:58:09.154Z",
               "EditorCaption": ""
             }
           ]

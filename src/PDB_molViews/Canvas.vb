@@ -1,52 +1,52 @@
 ﻿#Region "Microsoft.VisualBasic::2295f27ea2a8855f03ac32e0d8192eb8, visualize\PDB_canvas\Canvas.vb"
 
-    ' Author:
-    ' 
-    '       asuka (amethyst.asuka@gcmodeller.org)
-    '       xie (genetics@smrucc.org)
-    '       xieguigang (xie.guigang@live.com)
-    ' 
-    ' Copyright (c) 2018 GPL3 Licensed
-    ' 
-    ' 
-    ' GNU GENERAL PUBLIC LICENSE (GPL3)
-    ' 
-    ' 
-    ' This program is free software: you can redistribute it and/or modify
-    ' it under the terms of the GNU General Public License as published by
-    ' the Free Software Foundation, either version 3 of the License, or
-    ' (at your option) any later version.
-    ' 
-    ' This program is distributed in the hope that it will be useful,
-    ' but WITHOUT ANY WARRANTY; without even the implied warranty of
-    ' MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
-    ' GNU General Public License for more details.
-    ' 
-    ' You should have received a copy of the GNU General Public License
-    ' along with this program. If not, see <http://www.gnu.org/licenses/>.
+' Author:
+' 
+'       asuka (amethyst.asuka@gcmodeller.org)
+'       xie (genetics@smrucc.org)
+'       xieguigang (xie.guigang@live.com)
+' 
+' Copyright (c) 2018 GPL3 Licensed
+' 
+' 
+' GNU GENERAL PUBLIC LICENSE (GPL3)
+' 
+' 
+' This program is free software: you can redistribute it and/or modify
+' it under the terms of the GNU General Public License as published by
+' the Free Software Foundation, either version 3 of the License, or
+' (at your option) any later version.
+' 
+' This program is distributed in the hope that it will be useful,
+' but WITHOUT ANY WARRANTY; without even the implied warranty of
+' MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+' GNU General Public License for more details.
+' 
+' You should have received a copy of the GNU General Public License
+' along with this program. If not, see <http://www.gnu.org/licenses/>.
 
 
 
-    ' /********************************************************************************/
+' /********************************************************************************/
 
-    ' Summaries:
+' Summaries:
 
-    ' Class Canvas
-    ' 
-    '     Properties: AutoRotate
-    ' 
-    '     Sub: __update, Canvas_Disposed, Canvas_MouseDown, Canvas_MouseMove, Canvas_MouseUp
-    '          Canvas_MouseWheel, Canvas_Paint, LoadModel
-    ' 
-    ' /********************************************************************************/
+' Class Canvas
+' 
+'     Properties: AutoRotate
+' 
+'     Sub: __update, Canvas_Disposed, Canvas_MouseDown, Canvas_MouseMove, Canvas_MouseUp
+'          Canvas_MouseWheel, Canvas_Paint, LoadModel
+' 
+' /********************************************************************************/
 
 #End Region
 
-Imports System.Drawing
-Imports System.Windows.Forms
+Imports Microsoft.VisualBasic.Drawing
 Imports Microsoft.VisualBasic.Imaging
 Imports Microsoft.VisualBasic.Parallel.Tasks
 Imports Microsoft.VisualBasic.Serialization.JSON
+Imports PDB_canvas
 Imports SMRUCC.genomics.Data.RCSB.PDB
 
 Public Class Canvas
@@ -66,7 +66,7 @@ Public Class Canvas
     ''' <param name="path">*.pdb file path</param>
     Public Sub LoadModel(path As String)
         Dim pdb As PDB = PDB.Load(path)
-        _model = New ChainModel(pdb)
+        _model = New ChainModel(pdb, 5)
         Call Me.Invalidate()
 
         AutoRotate = True
@@ -145,7 +145,7 @@ Public Class Canvas
 
     Private Sub Canvas_Paint(sender As Object, e As PaintEventArgs) Handles Me.Paint
         If _model IsNot Nothing Then
-            Call _model.UpdateGraph(e.Graphics, ClientSize, _viewDistance)
+            Call _model.UpdateGraph(Graphics2D.CreateDevice(Me.Size, e.Graphics), ClientSize, _viewDistance)
         End If
 
         Call e.Graphics.DrawString($"{currentPoint.GetJson}; rX={rotateX},rY={rotateY}", New Font(FontFace.MicrosoftYaHei, 12), Brushes.Red, New Point(5, 33))
