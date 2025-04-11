@@ -51,6 +51,8 @@ Imports Microsoft.VisualBasic.Imaging.Drawing2D.Colors.Scaler
 Imports Microsoft.VisualBasic.Imaging.Drawing3D.Math3D
 Imports Microsoft.VisualBasic.Imaging.Driver
 Imports SMRUCC.genomics.Data.RCSB.PDB
+Imports Microsoft.VisualBasic.Scripting.Runtime
+
 
 #If NET48 Then
 Imports Font = System.Drawing.Font
@@ -145,10 +147,10 @@ Public Class DrawingPDB : Inherits Plot
     ''' Drawing a protein structure from its pdb data.
     ''' </summary>
     ''' <returns></returns>
-    Public Shared Function MolDrawing(pdb As PDB) As GraphicsData
+    Public Shared Function MolDrawing(pdb As PDB, Optional size$ = "3000,2100") As GraphicsData
         Dim theme As New Theme
         Dim canvas As New DrawingPDB(pdb, theme)
-        Dim canvas_size As Size
+        Dim canvas_size As Size = size.SizeParser
 
         Return canvas.Plot(canvas_size)
     End Function
