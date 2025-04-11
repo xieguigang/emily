@@ -239,6 +239,10 @@
     <Import Include="System.Threading.Tasks" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Canvas.Designer.vb">
+      <DependentUpon>Canvas.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Canvas.vb" />
     <Compile Include="Form_molView.vb">
       <SubType>Form</SubType>
     </Compile>
@@ -263,6 +267,9 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
+    <EmbeddedResource Include="Canvas.resx">
+      <DependentUpon>Canvas.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Form_molView.resx">
       <DependentUpon>Form_molView.vb</DependentUpon>
     </EmbeddedResource>

@@ -1,12 +1,7 @@
 {
   "Version": 1,
   "WorkspaceRootPath": "G:\\emily\\src\\",
-  "Documents": [
-    {
-      "AbsoluteMoniker": "D:0:0:{044E4D64-0949-4654-B8B1-522D81E4231A}|PDB_canvas\\PDB_canvas.vbproj|g:\\emily\\src\\pdb_canvas\\pdb_canvas.vbproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|",
-      "RelativeMoniker": "D:0:0:{044E4D64-0949-4654-B8B1-522D81E4231A}|PDB_canvas\\PDB_canvas.vbproj|solutionrelative:pdb_canvas\\pdb_canvas.vbproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|"
-    }
-  ],
+  "Documents": [],
   "DocumentGroupContainers": [
     {
       "Orientation": 0,
@@ -14,7 +9,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 2,
+          "SelectedChildIndex": -1,
           "Children": [
             {
               "$type": "Bookmark",
@@ -23,19 +18,6 @@
             {
               "$type": "Bookmark",
               "Name": "ST:0:0:{34e76e81-ee4a-11d0-ae2e-00a0c90fffc3}"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "PDB_canvas",
-              "DocumentMoniker": "G:\\emily\\src\\PDB_canvas\\PDB_canvas.vbproj",
-              "RelativeDocumentMoniker": "PDB_canvas\\PDB_canvas.vbproj",
-              "ToolTip": "G:\\emily\\src\\PDB_canvas\\PDB_canvas.vbproj",
-              "RelativeToolTip": "PDB_canvas\\PDB_canvas.vbproj",
-              "ViewState": "AgIAACEAAAAAAAAAAAAAAEUAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003380|",
-              "WhenOpened": "2025-04-11T05:36:31.902Z",
-              "EditorCaption": ""
             }
           ]
         },
