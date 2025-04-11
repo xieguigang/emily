@@ -11,10 +11,10 @@ Public Module test_file
     End Sub
 
     Sub testDrawer()
-        Dim pdb As PDB = PDB.Load("G:\emily\data\XC_1184.pdb")
+        Dim pdb As PDB = PDB.Load("G:\emily\data\8qne.pdb")
         Dim img = DrawingPDB.MolDrawing(pdb, "3000,3000")
 
-        Call img.Save("G:\emily\data\XC_1184.png")
+        Call img.Save("G:\emily\data\8qne_pdb.png")
     End Sub
 
     Sub testFilter()
