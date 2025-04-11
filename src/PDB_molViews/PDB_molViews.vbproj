@@ -242,7 +242,9 @@
     <Compile Include="Canvas.Designer.vb">
       <DependentUpon>Canvas.vb</DependentUpon>
     </Compile>
-    <Compile Include="Canvas.vb" />
+    <Compile Include="Canvas.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
     <Compile Include="Form_molView.vb">
       <SubType>Form</SubType>
     </Compile>
