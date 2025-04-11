@@ -9,3 +9,4 @@ assembly/
 .vs/emily/v17/DocumentLayout.backup.json
 *.v2
 *.bin
+/src/.vs/PDB_molViews/v17/.suo
