@@ -26,7 +26,7 @@ Public Module test_file
                                                        segments:=100)
 
         Dim gfx As New PdfGraphics(2000, 2000)
-        Dim camera As New Camera(gfx, New Point3D(45, 45, 45))
+        Dim camera As New Camera(gfx, New Point3D(45, 45, 45), viewDistance:=1)
 
         Call PainterAlgorithm.SurfacePainter(gfx, camera, ribbonMeshes, drawPath:=True)
         Call gfx.Flush()
