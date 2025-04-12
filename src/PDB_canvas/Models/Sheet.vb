@@ -1,14 +1,23 @@
-﻿Imports Microsoft.VisualBasic.Imaging.Drawing3D
+﻿Imports System.Drawing
+Imports Microsoft.VisualBasic.Imaging.Drawing3D
 Imports std = System.Math
+
+#If NET48 Then
+Imports SolidBrush = System.Drawing.SolidBrush
+#Else
+Imports SolidBrush = Microsoft.VisualBasic.Imaging.SolidBrush
+#End If
 
 Namespace StructModels
 
     Public Class Sheet
 
         ReadOnly originalPath As Point3D()
+        ReadOnly fill As SolidBrush
 
-        Sub New(originalPoints As Point3D())
+        Sub New(originalPoints As Point3D(), color As Color)
             Me.originalPath = originalPoints
+            Me.fill = New SolidBrush(color)
         End Sub
 
         Public Function GenerateSheetRibbonModel(thickness As Single, width As Single, segments As Integer) As List(Of Surface)
@@ -103,37 +112,43 @@ Namespace StructModels
 #Region "面生成辅助方法"
         Private Function CreateFrontFace(vertices() As Point3D) As Surface
             Return New Surface With {
-        .vertices = {vertices(0), vertices(1), vertices(2), vertices(3)}
+        .vertices = {vertices(0), vertices(1), vertices(2), vertices(3)},
+        .brush = fill
     }
         End Function
 
         Private Function CreateBackFace(vertices() As Point3D) As Surface
             Return New Surface With {
-        .vertices = {vertices(0), vertices(1), vertices(2), vertices(3)}
+        .vertices = {vertices(0), vertices(1), vertices(2), vertices(3)},
+        .brush = fill
     }
         End Function
 
         Private Function CreateRightFace(current() As Point3D, [next]() As Point3D) As Surface
             Return New Surface With {
-        .vertices = {current(0), current(1), [next](1), [next](0)}
+        .vertices = {current(0), current(1), [next](1), [next](0)},
+        .brush = fill
     }
         End Function
 
         Private Function CreateLeftFace(current() As Point3D, [next]() As Point3D) As Surface
             Return New Surface With {
-        .vertices = {current(3), current(2), [next](2), [next](3)}
+        .vertices = {current(3), current(2), [next](2), [next](3)},
+        .brush = fill
     }
         End Function
 
         Private Function CreateTopFace(current() As Point3D, [next]() As Point3D) As Surface
             Return New Surface With {
-        .vertices = {current(0), current(3), [next](3), [next](0)}
+        .vertices = {current(0), current(3), [next](3), [next](0)},
+        .brush = fill
     }
         End Function
 
         Private Function CreateBottomFace(current() As Point3D, [next]() As Point3D) As Surface
             Return New Surface With {
-        .vertices = {current(1), current(2), [next](2), [next](1)}
+        .vertices = {current(1), current(2), [next](2), [next](1)},
+        .brush = fill
     }
         End Function
 #End Region

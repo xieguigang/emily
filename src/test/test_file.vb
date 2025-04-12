@@ -1,5 +1,6 @@
 Imports System.Drawing
 Imports Emily.gromacs
+Imports Microsoft.VisualBasic.Drawing
 Imports Microsoft.VisualBasic.Imaging.Drawing3D
 Imports PDB_canvas
 Imports PDB_canvas.StructModels
@@ -18,11 +19,18 @@ Public Module test_file
             New Point3D With {.X = 0, .Y = 0, .Z = 0},
             New Point3D With {.X = 1, .Y = 2, .Z = 3},
             New Point3D With {.X = 3, .Y = 1, .Z = 2}
-        })
+        }, Color.Red)
         Dim ribbonMeshes = generator.GenerateSheetRibbonModel(
                                                        thickness:=0.5,
                                                        width:=1.0,
                                                        segments:=100)
+
+        Dim gfx As New PdfGraphics(2000, 2000)
+        Dim camera As New Camera(gfx, New Point3D(45, 45, 45))
+
+        Call PainterAlgorithm.SurfacePainter(gfx, camera, ribbonMeshes, drawPath:=True)
+        Call gfx.Flush()
+        Call gfx.Save("Z:/test_model_render.pdf")
 
         Pause()
     End Sub
