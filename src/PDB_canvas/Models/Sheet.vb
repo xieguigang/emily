@@ -11,7 +11,7 @@ Namespace StructModels
             Me.originalPath = originalPoints
         End Sub
 
-        Public Function GenerateSheetRibbonModel(thickness As Single, width As Single, segments As Integer) As List(Of Point3D())
+        Public Function GenerateSheetRibbonModel(thickness As Single, width As Single, segments As Integer) As List(Of Surface)
             ' 1. 路径重采样
             Dim sampledPath = ResamplePath(segments)
             ' 2. 计算Frenet标架
@@ -61,8 +61,8 @@ Namespace StructModels
         Private Function GenerateStripVertices(path As List(Of Point3D),
                                          frames As List(Of Frame),
                                          width As Single,
-                                         thickness As Single) As List(Of Point3D())
-            Dim verticesList = New List(Of Point3D())
+                                         thickness As Single) As List(Of Surface)
+            Dim meshList As New List(Of Surface)()
             Dim halfWidth = width / 2
             Dim halfThickness = thickness / 2
 
@@ -72,29 +72,71 @@ Namespace StructModels
                 Dim frameCurrent = frames(i)
                 Dim frameNext = frames(i + 1)
 
-                ' 计算四个方向向量
-                Dim widthOffsetCurrent = Multiply(frameCurrent.Normal, halfWidth)
-                Dim thicknessOffsetCurrent = Multiply(frameCurrent.Binormal, halfThickness)
-                Dim widthOffsetNext = Multiply(frameNext.Normal, halfWidth)
-                Dim thicknessOffsetNext = Multiply(frameNext.Binormal, halfThickness)
+                ' 计算当前段的四个顶点（绕法线和副法线展开）
+                Dim currentVertices(3) As Point3D
+                currentVertices(0) = Add(current, Add(Multiply(frameCurrent.Normal, halfWidth), Multiply(frameCurrent.Binormal, halfThickness)))
+                currentVertices(1) = Add(current, Subtract(Multiply(frameCurrent.Normal, halfWidth), Multiply(frameCurrent.Binormal, halfThickness)))
+                currentVertices(2) = Add(current, Subtract(Multiply(frameCurrent.Binormal, halfThickness), Multiply(frameCurrent.Normal, halfWidth)))
+                currentVertices(3) = Add(current, Add(Multiply(frameCurrent.Binormal, halfThickness), Multiply(frameCurrent.Normal, -halfWidth)))
 
-                ' 生成当前段的长方体顶点
-                Dim vertices = {
-                Add(current, Add(widthOffsetCurrent, thicknessOffsetCurrent)),
-                Add(current, Subtract(widthOffsetCurrent, thicknessOffsetCurrent)),
-                Add(current, Subtract(thicknessOffsetCurrent, widthOffsetCurrent)),
-                Add(current, Add(thicknessOffsetCurrent, widthOffsetCurrent)),
-                Add([next], Add(widthOffsetNext, thicknessOffsetNext)),
-                Add([next], Subtract(widthOffsetNext, thicknessOffsetNext)),
-                Add([next], Subtract(thicknessOffsetNext, widthOffsetNext)),
-                Add([next], Add(thicknessOffsetNext, widthOffsetNext))
-            }
+                ' 计算下一段的四个顶点
+                Dim nextVertices(3) As Point3D
+                nextVertices(0) = Add([next], Add(Multiply(frameNext.Normal, halfWidth), Multiply(frameNext.Binormal, halfThickness)))
+                nextVertices(1) = Add([next], Subtract(Multiply(frameNext.Normal, halfWidth), Multiply(frameNext.Binormal, halfThickness)))
+                nextVertices(2) = Add([next], Subtract(Multiply(frameNext.Binormal, halfThickness), Multiply(frameNext.Normal, halfWidth)))
+                nextVertices(3) = Add([next], Add(Multiply(frameNext.Binormal, halfThickness), Multiply(frameNext.Normal, -halfWidth)))
 
-                verticesList.Add(vertices)
+                ' 生成六个面（每个面包含4个顶点）
+                meshList.AddRange({
+            CreateFrontFace(currentVertices),   ' 前表面
+            CreateBackFace(nextVertices),       ' 后表面
+            CreateRightFace(currentVertices, nextVertices),  ' 右侧面
+            CreateLeftFace(currentVertices, nextVertices),   ' 左侧面
+            CreateTopFace(currentVertices, nextVertices),    ' 顶面
+            CreateBottomFace(currentVertices, nextVertices)  ' 底面
+        })
             Next
 
-            Return verticesList
+            Return meshList
         End Function
+
+#Region "面生成辅助方法"
+        Private Function CreateFrontFace(vertices() As Point3D) As Surface
+            Return New Surface With {
+        .vertices = {vertices(0), vertices(1), vertices(2), vertices(3)}
+    }
+        End Function
+
+        Private Function CreateBackFace(vertices() As Point3D) As Surface
+            Return New Surface With {
+        .vertices = {vertices(0), vertices(1), vertices(2), vertices(3)}
+    }
+        End Function
+
+        Private Function CreateRightFace(current() As Point3D, [next]() As Point3D) As Surface
+            Return New Surface With {
+        .vertices = {current(0), current(1), [next](1), [next](0)}
+    }
+        End Function
+
+        Private Function CreateLeftFace(current() As Point3D, [next]() As Point3D) As Surface
+            Return New Surface With {
+        .vertices = {current(3), current(2), [next](2), [next](3)}
+    }
+        End Function
+
+        Private Function CreateTopFace(current() As Point3D, [next]() As Point3D) As Surface
+            Return New Surface With {
+        .vertices = {current(0), current(3), [next](3), [next](0)}
+    }
+        End Function
+
+        Private Function CreateBottomFace(current() As Point3D, [next]() As Point3D) As Surface
+            Return New Surface With {
+        .vertices = {current(1), current(2), [next](2), [next](1)}
+    }
+        End Function
+#End Region
 
 #Region "Vector Operations"
         Private Structure Frame
