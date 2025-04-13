@@ -3,6 +3,7 @@ Imports Emily.gromacs
 Imports Microsoft.VisualBasic.ComponentModel.DataSourceModel
 Imports Microsoft.VisualBasic.Data.ChartPlots.Plot3D
 Imports Microsoft.VisualBasic.Drawing
+Imports Microsoft.VisualBasic.Imaging.Drawing2D.Colors
 Imports Microsoft.VisualBasic.Imaging.Drawing3D
 Imports Microsoft.VisualBasic.Linq
 Imports PDB_canvas
@@ -35,16 +36,22 @@ Public Module test_file
         Call gfx.Flush()
         Call gfx.Save("Z:/test_model_render.pdf")
 
-        Dim scatter = ribbonMeshes.Select(Function(a) a.vertices).IteratesALL.ToArray
-        Dim data As New Serial3D With {
-            .Color = Color.Blue,
-            .PointSize = 5,
+        Dim colors = Designer.GetColors("paper", ribbonMeshes.Count + 1)
+        Dim createData As Func(Of Surface, Integer, Serial3D) =
+            Function(a, i)
+                Return New Serial3D With {
+            .Color = colors(i),
+            .PointSize = 10,
             .Shape = Microsoft.VisualBasic.Data.ChartPlots.Graphic.Legend.LegendStyles.Circle,
-            .Title = "test ribbon",
-            .Points = scatter.Select(Function(a) New NamedValue(Of Point3D)("", a)).ToArray
+            .Title = $"mesh_{i + 1}",
+            .Points = a.vertices.Select(Function(v) New NamedValue(Of Point3D)("", v)).ToArray
         }
+            End Function
 
-        Call {data}.Plot(camera, driver:=Microsoft.VisualBasic.Imaging.Driver.Drivers.PDF).Save("Z:/scatter_visual.pdf")
+
+        Dim scatter = ribbonMeshes.Select(createData).ToArray
+
+        Call scatter.Plot(camera, showHull:=False, showLegend:=False, driver:=Microsoft.VisualBasic.Imaging.Driver.Drivers.PDF).Save("Z:/scatter_visual.pdf")
 
         Pause()
     End Sub
