@@ -1,7 +1,10 @@
 Imports System.Drawing
 Imports Emily.gromacs
+Imports Microsoft.VisualBasic.ComponentModel.DataSourceModel
+Imports Microsoft.VisualBasic.Data.ChartPlots.Plot3D
 Imports Microsoft.VisualBasic.Drawing
 Imports Microsoft.VisualBasic.Imaging.Drawing3D
+Imports Microsoft.VisualBasic.Linq
 Imports PDB_canvas
 Imports PDB_canvas.StructModels
 Imports SMRUCC.genomics.Data.RCSB.PDB
@@ -31,6 +34,17 @@ Public Module test_file
         Call PainterAlgorithm.SurfacePainter(gfx, camera, ribbonMeshes, drawPath:=True)
         Call gfx.Flush()
         Call gfx.Save("Z:/test_model_render.pdf")
+
+        Dim scatter = ribbonMeshes.Select(Function(a) a.vertices).IteratesALL.ToArray
+        Dim data As New Serial3D With {
+            .Color = Color.Blue,
+            .PointSize = 5,
+            .Shape = Microsoft.VisualBasic.Data.ChartPlots.Graphic.Legend.LegendStyles.Circle,
+            .Title = "test ribbon",
+            .Points = scatter.Select(Function(a) New NamedValue(Of Point3D)("", a)).ToArray
+        }
+
+        Call {data}.Plot(camera, driver:=Microsoft.VisualBasic.Imaging.Driver.Drivers.PDF).Save("Z:/scatter_visual.pdf")
 
         Pause()
     End Sub
