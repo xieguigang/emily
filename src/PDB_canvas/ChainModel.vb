@@ -100,7 +100,7 @@ Public Class ChainModel
     Sub New(PDB As PDB, penWidth As Single)
         Dim aas As String() =
             LinqAPI.Exec(Of String) <= From AA As AminoAcid
-                                       In PDB.AminoAcidSequenceData
+                                       In PDB(0).AminoAcidSequenceData
                                        Select AA.AA_ID
                                        Distinct
         Dim AAColors = New CategoryColorProfile(aas, "paper") _
@@ -111,7 +111,7 @@ Public Class ChainModel
                           End Function)
 
         Chian = LinqAPI.Exec(Of AA) <= From x As AminoAcid
-                                       In PDB.AminoAcidSequenceData
+                                       In PDB(0).AminoAcidSequenceData
                                        Select New AA(x, AAColors)
     End Sub
 

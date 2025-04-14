@@ -96,7 +96,7 @@ Public Class DrawingPDB : Inherits Plot
 
     Protected Overrides Sub PlotInternal(ByRef g As IGraphics, canvas As GraphicsRegion)
         Dim offset As New Point(g.Width / 2, g.Height / 2)
-        Dim AASequence As AminoAcid() = pdb.AminoAcidSequenceData
+        Dim AASequence As AminoAcid() = pdb(0).AminoAcidSequenceData
         Dim PreAA As AminoAcid = AASequence.First
         Dim PrePoint As PointF
         Dim aas As String() = (From AA In AASequence Select AA.AA_ID Distinct).ToArray
