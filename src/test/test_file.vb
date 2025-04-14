@@ -14,7 +14,7 @@ Public Module test_file
 
     Sub Main()
         Call Microsoft.VisualBasic.Drawing.SkiaDriver.Register()
-        Call testModelRender()
+        ' Call testModelRender()
         Call testDrawer()
     End Sub
 
@@ -57,7 +57,7 @@ Public Module test_file
     End Sub
 
     Sub testDrawer()
-        Dim pdb As PDB = PDB.Load("G:\emily\data\8qne.pdb")
+        Dim pdb As PDB = PDB.Load("Z:\pdb2ku2.ent")
         Dim img = DrawingPDB.MolDrawing(pdb, "3000,3000")
 
         Call img.Save("G:\emily\data\8qne_pdb.png")
