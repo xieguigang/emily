@@ -14,8 +14,9 @@ declare namespace emily {
    /**
      * @param db_xref default value Is ``NA``.
      * @param openbabel default value Is ``Call "getOption"("openbabel")``.
+     * @param debug default value Is ``false``.
    */
-   function smiles_2_pdb(smiles: any, db_xref?: any, openbabel?: any): object;
+   function smiles_2_pdb(smiles: any, db_xref?: any, openbabel?: any, debug?: any): object;
    /**
      * @param outdir default value Is ``./``.
    */
