@@ -11,9 +11,15 @@ const smiles_2_pdb = function(smiles, db_xref = "NA", openbabel = getOption("ope
 
     if (debug) {
         print(`obabel ${pdb_cli}`);
-        cat("\n");
-        cat(pdb_txt);
-        cat("\n\n");
+
+        if (nchar(pdb_txt) > 0) {
+            cat("1 molecule converted:");
+            cat("\n");
+            cat(pdb_txt);
+            cat("\n\n");
+        } else {
+            print("smiles struct data convert to pdb struct data failure!");
+        }
     }
 
     # removes the last line
