@@ -14,8 +14,15 @@ Public Module test_file
 
     Sub Main()
         Call Microsoft.VisualBasic.Drawing.SkiaDriver.Register()
+        Call testMetadata()
         ' Call testModelRender()
         Call testDrawer()
+    End Sub
+
+    Sub testMetadata()
+        Dim pdb As PDB = PDB.Load("G:\pdb2ki6.ent")
+
+        Pause()
     End Sub
 
     Sub testModelRender()
