@@ -54,8 +54,14 @@ const zdock = function(L, R, outdir = "./", fixed = FALSE, n = 10) {
 const mark_sur = function(zdock, i, o) {
     let uniCHARMM = file.path(zdock, "uniCHARMM");
 
-    if (!file.exists(uniCHARMM)) {
+    if (!file.exists("./uniCHARMM")) {
         file.copy(uniCHARMM, getwd() & "/");
+
+        print("copy uniCHARMM to current workfolder:");
+        print(getwd());
+    } else {
+        print("found: ");
+        print(file.path(getwd(), "uniCHARMM"));
     }
 
     system2(file.path(zdock, "mark_sur"), [i o]);
