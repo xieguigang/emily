@@ -25,6 +25,8 @@ declare namespace emily {
    function smiles_2_pdb_rdkit(smiles: any, db_xref?: any, rdkit?: any, debug?: any): object;
    /**
      * @param outdir default value Is ``./``.
+     * @param fixed default value Is ``false``.
+     * @param n default value Is ``10``.
    */
-   function zdock(L: any, R: any, outdir?: any): object;
+   function zdock(L: any, R: any, outdir?: any, fixed?: any, n?: any): object;
 }

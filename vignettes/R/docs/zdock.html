@@ -28,7 +28,9 @@
 
         <div style="width: 100%; padding-left: 3%; color: black;">
             <pre><code class='language-R' style="color: black; font-weight:normal;"><strong>zdock</strong>(<i>L</i>, <i>R</i>,
-    <i>outdir</i> = <span style='color: brown;'><strong>'./'</strong></span>);</code></pre>
+    <i>outdir</i> = <span style='color: brown;'><strong>'./'</strong></span>,
+    <i>fixed</i> = <span style='color: blue !important;'>FALSE</span>,
+    <i>n</i> = <span style='color: green;'>10</span>);</code></pre>
         </div>
 
         <h3>Arguments</h3>
@@ -37,6 +39,14 @@
             
 <dt>R</dt>
 <dd><p><p>the another pdb file path</p></p></dd>
+
+
+<dt>n</dt>
+<dd><p><p>set the number of output predictions, (default to 10)</p></p></dd>
+
+
+<dt>fixed</dt>
+<dd><p><p>fix the receptor, preventing its rotation and switching with ligand during execution.</p></p></dd>
 
         </table>
 

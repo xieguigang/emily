@@ -1,10 +1,14 @@
 ﻿.TH ZDOCK 1 2025-Jun "" "zdock workflow for docking two structure data"
 .SH NAME
 zdock \- zdock(L, R,
-    <i>outdir</i> = <span style='color: brown;'><strong>'./'</strong></span>)
+    <i>outdir</i> = <span style='color: brown;'><strong>'./'</strong></span>,
+    <i>fixed</i> = <span style='color: blue !important;'>FALSE</span>,
+    <i>n</i> = <span style='color: green;'>10</span>)
 .SH SYNOPSIS
 \fIzdock(L, R,
-    <i>outdir</i> = <span style='color: brown;'><strong>'./'</strong></span>)\fR
+    <i>outdir</i> = <span style='color: brown;'><strong>'./'</strong></span>,
+    <i>fixed</i> = <span style='color: blue !important;'>FALSE</span>,
+    <i>n</i> = <span style='color: green;'>10</span>)\fR
 .SH OPTIONS
 .PP
 \fBL\fB \fR\- . 
@@ -15,9 +19,15 @@ zdock \- zdock(L, R,
 .PP
 \fBoutdir\fB \fR\- './'. 
 .PP
+.PP
+\fBfixed\fB \fR\- FALSE. fix the receptor, preventing its rotation and switching with ligand during execution.
+.PP
+.PP
+\fBn\fB \fR\- 10. set the number of output predictions, (default to 10)
+.PP
 .SH FILES
 .PP
-SMRUCC/R#.declare_function.zdock at zdock.R:line 6
+SMRUCC/R#.declare_function.zdock at zdock.R:line 10
 .PP
 .SH COPYRIGHT
 Copyright © Who wrote it, What license is it under? Licensed 2025
