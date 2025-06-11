@@ -8,8 +8,8 @@
 #' @return 
 #' 
 const zdock = function(L, R, outdir = "./", fixed = FALSE, n = 10) {
-    let L1 = file.path(outdir, basename(L) & ".pdb");
-    let R1 = file.path(outdir, basename(R) & ".pdb");
+    let L1 = file.path(outdir, basename(L) & "_m.pdb");
+    let R1 = file.path(outdir, basename(R) & "_m.pdb");
     let zdocklib = getOption("zdock");
     let zdock = file.path(zdocklib,"zdock");
     let mk_complex = file.path(zdocklib,"create.pl");
@@ -49,6 +49,14 @@ const zdock = function(L, R, outdir = "./", fixed = FALSE, n = 10) {
     }
 }
 
+#' Mark the surface residues of a PDB file
+#' 
 const mark_sur = function(zdock, i, o) {
-    system2(`${zdock}/mark_sur`, [i o]);
+    let uniCHARMM = file.path(zdock, "uniCHARMM");
+
+    if (!file.exists(uniCHARMM)) {
+        file.copy(uniCHARMM, getwd() & "/");
+    }
+
+    system2(file.path(zdock, "mark_sur"), [i o]);
 }
