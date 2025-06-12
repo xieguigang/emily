@@ -1,4 +1,6 @@
 ﻿
+Imports SMRUCC.genomics.Data.RCSB.PDB.Keywords
+
 ''' <summary>
 ''' # File Structure for Molecular Docking Configuration
 ''' 
@@ -81,8 +83,21 @@
 ''' </summary>
 Public Class ZDockOut
 
-    Public Property gridSize As Double
-    Public Property stepSize As Double
-    Public Property 
+    Public Property MaximumGridPoints As Double
+    Public Property GridSpacing As Double
+    Public Property RigidMoleculeFlag As Double
+
+    Public Property ReceptorOrientation As Point3D
+    Public Property LigandOrientation As Point3D
+
+    Public Property receptorMoleculeFile As String
+    Public Property receptorLocation As Point3D
+
+    Public Property ligandMoleculeFile As String
+    Public Property ligandLocation As Point3D
+
+    Public Property ligandRotation As Point3D
+    Public Property translationVector As Point3D
+    Public Property ZDockScore As Double
 
 End Class
