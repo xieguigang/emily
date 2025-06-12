@@ -1,5 +1,4 @@
-﻿Imports Emily.gromacs
-Imports Microsoft.VisualBasic.ComponentModel.Collection
+﻿Imports Microsoft.VisualBasic.ComponentModel.Collection
 
 Namespace gromacs
 

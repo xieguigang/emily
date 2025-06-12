@@ -19,6 +19,7 @@
     <ProjectReference Include="..\..\..\Microsoft.VisualBasic.Drawing\src\Microsoft.VisualBasic.Drawing\Microsoft.VisualBasic.Drawing.vbproj" />
     <ProjectReference Include="..\emily\emily.vbproj" />
     <ProjectReference Include="..\PDB_canvas\PDB_canvas.vbproj" />
+    <ProjectReference Include="..\zdock\zdock.vbproj" />
   </ItemGroup>
 
 </Project>
