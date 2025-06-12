@@ -1,4 +1,6 @@
 ﻿
+Imports System.IO
+Imports Microsoft.VisualBasic.Language
 Imports SMRUCC.genomics.Data.RCSB.PDB.Keywords
 
 ''' <summary>
@@ -144,6 +146,53 @@ Public Class ZDockOut
             Return complexes.ElementAtOrNull(Scan0)
         End Get
     End Property
+
+    Public Shared Function Parse(s As Stream) As ZDockOut
+        Return Parse(New StreamReader(s))
+    End Function
+
+    Public Shared Function Parse(s As String) As ZDockOut
+        Return Parse(New StringReader(s))
+    End Function
+
+    Public Shared Function Parse(out As TextReader) As ZDockOut
+        Dim zdock As New ZDockOut
+        Dim line As String() = out.ReadLine.StringSplit("\t")
+        Dim str As Value(Of String) = ""
+        Dim ranking As New List(Of Complex)
+
+        zdock.MaximumGridPoints = Val(line(0))
+        zdock.GridSpacing = Val(line(1))
+        zdock.RigidMoleculeFlag = Val(line(2))
+
+        line = out.ReadLine.StringSplit("\t")
+        zdock.ReceptorOrientation = New Point3D(Val(line(0)), Val(line(1)), Val(line(2)))
+
+        line = out.ReadLine.StringSplit("\t")
+        zdock.LigandOrientation = New Point3D(Val(line(0)), Val(line(1)), Val(line(2)))
+
+        line = out.ReadLine.StringSplit("\t")
+        zdock.receptorMoleculeFile = line(0)
+        zdock.receptorLocation = New Point3D(Val(line(1)), Val(line(2)), Val(line(3)))
+
+        line = out.ReadLine.StringSplit("\t")
+        zdock.ligandMoleculeFile = line(0)
+        zdock.ligandLocation = New Point3D(Val(line(1)), Val(line(2)), Val(line(3)))
+
+        Do While (str = out.ReadLine) IsNot Nothing
+            Dim complex As New Complex
+
+            line = CStr(str).StringSplit("\t")
+            complex.ligandRotation = New Point3D(Val(line(0)), Val(line(1)), Val(line(2)))
+            complex.translationVector = New Point3D(Val(line(3)), Val(line(4)), Val(line(5)))
+            complex.ZDockScore = Val(line(6))
+            ranking.Add(complex)
+        Loop
+
+        zdock.complexes = ranking.ToArray
+
+        Return zdock
+    End Function
 
 End Class
 
