@@ -4,6 +4,7 @@
     <RootNamespace>Emily</RootNamespace>
     <TargetFrameworks>net48;net8.0-windows;net8.0</TargetFrameworks>
     <AssemblyName>Emily.ZDock</AssemblyName>
+    <Platforms>AnyCPU;x64</Platforms>
   </PropertyGroup>
 
   <ItemGroup>
