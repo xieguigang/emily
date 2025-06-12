@@ -83,21 +83,86 @@ Imports SMRUCC.genomics.Data.RCSB.PDB.Keywords
 ''' </summary>
 Public Class ZDockOut
 
+    ''' <summary>
+    ''' **Maximum grid points**: Specifies the size of the grid used for spatial discretization of the molecular interaction space
+    ''' </summary>
+    ''' <returns></returns>
     Public Property MaximumGridPoints As Double
+    ''' <summary>
+    ''' **Grid spacing**: Defines the step size for molecular movement in space, representing the distance between consecutive positions in the search space
+    ''' </summary>
+    ''' <returns></returns>
     Public Property GridSpacing As Double
+    ''' <summary>
+    ''' **Rigid molecule flag**: Set to 0 to indicate that the receptor molecule remains rigid during the docking process
+    ''' </summary>
+    ''' <returns></returns>
     Public Property RigidMoleculeFlag As Double
 
+    ''' <summary>
+    ''' The second line contains the initial Euler angles of the receptor molecule. These three 
+    ''' angles define the initial orientation of the receptor molecule in 3D space before the 
+    ''' docking simulation begins.
+    ''' </summary>
+    ''' <returns></returns>
     Public Property ReceptorOrientation As Point3D
+    ''' <summary>
+    ''' The third line contains the initial Euler angles of the ligand molecule. These angles 
+    ''' establish the initial orientation of the ligand molecule relative to the receptor at the 
+    ''' start of the simulation.
+    ''' </summary>
+    ''' <returns></returns>
     Public Property LigandOrientation As Point3D
 
+    ''' <summary>
+    ''' The filename of the receptor molecule file
+    ''' </summary>
+    ''' <returns></returns>
     Public Property receptorMoleculeFile As String
+    ''' <summary>
+    ''' Position parameters that define the receptor's location relative to the coordinate system 
+    ''' center, typically represented as Cartesian coordinates (x, y, z)
+    ''' </summary>
+    ''' <returns></returns>
     Public Property receptorLocation As Point3D
 
+    ''' <summary>
+    ''' The filename of the ligand molecule file
+    ''' </summary>
+    ''' <returns></returns>
     Public Property ligandMoleculeFile As String
+    ''' <summary>
+    ''' Position parameters that define the ligand's initial location relative to the coordinate system center
+    ''' </summary>
+    ''' <returns></returns>
     Public Property ligandLocation As Point3D
 
+    Public Property complexes As Complex()
+
+    Public ReadOnly Property topRankComplex As Complex
+        Get
+            Return complexes.ElementAtOrNull(Scan0)
+        End Get
+    End Property
+
+End Class
+
+Public Class Complex
+
+    ''' <summary>
+    ''' Euler angles representing the rotation of the ligand relative to its initial position
+    ''' </summary>
+    ''' <returns></returns>
     Public Property ligandRotation As Point3D
+    ''' <summary>
+    ''' Translation vector indicating the linear displacement of the ligand's center relative to its initial position
+    ''' </summary>
+    ''' <returns></returns>
     Public Property translationVector As Point3D
+    ''' <summary>
+    ''' ZDock scoring value, where a higher score indicates better docking quality and a more favorable interaction
+    ''' </summary>
+    ''' <returns></returns>
     Public Property ZDockScore As Double
 
 End Class
