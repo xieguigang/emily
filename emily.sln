@@ -37,6 +37,12 @@ Project("{F184B08F-C81C-45F6-A57F-5ABD9991F28F}") = "Microsoft.VisualBasic.Drawi
 EndProject
 Project("{F184B08F-C81C-45F6-A57F-5ABD9991F28F}") = "zdock", "src\zdock\zdock.vbproj", "{8EA1E75F-48FE-4BF1-ACFE-2955B16CD968}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "renv", "renv", "{F5C4DBF7-6DFE-4326-BCCB-B9783F8C9EA9}"
+EndProject
+Project("{F184B08F-C81C-45F6-A57F-5ABD9991F28F}") = "Rsharp-netcore5", "..\GCModeller\src\R-sharp\R#\Rsharp-netcore5.vbproj", "{CDF04607-C183-6F6C-FE5A-DABFDBB5E7D7}"
+EndProject
+Project("{F184B08F-C81C-45F6-A57F-5ABD9991F28F}") = "R-cmd.NET5", "..\GCModeller\src\R-sharp\studio\R-terminal\R-cmd.NET5.vbproj", "{33CC05B1-BD48-776F-F90A-541F80A22D67}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -203,6 +209,30 @@ Global
 		{8EA1E75F-48FE-4BF1-ACFE-2955B16CD968}.Rsharp_app_release|Any CPU.Build.0 = Release|Any CPU
 		{8EA1E75F-48FE-4BF1-ACFE-2955B16CD968}.Rsharp_app_release|x64.ActiveCfg = Release|x64
 		{8EA1E75F-48FE-4BF1-ACFE-2955B16CD968}.Rsharp_app_release|x64.Build.0 = Release|x64
+		{CDF04607-C183-6F6C-FE5A-DABFDBB5E7D7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CDF04607-C183-6F6C-FE5A-DABFDBB5E7D7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CDF04607-C183-6F6C-FE5A-DABFDBB5E7D7}.Debug|x64.ActiveCfg = Debug|x64
+		{CDF04607-C183-6F6C-FE5A-DABFDBB5E7D7}.Debug|x64.Build.0 = Debug|x64
+		{CDF04607-C183-6F6C-FE5A-DABFDBB5E7D7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CDF04607-C183-6F6C-FE5A-DABFDBB5E7D7}.Release|Any CPU.Build.0 = Release|Any CPU
+		{CDF04607-C183-6F6C-FE5A-DABFDBB5E7D7}.Release|x64.ActiveCfg = Release|x64
+		{CDF04607-C183-6F6C-FE5A-DABFDBB5E7D7}.Release|x64.Build.0 = Release|x64
+		{CDF04607-C183-6F6C-FE5A-DABFDBB5E7D7}.Rsharp_app_release|Any CPU.ActiveCfg = Rsharp_app_release|Any CPU
+		{CDF04607-C183-6F6C-FE5A-DABFDBB5E7D7}.Rsharp_app_release|Any CPU.Build.0 = Rsharp_app_release|Any CPU
+		{CDF04607-C183-6F6C-FE5A-DABFDBB5E7D7}.Rsharp_app_release|x64.ActiveCfg = Rsharp_app_release|x64
+		{CDF04607-C183-6F6C-FE5A-DABFDBB5E7D7}.Rsharp_app_release|x64.Build.0 = Rsharp_app_release|x64
+		{33CC05B1-BD48-776F-F90A-541F80A22D67}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{33CC05B1-BD48-776F-F90A-541F80A22D67}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{33CC05B1-BD48-776F-F90A-541F80A22D67}.Debug|x64.ActiveCfg = Debug|x64
+		{33CC05B1-BD48-776F-F90A-541F80A22D67}.Debug|x64.Build.0 = Debug|x64
+		{33CC05B1-BD48-776F-F90A-541F80A22D67}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{33CC05B1-BD48-776F-F90A-541F80A22D67}.Release|Any CPU.Build.0 = Release|Any CPU
+		{33CC05B1-BD48-776F-F90A-541F80A22D67}.Release|x64.ActiveCfg = Release|x64
+		{33CC05B1-BD48-776F-F90A-541F80A22D67}.Release|x64.Build.0 = Release|x64
+		{33CC05B1-BD48-776F-F90A-541F80A22D67}.Rsharp_app_release|Any CPU.ActiveCfg = Rsharp_app_release|Any CPU
+		{33CC05B1-BD48-776F-F90A-541F80A22D67}.Rsharp_app_release|Any CPU.Build.0 = Rsharp_app_release|Any CPU
+		{33CC05B1-BD48-776F-F90A-541F80A22D67}.Rsharp_app_release|x64.ActiveCfg = Rsharp_app_release|x64
+		{33CC05B1-BD48-776F-F90A-541F80A22D67}.Rsharp_app_release|x64.Build.0 = Rsharp_app_release|x64
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -219,8 +249,13 @@ Global
 		{E291FDD6-AC16-0A49-E51E-F02F27AFFD9F} = {76740A1F-2D0A-412E-AC2D-C7027BD026E4}
 		{401B0259-31BB-F9A0-F107-FB577A786B72} = {76740A1F-2D0A-412E-AC2D-C7027BD026E4}
 		{E1812DB0-3272-730E-CFE0-FE854CB0A779} = {76740A1F-2D0A-412E-AC2D-C7027BD026E4}
+		{CDF04607-C183-6F6C-FE5A-DABFDBB5E7D7} = {F5C4DBF7-6DFE-4326-BCCB-B9783F8C9EA9}
+		{33CC05B1-BD48-776F-F90A-541F80A22D67} = {F5C4DBF7-6DFE-4326-BCCB-B9783F8C9EA9}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {9A1B03D2-3004-477F-B124-0139DA9170EB}
+	EndGlobalSection
+	GlobalSection(SharedMSBuildProjectFiles) = preSolution
+		..\GCModeller\src\R-sharp\studio\Rstudio.common\Rstudio.common.projitems*{33cc05b1-bd48-776f-f90a-541f80a22d67}*SharedItemsImports = 5
 	EndGlobalSection
 EndGlobal
