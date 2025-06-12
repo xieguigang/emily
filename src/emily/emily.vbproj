@@ -146,6 +146,7 @@
     <ProjectReference Include="..\..\..\GCModeller\src\runtime\sciBASIC#\Microsoft.VisualBasic.Core\src\Core.vbproj" />
     <ProjectReference Include="..\..\..\GCModeller\src\runtime\sciBASIC#\mime\text%html\html_netcore5.vbproj" />
     <ProjectReference Include="..\PDB_canvas\PDB_canvas.vbproj" />
+    <ProjectReference Include="..\zdock\zdock.vbproj" />
   </ItemGroup>
 
 
