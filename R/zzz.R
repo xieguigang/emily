@@ -1,4 +1,5 @@
-# imports "Rscript" from "emily";
+require(GCModeller);
+require(Markdown2PDF);
 
 const .onLoad = function() {
     # set directory path that contaains zdock program
