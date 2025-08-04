@@ -12,6 +12,9 @@ declare namespace emily {
    */
    function mark_sur(zdock: any, i: any, o: any): object;
    /**
+   */
+   function pdb_pdf(pdb_txt: any, save_file: any): object;
+   /**
      * @param db_xref default value Is ``NA``.
      * @param openbabel default value Is ``Call "getOption"("openbabel")``.
      * @param debug default value Is ``false``.
