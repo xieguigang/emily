@@ -9,7 +9,8 @@ const .onLoad = function() {
     # config openbabel
     # rdkit environment
     if ((Sys.info()[['sysname']]) == "Win32NT") {
-        options(openbabel = "C:\Program Files\OpenBabel-3.1.1\obabel.exe");
-        options(rdkit_py = "C:\ProgramData\anaconda3\envs\rdkit\python.exe");
+        options(openbabel = "C:\\Program Files\\OpenBabel-3.1.1\\obabel.exe");
+        options(rdkit_py = "C:\\ProgramData\\anaconda3\\envs\\rdkit\\python.exe");
+        options(wkhtmltopdf = "C:\\Program Files\\wkhtmltopdf\\bin\\wkhtmltopdf.exe");
     }
 }
