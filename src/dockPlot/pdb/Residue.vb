@@ -4,7 +4,7 @@ Imports Microsoft.VisualBasic.Imaging
 Imports Microsoft.VisualBasic.Imaging.Math2D
 Imports Microsoft.VisualBasic.Linq
 
-Namespace ligplus
+Namespace pdb
 
     Public Class Residue
         Public Shared nResidues As Integer = 0
@@ -458,7 +458,7 @@ Namespace ligplus
             residueTypeField = 0
             If nAtomsField = 1 Then
                 Dim atom As Atom = atomListField(0)
-                If Not Atom.isMetal(atom.AtomName).Equals("  ") Then
+                If Not atom.isMetal(atom.AtomName).Equals("  ") Then
                     residueTypeField = 4
                 End If
             End If
@@ -1050,7 +1050,7 @@ Namespace ligplus
                 End If
                 For i = 0 To nspokes - 1
                     If spoke(i) Then
-                        Dim contactAngle = i * 12 / 57.29577951308232R
+                        Dim contactAngle = i * 12 / 57.295779513082323R
                         Dim innerRadius = radius * 1.0F
                         Dim outerRadius = radius * 1.4F
                         If plotMode = 1 Then

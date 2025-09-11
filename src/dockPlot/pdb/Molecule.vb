@@ -1,7 +1,7 @@
 ﻿Imports System.Drawing
 Imports Microsoft.VisualBasic.Imaging
 
-Namespace ligplus
+Namespace pdb
 
     Public Class Molecule
         Public Const MOL_UNKNOWN As Integer = 0
@@ -278,7 +278,7 @@ Namespace ligplus
                 If Not ReferenceEquals(colourName, Nothing) Then
                     colour = ligplus.Params.getColour(colourName)
                 Else
-                    colour = Color.BLACK
+                    colour = Color.Black
                 End If
                 Dim antibodyLoopID = firstResidueField.AntibodyLoopID
                 Dim isAntigen = firstResidueField.Antigen

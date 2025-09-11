@@ -1,6 +1,4 @@
-﻿Imports Microsoft.VisualBasic
-
-Namespace ligplus
+﻿Namespace ligplus
 
     Public NotInheritable Class LigPlusFrame
         Public Const VERSION As String = "v.2.3.1"

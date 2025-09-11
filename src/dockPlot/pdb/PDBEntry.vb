@@ -1,7 +1,7 @@
 ﻿Imports Microsoft.VisualBasic.ComponentModel.Collection
 Imports Microsoft.VisualBasic.Imaging
 
-Namespace ligplus
+Namespace pdb
 
     Public Class PDBEntry
         Public Const COVALENT_DIST As Single = 2.0F
@@ -1481,7 +1481,7 @@ Namespace ligplus
         End Sub
 
         Public Overridable Sub shiftSecondDummy(dimShiftX As Single, dimShiftY As Single)
-            Dim cutPointX = -3.4028235E38F
+            Dim cutPointX = -3.40282347E+38F
             Dim cutPointY = Single.MaxValue
             If nDummyField > 1 Then
                 Dim molecule = dummyMolecule(1)
@@ -1541,7 +1541,7 @@ Namespace ligplus
             Dim i As Integer
             For i = 0 To 1
                 cMin(i) = Single.MaxValue
-                cMax(i) = -3.4028235E38F
+                cMax(i) = -3.40282347E+38F
             Next
             For i = 0 To atomListField.Count - 1
                 Dim atom As Atom = atomListField(i)
@@ -1715,8 +1715,8 @@ Namespace ligplus
                     dummyMolecule(j).updateMaxMinCoords()
                     dummyMin(j)(1) = Single.MaxValue
                     dummyMin(j)(0) = Single.MaxValue
-                    dummyMax(j)(1) = -3.4028235E38F
-                    dummyMax(j)(0) = -3.4028235E38F
+                    dummyMax(j)(1) = -3.40282347E+38F
+                    dummyMax(j)(0) = -3.40282347E+38F
                     nAssigned(j) = 0
                 Next
                 If nDummyField > 1 Then

@@ -1,4 +1,4 @@
-﻿Namespace ligplus
+﻿Namespace pdb
     Public Class HetGroup
         Private hetDescriptionField As String
 

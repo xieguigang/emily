@@ -1,6 +1,4 @@
-﻿Imports System.Collections.Generic
-
-Namespace ligplus
+﻿Namespace ligplus
 
     Public Class SizeSelection
         Public Shared LIGPLOT As Integer = 0

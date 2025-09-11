@@ -2,7 +2,7 @@
 Imports Microsoft.VisualBasic.ComponentModel.Collection
 Imports Microsoft.VisualBasic.Imaging
 
-Namespace ligplus
+Namespace models
 
     Public Class Atom
         Public Shared METAL_NAME As String() = New String() {"HE  ", "LI  ", "BE  ", " B  ", " F  ", "NE  ", "NA  ", "MG  ", "AL  ", "SI  ", "CL  ", "AR  ", " K  ", "CA  ", "SC  ", "TI  ", " V  ", "CR  ", "MN  ", "FE  ", "CO  ", "NI  ", "CU  ", "ZN  ", "GA  ", "GE  ", "AS  ", "SE  ", "BR  ", "KR  ", "RB  ", "SR  ", " Y  ", "ZR  ", "NB  ", "MO  ", "TC  ", "RU  ", "RH  ", "PD  ", "AG  ", "CD  ", "IN  ", "SN  ", "SB  ", "TE  ", " I  ", "XE  ", "CS  ", "BA  ", "LA  ", "CE  ", "PR  ", "ND  ", "PM  ", "SM  ", "EU  ", "GD  ", "TB  ", "DY  ", "HO  ", "ER  ", "TM  ", "YB  ", "LU  ", "HF  ", "TA  ", " W  ", "RE  ", "OS  ", "IR  ", "PT  ", "AU  ", "HG  ", "TL  ", "PB  ", "BI  ", "po  ", "AT  ", "RN  ", "FR  ", "RA  ", "ac  ", "TH  ", "PA  ", " U  ", "np  ", "PU  ", "AM  ", "CM  ", "BK  ", "CF  ", "ES  ", "FM  ", "MD  ", "no  ", "LR  ", "....", "....", "...."}

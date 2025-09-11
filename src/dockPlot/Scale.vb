@@ -1,8 +1,6 @@
-﻿Imports System
-
-Namespace ligplus
+﻿Namespace ligplus
     Public Class Scale
-        Private Const NEAR_ZERO As Single = 1.0E-6F
+        Private Const NEAR_ZERO As Single = 0.000001F
 
         Public Const TO_SCREEN As Integer = 0
 
@@ -81,10 +79,10 @@ Namespace ligplus
             width = cMax(0) - cMin(0)
             centre(0) = (cMin(0) + cMax(0)) / 2.0F
             centre(1) = (cMin(1) + cMax(1)) / 2.0F
-            If Math.Abs(width) < 1.0E-6F Then
+            If Math.Abs(width) < 0.000001F Then
                 width = 1.0F
             End If
-            If Math.Abs(height) < 1.0E-6F Then
+            If Math.Abs(height) < 0.000001F Then
                 height = 1.0F
             End If
             For i = 0 To 1

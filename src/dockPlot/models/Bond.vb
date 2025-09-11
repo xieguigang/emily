@@ -1,7 +1,7 @@
 ﻿Imports System.Drawing
 Imports Microsoft.VisualBasic.Imaging
 
-Namespace ligplus
+Namespace models
 
     Public Class Bond
         Public Const UNKNOWN As Integer = -1

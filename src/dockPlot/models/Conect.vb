@@ -1,4 +1,4 @@
-﻿Namespace ligplus
+﻿Namespace models
 
     Public Class Conect
 

@@ -1,7 +1,7 @@
 ﻿Imports Microsoft.VisualBasic.ComponentModel.Collection
 Imports Microsoft.VisualBasic.Imaging
 
-Namespace ligplus
+Namespace pdb
 
     Public Class Ensemble
         Public Const LIST_MARGIN As Integer = 10
