@@ -1,4 +1,6 @@
 ﻿Imports System.Drawing
+Imports ligplus.ligplus
+Imports ligplus.pdb
 Imports Microsoft.VisualBasic.ComponentModel.Collection
 Imports Microsoft.VisualBasic.Imaging
 

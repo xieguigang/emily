@@ -1,4 +1,6 @@
-﻿Namespace ligplus
+﻿Imports ligplus.pdb
+
+Namespace ligplus
 
     Public Class SizeSelection
         Public Shared LIGPLOT As Integer = 0

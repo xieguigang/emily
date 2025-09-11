@@ -1,4 +1,5 @@
-﻿Imports Microsoft.VisualBasic.Text.Parser
+﻿Imports ligplus.pdb
+Imports Microsoft.VisualBasic.Text.Parser
 
 Namespace ligplus
 

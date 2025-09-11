@@ -1,4 +1,6 @@
-﻿Imports Microsoft.VisualBasic.Imaging
+﻿Imports ligplus.models
+Imports ligplus.pdb
+Imports Microsoft.VisualBasic.Imaging
 
 Namespace ligplus
 

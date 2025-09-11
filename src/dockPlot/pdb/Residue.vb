@@ -1,4 +1,6 @@
 ﻿Imports System.Drawing
+Imports ligplus.ligplus
+Imports ligplus.models
 Imports Microsoft.VisualBasic.ComponentModel.Collection
 Imports Microsoft.VisualBasic.Imaging
 Imports Microsoft.VisualBasic.Imaging.Math2D
@@ -458,7 +460,7 @@ Namespace pdb
             residueTypeField = 0
             If nAtomsField = 1 Then
                 Dim atom As Atom = atomListField(0)
-                If Not atom.isMetal(atom.AtomName).Equals("  ") Then
+                If Not Atom.isMetal(atom.AtomName).Equals("  ") Then
                     residueTypeField = 4
                 End If
             End If

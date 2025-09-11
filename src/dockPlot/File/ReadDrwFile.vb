@@ -1,4 +1,7 @@
 ﻿Imports System.IO
+Imports ligplus.ligplus
+Imports ligplus.models
+Imports ligplus.pdb
 Imports Microsoft.VisualBasic.Language
 Imports Microsoft.VisualBasic.Text.Parser
 
@@ -62,7 +65,7 @@ Namespace file
 
         Private orientation As Integer = RunExe.LANDSCAPE
 
-        Private programField As Integer = ensemble.LIGPLOT
+        Private programField As Integer = Ensemble.LIGPLOT
 
         Private antibodyLoopID As String = Nothing
 
@@ -149,7 +152,7 @@ Namespace file
                 Return
             End If
             pdb.flagShortestHphobics()
-            If programField = ensemble.DIMPLOT OrElse antibodyField Then
+            If programField = Ensemble.DIMPLOT OrElse antibodyField Then
                 ensemble.updateMaxMinCoords()
                 If antibodyField Then
                     If Not savedFile Then
@@ -217,7 +220,7 @@ Namespace file
                 lType = LineType.DIMPLOT_FLAG
                 pdb.ReadFrom = 2
                 readFrom = 2
-                programField = ensemble.DIMPLOT
+                programField = Ensemble.DIMPLOT
                 If ranLigfit OrElse savedFile Then
                     If inputLine.Length > 2 AndAlso inputLine(2) = "P"c Then
                         orientation = RunExe.PORTRAIT

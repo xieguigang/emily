@@ -1,4 +1,7 @@
-﻿Imports Microsoft.VisualBasic.Text
+﻿Imports ligplus.ligplus
+Imports ligplus.models
+Imports ligplus.pdb
+Imports Microsoft.VisualBasic.Text
 Imports PrintStream = System.IO.StreamWriter
 
 Namespace file
@@ -69,7 +72,7 @@ Namespace file
             For i = 0 To pdbEntryList.Count - 1
                 Dim pdb = pdbEntryList(i)
                 out.format("echo ""  prot%02d = protein residues for %s""" & vbLf, New Object() {Convert.ToInt32(i + 1), pdb.PDBCode})
-                If program = ensemble.LIGPLOT Then
+                If program = Ensemble.LIGPLOT Then
                     out.format("echo ""  lig%02d  = ligand for %s""" & vbLf, New Object() {Convert.ToInt32(i + 1), pdb.PDBCode})
                 End If
             Next

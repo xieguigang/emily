@@ -1,4 +1,7 @@
 ﻿Imports System.IO
+Imports ligplus.file
+Imports ligplus.models
+Imports ligplus.pdb
 Imports Microsoft.VisualBasic.Text
 Imports PrintStream = System.IO.StreamWriter
 

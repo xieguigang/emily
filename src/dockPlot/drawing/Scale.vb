@@ -1,4 +1,6 @@
-﻿Namespace ligplus
+﻿Imports ligplus.file
+
+Namespace ligplus
     Public Class Scale
         Private Const NEAR_ZERO As Single = 0.000001F
 

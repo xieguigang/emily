@@ -1,4 +1,6 @@
-﻿Imports Microsoft.VisualBasic.Text
+﻿Imports ligplus.models
+Imports ligplus.pdb
+Imports Microsoft.VisualBasic.Text
 Imports PrintStream = System.IO.StreamWriter
 
 Namespace file
@@ -21,7 +23,7 @@ Namespace file
             Dim program = ensemble.Program
             Dim pdbEntryList As List(Of PDBEntry) = ensemble.PDBEntryList
             Using out = New PrintStream(fileName)
-                If program = ensemble.LIGPLOT Then
+                If program = Ensemble.LIGPLOT Then
                     out.format("List of protein-ligand interactions" & vbLf & "-----------------------------------" & vbLf, New Object(-1) {})
                     out.format(vbLf, New Object(-1) {})
                     out.format(vbLf, New Object(-1) {})

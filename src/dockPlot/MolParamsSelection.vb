@@ -1,4 +1,6 @@
-﻿Namespace ligplus
+﻿Imports ligplus.pdb
+
+Namespace ligplus
 
     Public Class MolParamsSelection
         Public Shared DELETE As Integer = 0

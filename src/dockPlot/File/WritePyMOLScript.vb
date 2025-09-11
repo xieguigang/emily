@@ -1,4 +1,7 @@
-﻿Imports Microsoft.VisualBasic.Text
+﻿Imports ligplus.ligplus
+Imports ligplus.models
+Imports ligplus.pdb
+Imports Microsoft.VisualBasic.Text
 Imports PrintStream = System.IO.StreamWriter
 
 Namespace file

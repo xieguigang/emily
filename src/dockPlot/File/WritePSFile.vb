@@ -1,4 +1,6 @@
 ﻿Imports System.Drawing
+Imports ligplus.ligplus
+Imports ligplus.pdb
 Imports Microsoft.VisualBasic.Imaging
 Imports PrintStream = System.IO.StreamWriter
 

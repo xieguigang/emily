@@ -1,4 +1,7 @@
-﻿Namespace ligplus
+﻿Imports ligplus.file
+Imports ligplus.pdb
+
+Namespace ligplus
 
     Public NotInheritable Class LigPlusFrame
         Public Const VERSION As String = "v.2.3.1"

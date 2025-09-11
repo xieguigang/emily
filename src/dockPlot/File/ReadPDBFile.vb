@@ -1,4 +1,7 @@
 ﻿Imports System.IO
+Imports ligplus.ligplus
+Imports ligplus.models
+Imports ligplus.pdb
 Imports Microsoft.VisualBasic.Language
 Imports Microsoft.VisualBasic.Text.Parser
 
