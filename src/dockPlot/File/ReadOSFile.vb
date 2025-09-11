@@ -1,7 +1,7 @@
 ﻿Imports System.IO
 Imports Microsoft.VisualBasic.Language
 
-Namespace ligplus
+Namespace file
 
     Public Class ReadOSFile
 

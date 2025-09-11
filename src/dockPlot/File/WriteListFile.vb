@@ -1,7 +1,7 @@
 ﻿Imports Microsoft.VisualBasic.Text
 Imports PrintStream = System.IO.StreamWriter
 
-Namespace ligplus
+Namespace file
 
     Public Class WriteListFile
         Public Const SHIFT_MARGIN As Integer = 2
@@ -21,7 +21,7 @@ Namespace ligplus
             Dim program = ensemble.Program
             Dim pdbEntryList As List(Of PDBEntry) = ensemble.PDBEntryList
             Using out = New PrintStream(fileName)
-                If program = Ensemble.LIGPLOT Then
+                If program = ensemble.LIGPLOT Then
                     out.format("List of protein-ligand interactions" & vbLf & "-----------------------------------" & vbLf, New Object(-1) {})
                     out.format(vbLf, New Object(-1) {})
                     out.format(vbLf, New Object(-1) {})

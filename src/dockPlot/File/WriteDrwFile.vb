@@ -1,7 +1,7 @@
 ﻿Imports Microsoft.VisualBasic.Text
 Imports PrintStream = System.IO.StreamWriter
 
-Namespace ligplus
+Namespace file
 
     Friend Class WriteDrwFile
         Public Const SHIFT_MARGIN As Integer = 2
@@ -56,8 +56,8 @@ Namespace ligplus
                             out.format("#Y" & vbLf, New Object(-1) {})
                         End If
                     End If
-                    writeMolecules(out, ensemble, pdb, First, straightenDimShift)
-                    First = False
+                    writeMolecules(out, ensemble, pdb, first, straightenDimShift)
+                    first = False
                     writeBonds(out, pdb)
                     writeTitle(out, ensemble, pdb, straightenDimShift)
                     If ensemble.Antibody AndAlso pdb.AntibodyLoopLabel IsNot Nothing Then

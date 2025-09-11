@@ -2,7 +2,7 @@
 Imports Microsoft.VisualBasic.Language
 Imports Microsoft.VisualBasic.Text.Parser
 
-Namespace ligplus
+Namespace file
 
     Friend Class ReadCORAFile
         Public Const NONE As Integer = -1

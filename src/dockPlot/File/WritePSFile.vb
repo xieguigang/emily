@@ -1,9 +1,8 @@
-﻿Imports Microsoft.VisualBasic.Imaging
-Imports System.Collections.Generic
-Imports System.Drawing
+﻿Imports System.Drawing
+Imports Microsoft.VisualBasic.Imaging
 Imports PrintStream = System.IO.StreamWriter
 
-Namespace ligplus
+Namespace file
 
     Public Class WritePSFile
         Private okField As Boolean = False

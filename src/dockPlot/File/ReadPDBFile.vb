@@ -2,7 +2,7 @@
 Imports Microsoft.VisualBasic.Language
 Imports Microsoft.VisualBasic.Text.Parser
 
-Namespace ligplus
+Namespace file
 
     Public Class ReadPDBFile
         Private Const MAX_FIELDS As Integer = 1000
@@ -535,7 +535,7 @@ Namespace ligplus
                         isUniprot = False
                         nEntry = 0
                         nFields = 0
-                        loopType = loopType.LOOP_NOT_WANTED
+                        loopType = LoopType.LOOP_NOT_WANTED
                         Continue While
                     End If
                     If lineLen > 10 AndAlso line_str.Substring(0, 10).Equals("_entry.id ") Then
@@ -568,29 +568,29 @@ Namespace ligplus
                                     End If
                                 Next
                                 If iMatch = 0 Then
-                                    loopType = loopType.LOOP_AUTHOR_NAMES
+                                    loopType = LoopType.LOOP_AUTHOR_NAMES
                                 ElseIf iMatch = 1 Then
-                                    loopType = loopType.LOOP_CITATION_NAMES
+                                    loopType = LoopType.LOOP_CITATION_NAMES
                                 ElseIf iMatch = 2 Then
-                                    loopType = loopType.LOOP_ENTITY_DEF
+                                    loopType = LoopType.LOOP_ENTITY_DEF
                                 ElseIf iMatch = 3 Then
-                                    loopType = loopType.LOOP_POLYMER_TYPES
+                                    loopType = LoopType.LOOP_POLYMER_TYPES
                                 ElseIf iMatch = 4 Then
-                                    loopType = loopType.LOOP_NONPOLYMER_TYPES
+                                    loopType = LoopType.LOOP_NONPOLYMER_TYPES
                                 ElseIf iMatch = 5 Then
-                                    loopType = loopType.LOOP_CHEM_COMP
+                                    loopType = LoopType.LOOP_CHEM_COMP
                                 ElseIf iMatch = 6 Then
-                                    loopType = loopType.LOOP_ATOM_RECORDS
+                                    loopType = LoopType.LOOP_ATOM_RECORDS
                                 ElseIf iMatch = 7 Then
-                                    loopType = loopType.LOOP_LIGAND_DEFS
+                                    loopType = LoopType.LOOP_LIGAND_DEFS
                                 ElseIf iMatch = 8 Then
-                                    loopType = loopType.LOOP_DB_REFS
+                                    loopType = LoopType.LOOP_DB_REFS
                                 ElseIf iMatch = 9 Then
-                                    loopType = loopType.LOOP_DB_ALIGN
+                                    loopType = LoopType.LOOP_DB_ALIGN
                                 ElseIf iMatch = 10 Then
-                                    loopType = loopType.LOOP_SOURCE
+                                    loopType = LoopType.LOOP_SOURCE
                                 ElseIf iMatch = 11 Then
-                                    loopType = loopType.LOOP_CONECT
+                                    loopType = LoopType.LOOP_CONECT
                                 End If
                             End If
                             nFields += 1
@@ -600,7 +600,7 @@ Namespace ligplus
                         brokenLine = False
                         Continue While
                     End If
-                    If inLoop = True AndAlso inputLine(0) <> "_"c AndAlso loopType <> loopType.LOOP_NOT_WANTED Then
+                    If inLoop = True AndAlso inputLine(0) <> "_"c AndAlso loopType <> LoopType.LOOP_NOT_WANTED Then
                         Dim nTokens As Integer
                         Dim isDuplicate As Boolean
                         Select Case loopType

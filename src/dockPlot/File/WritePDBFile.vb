@@ -1,9 +1,8 @@
-﻿Imports Microsoft.VisualBasic
-Imports Microsoft.VisualBasic.Text
+﻿Imports Microsoft.VisualBasic.Text
 Imports Microsoft.VisualBasic.Text.Parser
 Imports PrintStream = System.IO.StreamWriter
 
-Namespace ligplus
+Namespace file
 
     Public Class WritePDBFile
         Public Shared STANDARD As Integer = 0

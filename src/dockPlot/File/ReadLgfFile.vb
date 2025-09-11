@@ -1,9 +1,8 @@
-﻿Imports Microsoft.VisualBasic.Language
+﻿Imports System.IO
+Imports Microsoft.VisualBasic.Language
 Imports Microsoft.VisualBasic.Text.Parser
-Imports System
-Imports System.IO
 
-Namespace ligplus
+Namespace file
 
     Public Class ReadLgfFile
         Public Const NONE As Integer = -1

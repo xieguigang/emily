@@ -1,10 +1,8 @@
-﻿Imports Microsoft.VisualBasic.Language
+﻿Imports System.IO
+Imports Microsoft.VisualBasic.Language
 Imports Microsoft.VisualBasic.Text.Parser
-Imports System
-Imports System.Collections.Generic
-Imports System.IO
 
-Namespace ligplus
+Namespace file
 
     Public Class ReadDrwFile
         Public Enum LineType
@@ -64,7 +62,7 @@ Namespace ligplus
 
         Private orientation As Integer = RunExe.LANDSCAPE
 
-        Private programField As Integer = Ensemble.LIGPLOT
+        Private programField As Integer = ensemble.LIGPLOT
 
         Private antibodyLoopID As String = Nothing
 
@@ -151,7 +149,7 @@ Namespace ligplus
                 Return
             End If
             pdb.flagShortestHphobics()
-            If programField = Ensemble.DIMPLOT OrElse antibodyField Then
+            If programField = ensemble.DIMPLOT OrElse antibodyField Then
                 ensemble.updateMaxMinCoords()
                 If antibodyField Then
                     If Not savedFile Then
@@ -219,7 +217,7 @@ Namespace ligplus
                 lType = LineType.DIMPLOT_FLAG
                 pdb.ReadFrom = 2
                 readFrom = 2
-                programField = Ensemble.DIMPLOT
+                programField = ensemble.DIMPLOT
                 If ranLigfit OrElse savedFile Then
                     If inputLine.Length > 2 AndAlso inputLine(2) = "P"c Then
                         orientation = RunExe.PORTRAIT

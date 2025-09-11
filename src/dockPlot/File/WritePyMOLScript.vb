@@ -1,9 +1,7 @@
 ﻿Imports Microsoft.VisualBasic.Text
-Imports System
-Imports System.Collections.Generic
 Imports PrintStream = System.IO.StreamWriter
 
-Namespace ligplus
+Namespace file
 
     Friend Class WritePyMOLScript
         Public Shared SCRIPT As Integer = 0

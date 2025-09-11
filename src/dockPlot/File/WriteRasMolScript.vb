@@ -1,7 +1,7 @@
 ﻿Imports Microsoft.VisualBasic.Text
 Imports PrintStream = System.IO.StreamWriter
 
-Namespace ligplus
+Namespace file
 
     Friend Class WriteRasMolScript
         Public Shared SCRIPT As Integer = 0
@@ -69,7 +69,7 @@ Namespace ligplus
             For i = 0 To pdbEntryList.Count - 1
                 Dim pdb = pdbEntryList(i)
                 out.format("echo ""  prot%02d = protein residues for %s""" & vbLf, New Object() {Convert.ToInt32(i + 1), pdb.PDBCode})
-                If program = Ensemble.LIGPLOT Then
+                If program = ensemble.LIGPLOT Then
                     out.format("echo ""  lig%02d  = ligand for %s""" & vbLf, New Object() {Convert.ToInt32(i + 1), pdb.PDBCode})
                 End If
             Next
