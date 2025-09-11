@@ -1,6 +1,5 @@
-﻿Imports Microsoft.VisualBasic.Imaging
-Imports System.Collections.Generic
-Imports System.Drawing
+﻿Imports System.Drawing
+Imports Microsoft.VisualBasic.Imaging
 
 Namespace ligplus
 
