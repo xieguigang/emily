@@ -123,13 +123,9 @@ Namespace ligplus
 
         Private moleculeIDField As String = Nothing
 
-        Public Sub New()
-            visibleField = True
-        End Sub
-
         Public Sub New(pdb As PDBEntry, text As String, type As Integer, x As Single, y As Single)
-            Me.New()
             Me.pdb = pdb
+            visibleField = True
             params = pdb.Params
             textField = text
             showText = text

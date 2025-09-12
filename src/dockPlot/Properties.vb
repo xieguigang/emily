@@ -25,5 +25,26 @@
         Public Function ContainsKey(key As String) As Boolean
             Return data.ContainsKey(key)
         End Function
+
+        Public Shared Function Load(filepath As String) As Properties
+            Dim data As New Dictionary(Of String, String)
+
+            For Each line As String In filepath.IterateAllLines
+                If line.StringEmpty(, True) Then
+                    Continue For
+                End If
+                If line.StartsWith("#"c) Then
+                    Continue For
+                End If
+
+                With line.GetTagValue("=")
+                    data(.Name) = .Value
+                End With
+            Next
+
+            Return New Properties With {
+                .data = data
+            }
+        End Function
     End Class
 End Namespace

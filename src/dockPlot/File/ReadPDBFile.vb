@@ -273,11 +273,15 @@ Namespace file
 
         Private conectRecordsList As List(Of Object) = Nothing
 
-        Public Sub New(fileName As String)
+        Dim param As Properties
+
+        Public Sub New(fileName As String, param As Properties)
             Dim gzip = False
             Dim haveCIF = True
+            Me.param = param
             init()
             conectRecordsList = New List(Of Object)()
+
             Dim inputStream As New StreamReader(fileName.Open(FileMode.Open, doClear:=False, [readOnly]:=True))
 
             haveCIF = getPDB(inputStream)
@@ -294,7 +298,7 @@ Namespace file
 
         Private Sub init()
             coords = New Single(2) {}
-            pdb = New PDBEntry()
+            pdb = New PDBEntry(param)
             initElements()
         End Sub
 

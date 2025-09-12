@@ -135,23 +135,15 @@ Namespace pdb
 
         Private protProtPairsList As List(Of Molecule)()
 
-        Public Sub New()
-            init()
-            pdbCodeField = Nothing
-        End Sub
-
-        Public Sub New(defaultParams As Properties, pdbCode As String, instance As Integer, ensemble As Ensemble)
+        Public Sub New(defaultParams As Properties,
+                       Optional pdbCode As String = Nothing,
+                       Optional instance As Integer = -1,
+                       Optional ensemble As Ensemble = Nothing)
             init()
             pdbCodeField = pdbCode
             instanceField = instance
             Me.ensemble = ensemble
-            Params = New Properties
-            For Each paramKey As String In defaultParams.Keys
-                Dim value = defaultParams(paramKey)
-                If Not ReferenceEquals(value, Nothing) Then
-                    Params(paramKey) = value
-                End If
-            Next
+            Params = defaultParams
             Dim plotName As String = formPlotName()
             createPlotLabel(plotName)
         End Sub
