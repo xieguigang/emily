@@ -35,7 +35,7 @@ Public Module test_file
 
         For Each ligand In pdb.ListLigands
             Dim render As New Ligand2DPlot(pdb, ligand, theme)
-            Dim image = render.Plot("3000,2400").AsGDIImage
+            Dim image = render.Plot("3600,2400").AsGDIImage
 
             Call image.SaveAs($"./{ligand.Name} ~ {ligand.Description}.png")
         Next

@@ -62,19 +62,19 @@ Public Class Ligand2DPlot : Inherits Plot
                         Return Me.atom.Atoms _
                             .Select(Function(a) (atom, aa:=a, dist:=a.Location.DistanceTo(atom.XCoord, atom.YCoord, atom.ZCoord))) _
                             .OrderBy(Function(a) a.dist) _
-                            .Take(1) _
+                            .Take(5) _
                             .ToArray
                     End Function) _
             .IteratesALL _
-            .Where(Function(a) a.dist < 5) _
+            .Where(Function(a) a.dist < 3) _
             .OrderBy(Function(a) a.dist) _
             .ToArray
         Dim atoms As New List(Of Element3D)
-        Dim camera As New Camera(canvas, New Drawing3D.Point3D())
+        Dim camera As New Camera(canvas, New Drawing3D.Point3D()) With {.fov = 10000000}
         Dim connect = pdb.Conect.AsEnumerable.ToDictionary(Function(a) a.name, Function(a) a.value)
         Dim atomIndex = hetAtoms.ToDictionary(Function(a) a.AtomNumber.ToString)
-        Dim linkStroke As New Pen(Color.Green, 5)
-        Dim ligandStroke As New Pen(Color.Black, 5) With {.DashStyle = DashStyle.Dot}
+        Dim linkStroke As New Pen(Color.Black, 30)
+        Dim ligandStroke As New Pen(Color.LightGray, 5) With {.DashStyle = DashStyle.Dash}
 
         For Each link In connect
             For Each t2 In link.Value.AsCharacter
@@ -93,7 +93,7 @@ Public Class Ligand2DPlot : Inherits Plot
                 .Fill = Brushes.Black,
                 .IsResidue = False,
                 .Label = ligand.ElementSymbol,
-                .Size = New Size(10, 10),
+                .Size = New Size(80, 80),
                 .Style = LegendStyles.Circle,
                 .Location = New Drawing3D.Point3D(ligand.XCoord, ligand.YCoord, ligand.ZCoord)
             })
@@ -104,7 +104,7 @@ Public Class Ligand2DPlot : Inherits Plot
                     .IsResidue = True,
                     .Label = aa.AA_ID,
                     .Location = New Drawing3D.Point3D(aa.Location),
-                    .Size = New Size(90, 90),
+                    .Size = New Size(120, 120),
                     .Style = LegendStyles.Circle
                 })
                 Call atoms.Add(New Plot3D.Device.Line(ligand, aa.Location) With {
@@ -132,13 +132,22 @@ Public Class Ligand2DPlot : Inherits Plot
         Dim orders = PainterAlgorithm _
             .OrderProvider(atoms, Function(e) e.Location.Z) _
             .ToArray
-        Dim fontSize As New DoubleRange(12, 36)
+        Dim fontSize As New DoubleRange(12, 40)
         Dim offset As New DoubleRange(0, orders.Length)
+
+        ' rendering line at first
+        For Each line In atoms.OfType(Of Plot3D.Device.Line)
+            line.Draw(g, canvas, scaleX, scaleY)
+        Next
 
         ' 靠前的原子是比较远的原子
         For i As Integer = 0 To atoms.Count - 1
             Dim index As Integer = orders(i)
             Dim model As Element3D = atoms(index)
+
+            If TypeOf model Is Plot3D.Device.Line Then
+                Continue For
+            End If
 
             If TypeOf model Is AtomModel Then
                 If DirectCast(model, AtomModel).IsResidue Then
@@ -160,13 +169,17 @@ Public Class AtomModel : Inherits ShapePoint
 
     Public Overrides Sub Draw(g As IGraphics, rect As GraphicsRegion, scaleX As LinearScale, scaleY As LinearScale)
         Dim praw As PointF = GetPosition(rect.Size)
-        Dim pscale As New PointF(scaleX(praw.X), scaleY(praw.Y))
+        Dim pscale As New PointF(scaleX(praw.X) - Size.Width / 2, scaleY(praw.Y) - Size.Height / 2)
         Dim font As New Font(FontFace.SegoeUI, FontFace.PointSizeScale(fontSize, g.Dpi))
 
         Call g.DrawLegendShape(pscale, Size, Style, Fill)
 
         If IsResidue Then
-            Call g.DrawString(Label, font, Brushes.Blue, pscale)
+            Dim labelSize As SizeF = g.MeasureString(Label, font)
+            Dim lx = (Size.Width - labelSize.Width) / 2 + pscale.X
+            Dim ly = (Size.Height - labelSize.Height) / 2 + pscale.Y
+
+            Call g.DrawString(Label, font, Brushes.Blue, New PointF(lx, ly))
         End If
     End Sub
 
