@@ -20,7 +20,7 @@ Public Module test_file
     End Sub
 
     Sub testMetadata()
-        Dim pdb As PDB = PDB.Load("G:\pdb2ki6.ent")
+        Dim pdb As PDB = PDB.Load("G:\emily\data\8qne.pdb")
         Dim pdb2 As PDB = PDB.Load("G:\emily\data\XC_1184.pdb")
 
         Pause()
