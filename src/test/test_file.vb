@@ -1,8 +1,10 @@
 Imports System.Drawing
 Imports Emily.gromacs
 Imports Microsoft.VisualBasic.ComponentModel.DataSourceModel
+Imports Microsoft.VisualBasic.Data.ChartPlots.Graphic.Canvas
 Imports Microsoft.VisualBasic.Data.ChartPlots.Plot3D
 Imports Microsoft.VisualBasic.Drawing
+Imports Microsoft.VisualBasic.Imaging
 Imports Microsoft.VisualBasic.Imaging.Drawing2D.Colors
 Imports Microsoft.VisualBasic.Imaging.Drawing3D
 Imports Microsoft.VisualBasic.Linq
@@ -14,6 +16,7 @@ Public Module test_file
 
     Sub Main()
         Call Microsoft.VisualBasic.Drawing.SkiaDriver.Register()
+        Call test2DDrawer()
         Call testMetadata()
         ' Call testModelRender()
         Call testDrawer()
@@ -24,6 +27,15 @@ Public Module test_file
         Dim pdb2 As PDB = PDB.Load("G:\emily\data\XC_1184.pdb")
 
         Pause()
+    End Sub
+
+    Sub test2DDrawer()
+        Dim pdb As PDB = PDB.Load("G:\emily\data\8qne.pdb")
+        Dim theme As New Theme
+        Dim render As New Ligand2DPlot(pdb, theme)
+        Dim image = render.Plot("3000,3000").AsGDIImage
+
+        Call image.SaveAs("./test.png")
     End Sub
 
     Sub testModelRender()
