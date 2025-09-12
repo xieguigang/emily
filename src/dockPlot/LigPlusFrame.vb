@@ -100,7 +100,7 @@ Namespace ligplus
 
         Private Shared plotArea As PlotArea = Nothing
 
-        Private Shared pdb As PDBEntry = Nothing
+        Public Shared pdb As PDBEntry = Nothing
 
         Private Shared ligplusParams As Properties
 
@@ -125,7 +125,7 @@ Namespace ligplus
         Private Shared pdbCodeList As List(Of Object) = Nothing
 
 
-        Private Sub OpenPDBFileMenuItemActionPerformed()
+        Public Sub OpenPDBFileMenuItemActionPerformed(fileName As String)
             Dim cancelled = False
             Dim haveLigplot = False
             Dim haveDimplot = False
@@ -148,36 +148,14 @@ Namespace ligplus
                     End If
                 End If
             End If
-            If Not cancelled Then
-                ' AlignmentPDB;
-                If Not ReferenceEquals(coraFileName, Nothing) Then
-                Else
-                    addPDBEntry(haveLigplot, haveDimplot, haveAntibodyPlot)
-                End If
+
+            If Not ReferenceEquals(coraFileName, Nothing) Then
+            Else
+                addPDBEntry(fileName, haveLigplot, haveDimplot, haveAntibodyPlot)
             End If
         End Sub
 
-        Private Sub addPDBEntry(haveLigplot As Boolean, haveDimplot As Boolean, haveAntibodyPlot As Boolean)
-            Dim fileName = "Browse"
-            Dim pdbDir = Params.getGlobalProperty(3, 0)
-            If Not ReferenceEquals(pdbDir, Nothing) Then
-                fileName = PDBCode
-            End If
-            If Not ReferenceEquals(fileName, Nothing) AndAlso fileName.Equals("Browse") Then
-                fileName = browsePDB()
-            End If
-            If Not ReferenceEquals(fileName, Nothing) Then
-                processPDB(fileName, haveLigplot, haveDimplot, haveAntibodyPlot)
-            End If
-        End Sub
-
-        Private Function browsePDB() As String
-            Dim fileName As String = Nothing
-
-            Return fileName
-        End Function
-
-        Private Sub processPDB(fileName As String, haveLigplot As Boolean, haveDimplot As Boolean, haveAntibodyPlot As Boolean)
+        Private Sub addPDBEntry(fileName As String, haveLigplot As Boolean, haveDimplot As Boolean, haveAntibodyPlot As Boolean)
             Dim readFrom = 0
 
             Console.WriteLine("Reading .pdb file ...")
