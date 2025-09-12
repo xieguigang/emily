@@ -435,7 +435,7 @@ Namespace pdb
                 existingPDB.setSplitShift(0, 0.0F)
                 existingPDB.setSplitShift(1, 0.0F)
             Next
-            pdbEntryListField.Add(pdb.Object)
+            pdbEntryListField.Add(pdb)
             If pdbEntryListField.Count = 1 Then
                 Dim textType = 13
                 Dim x = 0.0F
@@ -444,7 +444,7 @@ Namespace pdb
                 plotListLabel.MaxMinCoords()
                 maxWidth = plotListLabel.TextWidth
             End If
-            Dim plotLabel = pdb.PlotLabel
+            Dim plotLabel As TextItem = pdb.PlotLabel
             plotLabel.MaxMinCoords()
             Dim width = plotLabel.TextWidth
             If width > maxWidth Then

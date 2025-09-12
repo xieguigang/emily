@@ -146,6 +146,10 @@ Namespace ligplus
             coordsField(1) = y
         End Sub
 
+        Public Overrides Function ToString() As String
+            Return textField
+        End Function
+
         Public Shared Function stringTruncate(text As String) As String
             Dim length = text.Length
             Dim lastNonSpace = -1

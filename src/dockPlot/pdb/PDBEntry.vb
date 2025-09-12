@@ -1223,12 +1223,6 @@ Namespace pdb
             End Get
         End Property
 
-        Public Overridable ReadOnly Property [Object] As Object
-            Get
-                Return Me
-            End Get
-        End Property
-
         Public Overridable ReadOnly Property Params As Properties
 
         Public Overridable Property PDBCode As String
