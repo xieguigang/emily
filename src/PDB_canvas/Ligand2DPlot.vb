@@ -20,8 +20,10 @@ Imports SMRUCC.genomics.Data.RCSB.PDB.Keywords
 
 #If NET48 Then
 Imports Brushes = System.Drawing.Brushes
+Imports DashStyle = System.Drawing.Drawing2D.DashStyle
 #Else
 Imports Brushes = Microsoft.VisualBasic.Imaging.Brushes
+Imports DashStyle = Microsoft.VisualBasic.Imaging.DashStyle
 #End If
 
 Public Class Ligand2DPlot : Inherits Plot
@@ -60,7 +62,7 @@ Public Class Ligand2DPlot : Inherits Plot
                         Return Me.atom.Atoms _
                             .Select(Function(a) (atom, aa:=a, dist:=a.Location.DistanceTo(atom.XCoord, atom.YCoord, atom.ZCoord))) _
                             .OrderBy(Function(a) a.dist) _
-                            .Take(5) _
+                            .Take(1) _
                             .ToArray
                     End Function) _
             .IteratesALL _
@@ -72,6 +74,7 @@ Public Class Ligand2DPlot : Inherits Plot
         Dim connect = pdb.Conect.AsEnumerable.ToDictionary(Function(a) a.name, Function(a) a.value)
         Dim atomIndex = hetAtoms.ToDictionary(Function(a) a.AtomNumber.ToString)
         Dim linkStroke As New Pen(Color.Green, 5)
+        Dim ligandStroke As New Pen(Color.Black, 5) With {.DashStyle = DashStyle.Dot}
 
         For Each link In connect
             For Each t2 In link.Value.AsCharacter
@@ -90,7 +93,7 @@ Public Class Ligand2DPlot : Inherits Plot
                 .Fill = Brushes.Black,
                 .IsResidue = False,
                 .Label = ligand.ElementSymbol,
-                .Size = New Size(20, 20),
+                .Size = New Size(10, 10),
                 .Style = LegendStyles.Circle,
                 .Location = New Drawing3D.Point3D(ligand.XCoord, ligand.YCoord, ligand.ZCoord)
             })
@@ -101,8 +104,11 @@ Public Class Ligand2DPlot : Inherits Plot
                     .IsResidue = True,
                     .Label = aa.AA_ID,
                     .Location = New Drawing3D.Point3D(aa.Location),
-                    .Size = New Size(30, 30),
+                    .Size = New Size(90, 90),
                     .Style = LegendStyles.Circle
+                })
+                Call atoms.Add(New Plot3D.Device.Line(ligand, aa.Location) With {
+                    .Stroke = ligandStroke
                 })
             Next
         Next
@@ -135,7 +141,11 @@ Public Class Ligand2DPlot : Inherits Plot
             Dim model As Element3D = atoms(index)
 
             If TypeOf model Is AtomModel Then
-                DirectCast(model, AtomModel).fontSize = offset.ScaleMapping(i, fontSize)
+                If DirectCast(model, AtomModel).IsResidue Then
+                    DirectCast(model, AtomModel).fontSize = offset.ScaleMapping(i, fontSize)
+                Else
+                    DirectCast(model, AtomModel).fontSize = fontSize.Max
+                End If
             End If
 
             model.Draw(g, canvas, scaleX, scaleY)
@@ -154,7 +164,10 @@ Public Class AtomModel : Inherits ShapePoint
         Dim font As New Font(FontFace.SegoeUI, FontFace.PointSizeScale(fontSize, g.Dpi))
 
         Call g.DrawLegendShape(pscale, Size, Style, Fill)
-        Call g.DrawString(Label, font, Brushes.Blue, pscale)
+
+        If IsResidue Then
+            Call g.DrawString(Label, font, Brushes.Blue, pscale)
+        End If
     End Sub
 
 End Class
