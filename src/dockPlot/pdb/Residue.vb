@@ -155,7 +155,6 @@ Namespace pdb
 
         Public hetGroupField As HetGroup = Nothing
 
-        Private moleculeField As Molecule = Nothing
 
         Private atomListField As List(Of Atom)
 
@@ -297,10 +296,10 @@ Namespace pdb
                 cOfG(1) = cOfG(1) / nAtomsField
                 ellipseCentre(1) = cOfG(1) / nAtomsField
             End If
-            If moleculeField.MoleculeType <> 3 Then
+            If Molecule.MoleculeType <> 3 Then
                 radius = maxRadius
             End If
-            If nAtomsField < 2 OrElse moleculeField.MoleculeType = 3 Then
+            If nAtomsField < 2 OrElse Molecule.MoleculeType = 3 Then
                 ellipseRadius(0) = radius + 1.0F
                 ellipseRadius(1) = radius + 1.0F
             Else
@@ -424,7 +423,7 @@ Namespace pdb
             If x < coordsMin(0) OrElse x > coordsMax(0) OrElse y < coordsMin(1) OrElse y > coordsMax(1) Then
                 Return clickObject
             End If
-            If moleculeField.MoleculeType = 3 Then
+            If Molecule.MoleculeType = 3 Then
                 coords = HGroupCoords
                 Dim distSqrd = (x - coords(0)) * (x - coords(0)) + (y - coords(1)) * (y - coords(1))
                 If distSqrd < 1.95999992F * radius * radius Then
@@ -650,13 +649,6 @@ Namespace pdb
         End Property
 
         Public Overridable Property Molecule As Molecule
-            Get
-                Return moleculeField
-            End Get
-            Set(value As Molecule)
-                moleculeField = value
-            End Set
-        End Property
 
         Public Overridable ReadOnly Property Natoms As Integer
             Get
@@ -843,15 +835,15 @@ Namespace pdb
         End Sub
 
         Public Overridable Sub paintResidue(paintType As Integer, g As IGraphics, psFile As PostScript, scale As Scale, selected As Boolean, nonEquivs As Boolean)
-            If moleculeField.MoleculeType <> 3 Then
+            If Molecule.MoleculeType <> 3 Then
                 For i = 0 To atomListField.Count - 1
                     Dim atom As Atom = atomListField(i)
                     atom.paintAtom(paintType, g, psFile, scale, selected, nonEquivs)
                 Next
-            ElseIf moleculeField.MoleculeType = 3 Then
+            ElseIf Molecule.MoleculeType = 3 Then
                 calcPlotCoords(scale)
                 harvestSpokes()
-                If selected AndAlso (Not nonEquivs AndAlso Equivalenced OrElse nonEquivs AndAlso Not Equivalenced) AndAlso moleculeField.MoleculeType <> 1 AndAlso moleculeField.MoleculeType <> 7 Then
+                If selected AndAlso (Not nonEquivs AndAlso Equivalenced OrElse nonEquivs AndAlso Not Equivalenced) AndAlso Molecule.MoleculeType <> 1 AndAlso Molecule.MoleculeType <> 7 Then
                     Dim underlay As Boolean
                     Dim onOffString = params("EQUIV_HGROUPS_UNDERLAY_STATUS")
                     If Not ReferenceEquals(onOffString, Nothing) AndAlso onOffString.Equals("OFF") Then
@@ -868,7 +860,7 @@ Namespace pdb
             If residueLabelField IsNot Nothing Then
                 residueLabelField.paintTextItem(paintType, g, psFile, scale, selected)
             End If
-            If (Not nonEquivs AndAlso Equivalenced OrElse nonEquivs AndAlso Not Equivalenced) AndAlso moleculeField.MoleculeType <> 1 AndAlso moleculeField.MoleculeType <> 7 Then
+            If (Not nonEquivs AndAlso Equivalenced OrElse nonEquivs AndAlso Not Equivalenced) AndAlso Molecule.MoleculeType <> 1 AndAlso Molecule.MoleculeType <> 7 Then
                 Dim ellipse As Boolean
                 Dim onOffString = params("EQUIV_ELLIPSES_STATUS")
                 If Not ReferenceEquals(onOffString, Nothing) AndAlso onOffString.Equals("OFF") Then
@@ -983,7 +975,7 @@ Namespace pdb
                 Else
                     colourName = params("UNDERLAY_COLOUR")
                 End If
-                If moleculeField.MoleculeType = 3 AndAlso moleculeField.InterFace = 2 Then
+                If Molecule.MoleculeType = 3 AndAlso Molecule.InterFace = 2 Then
                     colourName = params("HYDROPHOBIC2_COLOUR")
                 End If
                 If Not antibodyLoopIDField.Equals("") Then
@@ -997,8 +989,8 @@ Namespace pdb
                         colourName = params(name)
                     End If
                 End If
-                If moleculeField IsNot Nothing Then
-                    Dim moleculeID = moleculeField.MoleculeID
+                If Molecule IsNot Nothing Then
+                    Dim moleculeID = Molecule.MoleculeID
                     If Not ReferenceEquals(moleculeID, Nothing) Then
                         Dim name = moleculeID & "_RESIDUE_COLOUR"
                         If params.ContainsKey(name) Then
@@ -1031,7 +1023,7 @@ Namespace pdb
             If visible Then
                 Dim width = 0.0F
                 Dim numberString = params("HYDROPHOBIC_WIDTH")
-                If moleculeField.MoleculeType = 3 AndAlso moleculeField.InterFace = 2 Then
+                If Molecule.MoleculeType = 3 AndAlso Molecule.InterFace = 2 Then
                     numberString = params("HYDROPHOBIC2_WIDTH")
                 End If
                 If Not ReferenceEquals(numberString, Nothing) Then
@@ -1157,10 +1149,6 @@ Namespace pdb
             postTERField = True
         End Sub
 
-
-
-
-
         Public Overridable WriteOnly Property EntityDesc As String
             Set(value As String)
                 entityDescField = value
@@ -1172,7 +1160,7 @@ Namespace pdb
             If moleculeType = 3 Then
                 residueSizeType = "HPHOBIC_RADIUS"
                 If program = RunExe.DIMPLOT Then
-                    If moleculeField.InterFace = 1 Then
+                    If Molecule.InterFace = 1 Then
                         residueSizeType = "IFACE_HPHOBIC1_RADIUS"
                     Else
                         residueSizeType = "IFACE_HPHOBIC2_RADIUS"
@@ -1225,7 +1213,7 @@ Namespace pdb
 
         Public Overridable Function updateMaxMinCoords() As Integer
             nCoords = 0
-            If moleculeField.MoleculeType = 3 Then
+            If Molecule.MoleculeType = 3 Then
                 Dim numberString = params(residueSizeType)
                 radius = Single.Parse(numberString)
                 Dim spokeRadius = radius * 1.4F

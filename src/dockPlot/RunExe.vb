@@ -129,7 +129,7 @@ Namespace ligplus
 
 
 
-        Private params As Dictionary(Of String, String)
+        Private params As Properties
 
         Private errorMessage As String = ""
 
@@ -659,7 +659,7 @@ Namespace ligplus
                 Dim tmpPDBFile As String = tmpDirNameField & "/shifts" + pdb.PDBId.ToString() & ".pdb"
                 Dim readFile As ReadPDBFile = Nothing
                 Try
-                    readFile = New ReadPDBFile(tmpPDBFile)
+                    readFile = New ReadPDBFile(tmpPDBFile, params)
                     fileOk = True
                 Catch __unusedFileNotFoundException1__ As FileNotFoundException
                     fileOk = False
@@ -734,7 +734,7 @@ Namespace ligplus
             Dim ligandRcmFile As String = tmpDirNameField & "/ligand.rcm"
             Dim readFile As ReadPDBFile = Nothing
             Try
-                readFile = New ReadPDBFile(ligandRcmFile)
+                readFile = New ReadPDBFile(ligandRcmFile, params)
                 fileOk = True
             Catch __unusedFileNotFoundException1__ As FileNotFoundException
                 fileOk = False
@@ -867,7 +867,7 @@ Namespace ligplus
             Dim fileTmp = newFile
             Dim ligplotPrm As String = fileTmp
             Try
-                Dim rewritePrm As RewritePrm = New RewritePrm(ensemble, prmFile, newFile, program, params)
+                Dim rewritePrm As New RewritePrm(ensemble, prmFile, newFile, program, params)
             Catch __unusedFileNotFoundException1__ As FileNotFoundException
                 Console.WriteLine("*** ERROR. File not found: " & prmFile)
                 errorMessage = "File not found: " & prmFile

@@ -15,9 +15,9 @@ Namespace ligplus
 
         Private program As Integer = LIGPLOT
 
-        Private params As Dictionary(Of String, String) = Nothing
+        Private params As Properties
 
-        Public Sub New(ensemble As Ensemble, fileNameIn As String, fileNameOut As String, program As Integer, params As Dictionary(Of String, String))
+        Public Sub New(ensemble As Ensemble, fileNameIn As String, fileNameOut As String, program As Integer, params As Properties)
             Dim wanted = False
             Dim inputStream As StreamReader = Nothing
 

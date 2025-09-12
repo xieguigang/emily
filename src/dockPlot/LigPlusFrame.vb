@@ -181,7 +181,7 @@ Namespace ligplus
             Dim readFrom = 0
 
             Console.WriteLine("Reading .pdb file ...")
-            Dim readFile As ReadPDBFile = New ReadPDBFile(fileName)
+            Dim readFile As New ReadPDBFile(fileName, ligplusParams)
 
             If readFile IsNot Nothing Then
                 pdb = readFile.PDBEntry

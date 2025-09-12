@@ -352,21 +352,21 @@ Namespace pdb
         End Sub
 
         Public Overridable Function addAtom(atHet As Char, atomNumber As Integer, atomName As String, coords As Single(), bValue As Single, occupancy As Single, residue As Residue, element As String, originalCoords As Single()) As Atom
-            Dim atom As Atom = New Atom(Me, atHet, atomNumber, atomName, coords, bValue, occupancy, residue, element, originalCoords)
+            Dim atom As New Atom(Me, atHet, atomNumber, atomName, coords, bValue, occupancy, residue, element, originalCoords)
             atomListField.Add(atom.Object)
             nAtomsField += 1
             Return atom
         End Function
 
         Public Overridable Function addBond(atom As Atom(), type As Integer) As Bond
-            Dim bond As Bond = New Bond(Me, atom, type)
+            Dim bond As New Bond(Me, atom, type)
             bondListField.Add(bond.Object)
             nBonds += 1
             Return bond
         End Function
 
         Public Overridable Function addResidue(resName As String, resNum As String, chain As Char, fullResName As String, fullResNum As Integer, insCode As String, fullChain As String, moleculeType As Integer) As Residue
-            Dim residue As Residue = New Residue(Me, resName, resNum, chain, fullResName, fullResNum, insCode, fullChain, ensemble, moleculeType)
+            Dim residue As New Residue(Me, resName, resNum, chain, fullResName, fullResNum, insCode, fullChain, ensemble, moleculeType)
             residueListField.Add(residue.Object)
             nResiduesField += 1
             Return residue

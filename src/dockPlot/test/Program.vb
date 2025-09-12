@@ -8,7 +8,7 @@ Module Program
 
     Sub Main(args As String())
         Dim config As Properties = Properties.Load("G:\emily\src\dockPlot\default.txt")
-        Dim reader As New ReadPDBFile(dock_pdb)
+        Dim reader As New ReadPDBFile(dock_pdb, config)
 
         For Each ligend As HetGroup In reader.PDBEntry.HetGroupList
             Call Console.WriteLine(ligend.ToString)
