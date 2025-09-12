@@ -32,10 +32,13 @@ Public Module test_file
     Sub test2DDrawer()
         Dim pdb As PDB = PDB.Load("G:\emily\data\8qne.pdb")
         Dim theme As New Theme
-        Dim render As New Ligand2DPlot(pdb, theme)
-        Dim image = render.Plot("3000,3000").AsGDIImage
 
-        Call image.SaveAs("./test.png")
+        For Each ligand In pdb.ListLigands
+            Dim render As New Ligand2DPlot(pdb, ligand, theme)
+            Dim image = render.Plot("3000,3000").AsGDIImage
+
+            Call image.SaveAs($"./{ligand.Name} ~ {ligand.Description}.png")
+        Next
     End Sub
 
     Sub testModelRender()
