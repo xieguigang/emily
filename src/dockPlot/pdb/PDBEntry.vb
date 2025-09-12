@@ -125,7 +125,7 @@ Namespace pdb
 
         Private conectListField As List(Of Conect)
 
-        Private hetGroupListField As List(Of HetGroup)
+
 
         Private hhbnnbListField As List(Of String)
 
@@ -335,7 +335,7 @@ Namespace pdb
             atomListField = New List(Of Atom)()
             bondListField = New List(Of Bond)()
             conectListField = New List(Of Conect)()
-            hetGroupListField = New List(Of HetGroup)()
+            _HetGroupList = New List(Of HetGroup)()
             hhbnnbListField = New List(Of String)()
             moleculeListField = New List(Of Molecule)()
             residueListField = New List(Of Residue)()
@@ -381,8 +381,7 @@ Namespace pdb
         End Function
 
         Friend Overridable Sub addHetGroup(hetName As String, hetDescription As String)
-            Dim hetGroup As HetGroup = New HetGroup(hetName, hetDescription)
-            hetGroupListField.Add(hetGroup.Object)
+            HetGroupList.Add(New HetGroup(hetName, hetDescription))
         End Sub
 
         Public Overridable Sub addHHBNNB(inputLine As String)
@@ -409,8 +408,8 @@ Namespace pdb
             Dim hetGroup As HetGroup = Nothing
             Dim i = 0
 
-            While i < hetGroupListField.Count AndAlso hetGroup Is Nothing
-                Dim het As HetGroup = hetGroupListField(i)
+            While i < HetGroupList.Count AndAlso hetGroup Is Nothing
+                Dim het As HetGroup = _HetGroupList(i)
                 If hetName.Equals(het.HetName) Then
                     hetGroup = het
                 End If
@@ -1166,10 +1165,6 @@ Namespace pdb
         End Property
 
         Public Overridable ReadOnly Property HetGroupList As List(Of HetGroup)
-            Get
-                Return hetGroupListField
-            End Get
-        End Property
 
         Public Overridable ReadOnly Property HHBNNBList As List(Of String)
             Get

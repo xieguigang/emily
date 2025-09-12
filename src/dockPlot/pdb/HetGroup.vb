@@ -1,35 +1,22 @@
 ﻿Namespace pdb
-    Public Class HetGroup
-        Private hetDescriptionField As String
 
-        Private hetNameField As String
+    Public Class HetGroup
+
+        Public Overridable ReadOnly Property HetDescription As String
+        Public Overridable ReadOnly Property HetName As String
 
         Friend Sub New(hetName As String, hetDescription As String)
-            hetNameField = hetName
-            hetDescriptionField = hetDescription
+            _HetName = hetName
+            _HetDescription = hetDescription
         End Sub
 
         Public Overridable Sub appendHetDescription(description As String)
-            hetDescriptionField += description
+            _HetDescription &= description
         End Sub
 
-        Public Overridable ReadOnly Property HetDescription As String
-            Get
-                Return hetDescriptionField
-            End Get
-        End Property
-
-        Public Overridable ReadOnly Property HetName As String
-            Get
-                Return hetNameField
-            End Get
-        End Property
-
-        Public Overridable ReadOnly Property [Object] As Object
-            Get
-                Return Me
-            End Get
-        End Property
+        Public Overrides Function ToString() As String
+            Return $"[{HetName}] {HetDescription}"
+        End Function
     End Class
 
 End Namespace

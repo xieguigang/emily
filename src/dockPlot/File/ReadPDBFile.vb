@@ -278,51 +278,14 @@ Namespace file
             Dim haveCIF = True
             init()
             conectRecordsList = New List(Of Object)()
-            Dim ipos = fileName.LastIndexOf("."c)
-            If ipos > 0 AndAlso ipos < fileName.Length - 1 Then
-                Dim fileExtension As String = fileName.Substring(ipos + 1).ToLower()
-                If fileExtension.CompareTo("gz") = 0 Then
-                    gzip = True
-                    Console.WriteLine("Have gzipped file ...")
-                End If
-            End If
-            Dim [loop] = 0
+            Dim inputStream As New StreamReader(fileName.Open(FileMode.Open, doClear:=False, [readOnly]:=True))
 
-            While [loop] < 2 AndAlso haveCIF
-                Dim inputStream As StreamReader
-                'If fileName.Substring(0, 7).Equals("http://") OrElse fileName.Substring(0, 8).Equals("https://") OrElse fileName.Substring(0, 6).Equals("ftp://") Then
-                '    Dim fileStream As StreamReader
-                '    Console.WriteLine("HAVE URL: " & fileName)
-                '    Dim url As URL = New URL(fileName)
-                '    If gzip Then
-                '        Dim iStream As Stream = url.openStream()
-                '        Dim gzis As GZIPInputStream = New GZIPInputStream(iStream)
-                '        fileStream = New StreamReader(gzis)
-                '    Else
-                '        fileStream = New StreamReader(url.openStream())
-                '    End If
-                '    inputStream = New StreamReader(fileStream)
-                'Else
-                '    Dim fileStream As StreamReader
-                '    If gzip Then
-                '        Dim fileIn As FileStream = New FileStream(fileName, FileMode.Open, FileAccess.Read)
-                '        Dim gzis As GZIPInputStream = New GZIPInputStream(fileIn)
-                '        fileStream = New StreamReader(gzis)
-                '    Else
-                '        fileStream = New StreamReader(fileName)
-                '    End If
-                '    inputStream = New StreamReader(fileStream)
-                'End If
-                If [loop] = 0 Then
-                    haveCIF = getPDB(inputStream)
-                Else
-                    getCIF(inputStream)
-                    fromMmcif = True
-                    pdb.setFromMmcif()
-                End If
+            haveCIF = getPDB(inputStream)
 
-                [loop] += 1
-            End While
+            'getCIF(inputStream)
+            '        fromMmcif = True
+            '        pdb.setFromMmcif()
+
             pdb.fixDuplicates()
             Console.WriteLine("PDB code: " & pdb.PDBCode)
             Console.WriteLine("No. of residues read in: " & pdb.Nresidues.ToString())
@@ -348,7 +311,7 @@ Namespace file
             If residue.FullResName.Equals("UNK") Then
                 Return isDuplicate
             End If
-            Dim atomList As List(Of Atom) = residue.AtomList
+            Dim atomList As System.Collections.Generic.List(Of Atom) = residue.AtomList
             For i = 0 To atomList.Count - 1
                 Dim atom = atomList(i)
                 Dim otherAtomName = atom.AtomName
@@ -932,79 +895,78 @@ Namespace file
             Dim haveCIF = False
             Dim readAtoms = True
             Dim title As String = Nothing
-            Try
-                Dim inputLine As Value(Of String) = Nothing
-                While Not haveCIF AndAlso Not ((inputLine = inputStream.ReadLine) Is Nothing)
-                    Dim line_str As String = inputLine
-                    Dim lType = getLineType(inputLine)
-                    atHet = "A"c
-                    Select Case lType
-                        Case LineType.HEADER_RECORD
-                            If line_str.Length > 65 AndAlso ReferenceEquals(pdb.PDBCode, Nothing) Then
-                                Dim pdbCode = line_str.Substring(62, 4)
-                                pdbCode = pdbCode.ToLower()
-                                pdb.PDBCode = pdbCode
-                            End If
-                        Case LineType.TITLE_RECORD
-                            If ReferenceEquals(title, Nothing) Then
-                                title = line_str.Substring(10)
-                            Else
-                                title = title & line_str.Substring(10)
-                            End If
-                            pdb.FullTitle = title
-                        Case LineType.HETNAM_RECORD
-                            If line_str.Length > 13 Then
-                                Dim hetName = line_str.Substring(11, 3)
-                                Dim hetDescription = line_str.Substring(15)
-                                If inputLine(15) = " "c Then
-                                    hetDescription = line_str.Substring(16)
-                                End If
-                                hetDescription = TextItem.stringTruncate(hetDescription)
-                                If inputLine(9) = " "c Then
-                                    pdb.addHetGroup(hetName, hetDescription)
-                                    Continue While
-                                End If
-                                pdb.appendHetDescription(hetName, hetDescription)
-                            End If
-                        Case LineType.HETATM_RECORD
-                            atHet = "H"c
-                        Case LineType.ATOM_RECORD
-                            If readAtoms Then
-                                Dim ok = getAtomDetails(inputLine)
-                                If ok Then
-                                    checkResidue()
-                                    Dim isDuplicate As Boolean = checkDuplicate()
-                                    If Not isDuplicate Then
-                                        pdb.addAtom(atHet, atomNumber, atomName, coords, bValue, occupancy, residue, element, coords)
-                                    End If
-                                End If
-                            End If
-                        Case LineType.CONECT_RECORD
-                            processConect(inputLine)
-                        Case LineType.MODEL_RECORD, LineType.ENDMDL_RECORD
-                            If pdb.Natoms > 0 Then
-                                readAtoms = False
-                            End If
-                        Case LineType.HHBNNB_RECORD
-                            pdb.addHHBNNB(inputLine)
-                        Case LineType.LOOP_RECORD
-                            haveCIF = True
-                            Console.WriteLine("mmCIF file detected: " & CStr(inputLine))
-                        Case LineType.TER_RECORD
-                            If residue IsNot Nothing Then
-                                residue.setPostTER()
-                            End If
-                    End Select
-                End While
 
-            Finally
-                If lastResidue IsNot Nothing Then
-                    lastResidue.determineResidueType()
-                End If
-                If inputStream IsNot Nothing Then
-                    inputStream.Close()
-                End If
-            End Try
+            Dim inputLine As Value(Of String) = ""
+            While Not haveCIF AndAlso Not ((inputLine = inputStream.ReadLine) Is Nothing)
+                Dim line_str As String = inputLine
+                Dim lType = getLineType(line_str)
+                atHet = "A"c
+                Select Case lType
+                    Case LineType.HEADER_RECORD
+                        If line_str.Length > 65 AndAlso ReferenceEquals(pdb.PDBCode, Nothing) Then
+                            Dim pdbCode = line_str.Substring(62, 4)
+                            pdbCode = pdbCode.ToLower()
+                            pdb.PDBCode = pdbCode
+                        End If
+                    Case LineType.TITLE_RECORD
+                        If ReferenceEquals(title, Nothing) Then
+                            title = line_str.Substring(10)
+                        Else
+                            title = title & line_str.Substring(10)
+                        End If
+                        pdb.FullTitle = title
+                    Case LineType.HETNAM_RECORD
+                        If line_str.Length > 13 Then
+                            Dim hetName = line_str.Substring(11, 3)
+                            Dim hetDescription = line_str.Substring(15)
+                            If line_str(15) = " "c Then
+                                hetDescription = line_str.Substring(16)
+                            End If
+                            hetDescription = TextItem.stringTruncate(hetDescription)
+                            If line_str(9) = " "c Then
+                                pdb.addHetGroup(hetName, hetDescription)
+                                Continue While
+                            End If
+                            pdb.appendHetDescription(hetName, hetDescription)
+                        End If
+                    Case LineType.HETATM_RECORD
+                        atHet = "H"c
+                    Case LineType.ATOM_RECORD
+                        If readAtoms Then
+                            Dim ok = getAtomDetails(line_str)
+                            If ok Then
+                                checkResidue()
+                                Dim isDuplicate As Boolean = checkDuplicate()
+                                If Not isDuplicate Then
+                                    pdb.addAtom(atHet, atomNumber, atomName, coords, bValue, occupancy, residue, element, coords)
+                                End If
+                            End If
+                        End If
+                    Case LineType.CONECT_RECORD
+                        processConect(line_str)
+                    Case LineType.MODEL_RECORD, LineType.ENDMDL_RECORD
+                        If pdb.Natoms > 0 Then
+                            readAtoms = False
+                        End If
+                    Case LineType.HHBNNB_RECORD
+                        pdb.addHHBNNB(line_str)
+                    Case LineType.LOOP_RECORD
+                        haveCIF = True
+                        Console.WriteLine("mmCIF file detected: " & CStr(inputLine))
+                    Case LineType.TER_RECORD
+                        If residue IsNot Nothing Then
+                            residue.setPostTER()
+                        End If
+                End Select
+            End While
+
+            If lastResidue IsNot Nothing Then
+                lastResidue.determineResidueType()
+            End If
+            If inputStream IsNot Nothing Then
+                inputStream.Close()
+            End If
+
             Return haveCIF
         End Function
 
