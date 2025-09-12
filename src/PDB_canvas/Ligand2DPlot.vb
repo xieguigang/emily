@@ -1,11 +1,24 @@
-﻿Imports Microsoft.VisualBasic.Data.ChartPlots.Graphic
+﻿Imports System.Drawing
+Imports Microsoft.VisualBasic.Data.ChartPlots.Graphic
 Imports Microsoft.VisualBasic.Data.ChartPlots.Graphic.Canvas
+Imports Microsoft.VisualBasic.Data.ChartPlots.Graphic.Legend
+Imports Microsoft.VisualBasic.Data.ChartPlots.Plot3D.Device
 Imports Microsoft.VisualBasic.Imaging
 Imports Microsoft.VisualBasic.Imaging.Drawing2D
+Imports Microsoft.VisualBasic.Imaging.Drawing3D
+Imports Microsoft.VisualBasic.Imaging.Drawing3D.Math3D
 Imports Microsoft.VisualBasic.Imaging.Math2D
 Imports Microsoft.VisualBasic.Linq
+Imports Microsoft.VisualBasic.MIME.Html.CSS
+Imports Microsoft.VisualBasic.MIME.Html.Render
 Imports SMRUCC.genomics.Data.RCSB.PDB
 Imports SMRUCC.genomics.Data.RCSB.PDB.Keywords
+
+#If NET48 Then
+Imports Brushes = System.Drawing.Brushes
+#Else
+Imports Brushes = Microsoft.VisualBasic.Imaging.Brushes
+#End If
 
 Public Class Ligand2DPlot : Inherits Plot
 
@@ -47,10 +60,67 @@ Public Class Ligand2DPlot : Inherits Plot
                             .ToArray
                     End Function) _
             .IteratesALL _
+            .Where(Function(a) a.dist < 5) _
+            .OrderBy(Function(a) a.dist) _
             .ToArray
+        Dim atoms As New List(Of AtomModel)
+        Dim camera As New Camera(canvas, New Drawing3D.Point3D())
 
         For Each atom As IGrouping(Of String, (atom As HETATM.HETATMRecord, aa As AtomUnit, dist As Double)) In knn.GroupBy(Function(a) a.atom.AtomName)
+            Dim ligand = atom.First.atom
 
+            Call atoms.Add(New AtomModel With {
+                .Fill = Brushes.Black,
+                .IsResidue = False,
+                .Label = ligand.ResidueName,
+                .Size = New Size(20, 20),
+                .Style = LegendStyles.Circle,
+                .Location = New Drawing3D.Point3D(ligand.XCoord, ligand.YCoord, ligand.ZCoord)
+            })
+
+            For Each aa As AtomUnit In atom.Select(Function(t) t.aa)
+                Call atoms.Add(New AtomModel With {
+                    .Fill = Brushes.Red,
+                    .IsResidue = True,
+                    .Label = aa.AA_ID,
+                    .Location = New Drawing3D.Point3D(aa.Location),
+                    .Size = New Size(30, 30),
+                    .Style = LegendStyles.Circle
+                })
+            Next
+        Next
+
+        For Each element As AtomModel In atoms
+            Call element.Transform(camera)
+        Next
+
+        Dim css As CSSEnvirnment = g.LoadEnvironment
+
+        ' 进行投影之后只需要直接取出XY即可得到二维的坐标
+        ' 然后生成多边形，进行画布的居中处理
+        Dim plotRect As Rectangle = canvas.PlotRegion(css)
+        Dim polygon As PointF() = atoms _
+            .Select(Function(element) element.EnumeratePath) _
+            .IteratesALL _
+            .Select(Function(pt) pt.PointXY(plotRect.Size)) _
+            .ToArray
+        Dim scaleX = d3js.scale.linear.domain(polygon.Select(Function(a) a.X)).range(values:=New Double() {plotRect.Left, plotRect.Right})
+        Dim scaleY = d3js.scale.linear.domain(polygon.Select(Function(a) a.Y)).range(values:=New Double() {plotRect.Top, plotRect.Bottom})
+        Dim orders = PainterAlgorithm _
+            .OrderProvider(atoms, Function(e) e.Location.Z) _
+            .ToArray
+
+        For i As Integer = 0 To atoms.Count - 1
+            Dim index As Integer = orders(i)
+            Dim model As Element3D = atoms(index)
+
+            Call model.Draw(g, canvas, scaleX, scaleY)
         Next
     End Sub
+End Class
+
+Public Class AtomModel : Inherits ShapePoint
+
+    Public Property IsResidue As Boolean
+
 End Class
