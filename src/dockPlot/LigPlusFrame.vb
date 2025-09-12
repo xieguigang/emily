@@ -102,7 +102,7 @@ Namespace ligplus
 
         Public Shared pdb As PDBEntry = Nothing
 
-        Private Shared ligplusParams As Properties
+        Private ligplusParams As Properties
 
         Private Shared run As RunExe = Nothing
 
@@ -124,6 +124,9 @@ Namespace ligplus
 
         Private Shared pdbCodeList As List(Of Object) = Nothing
 
+        Public Sub New(Params As Properties)
+            ligplusParams = Params
+        End Sub
 
         Public Sub OpenPDBFileMenuItemActionPerformed(fileName As String)
             Dim cancelled = False

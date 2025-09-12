@@ -8,7 +8,7 @@ Module Program
 
     Sub Main(args As String())
         Dim config As Properties = Properties.Load("G:\emily\src\dockPlot\default.txt")
-        Dim app As New LigPlusFrame()
+        Dim app As New LigPlusFrame(config)
 
         Call app.OpenPDBFileMenuItemActionPerformed(dock_pdb)
 
