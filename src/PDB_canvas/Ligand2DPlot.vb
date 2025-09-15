@@ -20,7 +20,6 @@ Imports SMRUCC.genomics.Data.RCSB.PDB
 Imports SMRUCC.genomics.Data.RCSB.PDB.Keywords
 Imports SMRUCC.genomics.SequenceModel.Polypeptides
 
-
 #If NET48 Then
 Imports Brushes = System.Drawing.Brushes
 Imports DashStyle = System.Drawing.Drawing2D.DashStyle
@@ -35,6 +34,13 @@ Public Class Ligand2DPlot : Inherits Plot
     ReadOnly target As Het.HETRecord
     ReadOnly hetAtoms As HETATM.HETATMRecord()
     ReadOnly atom As Atom
+
+    Public Property HetAtomColors As New Dictionary(Of String, Color) From {
+        {"C", Color.Black},
+        {"N", Color.Blue},
+        {"O", Color.Red},
+        {"S", Color.Orange}
+    }
 
     Sub New(pdb As PDB, target As Het.HETRecord, theme As Theme)
         Call MyBase.New(theme)
@@ -58,26 +64,38 @@ Public Class Ligand2DPlot : Inherits Plot
         Throw New InvalidProgramException($"missing {target.ToString} het atom model data!")
     End Function
 
+    Private Function getAtomGroups() As IEnumerable(Of (atom As HETATM.HETATMRecord, (aa As AtomUnit, dist As Double)()))
+        Dim hitSet As New List(Of (atom As HETATM.HETATMRecord, (aa As AtomUnit, dist As Double)()))
+
+        For Each atom As HETATM.HETATMRecord In hetAtoms
+            Dim filter = Me.atom.Atoms _
+                .Select(Function(a) (aa:=a, dist:=a.Location.DistanceTo(atom.XCoord, atom.YCoord, atom.ZCoord))) _
+                .Where(Function(a) a.dist < 3) _
+                .OrderBy(Function(a) a.dist) _
+                .Take(1) _
+                .ToArray
+
+            If filter.IsNullOrEmpty Then
+                ' there is no docking for this atom
+                ' returns a place holder
+                Call hitSet.Add((atom, {}))
+            Else
+                Call hitSet.Add((atom, filter))
+            End If
+        Next
+
+        Return hitSet
+    End Function
+
     Protected Overrides Sub PlotInternal(ByRef g As IGraphics, canvas As GraphicsRegion)
-        Dim knn = hetAtoms _
-            .AsParallel _
-            .Select(Function(atom)
-                        Return Me.atom.Atoms _
-                            .Select(Function(a) (atom, aa:=a, dist:=a.Location.DistanceTo(atom.XCoord, atom.YCoord, atom.ZCoord))) _
-                            .OrderBy(Function(a) a.dist) _
-                            .Take(5) _
-                            .ToArray
-                    End Function) _
-            .IteratesALL _
-            .Where(Function(a) a.dist < 3) _
-            .OrderBy(Function(a) a.dist) _
-            .ToArray
         Dim atoms As New List(Of Element3D)
         Dim camera As New Camera(canvas, New Drawing3D.Point3D()) With {.fov = 10000000}
         Dim connect = pdb.Conect.AsEnumerable.ToDictionary(Function(a) a.name, Function(a) a.value)
         Dim atomIndex = hetAtoms.ToDictionary(Function(a) a.AtomNumber.ToString)
         Dim linkStroke As New Pen(Color.Black, 30)
         Dim ligandStroke As New Pen(Color.LightGray, 5) With {.DashStyle = DashStyle.Dash}
+        Dim atomSize As Single = 95
+        Dim aminoAcidSize As Single = 150
 
         For Each link In connect
             For Each t2 In link.Value.AsCharacter
@@ -89,19 +107,21 @@ Public Class Ligand2DPlot : Inherits Plot
             Next
         Next
 
-        For Each atom As IGrouping(Of String, (atom As HETATM.HETATMRecord, aa As AtomUnit, dist As Double)) In knn.GroupBy(Function(a) a.atom.AtomName)
-            Dim ligand = atom.First.atom
+        Dim knn As (atom As HETATM.HETATMRecord, (aa As AtomUnit, dist As Double)())() = getAtomGroups().ToArray
+
+        For Each atom As (atom As HETATM.HETATMRecord, (aa As AtomUnit, dist As Double)()) In knn
+            Dim ligand As HETATM.HETATMRecord = atom.atom
 
             Call atoms.Add(New AtomModel With {
-                .Fill = Brushes.Black,
+                .Fill = If(HetAtomColors.ContainsKey(ligand.ElementSymbol), New SolidBrush(HetAtomColors(ligand.ElementSymbol)), Brushes.Black),
                 .IsResidue = False,
                 .Label = ligand.ElementSymbol,
-                .Size = New Size(80, 80),
+                .Size = New Size(atomSize, atomSize),
                 .Style = LegendStyles.Circle,
                 .Location = New Drawing3D.Point3D(ligand.XCoord, ligand.YCoord, ligand.ZCoord)
             })
 
-            For Each aa As AtomUnit In atom.Select(Function(t) t.aa)
+            For Each aa As AtomUnit In atom.Item2.Select(Function(t) t.aa)
                 Dim chr As Char = Polypeptide.Abbreviate.TryGetValue(aa.AA_ID)
                 Dim color As SolidBrush = Brushes.Black
 
@@ -114,7 +134,7 @@ Public Class Ligand2DPlot : Inherits Plot
                     .IsResidue = True,
                     .Label = $"{aa.AA_ID} {aa.Index}({aa.AA_ID})",
                     .Location = New Drawing3D.Point3D(aa.Location),
-                    .Size = New Size(120, 120),
+                    .Size = New Size(aminoAcidSize, aminoAcidSize),
                     .Style = LegendStyles.Circle
                 })
                 Call atoms.Add(New Plot3D.Device.Line(ligand, aa.Location) With {
