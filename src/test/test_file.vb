@@ -1,5 +1,7 @@
 Imports System.Drawing
 Imports Emily.gromacs
+Imports Emily.PDB_Canvas
+Imports Emily.PDB_Canvas.StructModels
 Imports Microsoft.VisualBasic.ComponentModel.DataSourceModel
 Imports Microsoft.VisualBasic.Data.ChartPlots.Graphic.Canvas
 Imports Microsoft.VisualBasic.Data.ChartPlots.Plot3D
@@ -8,8 +10,6 @@ Imports Microsoft.VisualBasic.Imaging
 Imports Microsoft.VisualBasic.Imaging.Drawing2D.Colors
 Imports Microsoft.VisualBasic.Imaging.Drawing3D
 Imports Microsoft.VisualBasic.Linq
-Imports PDB_canvas
-Imports PDB_canvas.StructModels
 Imports SMRUCC.genomics.Data.RCSB.PDB
 
 Public Module test_file
