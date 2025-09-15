@@ -132,7 +132,7 @@ Public Class Ligand2DPlot : Inherits Plot
                 Call atoms.Add(New AtomModel With {
                     .Fill = color,
                     .IsResidue = True,
-                    .Label = $"{aa.AA_ID} {aa.Index}({aa.AA_ID})",
+                    .Label = $"{aa.AA_ID} {aa.Index}({aa.ChianID})",
                     .Location = New Drawing3D.Point3D(aa.Location),
                     .Size = New Size(aminoAcidSize, aminoAcidSize),
                     .Style = LegendStyles.Circle
