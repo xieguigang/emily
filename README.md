@@ -17,6 +17,6 @@ For Each ligand In pdb.ListLigands
 Next
 ```
 
-![](docs/FMN ~ FLAVIN MONONUCLEOTIDE.png)
+![](docs/FMN%20~%20FLAVIN%20MONONUCLEOTIDE.png)
 
 
