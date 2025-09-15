@@ -192,25 +192,3 @@ Public Class Ligand2DPlot : Inherits Plot
     End Sub
 End Class
 
-Public Class AtomModel : Inherits ShapePoint
-
-    Public Property IsResidue As Boolean
-    Public Property fontSize As Double
-
-    Public Overrides Sub Draw(g As IGraphics, rect As GraphicsRegion, scaleX As LinearScale, scaleY As LinearScale)
-        Dim praw As PointF = GetPosition(rect.Size)
-        Dim pscale As New PointF(scaleX(praw.X) - Size.Width / 2, scaleY(praw.Y) - Size.Height / 2)
-        Dim font As New Font(FontFace.SegoeUI, FontFace.PointSizeScale(fontSize, g.Dpi))
-
-        Call g.DrawLegendShape(pscale, Size, Style, Fill)
-
-        If IsResidue Then
-            Dim labelSize As SizeF = g.MeasureString(Label, font)
-            Dim lx = (Size.Width - labelSize.Width) / 2 + pscale.X
-            Dim ly = (Size.Height - labelSize.Height) / 2 + pscale.Y
-
-            Call g.DrawString(Label, font, Brushes.Blue, New PointF(lx, ly))
-        End If
-    End Sub
-
-End Class
