@@ -2,7 +2,7 @@
 <html>
 
 <head>
-    <title>Convert the smiles structure information as pdb structure data</title>
+    <title>draw_ligand2D</title>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
     <link rel="stylesheet" type="text/css" href="../../_assets/page.css">
@@ -13,33 +13,30 @@
 
         <table style="width: 100%;">
             <tr>
-                <td>smiles_2_pdb {emily}</td>
+                <td>draw_ligand2D {Rscript}</td>
                 <td style="text-align: right;">R Documentation</td>
             </tr>
         </table>
 
-        <h2>Convert the smiles structure information as pdb structure data</h2>
+        <h2>draw_ligand2D</h2>
 
         <h3>Description</h3>
 
-        
+        draw_ligand2D
 
         <h3>Usage</h3>
 
         <div style="width: 100%; padding-left: 3%; color: black;">
-            <pre><code class='language-R' style="color: black; font-weight:normal;"><strong>smiles_2_pdb</strong>(<i>smiles</i>,
-    <i>db.xref</i> = <span style='color: brown;'><strong>'NA'</strong></span>,
-    <i>openbabel</i> = 'getOption'('openbabel'),
-    <i>debug</i> = <span style='color: blue !important;'>FALSE</span>);</code></pre>
+            <pre><code class='language-R' style="color: black; font-weight:normal;"><strong>draw_ligand2D</strong>(<i>pdb</i>, <i>ligand</i>,
+    <i>style</i> = <span style='color: blue !important;'>NULL</span>,
+    <i>size</i> = <span style='color: brown;'><strong>"3600,2400"</strong></span>,
+    <i>dpi</i> = <span style='color: green;'>120</span>);</code></pre>
         </div>
 
         <h3>Arguments</h3>
 
         <table>
             
-<dt>openbabel</dt>
-<dd><p><p>the program file path to the <code>obabel</code>.</p></p></dd>
-
         </table>
 
 
@@ -49,19 +46,19 @@
 
         <h3 style="display: block">Authors</h3>
 
-        Who wrote it
+        Emily
 
         <h3>Value</h3>
 
-        <p>this function returns a plain text content data of the generated pdb structrue file data.</p>
+        this function returns data object of type <i>any</i> kind.<h4>clr value class</h4><ul><li><i>any</i> kind</li></ul>
 
         <h3 style="display: none;">Examples</h3>
 
         
 
         <hr />
-        <div style="text-align: center;">[Package <em>emily</em> version 0.1.0 <a
-                href="../emily.html">Index</a>]
+        <div style="text-align: center;">[Package <em>Rscript</em> version 1.0.0.0 <a
+                href="../Rscript.html">Index</a>]
         </div>
     </div>
 </body>

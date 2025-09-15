@@ -9,9 +9,19 @@
 */
 declare namespace Rscript {
    /**
+     * @param style default value Is ``null``.
+     * @param size default value Is ``'3600,2400'``.
+     * @param dpi default value Is ``120``.
+     * @param env default value Is ``null``.
+   */
+   function draw_ligand2D(pdb: object, ligand: object, style?: object, size?: any, dpi?: object, env?: object): any;
+   /**
      * @param size default value Is ``'3000,2100'``.
    */
    function draw_pdb(pdb: object, size?: any): any;
+   /**
+   */
+   function parse_style(jsonstr: string): object;
    /**
     * parse the zdock output text
     * 
