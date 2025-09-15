@@ -15,8 +15,11 @@ Imports Microsoft.VisualBasic.Linq
 Imports Microsoft.VisualBasic.MIME.Html.CSS
 Imports Microsoft.VisualBasic.MIME.Html.Render
 Imports Microsoft.VisualBasic.Scripting.Runtime
+Imports Microsoft.VisualBasic.Text
 Imports SMRUCC.genomics.Data.RCSB.PDB
 Imports SMRUCC.genomics.Data.RCSB.PDB.Keywords
+Imports SMRUCC.genomics.SequenceModel.Polypeptides
+
 
 #If NET48 Then
 Imports Brushes = System.Drawing.Brushes
@@ -99,10 +102,17 @@ Public Class Ligand2DPlot : Inherits Plot
             })
 
             For Each aa As AtomUnit In atom.Select(Function(t) t.aa)
+                Dim chr As Char = Polypeptide.Abbreviate.TryGetValue(aa.AA_ID)
+                Dim color As SolidBrush = Brushes.Black
+
+                If chr <> ASCII.NUL Then
+                    color = New SolidBrush(Polypeptide.MEGASchema(chr))
+                End If
+
                 Call atoms.Add(New AtomModel With {
-                    .Fill = Brushes.Red,
+                    .Fill = color,
                     .IsResidue = True,
-                    .Label = aa.AA_ID,
+                    .Label = $"{aa.AA_ID} {aa.Index}({aa.AA_ID})",
                     .Location = New Drawing3D.Point3D(aa.Location),
                     .Size = New Size(120, 120),
                     .Style = LegendStyles.Circle
