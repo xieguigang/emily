@@ -92,6 +92,15 @@ Public Class Ligand2DPlot : Inherits Plot
 
     Dim models As New List(Of Element3D)
 
+    Public Function CalculateMaxPlainView() As Drawing3D.Point3D
+        Dim pointCloud As Drawing3D.Point3D() = models.Select(Function(m) m.Location).ToArray
+        Dim maxView As Drawing3D.Point3D = MaxPlainCameraView.CalculateOptimalCameraView(pointCloud)
+
+        ViewPoint = maxView
+
+        Return ViewPoint
+    End Function
+
     Private Sub Build3DModel()
         Dim connect = pdb.Conect.AsEnumerable.ToDictionary(Function(a) a.name, Function(a) a.value)
         Dim atomIndex = hetAtoms.ToDictionary(Function(a) a.AtomNumber.ToString)
