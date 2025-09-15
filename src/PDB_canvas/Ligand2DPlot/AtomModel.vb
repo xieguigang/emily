@@ -42,7 +42,7 @@ Public Class AtomModel : Inherits ShapePoint
             .fontSize = fontSize,
             .IsResidue = IsResidue,
             .Label = Label,
-            .Location = Location,
+            .Location = camera.Project(camera.Rotate(Location)),
             .Size = Size,
             .Style = Style
         }
