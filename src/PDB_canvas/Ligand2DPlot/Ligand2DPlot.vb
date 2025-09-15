@@ -49,6 +49,8 @@ Public Class Ligand2DPlot : Inherits Plot
         Me.pdb = pdb
         Me.target = target
         Me.hetAtoms = FindTarget(pdb, target, model:=atom)
+
+        Call Build3DModel()
     End Sub
 
     Private Shared Function FindTarget(pdb As PDB, target As Het.HETRecord, ByRef model As Atom) As HETATM.HETATMRecord()
@@ -88,9 +90,9 @@ Public Class Ligand2DPlot : Inherits Plot
         Return hitSet
     End Function
 
-    Protected Overrides Sub PlotInternal(ByRef g As IGraphics, canvas As GraphicsRegion)
-        Dim atoms As New List(Of Element3D)
-        Dim camera As New Camera(canvas, ViewPoint) With {.fov = 10000000}
+    Dim models As New List(Of Element3D)
+
+    Private Sub Build3DModel()
         Dim connect = pdb.Conect.AsEnumerable.ToDictionary(Function(a) a.name, Function(a) a.value)
         Dim atomIndex = hetAtoms.ToDictionary(Function(a) a.AtomNumber.ToString)
         Dim linkStroke As New Pen(Color.Black, 30)
@@ -101,7 +103,7 @@ Public Class Ligand2DPlot : Inherits Plot
         For Each link In connect
             For Each t2 In link.Value.AsCharacter
                 If atomIndex.ContainsKey(link.Key) AndAlso atomIndex.ContainsKey(t2) Then
-                    Call atoms.Add(New Plot3D.Device.Line(atomIndex(link.Key), atomIndex(t2)) With {
+                    Call models.Add(New Plot3D.Device.Line(atomIndex(link.Key), atomIndex(t2)) With {
                         .Stroke = linkStroke
                     })
                 End If
@@ -120,7 +122,7 @@ Public Class Ligand2DPlot : Inherits Plot
                 Call $"missing color schema for atom: {ligand.ElementSymbol}".warning
             End If
 
-            Call atoms.Add(New AtomModel With {
+            Call models.Add(New AtomModel With {
                 .Fill = ligandColor,
                 .IsResidue = False,
                 .Label = ligand.ElementSymbol,
@@ -137,7 +139,7 @@ Public Class Ligand2DPlot : Inherits Plot
                     color = New SolidBrush(Polypeptide.MEGASchema(chr))
                 End If
 
-                Call atoms.Add(New AtomModel With {
+                Call models.Add(New AtomModel With {
                     .Fill = color,
                     .IsResidue = True,
                     .Label = $"{aa.AA_ID} {aa.Index}({aa.ChianID})",
@@ -145,14 +147,19 @@ Public Class Ligand2DPlot : Inherits Plot
                     .Size = New Size(aminoAcidSize, aminoAcidSize),
                     .Style = LegendStyles.Circle
                 })
-                Call atoms.Add(New Plot3D.Device.Line(ligand, aa.Location) With {
+                Call models.Add(New Plot3D.Device.Line(ligand, aa.Location) With {
                     .Stroke = ligandStroke
                 })
             Next
         Next
+    End Sub
 
-        For Each element As Element3D In atoms
-            Call element.Transform(camera)
+    Protected Overrides Sub PlotInternal(ByRef g As IGraphics, canvas As GraphicsRegion)
+        Dim camera As New Camera(canvas, ViewPoint) With {.fov = 10000000}
+        Dim norm As New List(Of Element3D)
+
+        For Each element As Element3D In models
+            Call norm.Add(element.Transform(camera))
         Next
 
         Dim css As CSSEnvirnment = g.LoadEnvironment
@@ -160,7 +167,7 @@ Public Class Ligand2DPlot : Inherits Plot
         ' 进行投影之后只需要直接取出XY即可得到二维的坐标
         ' 然后生成多边形，进行画布的居中处理
         Dim plotRect As Rectangle = canvas.PlotRegion(css)
-        Dim polygon As PointF() = atoms _
+        Dim polygon As PointF() = models _
             .Select(Function(element) element.EnumeratePath) _
             .IteratesALL _
             .Select(Function(pt) pt.PointXY(plotRect.Size)) _
@@ -168,20 +175,20 @@ Public Class Ligand2DPlot : Inherits Plot
         Dim scaleX = d3js.scale.linear.domain(polygon.Select(Function(a) a.X)).range(values:=New Double() {plotRect.Left, plotRect.Right})
         Dim scaleY = d3js.scale.linear.domain(polygon.Select(Function(a) a.Y)).range(values:=New Double() {plotRect.Top, plotRect.Bottom})
         Dim orders = PainterAlgorithm _
-            .OrderProvider(atoms, Function(e) e.Location.Z) _
+            .OrderProvider(models, Function(e) e.Location.Z) _
             .ToArray
         Dim fontSize As New DoubleRange(12, 40)
         Dim offset As New DoubleRange(0, orders.Length)
 
         ' rendering line at first
-        For Each line In atoms.OfType(Of Plot3D.Device.Line)
+        For Each line In models.OfType(Of Plot3D.Device.Line)
             line.Draw(g, canvas, scaleX, scaleY)
         Next
 
         ' 靠前的原子是比较远的原子
-        For i As Integer = 0 To atoms.Count - 1
+        For i As Integer = 0 To models.Count - 1
             Dim index As Integer = orders(i)
-            Dim model As Element3D = atoms(index)
+            Dim model As Element3D = models(index)
 
             If TypeOf model Is Plot3D.Device.Line Then
                 Continue For
