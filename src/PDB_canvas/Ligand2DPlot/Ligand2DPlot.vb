@@ -42,6 +42,10 @@ Public Class Ligand2DPlot : Inherits Plot
                           Return a.color.TranslateColor
                       End Function)
     Public Property ViewPoint As New Drawing3D.Point3D
+    Public Property DistanceCutoff As Double = 3.5
+    Public Property TopRank As Integer = 1
+    Public Property AtomSize As Single = 95
+    Public Property AminoAcidSize As Single = 150
 
     Sub New(pdb As PDB, target As Het.HETRecord, theme As Theme)
         Call MyBase.New(theme)
@@ -73,9 +77,9 @@ Public Class Ligand2DPlot : Inherits Plot
         For Each atom As HETATM.HETATMRecord In hetAtoms
             Dim filter = Me.atom.Atoms _
                 .Select(Function(a) (aa:=a, dist:=a.Location.DistanceTo(atom.XCoord, atom.YCoord, atom.ZCoord))) _
-                .Where(Function(a) a.dist < 3) _
+                .Where(Function(a) a.dist < DistanceCutoff) _
                 .OrderBy(Function(a) a.dist) _
-                .Take(1) _
+                .Take(TopRank) _
                 .ToArray
 
             If filter.IsNullOrEmpty Then
@@ -106,8 +110,6 @@ Public Class Ligand2DPlot : Inherits Plot
         Dim atomIndex = hetAtoms.ToDictionary(Function(a) a.AtomNumber.ToString)
         Dim linkStroke As New Pen(Color.Black, 30)
         Dim ligandStroke As New Pen(Color.LightGray, 5) With {.DashStyle = DashStyle.Dash}
-        Dim atomSize As Single = 95
-        Dim aminoAcidSize As Single = 150
 
         For Each link In connect
             For Each t2 In link.Value.AsCharacter
