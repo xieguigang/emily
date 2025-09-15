@@ -8,6 +8,7 @@ Imports Microsoft.VisualBasic.Data.ChartPlots.Plot3D.Device
 Imports Microsoft.VisualBasic.Imaging
 Imports Microsoft.VisualBasic.Imaging.d3js.scale
 Imports Microsoft.VisualBasic.Imaging.Drawing2D
+Imports Microsoft.VisualBasic.Imaging.Drawing2D.Text.Nudge
 Imports Microsoft.VisualBasic.Imaging.Drawing3D
 Imports Microsoft.VisualBasic.Imaging.Drawing3D.Math3D
 Imports Microsoft.VisualBasic.Imaging.Math2D
@@ -46,6 +47,8 @@ Public Class Ligand2DPlot : Inherits Plot
     Public Property TopRank As Integer = 1
     Public Property AtomSize As Single = 95
     Public Property AminoAcidSize As Single = 150
+
+    Public Property TextNudge As Boolean = False
 
     Sub New(pdb As PDB, target As Het.HETRecord, theme As Theme)
         Call MyBase.New(theme)
@@ -195,8 +198,10 @@ Public Class Ligand2DPlot : Inherits Plot
 
         ' rendering line at first
         For Each line In norm.OfType(Of Plot3D.Device.Line)
-            line.Draw(g, canvas, scaleX, scaleY)
+            Call line.Draw(g, canvas, scaleX, scaleY)
         Next
+
+        Dim text As New List(Of (AtomModel, PointF))
 
         ' 靠前的原子是比较远的原子
         For i As Integer = 0 To norm.Count - 1
@@ -213,10 +218,30 @@ Public Class Ligand2DPlot : Inherits Plot
                 Else
                     DirectCast(model, AtomModel).fontSize = fontSize.Max
                 End If
+
+                If TextNudge Then
+                    DirectCast(model, AtomModel).IsResidue = False
+                    text.Add((DirectCast(model, AtomModel), DirectCast(model, AtomModel).TextLocation(g, canvas, scaleX, scaleY)))
+                End If
             End If
 
             model.Draw(g, canvas, scaleX, scaleY)
         Next
+
+        If text.Any Then
+            Dim graphics As IGraphics = g
+            Dim labels As List(Of d3js.Layout.Label) = text _
+                .Select(Function(t) New d3js.Layout.Label(t.Item1.Label, t.Item2, t.Item1.TextSize(graphics))) _
+                .ToList
+
+            labels = SimpleNudge.ReduceOverlap(labels)
+
+            For i As Integer = 0 To labels.Count - 1
+                With labels(i)
+                    Call text(i).Item1.DrawText(graphics, .X, .Y)
+                End With
+            Next
+        End If
     End Sub
 End Class
 
