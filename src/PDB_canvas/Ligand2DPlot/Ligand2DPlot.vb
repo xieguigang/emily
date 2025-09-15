@@ -49,6 +49,10 @@ Public Class Ligand2DPlot : Inherits Plot
     Public Property AminoAcidSize As Single = 150
 
     Public Property TextNudge As Boolean = False
+    Public Property ShowAtomLabel As Boolean = True
+
+    Public Property FontSizeMin As Double = 12
+    Public Property FontSizeMax As Double = 40
 
     Sub New(pdb As PDB, target As Het.HETRecord, theme As Theme)
         Call MyBase.New(theme)
@@ -193,7 +197,7 @@ Public Class Ligand2DPlot : Inherits Plot
         Dim orders = PainterAlgorithm _
             .OrderProvider(norm, Function(e) e.Location.Z) _
             .ToArray
-        Dim fontSize As New DoubleRange(12, 40)
+        Dim fontSize As New DoubleRange(FontSizeMin, FontSizeMax)
         Dim offset As New DoubleRange(0, orders.Length)
 
         ' rendering line at first
@@ -213,15 +217,23 @@ Public Class Ligand2DPlot : Inherits Plot
             End If
 
             If TypeOf model Is AtomModel Then
-                If DirectCast(model, AtomModel).IsResidue Then
+                Dim isResidue As Boolean = DirectCast(model, AtomModel).IsResidue
+
+                If isResidue Then
                     DirectCast(model, AtomModel).fontSize = offset.ScaleMapping(i, fontSize)
                 Else
-                    DirectCast(model, AtomModel).fontSize = fontSize.Max
+                    DirectCast(model, AtomModel).fontSize = fontSize.Min
                 End If
 
-                If TextNudge Then
-                    DirectCast(model, AtomModel).IsResidue = False
+                DirectCast(model, AtomModel).IsResidue = False
+
+                If isResidue Then
                     text.Add((DirectCast(model, AtomModel), DirectCast(model, AtomModel).TextLocation(g, canvas, scaleX, scaleY)))
+                End If
+
+                If ShowAtomLabel AndAlso Not isResidue Then
+                    DirectCast(model, AtomModel).IsResidue = True
+                    DirectCast(model, AtomModel).LabelColor = Color.White
                 End If
             End If
 
@@ -234,7 +246,9 @@ Public Class Ligand2DPlot : Inherits Plot
                 .Select(Function(t) New d3js.Layout.Label(t.Item1.Label, t.Item2, t.Item1.TextSize(graphics))) _
                 .ToList
 
-            labels = SimpleNudge.ReduceOverlap(labels)
+            If TextNudge Then
+                labels = SimpleNudge.ReduceOverlap(labels)
+            End If
 
             For i As Integer = 0 To labels.Count - 1
                 With labels(i)

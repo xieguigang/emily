@@ -17,9 +17,9 @@ Public Module test_file
     Sub Main()
         Call Microsoft.VisualBasic.Drawing.SkiaDriver.Register()
         Call test2DDrawer()
-        Call testMetadata()
+        ' Call testMetadata()
         ' Call testModelRender()
-        Call testDrawer()
+        ' Call testDrawer()
     End Sub
 
     Sub testMetadata()
@@ -35,6 +35,7 @@ Public Module test_file
 
         For Each ligand In pdb.ListLigands
             Dim render As New Ligand2DPlot(pdb, ligand, theme)
+            render.TextNudge = False
             render.CalculateMaxPlainView()
             Dim image = render.Plot("3600,2400").AsGDIImage
 

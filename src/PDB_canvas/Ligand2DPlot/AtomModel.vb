@@ -19,6 +19,7 @@ Public Class AtomModel : Inherits ShapePoint
 
     Public Property IsResidue As Boolean
     Public Property fontSize As Double
+    Public Property LabelColor As Color = Color.Black
 
     Public Overrides Sub Draw(g As IGraphics, rect As GraphicsRegion, scaleX As LinearScale, scaleY As LinearScale)
         Dim praw As PointF = GetPosition(rect.Size)
@@ -53,7 +54,7 @@ Public Class AtomModel : Inherits ShapePoint
     End Function
 
     Public Sub DrawText(g As IGraphics, lx As Single, ly As Single)
-        Call g.DrawString(Label, font(g.Dpi), Brushes.Black, New PointF(lx, ly))
+        Call g.DrawString(Label, font(g.Dpi), New SolidBrush(LabelColor), New PointF(lx, ly))
     End Sub
 
     Public Overrides Function Transform(camera As Camera) As Element3D
