@@ -111,6 +111,8 @@ Public Class Ligand2DPlot : Inherits Plot
         Dim linkStroke As New Pen(Color.Black, 30)
         Dim ligandStroke As New Pen(Color.LightGray, 5) With {.DashStyle = DashStyle.Dash}
 
+        Call models.Clear()
+
         For Each link In connect
             For Each t2 In link.Value.AsCharacter
                 If atomIndex.ContainsKey(link.Key) AndAlso atomIndex.ContainsKey(t2) Then
