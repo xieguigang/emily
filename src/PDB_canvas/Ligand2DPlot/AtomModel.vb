@@ -5,6 +5,7 @@ Imports Microsoft.VisualBasic.Data.ChartPlots.Plot3D.Device
 Imports Microsoft.VisualBasic.Imaging
 Imports Microsoft.VisualBasic.Imaging.d3js.scale
 Imports Microsoft.VisualBasic.Imaging.Drawing2D
+Imports Microsoft.VisualBasic.Imaging.Drawing3D
 
 #If NET48 Then
 Imports Brushes = System.Drawing.Brushes
@@ -34,5 +35,17 @@ Public Class AtomModel : Inherits ShapePoint
             Call g.DrawString(Label, font, Brushes.Black, New PointF(lx, ly))
         End If
     End Sub
+
+    Public Overrides Function Transform(camera As Camera) As Element3D
+        Return New AtomModel With {
+            .Fill = Fill,
+            .fontSize = fontSize,
+            .IsResidue = IsResidue,
+            .Label = Label,
+            .Location = Location,
+            .Size = Size,
+            .Style = Style
+        }
+    End Function
 
 End Class
