@@ -105,7 +105,7 @@ Public Class Ligand2DPlot : Inherits Plot
         Return ViewPoint
     End Function
 
-    Private Sub Build3DModel()
+    Public Sub Build3DModel()
         Dim connect = pdb.Conect.AsEnumerable.ToDictionary(Function(a) a.name, Function(a) a.value)
         Dim atomIndex = hetAtoms.ToDictionary(Function(a) a.AtomNumber.ToString)
         Dim linkStroke As New Pen(Color.Black, 30)
@@ -137,7 +137,7 @@ Public Class Ligand2DPlot : Inherits Plot
                 .Fill = ligandColor,
                 .IsResidue = False,
                 .Label = ligand.ElementSymbol,
-                .Size = New Size(atomSize, atomSize),
+                .Size = New Size(AtomSize, AtomSize),
                 .Style = LegendStyles.Circle,
                 .Location = New Drawing3D.Point3D(ligand.XCoord, ligand.YCoord, ligand.ZCoord)
             })
@@ -155,7 +155,7 @@ Public Class Ligand2DPlot : Inherits Plot
                     .IsResidue = True,
                     .Label = $"{aa.AA_ID} {aa.Index}({aa.ChianID})",
                     .Location = New Drawing3D.Point3D(aa.Location),
-                    .Size = New Size(aminoAcidSize, aminoAcidSize),
+                    .Size = New Size(AminoAcidSize, AminoAcidSize),
                     .Style = LegendStyles.Circle
                 })
                 Call models.Add(New Plot3D.Device.Line(ligand, aa.Location) With {
