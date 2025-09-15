@@ -5,6 +5,7 @@ Imports Microsoft.VisualBasic.Data.ChartPlots.Graphic.Canvas
 Imports Microsoft.VisualBasic.Imaging
 Imports Microsoft.VisualBasic.Imaging.Driver
 Imports Microsoft.VisualBasic.Scripting.MetaData
+Imports Microsoft.VisualBasic.Serialization.JSON
 Imports SMRUCC.genomics.Data.RCSB.PDB
 Imports SMRUCC.genomics.Data.RCSB.PDB.Keywords
 Imports SMRUCC.Rsharp.Runtime
@@ -16,6 +17,11 @@ Module Rscript
     <ExportAPI("draw_pdb")>
     Public Function draw_pdb(pdb As PDB, <RRawVectorArgument> Optional size As Object = "3000,2100") As Object
         Return DrawingPDB.MolDrawing(pdb,)
+    End Function
+
+    <ExportAPI("parse_style")>
+    Public Function ParseStyle(jsonstr As String) As RenderArguments
+        Return jsonstr.LoadJSON(Of RenderArguments)
     End Function
 
     <ExportAPI("draw_ligand2D")>
