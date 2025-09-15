@@ -47,6 +47,8 @@ Project("{D954291E-2A0B-460D-934E-DC6B0785DB48}") = "R_plot.interop", "..\GCMode
 EndProject
 Project("{D954291E-2A0B-460D-934E-DC6B0785DB48}") = "R_graphic.interop", "..\GCModeller\src\R-sharp\Library\shares\R_graphic.interop\R_graphic.interop.shproj", "{53AF2B13-CCD5-4F73-94D5-612191E785A9}"
 EndProject
+Project("{F184B08F-C81C-45F6-A57F-5ABD9991F28F}") = "R_graphics.common_runtime", "..\GCModeller\src\R-sharp\Library\shares\graphics.common_runtime\R_graphics.common_runtime.vbproj", "{705E51CF-B0F3-0819-C2BE-0AA0D1D5CD78}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -237,6 +239,18 @@ Global
 		{33CC05B1-BD48-776F-F90A-541F80A22D67}.Rsharp_app_release|Any CPU.Build.0 = Rsharp_app_release|Any CPU
 		{33CC05B1-BD48-776F-F90A-541F80A22D67}.Rsharp_app_release|x64.ActiveCfg = Rsharp_app_release|x64
 		{33CC05B1-BD48-776F-F90A-541F80A22D67}.Rsharp_app_release|x64.Build.0 = Rsharp_app_release|x64
+		{705E51CF-B0F3-0819-C2BE-0AA0D1D5CD78}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{705E51CF-B0F3-0819-C2BE-0AA0D1D5CD78}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{705E51CF-B0F3-0819-C2BE-0AA0D1D5CD78}.Debug|x64.ActiveCfg = Debug|x64
+		{705E51CF-B0F3-0819-C2BE-0AA0D1D5CD78}.Debug|x64.Build.0 = Debug|x64
+		{705E51CF-B0F3-0819-C2BE-0AA0D1D5CD78}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{705E51CF-B0F3-0819-C2BE-0AA0D1D5CD78}.Release|Any CPU.Build.0 = Release|Any CPU
+		{705E51CF-B0F3-0819-C2BE-0AA0D1D5CD78}.Release|x64.ActiveCfg = Release|x64
+		{705E51CF-B0F3-0819-C2BE-0AA0D1D5CD78}.Release|x64.Build.0 = Release|x64
+		{705E51CF-B0F3-0819-C2BE-0AA0D1D5CD78}.Rsharp_app_release|Any CPU.ActiveCfg = Release|Any CPU
+		{705E51CF-B0F3-0819-C2BE-0AA0D1D5CD78}.Rsharp_app_release|Any CPU.Build.0 = Release|Any CPU
+		{705E51CF-B0F3-0819-C2BE-0AA0D1D5CD78}.Rsharp_app_release|x64.ActiveCfg = Release|x64
+		{705E51CF-B0F3-0819-C2BE-0AA0D1D5CD78}.Rsharp_app_release|x64.Build.0 = Release|x64
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -257,6 +271,7 @@ Global
 		{33CC05B1-BD48-776F-F90A-541F80A22D67} = {F5C4DBF7-6DFE-4326-BCCB-B9783F8C9EA9}
 		{3DB4F673-68C2-41EA-B7DC-8CAF8BAB574D} = {F5C4DBF7-6DFE-4326-BCCB-B9783F8C9EA9}
 		{53AF2B13-CCD5-4F73-94D5-612191E785A9} = {F5C4DBF7-6DFE-4326-BCCB-B9783F8C9EA9}
+		{705E51CF-B0F3-0819-C2BE-0AA0D1D5CD78} = {F5C4DBF7-6DFE-4326-BCCB-B9783F8C9EA9}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {9A1B03D2-3004-477F-B124-0139DA9170EB}
