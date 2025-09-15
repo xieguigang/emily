@@ -31,7 +31,7 @@ Public Module test_file
 
     Sub test2DDrawer()
         Dim pdb As PDB = PDB.Load("G:\emily\data\8qne.pdb")
-        Dim theme As New Theme
+        Dim theme As New Theme With {.padding = "padding: 10% 10% 10% 10%;"}
 
         For Each ligand In pdb.ListLigands
             Dim render As New Ligand2DPlot(pdb, ligand, theme)
