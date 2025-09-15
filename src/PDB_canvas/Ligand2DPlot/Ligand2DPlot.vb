@@ -178,7 +178,7 @@ Public Class Ligand2DPlot : Inherits Plot
         ' 进行投影之后只需要直接取出XY即可得到二维的坐标
         ' 然后生成多边形，进行画布的居中处理
         Dim plotRect As Rectangle = canvas.PlotRegion(css)
-        Dim polygon As PointF() = models _
+        Dim polygon As PointF() = norm _
             .Select(Function(element) element.EnumeratePath) _
             .IteratesALL _
             .Select(Function(pt) pt.PointXY(plotRect.Size)) _
@@ -186,20 +186,20 @@ Public Class Ligand2DPlot : Inherits Plot
         Dim scaleX = d3js.scale.linear.domain(polygon.Select(Function(a) a.X)).range(values:=New Double() {plotRect.Left, plotRect.Right})
         Dim scaleY = d3js.scale.linear.domain(polygon.Select(Function(a) a.Y)).range(values:=New Double() {plotRect.Top, plotRect.Bottom})
         Dim orders = PainterAlgorithm _
-            .OrderProvider(models, Function(e) e.Location.Z) _
+            .OrderProvider(norm, Function(e) e.Location.Z) _
             .ToArray
         Dim fontSize As New DoubleRange(12, 40)
         Dim offset As New DoubleRange(0, orders.Length)
 
         ' rendering line at first
-        For Each line In models.OfType(Of Plot3D.Device.Line)
+        For Each line In norm.OfType(Of Plot3D.Device.Line)
             line.Draw(g, canvas, scaleX, scaleY)
         Next
 
         ' 靠前的原子是比较远的原子
-        For i As Integer = 0 To models.Count - 1
+        For i As Integer = 0 To norm.Count - 1
             Dim index As Integer = orders(i)
-            Dim model As Element3D = models(index)
+            Dim model As Element3D = norm(index)
 
             If TypeOf model Is Plot3D.Device.Line Then
                 Continue For
