@@ -22,7 +22,7 @@ Public Class AtomModel : Inherits ShapePoint
     Public Overrides Sub Draw(g As IGraphics, rect As GraphicsRegion, scaleX As LinearScale, scaleY As LinearScale)
         Dim praw As PointF = GetPosition(rect.Size)
         Dim pscale As New PointF(scaleX(praw.X) - Size.Width / 2, scaleY(praw.Y) - Size.Height / 2)
-        Dim font As New Font(FontFace.SegoeUI, FontFace.PointSizeScale(fontSize, g.Dpi))
+        Dim font As New Font(FontFace.CambriaMath, FontFace.PointSizeScale(fontSize, g.Dpi))
 
         Call g.DrawLegendShape(pscale, Size, Style, Fill)
 

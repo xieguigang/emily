@@ -34,7 +34,7 @@ Public Module test_file
         Dim theme As New Theme With {.padding = "padding: 10% 10% 10% 10%;"}
 
         For Each ligand In pdb.ListLigands
-            Dim render As New Ligand2DPlot(pdb, ligand, theme)
+            Dim render As New Ligand2DPlot(pdb, ligand, theme) With {.ViewPoint = New Drawing3D.Point3D(50, 20, 30)}
             Dim image = render.Plot("3600,2400").AsGDIImage
 
             Call image.SaveAs($"./{ligand.Name} ~ {ligand.Description}.png")

@@ -35,12 +35,13 @@ Public Class Ligand2DPlot : Inherits Plot
     ReadOnly hetAtoms As HETATM.HETATMRecord()
     ReadOnly atom As Atom
 
-    Public Property HetAtomColors As New Dictionary(Of String, Color) From {
-        {"C", Color.Black},
-        {"N", Color.Blue},
-        {"O", Color.Red},
-        {"S", Color.Orange}
-    }
+    Public Property HetAtomColors As Dictionary(Of String, Color) = CPKColors _
+        .LoadColors _
+        .ToDictionary(Function(a) a.symbol,
+                      Function(a)
+                          Return a.color.TranslateColor
+                      End Function)
+    Public Property ViewPoint As New Drawing3D.Point3D
 
     Sub New(pdb As PDB, target As Het.HETRecord, theme As Theme)
         Call MyBase.New(theme)
@@ -89,7 +90,7 @@ Public Class Ligand2DPlot : Inherits Plot
 
     Protected Overrides Sub PlotInternal(ByRef g As IGraphics, canvas As GraphicsRegion)
         Dim atoms As New List(Of Element3D)
-        Dim camera As New Camera(canvas, New Drawing3D.Point3D()) With {.fov = 10000000}
+        Dim camera As New Camera(canvas, ViewPoint) With {.fov = 10000000}
         Dim connect = pdb.Conect.AsEnumerable.ToDictionary(Function(a) a.name, Function(a) a.value)
         Dim atomIndex = hetAtoms.ToDictionary(Function(a) a.AtomNumber.ToString)
         Dim linkStroke As New Pen(Color.Black, 30)
@@ -111,9 +112,16 @@ Public Class Ligand2DPlot : Inherits Plot
 
         For Each atom As (atom As HETATM.HETATMRecord, (aa As AtomUnit, dist As Double)()) In knn
             Dim ligand As HETATM.HETATMRecord = atom.atom
+            Dim ligandColor As Brush = Brushes.Black
+
+            If (HetAtomColors.ContainsKey(ligand.ElementSymbol)) Then
+                ligandColor = New SolidBrush(HetAtomColors(ligand.ElementSymbol))
+            Else
+                Call $"missing color schema for atom: {ligand.ElementSymbol}".warning
+            End If
 
             Call atoms.Add(New AtomModel With {
-                .Fill = If(HetAtomColors.ContainsKey(ligand.ElementSymbol), New SolidBrush(HetAtomColors(ligand.ElementSymbol)), Brushes.Black),
+                .Fill = ligandColor,
                 .IsResidue = False,
                 .Label = ligand.ElementSymbol,
                 .Size = New Size(atomSize, atomSize),
