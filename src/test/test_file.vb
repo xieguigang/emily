@@ -30,7 +30,8 @@ Public Module test_file
     End Sub
 
     Sub test2DDrawer()
-        Dim pdb As PDB = PDB.Load("G:\emily\data\8qne.pdb")
+        ' Dim pdb As PDB = PDB.Load("G:\emily\data\8qne.pdb")
+        Dim pdb As PDB = PDB.Load("F:/test_viewer/BioDeep_00000000001-1LPW.pdb")
         Dim theme As New Theme With {.padding = "padding: 10% 10% 10% 10%;"}
 
         For Each ligand In pdb.ListLigands
