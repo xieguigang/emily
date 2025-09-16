@@ -12,6 +12,7 @@ Imports SMRUCC.Rsharp.Runtime
 Imports SMRUCC.Rsharp.Runtime.Interop
 
 <Package("Rscript")>
+<RTypeExport("ligand2d_style", GetType(RenderArguments))>
 Module Rscript
 
     <ExportAPI("draw_pdb")>
