@@ -1,7 +1,7 @@
 require(GCModeller);
 require(Markdown2PDF);
 
-imports "Rscript" from "emily";
+imports "Rscript" from "Emily";
 
 const .onLoad = function() {
     # set directory path that contaains zdock program
