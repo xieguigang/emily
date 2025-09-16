@@ -79,6 +79,7 @@ Public Class Ligand2DPlot : Inherits Plot
                     .ToArray
 
                 If Not filter.IsNullOrEmpty Then
+                    model = atom
                     Return filter _
                         .Select(Function(a) New HETATM.HETATMRecord(a)) _
                         .ToArray
@@ -129,8 +130,18 @@ Public Class Ligand2DPlot : Inherits Plot
     End Function
 
     Public Sub Build3DModel()
-        Dim connect = pdb.Conect.AsEnumerable.ToDictionary(Function(a) a.name, Function(a) a.value)
-        Dim atomIndex = hetAtoms.ToDictionary(Function(a) a.AtomNumber.ToString)
+        Dim connect As Dictionary(Of String, Integer()) = pdb.Conect _
+            .AsEnumerable _
+            .ToDictionary(Function(a) a.name,
+                          Function(a)
+                              Return a.value
+                          End Function)
+        Dim atomIndex As Dictionary(Of String, HETATM.HETATMRecord) = hetAtoms _
+            .GroupBy(Function(a) a.AtomNumber.ToString) _
+            .ToDictionary(Function(a) a.Key,
+                          Function(a)
+                              Return a.First
+                          End Function)
         Dim linkStroke As New Pen(Color.Black, 30)
         Dim ligandStroke As New Pen(Color.LightGray, 5) With {.DashStyle = DashStyle.Dash}
 
