@@ -69,9 +69,25 @@ Public Class Ligand2DPlot : Inherits Plot
             Dim hetatom As HETATM = atom.HetAtoms
             Dim key As String = $"{target.ResidueType}-{target.SequenceNumber}"
 
-            If Not hetatom(key).IsNullOrEmpty Then
-                model = atom
-                Return hetatom(key)
+            If hetatom Is Nothing Then
+                ' find in atoms
+                Dim filter = atom.Atoms _
+                    .Where(Function(a)
+                               Return target.SequenceNumber = a.AA_IDX AndAlso
+                                   a.AA_ID = target.ResidueType
+                           End Function) _
+                    .ToArray
+
+                If Not filter.IsNullOrEmpty Then
+                    Return filter _
+                        .Select(Function(a) New HETATM.HETATMRecord(a)) _
+                        .ToArray
+                End If
+            Else
+                If Not hetatom(key).IsNullOrEmpty Then
+                    model = atom
+                    Return hetatom(key)
+                End If
             End If
         Next
 
