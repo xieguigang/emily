@@ -8,8 +8,13 @@
 const autodock_vina <- function(prot_pdb, ligand_pdb, 
                                 complex_pdb = "./complex.pdb", 
                                 score_txt = "./score.pdb", 
+                                size = c(25.0, 25.0, 25.0),
+                                num_modes = 10,       # 生成10个构象
+                                energy_range = 4,    # 能量范围
+                                exhaustiveness = 8,   # 搜索强度
                                 mgltools_dir = "/opt/mgltools", 
-                                autodock_vina_dir = "/opt/autodock") {
+                                autodock_vina_dir = "/opt/autodock", 
+                                make_cleanup = FALSE) {
 
     # 构建MGLTools实用工具脚本的完整路径
     mgltools_dir <- file.path(mgltools_dir, "MGLToolsPckgs/AutoDockTools/Utilities24");
@@ -102,12 +107,12 @@ const autodock_vina <- function(prot_pdb, ligand_pdb,
             paste("center_x =", round(center_x, 4)),
             paste("center_y =", round(center_y, 4)),
             paste("center_z =", round(center_z, 4)),
-            "size_x = 25.0",
-            "size_y = 25.0",
-            "size_z = 25.0",
-            "num_modes = 10",       # 生成10个构象
-            "energy_range = 4",    # 能量范围
-            "exhaustiveness = 8"   # 搜索强度
+            paste("size_x =", size[1]),
+            paste("size_y =", size[2]),
+            paste("size_z =", size[3]),
+            paste("num_modes =", num_modes),       # 生成10个构象
+            paste("energy_range =", energy_range),    # 能量范围
+            paste("exhaustiveness =", exhaustiveness)   # 搜索强度
         ),
         config_file
     )
@@ -162,6 +167,8 @@ const autodock_vina <- function(prot_pdb, ligand_pdb,
 
     message("Molecular docking completed successfully.")
 
-    # 清理：可以选择删除临时文件，但暂时保留以供调试
-    # unlink(temp_dir, recursive = TRUE)
+    if (isTRUE(as.logical(make_cleanup ))) {
+      # 清理：可以选择删除临时文件，但暂时保留以供调试
+      unlink(temp_dir, recursive = TRUE);
+    }
 }
