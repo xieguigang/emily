@@ -1,20 +1,23 @@
-autodock_vina <- function(prot_pdb, ligand_pdb, complex_pdb, score_txt) {
-
-    # 加载必要的R包
-    if (!requireNamespace("tools", quietly = TRUE)) {
-        stop("Required package 'tools' is not installed.")
-    }
-
-    # 定义MGLTools和AutoDock Vina的安装路径（根据用户设置）
-    mgltools_dir <- "/opt/mgltools"
-    autodock_vina_dir <- "/opt/autodock"
+#' Run protein and ligand molecule docking via autodock vina commandline
+#' 
+#' @param prot_pdb the pdb file path of the protein
+#' @param ligand_pdb the pdb file path of the ligand metabolite
+#' @param complex_pdb the pdb file path of the output top1 best protein complex
+#' @param score_txt the file path of the output top1 scoring details 
+#' 
+const autodock_vina <- function(prot_pdb, ligand_pdb, 
+                                complex_pdb = "./complex.pdb", 
+                                score_txt = "./score.pdb", 
+                                mgltools_dir = "/opt/mgltools", 
+                                autodock_vina_dir = "/opt/autodock") {
 
     # 构建MGLTools实用工具脚本的完整路径
-    prepare_receptor <- file.path(mgltools_dir, "MGLToolsPckgs/AutoDockTools/Utilities24/prepare_receptor4.py")
-    prepare_ligand <- file.path(mgltools_dir, "MGLToolsPckgs/AutoDockTools/Utilities24/prepare_ligand4.py")
+    mgltools_dir <- file.path(mgltools_dir, "MGLToolsPckgs/AutoDockTools/Utilities24");
+    prepare_receptor <- file.path(mgltools_dir, "prepare_receptor4.py");
+    prepare_ligand <- file.path(mgltools_dir, "prepare_ligand4.py");
 
     # 定义Vina可执行文件的路径
-    vina_exe <- file.path(autodock_vina_dir, "vina")
+    vina_exe <- file.path(autodock_vina_dir, "vina");
 
     # 检查必要工具是否存在
     if (!file.exists(prepare_receptor)) {
@@ -104,7 +107,7 @@ autodock_vina <- function(prot_pdb, ligand_pdb, complex_pdb, score_txt) {
             "size_z = 25.0",
             "num_modes = 10",       # 生成10个构象
             "energy_range = 4",    # 能量范围
-            "exhaustiveness = 8"   # 搜索强度[7](@ref)
+            "exhaustiveness = 8"   # 搜索强度
         ),
         config_file
     )
