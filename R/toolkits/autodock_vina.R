@@ -139,9 +139,9 @@ const autodock_vina = function(prot_pdb, ligand_pdb,
         "-U", "nphs_lps_waters" # 删除非极性氢、配体和水分子
     );
     let receptor_status <- system(receptor_cmd, ignore.stdout = TRUE, ignore.stderr = FALSE);
-    if (receptor_status != 0) {
-        stop("Failed to prepare receptor PDBQT file. Command: ", receptor_cmd);
-    }
+    # if (receptor_status != 0) {
+    #     stop("Failed to prepare receptor PDBQT file. Command: ", receptor_cmd);
+    # }
     if (!file.exists(prot_pdbqt)) {
         stop("Failed to generate receptor PDBQT file: ", prot_pdbqt);
     }
@@ -157,9 +157,9 @@ const autodock_vina = function(prot_pdb, ligand_pdb,
         "-U", "nphs_lps" # 删除非极性氢和配体
     );
     let ligand_status <- system(ligand_cmd, ignore.stdout = TRUE, ignore.stderr = FALSE);
-    if (ligand_status != 0) {
-        stop("Failed to prepare ligand PDBQT file. Command: ", ligand_cmd);
-    }
+    # if (ligand_status != 0) {
+    #     stop("Failed to prepare ligand PDBQT file. Command: ", ligand_cmd);
+    # }
     if (!file.exists(ligand_pdbqt)) {
         stop("Failed to generate ligand PDBQT file: ", ligand_pdbqt);
     }
@@ -171,7 +171,7 @@ const autodock_vina = function(prot_pdb, ligand_pdb,
         message("Calculating docking box center as protein centroid...");
         let con <- file(prot_pdb, "r");
         let coords <- list(x = numeric(), y = numeric(), z = numeric());
-        
+
         while (length(line <- readLines(con, n = 1)) > 0) {
             if (startsWith(line, "ATOM") || startsWith(line, "HETATM")) {
                 let x_str <- substr(line, 31, 38);
