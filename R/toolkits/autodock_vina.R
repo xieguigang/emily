@@ -171,6 +171,7 @@ const autodock_vina = function(prot_pdb, ligand_pdb,
         message("Calculating docking box center as protein centroid...");
         let con <- file(prot_pdb, "r");
         let coords <- list(x = numeric(), y = numeric(), z = numeric());
+        
         while (length(line <- readLines(con, n = 1)) > 0) {
             if (startsWith(line, "ATOM") || startsWith(line, "HETATM")) {
                 let x_str <- substr(line, 31, 38);
@@ -179,14 +180,16 @@ const autodock_vina = function(prot_pdb, ligand_pdb,
                 if (grepl("^[-+]?[0-9]*\\.?[0-9]+([eE][-+]?[0-9]+)?$", x_str) &&
                     grepl("^[-+]?[0-9]*\\.?[0-9]+([eE][-+]?[0-9]+)?$", y_str) &&
                     grepl("^[-+]?[0-9]*\\.?[0-9]+([eE][-+]?[0-9]+)?$", z_str)) {
-                  let x_val <- as.numeric(x_str);
-                  let y_val <- as.numeric(y_str);
-                  let z_val <- as.numeric(z_str);
-                  if (!is.na(x_val) && !is.na(y_val) && !is.na(z_val)) {
-                    coords$x <- c(coords$x, x_val);
-                    coords$y <- c(coords$y, y_val);
-                    coords$z <- c(coords$z, z_val);
-                  }
+
+                    let x_val <- as.numeric(x_str);
+                    let y_val <- as.numeric(y_str);
+                    let z_val <- as.numeric(z_str);
+
+                    if (!is.na(x_val) && !is.na(y_val) && !is.na(z_val)) {
+                        coords$x <- c(coords$x, x_val);
+                        coords$y <- c(coords$y, y_val);
+                        coords$z <- c(coords$z, z_val);
+                    }
                 }
             }
         }
