@@ -1,0 +1,125 @@
+﻿.TH AUTODOCK_VINA 1 2025-Sep "" "Run Molecular Docking with AutoDock Vina"
+.SH NAME
+autodock_vina \- autodock_vina(prot.pdb, ligand.pdb,
+    <i>complex.pdb</i> = <span style='color: brown;'><strong>'./complex.pdb'</strong></span>,
+    <i>score.txt</i> = <span style='color: brown;'><strong>'./score.txt'</strong></span>,
+    <i>center</i> = <span style='color: blue !important;'>NULL</span>,
+    <i>size</i> = 'c'(25, 25, 25),
+    <i>num.modes</i> = <span style='color: green;'>10</span>,
+    <i>energy.range</i> = <span style='color: green;'>4</span>,
+    <i>exhaustiveness</i> = <span style='color: green;'>8</span>,
+    <i>cpu</i> = <span style='color: green;'>1</span>,
+    <i>seed</i> = <span style='color: blue !important;'>NULL</span>,
+    <i>mgltools.dir</i> = <span style='color: brown;'><strong>'/opt/mgltools'</strong></span>,
+    <i>autodock.vina.dir</i> = <span style='color: brown;'><strong>'/opt/autodock_vina'</strong></span>,
+    <i>make.cleanup</i> = <span style='color: blue !important;'>FALSE</span>)
+.SH SYNOPSIS
+\fIautodock_vina(prot.pdb, ligand.pdb,
+    <i>complex.pdb</i> = <span style='color: brown;'><strong>'./complex.pdb'</strong></span>,
+    <i>score.txt</i> = <span style='color: brown;'><strong>'./score.txt'</strong></span>,
+    <i>center</i> = <span style='color: blue !important;'>NULL</span>,
+    <i>size</i> = 'c'(25, 25, 25),
+    <i>num.modes</i> = <span style='color: green;'>10</span>,
+    <i>energy.range</i> = <span style='color: green;'>4</span>,
+    <i>exhaustiveness</i> = <span style='color: green;'>8</span>,
+    <i>cpu</i> = <span style='color: green;'>1</span>,
+    <i>seed</i> = <span style='color: blue !important;'>NULL</span>,
+    <i>mgltools.dir</i> = <span style='color: brown;'><strong>'/opt/mgltools'</strong></span>,
+    <i>autodock.vina.dir</i> = <span style='color: brown;'><strong>'/opt/autodock_vina'</strong></span>,
+    <i>make.cleanup</i> = <span style='color: blue !important;'>FALSE</span>)\fR
+.SH DESCRIPTION
+.PP
+This function performs protein-ligand molecular docking using AutoDock Vina
+on a Linux system. It handles preparation of receptor and ligand PDB files
+into PDBQT format, configuration of the docking box, execution of Vina,
+and extraction of the top-scoring pose.
+.PP
+.SH OPTIONS
+.PP
+\fBprot.pdb\fB \fR\- . 
+.PP
+.PP
+\fBligand.pdb\fB \fR\- . 
+.PP
+.PP
+\fBcomplex.pdb\fB \fR\- './complex.pdb'. 
+.PP
+.PP
+\fBscore.txt\fB \fR\- './score.txt'. 
+.PP
+.PP
+\fBcenter\fB \fR\- NULL. Numeric vector of length 3. (x, y, z) coordinates for the center of the docking box in Angstroms. If NULL (default), the centroid of the protein is used. Providing explicit coordinates is strongly recommended for accurate docking[1,7](@ref).
+.PP
+.PP
+\fBsize\fB \fR\- 'c'(25, 25, 25). Numeric vector of length 3. Size of the docking box in Angstroms (x, y, z dimensions). Default: c(25, 25, 25)
+.PP
+.PP
+\fBnum.modes\fB \fR\- 10. 
+.PP
+.PP
+\fBenergy.range\fB \fR\- 4. 
+.PP
+.PP
+\fBexhaustiveness\fB \fR\- 8. Integer. Exhaustiveness of the global search. Higher values may improve results but increase computation time. Typical range: 8-32[9](@ref). Default: 8
+.PP
+.PP
+\fBcpu\fB \fR\- 1. Integer. Number of CPU cores to use. Default: 1
+.PP
+.PP
+\fBseed\fB \fR\- NULL. Integer. Random seed. Use for reproducible results. Default: NULL (uses Vina default)
+.PP
+.PP
+\fBmgltools.dir\fB \fR\- '/opt/mgltools'. 
+.PP
+.PP
+\fBautodock.vina.dir\fB \fR\- '/opt/autodock_vina'. 
+.PP
+.PP
+\fBmake.cleanup\fB \fR\- FALSE. 
+.PP
+.SH VALUE
+.PP
+Invisible NULL. The function writes two output files: the top-scoring complex structure (`complex_pdb`) and a text file containing docking scores (`score_txt`).
+.PP
+.SH DETAILS
+.PP
+The function performs the following steps:
+\enumerate{
+\item Prepares the receptor PDB file into PDBQT format using `prepare_receptor4.py` from MGLTools.
+\item Prepares the ligand PDB file into PDBQT format using `prepare_ligand4.py` from MGLTools.
+\item Estimates the docking box center (if not provided) by calculating the centroid of all protein atoms.
+\item Writes a Vina configuration file.
+\item Executes AutoDock Vina.
+\item Parses the output to extract the top-scoring pose and saves it as a PDB file.
+\item Saves the docking scores to a text file.
+}
+.PP
+.SH EXAMPLES
+.PP
+#\dontrun{
+
+# Using protein centroid as box center (not always recommended)
+autodock_vina(
+prot_pdb = "protein.pdb",
+ligand_pdb = "ligand.pdb",
+complex_pdb = "best_complex.pdb",
+score_txt = "docking_scores.txt"
+)
+# Providing explicit box center coordinates (recommended)
+autodock_vina(
+prot_pdb = "protein.pdb",
+ligand_pdb = "ligand.pdb",
+center = c(10.5, 22.3, 18.7), # Coordinates based on known binding site
+size = c(20, 20, 20),
+exhaustiveness = 16,
+cpu = 4
+)
+
+#}
+.PP
+.SH FILES
+.PP
+SMRUCC/R#.declare_function.autodock_vina at autodock_vina.R:line 75
+.PP
+.SH COPYRIGHT
+Copyright © Who wrote it, What license is it under? Licensed 2025

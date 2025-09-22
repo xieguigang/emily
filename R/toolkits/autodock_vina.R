@@ -120,9 +120,9 @@ const autodock_vina = function(prot_pdb, ligand_pdb,
     dir.create(temp_dir, recursive = TRUE);
     let orig_wd <- getwd();
     on.exit({
-        setwd(orig_wd)
+        setwd(orig_wd);
         if (make_cleanup) {
-            unlink(temp_dir, recursive = TRUE)
+            unlink(temp_dir, recursive = TRUE);
         }
     }, add = TRUE);
     setwd(temp_dir);

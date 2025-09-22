@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Run Molecular Docking with AutoDock Vina</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+    <link rel="stylesheet" type="text/css" href="../../_assets/page.css">
+</head>
+
+<body>
+    <div class="container">
+
+        <table style="width: 100%;">
+            <tr>
+                <td>autodock_vina {emily}</td>
+                <td style="text-align: right;">R Documentation</td>
+            </tr>
+        </table>
+
+        <h2>Run Molecular Docking with AutoDock Vina</h2>
+
+        <h3>Description</h3>
+
+        <p>This function performs protein-ligand molecular docking using AutoDock Vina
+on a Linux system. It handles preparation of receptor and ligand PDB files
+into PDBQT format, configuration of the docking box, execution of Vina,
+and extraction of the top-scoring pose.</p>
+
+        <h3>Usage</h3>
+
+        <div style="width: 100%; padding-left: 3%; color: black;">
+            <pre><code class='language-R' style="color: black; font-weight:normal;"><strong>autodock_vina</strong>(<i>prot.pdb</i>, <i>ligand.pdb</i>,
+    <i>complex.pdb</i> = <span style='color: brown;'><strong>'./complex.pdb'</strong></span>,
+    <i>score.txt</i> = <span style='color: brown;'><strong>'./score.txt'</strong></span>,
+    <i>center</i> = <span style='color: blue !important;'>NULL</span>,
+    <i>size</i> = 'c'(25, 25, 25),
+    <i>num.modes</i> = <span style='color: green;'>10</span>,
+    <i>energy.range</i> = <span style='color: green;'>4</span>,
+    <i>exhaustiveness</i> = <span style='color: green;'>8</span>,
+    <i>cpu</i> = <span style='color: green;'>1</span>,
+    <i>seed</i> = <span style='color: blue !important;'>NULL</span>,
+    <i>mgltools.dir</i> = <span style='color: brown;'><strong>'/opt/mgltools'</strong></span>,
+    <i>autodock.vina.dir</i> = <span style='color: brown;'><strong>'/opt/autodock_vina'</strong></span>,
+    <i>make.cleanup</i> = <span style='color: blue !important;'>FALSE</span>);</code></pre>
+        </div>
+
+        <h3>Arguments</h3>
+
+        <table>
+            
+<dt>prot.pdb</dt>
+<dd><p><p>Character string. Path to the receptor protein PDB file.</p></p></dd>
+
+
+<dt>ligand.pdb</dt>
+<dd><p><p>Character string. Path to the ligand molecule PDB file.</p></p></dd>
+
+
+<dt>complex.pdb</dt>
+<dd><p><p>Character string. Output path for the top-scoring complex (PDB format). Default: './complex.pdb'</p></p></dd>
+
+
+<dt>score.txt</dt>
+<dd><p><p>Character string. Output path for the docking scores. Default: './score.txt'</p></p></dd>
+
+
+<dt>center</dt>
+<dd><p><p>Numeric vector of length 3. (x, y, z) coordinates for the center of the docking box in Angstroms. If NULL (default), the centroid of the protein is used. Providing explicit coordinates is strongly recommended for accurate docking<a href='@ref' title='1,7'>1,7</a>.</p></p></dd>
+
+
+<dt>size</dt>
+<dd><p><p>Numeric vector of length 3. Size of the docking box in Angstroms (x, y, z dimensions). Default: c(25, 25, 25)</p></p></dd>
+
+
+<dt>num.modes</dt>
+<dd><p><p>Integer. Maximum number of binding modes to generate. Default: 10</p></p></dd>
+
+
+<dt>energy.range</dt>
+<dd><p><p>Numeric. Energy range (in kcal/mol) above the best mode to output. Default: 4</p></p></dd>
+
+
+<dt>exhaustiveness</dt>
+<dd><p><p>Integer. Exhaustiveness of the global search. Higher values may improve results but increase computation time. Typical range: 8-32<a href='@ref' title='9'>9</a>. Default: 8</p></p></dd>
+
+
+<dt>cpu</dt>
+<dd><p><p>Integer. Number of CPU cores to use. Default: 1</p></p></dd>
+
+
+<dt>seed</dt>
+<dd><p><p>Integer. Random seed. Use for reproducible results. Default: NULL (uses Vina default)</p></p></dd>
+
+
+<dt>mgltools.dir</dt>
+<dd><p><p>Character string. Path to the MGLTools directory. Default: '/opt/mgltools'</p></p></dd>
+
+
+<dt>autodock.vina.dir</dt>
+<dd><p><p>Character string. Path to the AutoDock Vina directory. Default: '/opt/autodock'</p></p></dd>
+
+
+<dt>make.cleanup</dt>
+<dd><p><p>Logical. Should temporary files be removed after completion? Default: FALSE</p></p></dd>
+
+        </table>
+
+
+        <h3 style="display: block;">Details</h3>
+
+        <p>The function performs the following steps:
+\enumerate{
+\item Prepares the receptor PDB file into PDBQT format using `prepare_receptor4.py` from MGLTools.
+\item Prepares the ligand PDB file into PDBQT format using `prepare_ligand4.py` from MGLTools.
+\item Estimates the docking box center (if not provided) by calculating the centroid of all protein atoms.
+\item Writes a Vina configuration file.
+\item Executes AutoDock Vina.
+\item Parses the output to extract the top-scoring pose and saves it as a PDB file.
+\item Saves the docking scores to a text file.
+}</p>
+
+        <h3 style="display: block">Authors</h3>
+
+        Who wrote it
+
+        <h3>Value</h3>
+
+        <p>Invisible NULL. The function writes two output files: the top-scoring complex structure (`complex<em>pdb`) and a text file containing docking scores (`score</em>txt`).</p>
+
+        <h3 style="display: block;">Examples</h3>
+
+        <pre><code id="example_r">#\dontrun{
+
+# Using protein centroid as box center (not always recommended)
+autodock_vina(
+prot_pdb = "protein.pdb",
+ligand_pdb = "ligand.pdb",
+complex_pdb = "best_complex.pdb",
+score_txt = "docking_scores.txt"
+)
+# Providing explicit box center coordinates (recommended)
+autodock_vina(
+prot_pdb = "protein.pdb",
+ligand_pdb = "ligand.pdb",
+center = c(10.5, 22.3, 18.7), # Coordinates based on known binding site
+size = c(20, 20, 20),
+exhaustiveness = 16,
+cpu = 4
+)
+
+#}</code></pre>
+
+        <hr />
+        <div style="text-align: center;">[Package <em>emily</em> version 0.1.0 <a
+                href="../emily.html">Index</a>]
+        </div>
+    </div>
+</body>
+
+<script type="text/javascript" src="../../_assets/R_syntax.js"></script>
+<script type="text/javascript" src="../../_assets/highlights.js"></script>
+<script type="text/javascript">r_highlights("example_r");</script>
+
+</html>

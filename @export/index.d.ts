@@ -9,6 +9,21 @@ declare namespace emily {
       function onLoad(): object;
    }
    /**
+     * @param complex_pdb default value Is ``./complex.pdb``.
+     * @param score_txt default value Is ``./score.txt``.
+     * @param center default value Is ``null``.
+     * @param size default value Is ``Call "c"(25, 25, 25)``.
+     * @param num_modes default value Is ``10``.
+     * @param energy_range default value Is ``4``.
+     * @param exhaustiveness default value Is ``8``.
+     * @param cpu default value Is ``1``.
+     * @param seed default value Is ``null``.
+     * @param mgltools_dir default value Is ``/opt/mgltools``.
+     * @param autodock_vina_dir default value Is ``/opt/autodock_vina``.
+     * @param make_cleanup default value Is ``false``.
+   */
+   function autodock_vina(prot_pdb: any, ligand_pdb: any, complex_pdb?: any, score_txt?: any, center?: any, size?: any, num_modes?: any, energy_range?: any, exhaustiveness?: any, cpu?: any, seed?: any, mgltools_dir?: any, autodock_vina_dir?: any, make_cleanup?: any): object;
+   /**
    */
    function mark_sur(zdock: any, i: any, o: any): object;
    /**
