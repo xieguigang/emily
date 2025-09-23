@@ -74,7 +74,7 @@
 #' @family molecular docking
 const autodock_vina = function(prot_pdb, ligand_pdb, 
                                complex_pdb = "./complex.pdb", 
-                               score_txt = "./score.txt", 
+                               score_txt = "./vina_score.txt", 
                                center = NULL,
                                size = c(25.0, 25.0, 25.0),
                                num_modes = 10,
@@ -283,27 +283,12 @@ const autodock_vina = function(prot_pdb, ligand_pdb,
 
     # 6. 处理对接结果
     message("Processing results...");
-    let log_content <- readLines(log_file);
-    let score_lines <- grep("^.*mode.*affinity.*$", log_content, value = TRUE, ignore.case = TRUE);
-    if (length(score_lines) == 0) {
-        warning("No score lines found in the Vina log file: ", log_file);
-    } else {
-        writeLines(score_lines, score_txt);
-        message("Scores written to: ", score_txt);
-    }
 
+    let vina_score = readLines(log_file) |> vina_score_parser(n = num_modes);
     let pdbqt_content <- readLines(output_pdbqt);
-    let model_starts <- grep("^MODEL", pdbqt_content);
-    let model_ends <- grep("^ENDMDL", pdbqt_content);
-    if (length(model_starts) > 0 && length(model_ends) > 0) {
-        let top1_start <- model_starts[1];
-        let top1_end <- model_ends[1];
-        let top1_lines <- pdbqt_content[top1_start:top1_end];
-        writeLines(top1_lines, complex_pdb);
-        message("Top1 complex structure written to: ", complex_pdb);
-    } else {
-        stop("No models (MODEL/ENDMDL sections) found in the docking output: ", output_pdbqt);
-    }
+
+    write.csv(vina_score, file = score_txt, tsv = TRUE);
+
     message("Molecular docking completed successfully.");
 
     invisible(NULL);
@@ -334,7 +319,13 @@ const vina_score_parser = function(vina, n) {
     # 8         -6.0      5.171      7.553
     # 9         -5.9     12.712     15.830
     # 10        -5.8     20.012     22.990
-    score_table = lapply(score_table, line_str -> line_str |> strsplit("\s+", fixed = FALSE) |> skip(1) |> as.numeric());
+    score_table <- lapply(score_table, function(line_str) {
+        line_str 
+        |> strsplit("\s+", fixed = FALSE) 
+        |> skip(1) 
+        |> as.numeric()
+        ;
+    });
     score_table = data.frame(
         row.names = sprintf("#%s", score_table@{1}),
         "affinity(kcal/mol)" = score_table@{2},
