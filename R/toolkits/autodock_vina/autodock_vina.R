@@ -274,9 +274,7 @@ const autodock_vina = function(prot_pdb, ligand_pdb,
     }
 
     let vina_status <- system2(vina_exe, vina_cmd, verbose = TRUE);
-    # if (vina_status != 0) {
-    #     stop("AutoDock Vina docking failed. Check the log for errors. Command: ", vina_cmd);
-    # }
+
     if (!file.exists(output_pdbqt)) {
         stop("AutoDock Vina did not generate the expected output file: ", output_pdbqt);
     }
