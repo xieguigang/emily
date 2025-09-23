@@ -84,6 +84,7 @@ const autodock_vina = function(prot_pdb, ligand_pdb,
                                seed = NULL,
                                mgltools_dir = "/opt/mgltools", 
                                autodock_vina_dir = "/opt/autodock_vina", 
+                               temp_dir = tempfile("vina_dock_"),
                                make_cleanup = FALSE) {
 
     # 构建MGLTools实用工具脚本的完整路径
@@ -114,17 +115,18 @@ const autodock_vina = function(prot_pdb, ligand_pdb,
     if (!file.exists(ligand_pdb)) {
         stop("Ligand PDB file not found: ", ligand_pdb);
     }
-
     # 为临时文件创建唯一的工作目录
-    let temp_dir <- tempfile("vina_dock_");
     dir.create(temp_dir, recursive = TRUE);
+
     let orig_wd <- getwd();
+    
     on.exit({
         setwd(orig_wd);
         if (make_cleanup) {
             unlink(temp_dir, recursive = TRUE);
         }
     }, add = TRUE);
+
     setwd(temp_dir);
 
     # 1. 准备受体（蛋白质）
@@ -168,41 +170,17 @@ const autodock_vina = function(prot_pdb, ligand_pdb,
 
     # 3. 确定对接盒子中心
     if (is.null(center)) {
-        message("Calculating docking box center as protein centroid...");
-        let con <- file(prot_pdb, "r");
-        let coords <- list(x = numeric(), y = numeric(), z = numeric());
-
-        while (length(line <- readLines(con, n = 1)) > 0) {
-            if (startsWith(line, "ATOM") || startsWith(line, "HETATM")) {
-                let x_str <- substr(line, 31, 38);
-                let y_str <- substr(line, 39, 46);
-                let z_str <- substr(line, 47, 54);
-                if (grepl("^[-+]?[0-9]*\\.?[0-9]+([eE][-+]?[0-9]+)?$", x_str) &&
-                    grepl("^[-+]?[0-9]*\\.?[0-9]+([eE][-+]?[0-9]+)?$", y_str) &&
-                    grepl("^[-+]?[0-9]*\\.?[0-9]+([eE][-+]?[0-9]+)?$", z_str)) {
-
-                    let x_val <- as.numeric(x_str);
-                    let y_val <- as.numeric(y_str);
-                    let z_val <- as.numeric(z_str);
-
-                    if (!is.na(x_val) && !is.na(y_val) && !is.na(z_val)) {
-                        coords$x <- c(coords$x, x_val);
-                        coords$y <- c(coords$y, y_val);
-                        coords$z <- c(coords$z, z_val);
-                    }
-                }
-            }
-        }
-        close(con);
-        if (length(coords$x) == 0) {
-            stop("No valid coordinate data found in the receptor PDB file: ", prot_pdb);
-        }
-        center_x <- mean(coords$x, na.rm = TRUE);
-        center_y <- mean(coords$y, na.rm = TRUE);
-        center_z <- mean(coords$z, na.rm = TRUE);
+        message("Calculating docking box center as protein centroid...");        
         
-        center <- c(center_x, center_y, center_z);
+        center = prot_pdb 
+        |> read.pdb() 
+        |> pdb_centroid(as.vector = TRUE)
+        ;
 
+        center_x <- center[1];
+        center_y <- center[2];
+        center_z <- center[3];
+        
         message(sprintf("Calculated center: x=%.3f, y=%.3f, z=%.3f", center_x, center_y, center_z));
     } else {
         if (length(center) != 3) {
