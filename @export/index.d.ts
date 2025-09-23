@@ -20,9 +20,10 @@ declare namespace emily {
      * @param seed default value Is ``null``.
      * @param mgltools_dir default value Is ``/opt/mgltools``.
      * @param autodock_vina_dir default value Is ``/opt/autodock_vina``.
+     * @param temp_dir default value Is ``Call "tempfile"("vina_dock_")``.
      * @param make_cleanup default value Is ``false``.
    */
-   function autodock_vina(prot_pdb: any, ligand_pdb: any, complex_pdb?: any, score_txt?: any, center?: any, size?: any, num_modes?: any, energy_range?: any, exhaustiveness?: any, cpu?: any, seed?: any, mgltools_dir?: any, autodock_vina_dir?: any, make_cleanup?: any): object;
+   function autodock_vina(prot_pdb: any, ligand_pdb: any, complex_pdb?: any, score_txt?: any, center?: any, size?: any, num_modes?: any, energy_range?: any, exhaustiveness?: any, cpu?: any, seed?: any, mgltools_dir?: any, autodock_vina_dir?: any, temp_dir?: any, make_cleanup?: any): object;
    /**
    */
    function mark_sur(zdock: any, i: any, o: any): object;

@@ -12,6 +12,7 @@ autodock_vina \- autodock_vina(prot.pdb, ligand.pdb,
     <i>seed</i> = <span style='color: blue !important;'>NULL</span>,
     <i>mgltools.dir</i> = <span style='color: brown;'><strong>'/opt/mgltools'</strong></span>,
     <i>autodock.vina.dir</i> = <span style='color: brown;'><strong>'/opt/autodock_vina'</strong></span>,
+    <i>temp.dir</i> = 'tempfile'('vina_dock_'),
     <i>make.cleanup</i> = <span style='color: blue !important;'>FALSE</span>)
 .SH SYNOPSIS
 \fIautodock_vina(prot.pdb, ligand.pdb,
@@ -26,6 +27,7 @@ autodock_vina \- autodock_vina(prot.pdb, ligand.pdb,
     <i>seed</i> = <span style='color: blue !important;'>NULL</span>,
     <i>mgltools.dir</i> = <span style='color: brown;'><strong>'/opt/mgltools'</strong></span>,
     <i>autodock.vina.dir</i> = <span style='color: brown;'><strong>'/opt/autodock_vina'</strong></span>,
+    <i>temp.dir</i> = 'tempfile'('vina_dock_'),
     <i>make.cleanup</i> = <span style='color: blue !important;'>FALSE</span>)\fR
 .SH DESCRIPTION
 .PP
@@ -73,6 +75,9 @@ and extraction of the top-scoring pose.
 .PP
 .PP
 \fBautodock.vina.dir\fB \fR\- '/opt/autodock_vina'. 
+.PP
+.PP
+\fBtemp.dir\fB \fR\- 'tempfile'('vina_dock_'). 
 .PP
 .PP
 \fBmake.cleanup\fB \fR\- FALSE. 
