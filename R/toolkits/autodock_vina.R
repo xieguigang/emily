@@ -133,17 +133,15 @@ const autodock_vina = function(prot_pdb, ligand_pdb,
     message("Preparing receptor (protein)...");
     let prot_pdbqt <- file.path(temp_dir, "protein.pdbqt");
     # 使用pythonsh而不是python2
-    let receptor_cmd <- paste(
-        pythonsh_bin, prepare_receptor,
-        "-r", shQuote(prot_pdb),
-        "-o", shQuote(prot_pdbqt),
-        "-A", "hydrogens",
-        "-U", "nphs_lps_waters" # 删除非极性氢、配体和水分子
+    let receptor_cmd <- list(
+        prepare_receptor,
+        "-r" = shQuote(prot_pdb),
+        "-o" = shQuote(prot_pdbqt),
+        "-A" = "hydrogens",
+        "-U" = "nphs_lps_waters" # 删除非极性氢、配体和水分子
     );
-    let receptor_status <- system(receptor_cmd, ignore.stdout = TRUE, ignore.stderr = FALSE);
-    # if (receptor_status != 0) {
-    #     stop("Failed to prepare receptor PDBQT file. Command: ", receptor_cmd);
-    # }
+    let receptor_status <- system2(pythonsh_bin, receptor_cmd, verbose = TRUE);
+
     if (!file.exists(prot_pdbqt)) {
         stop("Failed to generate receptor PDBQT file: ", prot_pdbqt);
     }
@@ -151,17 +149,15 @@ const autodock_vina = function(prot_pdb, ligand_pdb,
     # 2. 准备配体（小分子）
     message("Preparing ligand...");
     let ligand_pdbqt <- file.path(temp_dir, "ligand.pdbqt");
-    let ligand_cmd <- paste(
-        pythonsh_bin, prepare_ligand,
-        "-l", shQuote(ligand_pdb),
-        "-o", shQuote(ligand_pdbqt),
-        "-A", "hydrogens",
-        "-U", "nphs_lps" # 删除非极性氢和配体
+    let ligand_cmd <- list(
+        prepare_ligand,
+        "-l" = shQuote(ligand_pdb),
+        "-o" = shQuote(ligand_pdbqt),
+        "-A" = "hydrogens",
+        "-U" = "nphs_lps" # 删除非极性氢和配体
     );
-    let ligand_status <- system(ligand_cmd, ignore.stdout = TRUE, ignore.stderr = FALSE);
-    # if (ligand_status != 0) {
-    #     stop("Failed to prepare ligand PDBQT file. Command: ", ligand_cmd);
-    # }
+    let ligand_status <- system2(pythonsh_bin, ligand_cmd, verbose = TRUE);
+
     if (!file.exists(ligand_pdbqt)) {
         stop("Failed to generate ligand PDBQT file: ", ligand_pdbqt);
     }
@@ -194,6 +190,7 @@ const autodock_vina = function(prot_pdb, ligand_pdb,
 
     # 4. 创建配置文件
     message("Configuring docking box...");
+
     let config_file <- file.path(temp_dir, "config.txt");
     let config_lines <- c(
         paste("receptor =", prot_pdbqt),
@@ -218,16 +215,68 @@ const autodock_vina = function(prot_pdb, ligand_pdb,
     message("Running AutoDock Vina...");
     let output_pdbqt <- file.path(temp_dir, "output.pdbqt");
     let log_file <- file.path(temp_dir, "vina_log.txt");
-    let vina_cmd <- paste(
-        shQuote(vina_exe),
-        "--config", shQuote(config_file),
-        "--out", shQuote(output_pdbqt),
-        "--log", shQuote(log_file)
+
+    # Input:
+    # --receptor arg        rigid part of the receptor (PDBQT)
+    # --flex arg            flexible side chains, if any (PDBQT)
+    # --ligand arg          ligand (PDBQT)
+
+    # Search space (required):
+    # --center_x arg        X coordinate of the center
+    # --center_y arg        Y coordinate of the center
+    # --center_z arg        Z coordinate of the center
+    # --size_x arg          size in the X dimension (Angstroms)
+    # --size_y arg          size in the Y dimension (Angstroms)
+    # --size_z arg          size in the Z dimension (Angstroms)
+
+    # Output (optional):
+    # --out arg             output models (PDBQT), the default is chosen based on
+    #                         the ligand file name
+    # --log arg             optionally, write log file
+
+    # Misc (optional):
+    # --cpu arg                 the number of CPUs to use (the default is to try to
+    #                             detect the number of CPUs or, failing that, use 1)
+    # --seed arg                explicit random seed
+    # --exhaustiveness arg (=8) exhaustiveness of the global search (roughly
+    #                             proportional to time): 1+
+    # --num_modes arg (=9)      maximum number of binding modes to generate
+    # --energy_range arg (=3)   maximum energy difference between the best binding
+    #                             mode and the worst one displayed (kcal/mol)
+
+    # Configuration file (optional):
+    # --config arg          the above options can be put here
+
+    # Information (optional):
+    # --help                display usage summary
+    # --help_advanced       display usage summary with advanced options
+    # --version             display program version
+
+    let vina_cmd <- list(
+        "--receptor" = prot_pdbqt,
+        "--ligand" = ligand_pdbqt,
+        "--center_x" = center_x,
+        "--center_y" = center_y,
+        "--center_z" = center_z,
+        "--size_x" = size[1],
+        "--size_y" = size[2],
+        "--size_z" = size[3],
+        "--out" = output_pdbqt,
+        "--log" = log_file,
+        "--cpu" = cpu,
+        "--num_modes" = num_modes,
+        "--energy_range" = energy_range,
+        "--exhaustiveness" = exhaustiveness
     );
-    let vina_status <- system(vina_cmd, ignore.stdout = FALSE, ignore.stderr = FALSE);
-    if (vina_status != 0) {
-        stop("AutoDock Vina docking failed. Check the log for errors. Command: ", vina_cmd);
+
+    if (!is.null( seed)) {
+        vina_cmd$"--seed" = seed;
     }
+
+    let vina_status <- system2(vina_exe, vina_cmd, verbose = TRUE);
+    # if (vina_status != 0) {
+    #     stop("AutoDock Vina docking failed. Check the log for errors. Command: ", vina_cmd);
+    # }
     if (!file.exists(output_pdbqt)) {
         stop("AutoDock Vina did not generate the expected output file: ", output_pdbqt);
     }
