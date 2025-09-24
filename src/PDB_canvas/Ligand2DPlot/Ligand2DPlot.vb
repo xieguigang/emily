@@ -6,7 +6,6 @@ Imports Microsoft.VisualBasic.Data.ChartPlots.Graphic.Canvas
 Imports Microsoft.VisualBasic.Data.ChartPlots.Graphic.Legend
 Imports Microsoft.VisualBasic.Data.ChartPlots.Plot3D.Device
 Imports Microsoft.VisualBasic.Imaging
-Imports Microsoft.VisualBasic.Imaging.d3js.scale
 Imports Microsoft.VisualBasic.Imaging.Drawing2D
 Imports Microsoft.VisualBasic.Imaging.Drawing2D.Text.Nudge
 Imports Microsoft.VisualBasic.Imaging.Drawing3D
@@ -98,7 +97,7 @@ Public Class Ligand2DPlot : Inherits Plot
     Private Function getAtomGroups() As IEnumerable(Of (atom As HETATM.HETATMRecord, (aa As AtomUnit, dist As Double)()))
         Dim hitSet As New List(Of (atom As HETATM.HETATMRecord, (aa As AtomUnit, dist As Double)()))
 
-        For Each atom As HETATM.HETATMRecord In hetAtoms
+        For Each atom As HETATM.HETATMRecord In hetAtoms.Where(Function(a) a.ElementSymbol <> "H")
             Dim filter = Me.atom.Atoms _
                 .Select(Function(a) (aa:=a, dist:=a.Location.DistanceTo(atom.XCoord, atom.YCoord, atom.ZCoord))) _
                 .Where(Function(a) a.dist < DistanceCutoff) _
@@ -147,8 +146,9 @@ Public Class Ligand2DPlot : Inherits Plot
         For Each link In connect
             For Each t2 In link.Value.AsCharacter
                 If atomIndex.ContainsKey(link.Key) AndAlso atomIndex.ContainsKey(t2) Then
-                    Call models.Add(New Plot3D.Device.Line(atomIndex(link.Key), atomIndex(t2)) With {
-                        .Stroke = linkStroke
+                    Call models.Add(New BondConnectionModel(atomIndex(link.Key), atomIndex(t2)) With {
+                        .Stroke = linkStroke,
+                        .type = 1
                     })
                 End If
             Next
@@ -161,11 +161,12 @@ Public Class Ligand2DPlot : Inherits Plot
     End Sub
 
     Private Sub CalculateEdgeModels(linkStroke As Pen, atomIndex As Dictionary(Of String, HETATM.HETATMRecord))
-        Dim connections = CovalentRadii.MeasureBonds(atomIndex.Values.ToArray).ToArray
+        Dim connections = CovalentRadii.MeasureBonds(atomIndex.Values.Where(Function(a) a.ElementSymbol <> "H").ToArray).ToArray
 
         For Each link As ConnectBond In connections
-            Call models.Add(New Plot3D.Device.Line(link.atom1, link.atom2) With {
-                .Stroke = linkStroke
+            Call models.Add(New BondConnectionModel(link.atom1, link.atom2) With {
+                .Stroke = linkStroke,
+                .type = link.bondType
             })
         Next
     End Sub
@@ -245,7 +246,12 @@ Public Class Ligand2DPlot : Inherits Plot
         Dim fontSize As New DoubleRange(FontSizeMin, FontSizeMax)
         Dim offset As New DoubleRange(0, orders.Length)
 
-        ' rendering line at first
+        ' rendering bond at first
+        For Each line In norm.OfType(Of BondConnectionModel)
+            Call line.Draw(g, canvas, scaleX, scaleY)
+        Next
+
+        ' then rendering the protein-ligand interaction
         For Each line In norm.OfType(Of Plot3D.Device.Line)
             Call line.Draw(g, canvas, scaleX, scaleY)
         Next
@@ -257,7 +263,9 @@ Public Class Ligand2DPlot : Inherits Plot
             Dim index As Integer = orders(i)
             Dim model As Element3D = norm(index)
 
-            If TypeOf model Is Plot3D.Device.Line Then
+            If TypeOf model Is Plot3D.Device.Line OrElse
+                TypeOf model Is BondConnectionModel Then
+
                 Continue For
             End If
 
