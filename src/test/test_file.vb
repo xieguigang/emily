@@ -17,7 +17,7 @@ Public Module test_file
     Sub Main()
         Call Microsoft.VisualBasic.Drawing.SkiaDriver.Register()
         Call test_vina.pdb_writer()
-        ' Call test2DDrawer()
+        Call test2DDrawer()
         ' Call testMetadata()
         ' Call testModelRender()
         ' Call testDrawer()
@@ -32,7 +32,7 @@ Public Module test_file
 
     Sub test2DDrawer()
         ' Dim pdb As PDB = PDB.Load("G:\emily\data\8qne.pdb")
-        Dim pdb As PDB = PDB.Load("F:/test_viewer/BioDeep_00000000001-1LPW.pdb")
+        Dim pdb As PDB = PDB.Load("G:\emily\data\8qne.pdb")
         Dim theme As New Theme With {.padding = "padding: 10% 10% 10% 10%;"}
 
         For Each ligand In pdb.ListLigands
