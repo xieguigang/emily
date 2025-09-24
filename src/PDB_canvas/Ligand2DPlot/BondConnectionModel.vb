@@ -57,6 +57,11 @@ Public Class BondConnectionModel : Inherits Line
 
             ' 计算主向量的长度
             Dim length As Single = CSng(Math.Sqrt(dx * dx + dy * dy))
+            Dim width As Single = pen.Width / (bondType + 1)
+
+            pen = New Pen(pen.Color, width) With {
+                .DashStyle = pen.DashStyle
+            }
 
             ' 如果长度为零，则两点重合，无法计算垂直方向，直接返回
             If length = 0 Then Return
