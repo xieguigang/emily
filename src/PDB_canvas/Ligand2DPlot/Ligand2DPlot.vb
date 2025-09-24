@@ -129,23 +129,20 @@ Public Class Ligand2DPlot : Inherits Plot
         Return ViewPoint
     End Function
 
-    Public Sub Build3DModel()
-        Dim connect As Dictionary(Of String, Integer()) = pdb.Conect _
-            .AsEnumerable _
-            .ToDictionary(Function(a) a.name,
-                          Function(a)
-                              Return a.value
-                          End Function)
+    Private Sub MakeEdgeModel()
         Dim atomIndex As Dictionary(Of String, HETATM.HETATMRecord) = hetAtoms _
             .GroupBy(Function(a) a.AtomNumber.ToString) _
             .ToDictionary(Function(a) a.Key,
                           Function(a)
                               Return a.First
                           End Function)
+        Dim connect As Dictionary(Of String, Integer()) = pdb.Conect _
+            .AsEnumerable _
+            .ToDictionary(Function(a) a.name,
+                          Function(a)
+                              Return a.value
+                          End Function)
         Dim linkStroke As New Pen(Color.Black, 30)
-        Dim ligandStroke As New Pen(Color.LightGray, 5) With {.DashStyle = DashStyle.Dash}
-
-        Call models.Clear()
 
         For Each link In connect
             For Each t2 In link.Value.AsCharacter
@@ -157,7 +154,28 @@ Public Class Ligand2DPlot : Inherits Plot
             Next
         Next
 
+        If models.IsNullOrEmpty Then
+            ' needs calculated based on the covalent radius
+            Call CalculateEdgeModels(linkStroke, atomIndex)
+        End If
+    End Sub
+
+    Private Sub CalculateEdgeModels(linkStroke As Pen, atomIndex As Dictionary(Of String, HETATM.HETATMRecord))
+        Dim connections = CovalentRadii.MeasureBonds(atomIndex.Values.ToArray).ToArray
+
+        For Each link As ConnectBond In connections
+            Call models.Add(New Plot3D.Device.Line(link.atom1, link.atom2) With {
+                .Stroke = linkStroke
+            })
+        Next
+    End Sub
+
+    Public Sub Build3DModel()
+        Dim ligandStroke As New Pen(Color.LightGray, 5) With {.DashStyle = DashStyle.Dash}
         Dim knn As (atom As HETATM.HETATMRecord, (aa As AtomUnit, dist As Double)())() = getAtomGroups().ToArray
+
+        Call models.Clear()
+        Call MakeEdgeModel()
 
         For Each atom As (atom As HETATM.HETATMRecord, (aa As AtomUnit, dist As Double)()) In knn
             Dim ligand As HETATM.HETATMRecord = atom.atom

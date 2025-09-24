@@ -16,6 +16,7 @@ Public Module test_file
 
     Sub Main()
         Call Microsoft.VisualBasic.Drawing.SkiaDriver.Register()
+        Call test_vina.test_pdbqt_render()
         Call test_parser.test_reader()
         Call test_vina.pdb_writer()
         Call test2DDrawer()
