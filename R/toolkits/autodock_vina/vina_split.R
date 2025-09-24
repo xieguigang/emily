@@ -1,5 +1,7 @@
-#' Commandline call of the autodock vina split
+#' extract models by the autodock vina split
 #' 
-const vina_split = function(result_pdbqt, scores) {
-        
+const split_pdbqt = function(scores, result_pdbqt) {
+    let models = vina_split(result_pdbqt |> readText());
+    print(models);    
+    scores;
 }

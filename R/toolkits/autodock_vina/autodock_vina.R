@@ -7,8 +7,6 @@
 #'
 #' @param prot_pdb Character string. Path to the receptor protein PDB file.
 #' @param ligand_pdb Character string. Path to the ligand molecule PDB file.
-#' @param complex_pdb Character string. Output path for the top-scoring complex (PDB format). Default: './complex.pdb'
-#' @param score_txt Character string. Output path for the docking scores. Default: './score.txt'
 #' @param center Numeric vector of length 3. (x, y, z) coordinates for the center of the docking box in Angstroms. If NULL (default), the centroid of the protein is used. Providing explicit coordinates is strongly recommended for accurate docking[1,7](@ref).
 #' @param size Numeric vector of length 3. Size of the docking box in Angstroms (x, y, z dimensions). Default: c(25, 25, 25)
 #' @param num_modes Integer. Maximum number of binding modes to generate. Default: 10
@@ -47,9 +45,7 @@
 #' # Using protein centroid as box center (not always recommended)
 #' autodock_vina(
 #'   prot_pdb = "protein.pdb",
-#'   ligand_pdb = "ligand.pdb",
-#'   complex_pdb = "best_complex.pdb",
-#'   score_txt = "docking_scores.txt"
+#'   ligand_pdb = "ligand.pdb"
 #' )
 #'
 #' # Providing explicit box center coordinates (recommended)
@@ -73,8 +69,6 @@
 #' @export
 #' @family molecular docking
 const autodock_vina = function(prot_pdb, ligand_pdb, 
-                               complex_pdb = "./complex.pdb", 
-                               score_txt = "./vina_score.txt", 
                                center = NULL,
                                size = c(25.0, 25.0, 25.0),
                                num_modes = 10,
@@ -282,14 +276,14 @@ const autodock_vina = function(prot_pdb, ligand_pdb,
     # 6. 处理对接结果
     message("Processing results...");
 
-    let vina_score = readLines(log_file) |> vina_score_parser(n = num_modes);
-    let pdbqt_content <- readLines(output_pdbqt);
-
-    write.csv(vina_score, file = score_txt, tsv = TRUE);
+    let vina_score = readLines(log_file) 
+        |> vina_score_parser(n = num_modes) 
+        |> split_pdbqt(output_pdbqt)
+        ;
 
     message("Molecular docking completed successfully.");
 
-    invisible(NULL);
+    return(vina_score);
 }
 
 
