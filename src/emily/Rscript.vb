@@ -84,4 +84,16 @@ Module Rscript
     Public Function parse_zdock(str As String) As ZDockOut
         Return ZDockOut.Parse(str)
     End Function
+
+    <ExportAPI("vina_split")>
+    Public Function vina_split(dock_pdbqt As String) As String()
+        Return dock_pdbqt _
+            .Matches("MODEL\s+\d+(.*?)ENDMDL") _
+            .Select(Function(pdbqt)
+                        Dim lines = pdbqt.LineTokens
+                        lines = lines.Skip(1).Take(lines.Length - 1).ToArray
+                        Return lines.JoinBy(vbCrLf)
+                    End Function) _
+            .ToArray
+    End Function
 End Module
