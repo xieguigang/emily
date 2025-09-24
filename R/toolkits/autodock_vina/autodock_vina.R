@@ -115,10 +115,14 @@ const autodock_vina = function(prot_pdb, ligand_pdb,
     print("Processing of the molecule docking in temp workdir:");
     print(temp_dir);
 
+    options(list.symbol_names = FALSE);
+
     let orig_wd <- getwd();
     
     on.exit({
+        options(list.symbol_names = TRUE);
         setwd(orig_wd);
+        
         if (make_cleanup) {
             unlink(temp_dir, recursive = TRUE);
         }
