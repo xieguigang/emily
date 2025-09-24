@@ -141,7 +141,8 @@ const autodock_vina = function(prot_pdb, ligand_pdb,
         "-A" = "hydrogens",
         "-U" = "nphs_lps_waters" # 删除非极性氢、配体和水分子
     );
-    let receptor_status <- system2(pythonsh_bin, receptor_cmd, verbose = TRUE);
+    
+    system2(pythonsh_bin, receptor_cmd, verbose = TRUE);
 
     print(`check processed protein model: ${prot_pdbqt}`);
 
@@ -159,7 +160,10 @@ const autodock_vina = function(prot_pdb, ligand_pdb,
         "-A" = "hydrogens",
         "-U" = "nphs_lps" # 删除非极性氢和配体
     );
-    let ligand_status <- system2(pythonsh_bin, ligand_cmd, verbose = TRUE);
+    
+    system2(pythonsh_bin, ligand_cmd, verbose = TRUE);
+
+    print(`check processed ligand model: ${ligand_pdbqt}`);
 
     if (!file.exists(ligand_pdbqt)) {
         stop("Failed to generate ligand PDBQT file: ", ligand_pdbqt);
