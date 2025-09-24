@@ -25,8 +25,22 @@ Module Rscript
         Return jsonstr.LoadJSON(Of RenderArguments)
     End Function
 
+    ''' <summary>
+    ''' 
+    ''' </summary>
+    ''' <param name="pdb"></param>
+    ''' <param name="ligand">
+    ''' this function will treated the given <paramref name="pdb"/> object as vina dock
+    ''' pdbqt object if this ligand reference is missing.
+    ''' </param>
+    ''' <param name="style"></param>
+    ''' <param name="size"></param>
+    ''' <param name="dpi"></param>
+    ''' <param name="env"></param>
+    ''' <returns></returns>
     <ExportAPI("draw_ligand2D")>
-    Public Function draw_ligand2d(pdb As PDB, ligand As Het.HETRecord,
+    Public Function draw_ligand2d(pdb As PDB,
+                                  Optional ligand As Het.HETRecord = Nothing,
                                   Optional style As RenderArguments = Nothing,
                                   <RRawVectorArgument>
                                   Optional size As Object = "3600,2400",
@@ -34,7 +48,7 @@ Module Rscript
                                   Optional env As Environment = Nothing) As Object
 
         Dim theme As New Theme With {.padding = "padding: 10% 10% 10% 10%;"}
-        Dim render As New Ligand2DPlot(pdb, ligand, theme)
+        Dim render As New Ligand2DPlot(pdb, If(ligand, CType(pdb.GetLigandReference, Het.HETRecord)), theme)
         Dim plotSize As String = InteropArgumentHelper.getSize(size, env, [default]:="3600,2400")
         Dim driver As Drivers = env.getDriver
 
