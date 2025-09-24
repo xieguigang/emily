@@ -111,6 +111,9 @@ const autodock_vina = function(prot_pdb, ligand_pdb,
     }
     # 为临时文件创建唯一的工作目录
     dir.create(temp_dir, recursive = TRUE);
+    
+    print("Processing of the molecule docking in temp workdir:");
+    print(temp_dir);
 
     let orig_wd <- getwd();
     
@@ -135,6 +138,8 @@ const autodock_vina = function(prot_pdb, ligand_pdb,
         "-U" = "nphs_lps_waters" # 删除非极性氢、配体和水分子
     );
     let receptor_status <- system2(pythonsh_bin, receptor_cmd, verbose = TRUE);
+
+    print(`check processed protein model: ${prot_pdbqt}`);
 
     if (!file.exists(prot_pdbqt)) {
         stop("Failed to generate receptor PDBQT file: ", prot_pdbqt);
