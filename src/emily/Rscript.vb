@@ -6,6 +6,7 @@ Imports Microsoft.VisualBasic.Imaging
 Imports Microsoft.VisualBasic.Imaging.Driver
 Imports Microsoft.VisualBasic.Scripting.MetaData
 Imports Microsoft.VisualBasic.Serialization.JSON
+Imports Microsoft.VisualBasic.Text
 Imports SMRUCC.genomics.Data.RCSB.PDB
 Imports SMRUCC.genomics.Data.RCSB.PDB.Keywords
 Imports SMRUCC.Rsharp.Runtime
@@ -90,7 +91,7 @@ Module Rscript
         Return dock_pdbqt _
             .Matches("MODEL\s+\d+(.*?)ENDMDL") _
             .Select(Function(pdbqt)
-                        Dim lines = pdbqt.LineTokens
+                        Dim lines = pdbqt.Trim(" "c, ASCII.TAB, ASCII.CR, ASCII.LF).LineTokens
                         lines = lines.Skip(1).Take(lines.Length - 1).ToArray
                         Return lines.JoinBy(vbCrLf)
                     End Function) _
