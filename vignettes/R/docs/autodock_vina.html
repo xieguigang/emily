@@ -31,8 +31,6 @@ and extraction of the top-scoring pose.</p>
 
         <div style="width: 100%; padding-left: 3%; color: black;">
             <pre><code class='language-R' style="color: black; font-weight:normal;"><strong>autodock_vina</strong>(<i>prot.pdb</i>, <i>ligand.pdb</i>,
-    <i>complex.pdb</i> = <span style='color: brown;'><strong>'./complex.pdb'</strong></span>,
-    <i>score.txt</i> = <span style='color: brown;'><strong>'./score.txt'</strong></span>,
     <i>center</i> = <span style='color: blue !important;'>NULL</span>,
     <i>size</i> = 'c'(25, 25, 25),
     <i>num.modes</i> = <span style='color: green;'>10</span>,
@@ -56,14 +54,6 @@ and extraction of the top-scoring pose.</p>
 
 <dt>ligand.pdb</dt>
 <dd><p><p>Character string. Path to the ligand molecule PDB file.</p></p></dd>
-
-
-<dt>complex.pdb</dt>
-<dd><p><p>Character string. Output path for the top-scoring complex (PDB format). Default: './complex.pdb'</p></p></dd>
-
-
-<dt>score.txt</dt>
-<dd><p><p>Character string. Output path for the docking scores. Default: './score.txt'</p></p></dd>
 
 
 <dt>center</dt>
@@ -136,9 +126,7 @@ and extraction of the top-scoring pose.</p>
 # Using protein centroid as box center (not always recommended)
 autodock_vina(
 prot_pdb = "protein.pdb",
-ligand_pdb = "ligand.pdb",
-complex_pdb = "best_complex.pdb",
-score_txt = "docking_scores.txt"
+ligand_pdb = "ligand.pdb"
 )
 # Providing explicit box center coordinates (recommended)
 autodock_vina(

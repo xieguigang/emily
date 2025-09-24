@@ -1,8 +1,6 @@
 ﻿.TH AUTODOCK_VINA 1 2025-Sep "" "Run Molecular Docking with AutoDock Vina"
 .SH NAME
 autodock_vina \- autodock_vina(prot.pdb, ligand.pdb,
-    <i>complex.pdb</i> = <span style='color: brown;'><strong>'./complex.pdb'</strong></span>,
-    <i>score.txt</i> = <span style='color: brown;'><strong>'./score.txt'</strong></span>,
     <i>center</i> = <span style='color: blue !important;'>NULL</span>,
     <i>size</i> = 'c'(25, 25, 25),
     <i>num.modes</i> = <span style='color: green;'>10</span>,
@@ -16,8 +14,6 @@ autodock_vina \- autodock_vina(prot.pdb, ligand.pdb,
     <i>make.cleanup</i> = <span style='color: blue !important;'>FALSE</span>)
 .SH SYNOPSIS
 \fIautodock_vina(prot.pdb, ligand.pdb,
-    <i>complex.pdb</i> = <span style='color: brown;'><strong>'./complex.pdb'</strong></span>,
-    <i>score.txt</i> = <span style='color: brown;'><strong>'./score.txt'</strong></span>,
     <i>center</i> = <span style='color: blue !important;'>NULL</span>,
     <i>size</i> = 'c'(25, 25, 25),
     <i>num.modes</i> = <span style='color: green;'>10</span>,
@@ -42,12 +38,6 @@ and extraction of the top-scoring pose.
 .PP
 .PP
 \fBligand.pdb\fB \fR\- . 
-.PP
-.PP
-\fBcomplex.pdb\fB \fR\- './complex.pdb'. 
-.PP
-.PP
-\fBscore.txt\fB \fR\- './score.txt'. 
 .PP
 .PP
 \fBcenter\fB \fR\- NULL. Numeric vector of length 3. (x, y, z) coordinates for the center of the docking box in Angstroms. If NULL (default), the centroid of the protein is used. Providing explicit coordinates is strongly recommended for accurate docking[1,7](@ref).
@@ -106,9 +96,7 @@ The function performs the following steps:
 # Using protein centroid as box center (not always recommended)
 autodock_vina(
 prot_pdb = "protein.pdb",
-ligand_pdb = "ligand.pdb",
-complex_pdb = "best_complex.pdb",
-score_txt = "docking_scores.txt"
+ligand_pdb = "ligand.pdb"
 )
 # Providing explicit box center coordinates (recommended)
 autodock_vina(
@@ -124,7 +112,7 @@ cpu = 4
 .PP
 .SH FILES
 .PP
-SMRUCC/R#.declare_function.autodock_vina at autodock_vina.R:line 75
+SMRUCC/R#.declare_function.autodock_vina at autodock_vina.R:line 71
 .PP
 .SH COPYRIGHT
 Copyright © Who wrote it, What license is it under? Licensed 2025

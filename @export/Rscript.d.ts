@@ -9,12 +9,27 @@
 */
 declare namespace Rscript {
    /**
-     * @param style default value Is ``null``.
-     * @param size default value Is ``'3600,2400'``.
-     * @param dpi default value Is ``120``.
-     * @param env default value Is ``null``.
+    * 
+    * 
+     * @param pdb -
+     * @param ligand this function will treated the given **`pdb`** object as vina dock
+     *  pdbqt object if this ligand reference is missing.
+     * 
+     * + default value Is ``null``.
+     * @param style -
+     * 
+     * + default value Is ``null``.
+     * @param size -
+     * 
+     * + default value Is ``'3600,2400'``.
+     * @param dpi -
+     * 
+     * + default value Is ``120``.
+     * @param env -
+     * 
+     * + default value Is ``null``.
    */
-   function draw_ligand2D(pdb: object, ligand: object, style?: object, size?: any, dpi?: object, env?: object): any;
+   function draw_ligand2D(pdb: object, ligand?: object, style?: object, size?: any, dpi?: object, env?: object): any;
    /**
      * @param size default value Is ``'3000,2100'``.
    */
@@ -29,4 +44,7 @@ declare namespace Rscript {
      * @param str -
    */
    function parse_zdock(str: string): object;
+   /**
+   */
+   function vina_split(dock_pdbqt: string): string;
 }

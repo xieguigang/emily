@@ -4,11 +4,33 @@
 draw_ligand2D \- 
 .SH SYNOPSIS
 \fIdraw_ligand2D(\fBpdb\fR as <generic> PDB, 
-\fBligand\fR as <generic> HETRecord, 
+\fBligand\fR as <generic> HETRecord = \fB<NULL>\fR, 
 \fBstyle\fR as <generic> RenderArguments = \fB<NULL>\fR, 
 \fBsize\fR as any = "3600,2400", 
 \fBdpi\fR as integer = 120, 
 [\fB<Environment>\fR]);\fR
+.SH OPTIONS
+.PP
+\fBpdb\fB \fR\- -. 
+.PP
+.PP
+\fBligand\fB \fR\- 
+ this function will treated the given **`pdb`** object as vina dock
+ pdbqt object if this ligand reference is missing.
+. 
+.PP
+.PP
+\fBstyle\fB \fR\- -. 
+.PP
+.PP
+\fBsize\fB \fR\- -. 
+.PP
+.PP
+\fBdpi\fB \fR\- -. 
+.PP
+.PP
+\fBenv\fB \fR\- -. 
+.PP
 .SH SEE ALSO
 Rscript
 .SH FILES

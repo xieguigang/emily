@@ -2,7 +2,7 @@
 <html>
 
 <head>
-    <title>draw_ligand2D</title>
+    <title></title>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
     <link rel="stylesheet" type="text/css" href="../../_assets/page.css">
@@ -18,16 +18,17 @@
             </tr>
         </table>
 
-        <h2>draw_ligand2D</h2>
+        <h2></h2>
 
         <h3>Description</h3>
 
-        draw_ligand2D
+        
 
         <h3>Usage</h3>
 
         <div style="width: 100%; padding-left: 3%; color: black;">
-            <pre><code class='language-R' style="color: black; font-weight:normal;"><strong>draw_ligand2D</strong>(<i>pdb</i>, <i>ligand</i>,
+            <pre><code class='language-R' style="color: black; font-weight:normal;"><strong>draw_ligand2D</strong>(<i>pdb</i>,
+    <i>ligand</i> = <span style='color: blue !important;'>NULL</span>,
     <i>style</i> = <span style='color: blue !important;'>NULL</span>,
     <i>size</i> = <span style='color: brown;'><strong>"3600,2400"</strong></span>,
     <i>dpi</i> = <span style='color: green;'>120</span>);</code></pre>
@@ -37,6 +38,30 @@
 
         <table>
             
+<dt>pdb</dt>
+<dd><p>[as <a href="/vignettes/clr/SMRUCC/genomics/Data/RCSB/PDB/PDB.html">PDB</a>]</p></dd>
+
+
+<dt>ligand</dt>
+<dd><p>this function will treated the given <strong>`pdb`</strong> object as vina dock
+ pdbqt object if this ligand reference is missing. [as <a href="/vignettes/clr/SMRUCC/genomics/Data/RCSB/PDB/Keywords/HETRecord.html">HETRecord</a>]</p></dd>
+
+
+<dt>style</dt>
+<dd><p>[as <a href="/vignettes/clr/Emily/PDB_Canvas/RenderArguments.html">RenderArguments</a>]</p></dd>
+
+
+<dt>size</dt>
+<dd><p>-</p></dd>
+
+
+<dt>dpi</dt>
+<dd><p>[as integer]</p></dd>
+
+
+<dt>env</dt>
+<dd><p>[as <a href="/vignettes/clr/SMRUCC/Rsharp/Runtime/Environment.html">Environment</a>]</p></dd>
+
         </table>
 
 
