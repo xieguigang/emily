@@ -142,7 +142,7 @@ const autodock_vina = function(prot_pdb, ligand_pdb,
         "-U" = "nphs_lps_waters" # 删除非极性氢、配体和水分子
     );
     
-    system2(pythonsh_bin, receptor_cmd, verbose = TRUE);
+    system2(pythonsh_bin, receptor_cmd, verbose = TRUE, shell = TRUE);
 
     print(`check processed protein model: ${prot_pdbqt}`);
 
@@ -161,7 +161,7 @@ const autodock_vina = function(prot_pdb, ligand_pdb,
         "-U" = "nphs_lps" # 删除非极性氢和配体
     );
     
-    system2(pythonsh_bin, ligand_cmd, verbose = TRUE);
+    system2(pythonsh_bin, ligand_cmd, verbose = TRUE, shell = TRUE);
 
     print(`check processed ligand model: ${ligand_pdbqt}`);
 
@@ -280,7 +280,7 @@ const autodock_vina = function(prot_pdb, ligand_pdb,
         vina_cmd$"--seed" = seed;
     }
 
-    let vina_status <- system2(vina_exe, vina_cmd, verbose = TRUE);
+    system2(vina_exe, vina_cmd, verbose = TRUE, shell = TRUE);
 
     if (!file.exists(output_pdbqt)) {
         stop("AutoDock Vina did not generate the expected output file: ", output_pdbqt);
