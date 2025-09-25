@@ -132,7 +132,7 @@ const autodock_vina = function(prot_pdb, ligand_pdb,
 
     # 1. 准备受体（蛋白质）
     message("Preparing receptor (protein)...");
-    let prot_pdbqt <- file.path(temp_dir, "protein.pdbqt");
+    let prot_pdbqt <- normalizePath(file.path(temp_dir, "protein.pdbqt"));
     # 使用pythonsh而不是python2
     let receptor_cmd <- list(
         prepare_receptor,
@@ -152,7 +152,7 @@ const autodock_vina = function(prot_pdb, ligand_pdb,
 
     # 2. 准备配体（小分子）
     message("Preparing ligand...");
-    let ligand_pdbqt <- file.path(temp_dir, "ligand.pdbqt");
+    let ligand_pdbqt <- normalizePath(file.path(temp_dir, "ligand.pdbqt"));
     let ligand_cmd <- list(
         prepare_ligand,
         "-l" = shQuote(ligand_pdb),
@@ -220,8 +220,8 @@ const autodock_vina = function(prot_pdb, ligand_pdb,
 
     # 5. 运行AutoDock Vina对接
     message("Running AutoDock Vina...");
-    let output_pdbqt <- file.path(temp_dir, "output.pdbqt");
-    let log_file <- file.path(temp_dir, "vina_log.txt");
+    let output_pdbqt <- normalizePath(file.path(temp_dir, "output.pdbqt"));
+    let log_file <- normalizePath(file.path(temp_dir, "vina_log.txt"));
 
     # Input:
     # --receptor arg        rigid part of the receptor (PDBQT)
