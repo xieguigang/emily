@@ -132,7 +132,7 @@ const autodock_vina = function(prot_pdb, ligand_pdb,
 
     # 1. 准备受体（蛋白质）
     message("Preparing receptor (protein)...");
-    let prot_pdbqt <- file.path(temp_dir, "protein.pdbqt");
+    let prot_pdbqt <- normalizePath(file.path(temp_dir, "protein.pdbqt"));
     # 使用pythonsh而不是python2
     let receptor_cmd <- list(
         prepare_receptor,
@@ -142,7 +142,7 @@ const autodock_vina = function(prot_pdb, ligand_pdb,
         "-U" = "nphs_lps_waters" # 删除非极性氢、配体和水分子
     );
     
-    system2(pythonsh_bin, receptor_cmd, verbose = TRUE);
+    system2(pythonsh_bin, receptor_cmd, verbose = TRUE, shell = TRUE);
 
     print(`check processed protein model: ${prot_pdbqt}`);
 
@@ -152,7 +152,7 @@ const autodock_vina = function(prot_pdb, ligand_pdb,
 
     # 2. 准备配体（小分子）
     message("Preparing ligand...");
-    let ligand_pdbqt <- file.path(temp_dir, "ligand.pdbqt");
+    let ligand_pdbqt <- normalizePath(file.path(temp_dir, "ligand.pdbqt"));
     let ligand_cmd <- list(
         prepare_ligand,
         "-l" = shQuote(ligand_pdb),
@@ -161,7 +161,7 @@ const autodock_vina = function(prot_pdb, ligand_pdb,
         "-U" = "nphs_lps" # 删除非极性氢和配体
     );
     
-    system2(pythonsh_bin, ligand_cmd, verbose = TRUE);
+    system2(pythonsh_bin, ligand_cmd, verbose = TRUE, shell = TRUE);
 
     print(`check processed ligand model: ${ligand_pdbqt}`);
 
@@ -220,8 +220,8 @@ const autodock_vina = function(prot_pdb, ligand_pdb,
 
     # 5. 运行AutoDock Vina对接
     message("Running AutoDock Vina...");
-    let output_pdbqt <- file.path(temp_dir, "output.pdbqt");
-    let log_file <- file.path(temp_dir, "vina_log.txt");
+    let output_pdbqt <- normalizePath(file.path(temp_dir, "output.pdbqt"));
+    let log_file <- normalizePath(file.path(temp_dir, "vina_log.txt"));
 
     # Input:
     # --receptor arg        rigid part of the receptor (PDBQT)
@@ -280,7 +280,7 @@ const autodock_vina = function(prot_pdb, ligand_pdb,
         vina_cmd$"--seed" = seed;
     }
 
-    let vina_status <- system2(vina_exe, vina_cmd, verbose = TRUE);
+    system2(vina_exe, vina_cmd, verbose = TRUE, shell = TRUE);
 
     if (!file.exists(output_pdbqt)) {
         stop("AutoDock Vina did not generate the expected output file: ", output_pdbqt);
