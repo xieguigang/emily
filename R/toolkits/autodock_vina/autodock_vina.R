@@ -135,7 +135,10 @@ const autodock_vina = function(prot_pdb, ligand_pdb,
     let output_pdbqt = file.path(temp_dir,"output.pdbqt");
     let vina_score = readLines(log_file) 
         |> vina_score_parser(n = num_modes) 
-        |> split_pdbqt(output_pdbqt)
+        |> split_pdbqt(
+            result_pdbqt = output_pdbqt, 
+            prot_pdbqt = readText(file.path(temp_dir,"receptor.pdbqt"))
+        )
         ;
 
     message("Molecular docking completed successfully.");
