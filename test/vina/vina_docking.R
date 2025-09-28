@@ -18,5 +18,7 @@ let result = emily::autodock_vina(prot_pdb = "./r.pdb", ligand_pdb = "./l.pdb",
 str(result);
 
 for(let model in as.list(result,byrow=TRUE)) {
-    writeLines(model$pdbqt, con = `./model_${i=i+1}.pdbqt`);
+    writeLines(model$pdbqt, con = `./output/model_${i=i+1}.pdbqt`);
 }
+
+write.csv(result, file = "./output/docking.csv");
