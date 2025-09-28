@@ -110,7 +110,7 @@ const autodock_vina = function(prot_pdb, ligand_pdb,
         stop("Ligand PDB file not found: ", ligand_pdb);
     }
     # 为临时文件创建唯一的工作目录
-    dir.create(temp_dir, recursive = TRUE);
+    dir.create(temp_dir, recursive = TRUE,showWarnings=FALSE);
     
     print("Processing of the molecule docking in temp workdir:");
     print(temp_dir);
