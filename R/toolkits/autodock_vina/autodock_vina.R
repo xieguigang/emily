@@ -120,6 +120,8 @@ const autodock_vina = function(prot_pdb, ligand_pdb,
     |> gsub("{$prot_pdb}", normalizePath(prot_pdb))
     |> gsub("{$ligand_pdb}", normalizePath(ligand_pdb))
     |> gsub("{$temp_dir}", normalizePath(temp_dir))
+    |> gsub("{$cpu}", cpu)
+    |> gsub("{$num_modes}", num_modes)
     ;
 
     writeLines(bash, con = file.path(temp_dir,"run.sh"));
@@ -129,6 +131,8 @@ const autodock_vina = function(prot_pdb, ligand_pdb,
     # 6. 处理对接结果
     message("Processing results...");
 
+    let log_file = file.path(temp_dir,"vina.log");
+    let output_pdbqt = file.path(temp_dir,"output.pdbqt");
     let vina_score = readLines(log_file) 
         |> vina_score_parser(n = num_modes) 
         |> split_pdbqt(output_pdbqt)

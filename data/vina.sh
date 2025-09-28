@@ -17,10 +17,10 @@ fi
 # 设置默认变量（如果未提供）
 : ${center:="null"}
 : ${size:="25.0 25.0 25.0"}
-: ${num_modes:=10}
+: ${num_modes:="{$num_modes}"}
 : ${energy_range:=4}
 : ${exhaustiveness:=8}
-: ${cpu:=1}
+: ${cpu:="{$cpu}"}
 : ${seed:=1}
 : ${mgltools_dir:="/opt/mgltools"}
 : ${autodock_vina_dir:="/opt/autodock_vina"}
