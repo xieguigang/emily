@@ -92,8 +92,9 @@ Module Rscript
             .Matches("MODEL\s+\d+(.*?)ENDMDL") _
             .Select(Function(pdbqt)
                         Dim lines = pdbqt.Trim(" "c, ASCII.TAB, ASCII.CR, ASCII.LF).LineTokens
-                        lines = lines.Skip(1).Take(lines.Length - 1).ToArray
-                        Return lines.JoinBy(vbCrLf)
+                        lines = lines.Skip(1).ToArray
+                        lines = lines.Take(lines.Length - 1).ToArray
+                        Return lines.JoinBy(vbCrLf) & vbCrLf
                     End Function) _
             .ToArray
     End Function
