@@ -4,6 +4,9 @@
 # 分子对接自动化脚本
 # 使用MGLTools和AutoDock Vina
 # =============================================
+readonly prot_pdb="{$prot_pdb}"
+readonly ligand_pdb="{$ligand_pdb}"
+readonly temp_dir="{$temp_dir}"
 
 # 检查必需变量是否设置
 if [ -z "$prot_pdb" ] || [ -z "$ligand_pdb" ]; then
@@ -21,7 +24,6 @@ fi
 : ${seed:=1}
 : ${mgltools_dir:="/opt/mgltools"}
 : ${autodock_vina_dir:="/opt/autodock_vina"}
-: ${temp_dir:="./vina_dock_"}
 
 # 创建输出目录
 mkdir -p "$temp_dir"
@@ -37,8 +39,9 @@ if [ ! -d "$autodock_vina_dir" ]; then
 fi
 
 # 定义工具路径
-prepare_receptor="$mgltools_dir/MGLToolsPckgs/AutoDockTools/Utilities24/prepare_receptor4.py"
-prepare_ligand="$mgltools_dir/MGLToolsPckgs/AutoDockTools/Utilities24/prepare_ligand4.py"
+mgltools_utils="$mgltools_dir/MGLToolsPckgs/AutoDockTools/Utilities24"
+prepare_receptor="$mgltools_utils/prepare_receptor4.py"
+prepare_ligand="$mgltools_utils/prepare_ligand4.py"
 pythonsh="$mgltools_dir/bin/pythonsh"
 vina="$autodock_vina_dir/bin/vina"
 
