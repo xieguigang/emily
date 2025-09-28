@@ -1,18 +1,23 @@
-﻿.TH SPLIT_PDBQT 1 2025-Sep "" "split_pdbqt"
+﻿.TH SPLIT_PDBQT 1 2025-Sep "" "extract models by the autodock vina split"
 .SH NAME
-split_pdbqt \- split_pdbqt(scores, result.pdbqt)
+split_pdbqt \- split_pdbqt(scores, result.pdbqt,
+    <i>prot.pdbqt</i> = <span style='color: blue !important;'>NULL</span>)
 .SH SYNOPSIS
-\fIsplit_pdbqt(scores, result.pdbqt)\fR
+\fIsplit_pdbqt(scores, result.pdbqt,
+    <i>prot.pdbqt</i> = <span style='color: blue !important;'>NULL</span>)\fR
 .SH OPTIONS
 .PP
-\fBscores\fB \fR\- . 
+\fBscores\fB \fR\- . a dataframe that contains thescore that parsed from the vina docking result log output text
 .PP
 .PP
 \fBresult.pdbqt\fB \fR\- . 
 .PP
+.PP
+\fBprot.pdbqt\fB \fR\- NULL. 
+.PP
 .SH FILES
 .PP
-SMRUCC/R#.declare_function.split_pdbqt at vina_split.R:line 3
+SMRUCC/R#.declare_function.split_pdbqt at vina_split.R:line 7
 .PP
 .SH COPYRIGHT
 Copyright © Who wrote it, What license is it under? Licensed 2025

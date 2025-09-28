@@ -41,8 +41,9 @@ declare namespace emily {
    */
    function smiles_2_pdb_rdkit(smiles: any, db_xref?: any, rdkit?: any, debug?: any): object;
    /**
+     * @param prot_pdbqt default value Is ``null``.
    */
-   function split_pdbqt(scores: any, result_pdbqt: any): object;
+   function split_pdbqt(scores: any, result_pdbqt: any, prot_pdbqt?: any): object;
    /**
    */
    function view_pdb(pdb_txt: any, save_file: any): object;

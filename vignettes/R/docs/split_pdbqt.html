@@ -2,7 +2,7 @@
 <html>
 
 <head>
-    <title>split_pdbqt</title>
+    <title>extract models by the autodock vina split</title>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
     <link rel="stylesheet" type="text/css" href="../../_assets/page.css">
@@ -18,7 +18,7 @@
             </tr>
         </table>
 
-        <h2>split_pdbqt</h2>
+        <h2>extract models by the autodock vina split</h2>
 
         <h3>Description</h3>
 
@@ -27,13 +27,25 @@
         <h3>Usage</h3>
 
         <div style="width: 100%; padding-left: 3%; color: black;">
-            <pre><code class='language-R' style="color: black; font-weight:normal;"><strong>split_pdbqt</strong>(<i>scores</i>, <i>result.pdbqt</i>);</code></pre>
+            <pre><code class='language-R' style="color: black; font-weight:normal;"><strong>split_pdbqt</strong>(<i>scores</i>, <i>result.pdbqt</i>,
+    <i>prot.pdbqt</i> = <span style='color: blue !important;'>NULL</span>);</code></pre>
         </div>
 
         <h3>Arguments</h3>
 
         <table>
             
+<dt>result.pdbqt</dt>
+<dd><p><p>the autodock vina docking output pqdqt file its file path.</p></p></dd>
+
+
+<dt>scores</dt>
+<dd><p><p>a dataframe that contains thescore that parsed from the vina docking result log output text</p></p></dd>
+
+
+<dt>prot.pdbqt</dt>
+<dd><p><p>the content text data of the protein receptor input of the vina docking.</p></p></dd>
+
         </table>
 
 
