@@ -2,6 +2,7 @@ require(emily);
 
 setwd(relative_work());
 
+let i = 0;
 let result = emily::autodock_vina(prot_pdb = "./r.pdb", ligand_pdb = "./l.pdb", 
                                center = NULL,
                                size = c(25.0, 25.0, 25.0),
@@ -15,3 +16,7 @@ let result = emily::autodock_vina(prot_pdb = "./r.pdb", ligand_pdb = "./l.pdb",
                                temp_dir = "./tmp",
                                make_cleanup = FALSE);
 str(result);
+
+for(let model in as.list(result,byrow=TRUE)) {
+    writeLines(model$pdbqt, con = `./model_${i=i+1}.pdbqt`);
+}
