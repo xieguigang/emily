@@ -119,7 +119,7 @@ const autodock_vina = function(prot_pdb, ligand_pdb,
 
     system.file("data/vina.sh", package = "emily") 
     |> readLines()
-    |> writeLines(bash_run)
+    |> writeLines(bash_run, sep = "\n")
     ; 
     
     let bash = htmlReport::htmlTemplate(bash_run) + list(
