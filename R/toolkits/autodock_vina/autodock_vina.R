@@ -115,18 +115,23 @@ const autodock_vina = function(prot_pdb, ligand_pdb,
     print("Processing of the molecule docking in temp workdir:");
     print(temp_dir);
 
-    let bash = system.file("data/vina.sh", package = "emily") 
-    |> readText() 
-    |> gsub("{$prot_pdb}", normalizePath(prot_pdb))
-    |> gsub("{$ligand_pdb}", normalizePath(ligand_pdb))
-    |> gsub("{$temp_dir}", normalizePath(temp_dir))
-    |> gsub("{$cpu}", cpu)
-    |> gsub("{$num_modes}", num_modes)
-    ;
+    let bash_run = file.path(temp_dir,"run.sh");
 
-    writeLines(bash, con = file.path(temp_dir,"run.sh"));
-    system2("/bin/bash", list(
-        "-c" = file.path(temp_dir,"run.sh")) , shell = TRUE);
+    system.file("data/vina.sh", package = "emily") 
+    |> readLines()
+    |> writeLines(bash_run)
+    ; 
+    
+    let bash = htmlReport::htmlTemplate(bash_run) + list(
+        prot_pdb = normalizePath(prot_pdb),
+        ligand_pdb = normalizePath(ligand_pdb),
+        temp_dir = normalizePath(temp_dir),
+        cpu = cpu,
+        num_modes = num_modes
+    );
+
+    htmlReport::flush(bash);
+    system2("/bin/bash", list("-c" = bash_run), shell = TRUE);
 
     # 6. 处理对接结果
     message("Processing results...");

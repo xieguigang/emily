@@ -21,7 +21,7 @@ fi
 : ${energy_range:=4}
 : ${exhaustiveness:=8}
 : ${cpu:="{$cpu}"}
-: ${seed:=1}
+: ${seed:="{$seed}"}
 : ${mgltools_dir:="/opt/mgltools"}
 : ${autodock_vina_dir:="/opt/autodock_vina"}
 
