@@ -127,7 +127,14 @@ const autodock_vina = function(prot_pdb, ligand_pdb,
         ligand_pdb = normalizePath(ligand_pdb),
         temp_dir = normalizePath(temp_dir),
         cpu = cpu,
-        num_modes = num_modes
+        num_modes = num_modes,
+        seed = seed,
+        exhaustiveness = exhaustiveness,
+        energy_range = energy_range,
+        size = paste(size, sep = " "),
+        center = ifelse(is.null(center), "null", center),
+        mgltools_dir = normalizePath(mgltools_dir),
+        autodock_vina_dir = normalizePath(autodock_vina_dir)
     );
 
     htmlReport::flush(bash);

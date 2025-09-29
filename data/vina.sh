@@ -15,15 +15,15 @@ if [ -z "$prot_pdb" ] || [ -z "$ligand_pdb" ]; then
 fi
 
 # 设置默认变量（如果未提供）
-: ${center:="null"}
-: ${size:="25.0 25.0 25.0"}
+: ${center:="{$center}"}
+: ${size:="{$size}"}
 : ${num_modes:="{$num_modes}"}
-: ${energy_range:=4}
-: ${exhaustiveness:=8}
+: ${energy_range:="{$energy_range}"}
+: ${exhaustiveness:="{$exhaustiveness}"}
 : ${cpu:="{$cpu}"}
 : ${seed:="{$seed}"}
-: ${mgltools_dir:="/opt/mgltools"}
-: ${autodock_vina_dir:="/opt/autodock_vina"}
+: ${mgltools_dir:="{$mgltools_dir}"}
+: ${autodock_vina_dir:="{$autodock_vina_dir}"}
 
 # 创建输出目录
 mkdir -p "$temp_dir"
