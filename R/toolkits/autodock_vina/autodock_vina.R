@@ -92,22 +92,22 @@ const autodock_vina = function(prot_pdb, ligand_pdb,
 
     # 检查必要工具是否存在
     if (!file.exists(pythonsh_bin)) {
-        stop("MGLTools pythonsh not found at: ", pythonsh_bin);
+        warning(sprintf("MGLTools pythonsh not found at: %s", pythonsh_bin));
     }
     if (!file.exists(prepare_receptor)) {
-        stop("MGLTools prepare_receptor4.py script not found at: ", prepare_receptor);
+        warning(sprintf("MGLTools prepare_receptor4.py script not found at: %s", prepare_receptor));
     }
     if (!file.exists(prepare_ligand)) {
-        stop("MGLTools prepare_ligand4.py script not found at: ", prepare_ligand);
+        warning(sprintf("MGLTools prepare_ligand4.py script not found at: %s", prepare_ligand));
     }
     if (!file.exists(vina_exe)) {
-        stop("AutoDock Vina executable not found at: ", vina_exe);
+        warning(sprintf("AutoDock Vina executable not found at: %s", vina_exe));
     }
     if (!file.exists(prot_pdb)) {
-        stop("Receptor PDB file not found: ", prot_pdb);
+        warning(sprintf("Receptor PDB file not found: %s", prot_pdb));
     }
     if (!file.exists(ligand_pdb)) {
-        stop("Ligand PDB file not found: ", ligand_pdb);
+        warning(sprintf("Ligand PDB file not found: %s", ligand_pdb));
     }
     # 为临时文件创建唯一的工作目录
     dir.create(temp_dir, recursive = TRUE,showWarnings=FALSE);
