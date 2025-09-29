@@ -195,7 +195,6 @@ if ! "$vina" \
     --seed "$seed" \
     --out "$output_pdbqt" \
     --log "$log_file"; then
-    
     echo "错误: 分子对接失败"
     exit 1
 fi
