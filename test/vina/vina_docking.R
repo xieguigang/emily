@@ -19,6 +19,12 @@ str(result);
 
 for(let model in as.list(result,byrow=TRUE)) {
     writeLines(model$pdbqt, con = `./output/model_${i=i+1}.pdbqt`);
+
+    model = parse_pdb(model$pdbqt);
+
+    pdf(file = `./output/model_${i-1}.pdf`) {
+        draw_ligand2D(model, size = [4000,3000], dpi = 300);
+    }
 }
 
 write.csv(result, file = "./output/docking.csv");
