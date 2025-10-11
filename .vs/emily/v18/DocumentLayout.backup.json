@@ -1,7 +1,21 @@
 {
   "Version": 1,
   "WorkspaceRootPath": "E:\\emily\\",
-  "Documents": [],
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{C1B128C7-D4D5-50C0-F0B6-5F74F70ED8E4}|..\\GCModeller\\src\\GCModeller\\data\\RCSB PDB\\RCSB PDB.vbproj|e:\\gcmodeller\\src\\gcmodeller\\data\\rcsb pdb\\pdb\\pdb.vb||{2C015C70-C72C-11D0-88C3-00A0C9110049}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C1B128C7-D4D5-50C0-F0B6-5F74F70ED8E4}|..\\GCModeller\\src\\GCModeller\\data\\RCSB PDB\\RCSB PDB.vbproj|e:\\gcmodeller\\src\\gcmodeller\\data\\rcsb pdb\\pdb\\keywords\\headers\\header.vb||{2C015C70-C72C-11D0-88C3-00A0C9110049}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{8E503B13-3CFE-4E51-0F13-EFEC1E014FBF}|src\\emily\\emily.vbproj|e:\\emily\\src\\emily\\rscript.vb||{2C015C70-C72C-11D0-88C3-00A0C9110049}",
+      "RelativeMoniker": "D:0:0:{8E503B13-3CFE-4E51-0F13-EFEC1E014FBF}|src\\emily\\emily.vbproj|solutionrelative:src\\emily\\rscript.vb||{2C015C70-C72C-11D0-88C3-00A0C9110049}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{33CC05B1-BD48-776F-F90A-541F80A22D67}|..\\GCModeller\\src\\R-sharp\\studio\\R-terminal\\R-cmd.NET5.vbproj|e:\\gcmodeller\\src\\r-sharp\\studio\\r-terminal\\r-cmd.net5.vbproj||{04B8AB82-A572-4FEF-95CE-5222444B6B64}|"
+    }
+  ],
   "DocumentGroupContainers": [
     {
       "Orientation": 0,
@@ -9,8 +23,34 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": -1,
+          "SelectedChildIndex": 1,
           "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "Header.vb",
+              "DocumentMoniker": "E:\\GCModeller\\src\\GCModeller\\data\\RCSB PDB\\PDB\\Keywords\\Headers\\Header.vb",
+              "RelativeDocumentMoniker": "..\\GCModeller\\src\\GCModeller\\data\\RCSB PDB\\PDB\\Keywords\\Headers\\Header.vb",
+              "ToolTip": "E:\\GCModeller\\src\\GCModeller\\data\\RCSB PDB\\PDB\\Keywords\\Headers\\Header.vb",
+              "RelativeToolTip": "..\\GCModeller\\src\\GCModeller\\data\\RCSB PDB\\PDB\\Keywords\\Headers\\Header.vb",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAHQAAAAqAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003361|",
+              "WhenOpened": "2025-10-11T07:07:08.896Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "PDB.vb",
+              "DocumentMoniker": "E:\\GCModeller\\src\\GCModeller\\data\\RCSB PDB\\PDB\\PDB.vb",
+              "RelativeDocumentMoniker": "..\\GCModeller\\src\\GCModeller\\data\\RCSB PDB\\PDB\\PDB.vb",
+              "ToolTip": "E:\\GCModeller\\src\\GCModeller\\data\\RCSB PDB\\PDB\\PDB.vb",
+              "RelativeToolTip": "..\\GCModeller\\src\\GCModeller\\data\\RCSB PDB\\PDB\\PDB.vb",
+              "ViewState": "AgIAAD0BAAAAAAAAAAAAAFcBAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003361|",
+              "WhenOpened": "2025-10-11T07:05:52.144Z",
+              "EditorCaption": ""
+            },
             {
               "$type": "Bookmark",
               "Name": "ST:0:0:{1c4feeaa-4718-4aa9-859d-94ce25d182ba}"
@@ -26,6 +66,31 @@
             {
               "$type": "Bookmark",
               "Name": "ST:0:0:{aa2115a1-9712-457b-9047-dbb71ca2cdd2}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "R-cmd.NET5",
+              "DocumentMoniker": "E:\\GCModeller\\src\\R-sharp\\studio\\R-terminal\\R-cmd.NET5.vbproj",
+              "RelativeDocumentMoniker": "..\\GCModeller\\src\\R-sharp\\studio\\R-terminal\\R-cmd.NET5.vbproj",
+              "ToolTip": "E:\\GCModeller\\src\\R-sharp\\studio\\R-terminal\\R-cmd.NET5.vbproj",
+              "RelativeToolTip": "..\\GCModeller\\src\\R-sharp\\studio\\R-terminal\\R-cmd.NET5.vbproj",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003380|",
+              "WhenOpened": "2025-10-11T07:01:54.671Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "Rscript.vb",
+              "DocumentMoniker": "E:\\emily\\src\\emily\\Rscript.vb",
+              "RelativeDocumentMoniker": "src\\emily\\Rscript.vb",
+              "ToolTip": "E:\\emily\\src\\emily\\Rscript.vb",
+              "RelativeToolTip": "src\\emily\\Rscript.vb",
+              "ViewState": "AgIAABMAAAAAAAAAAAA+wCoAAAAqAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003361|",
+              "WhenOpened": "2025-09-29T07:23:06.348Z",
+              "EditorCaption": ""
             }
           ]
         },
