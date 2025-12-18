@@ -3,6 +3,14 @@
   "WorkspaceRootPath": "G:\\emily\\",
   "Documents": [
     {
+      "AbsoluteMoniker": "D:0:0:{044E4D64-0949-4654-B8B1-522D81E4231A}|src\\PDB_canvas\\PDB_canvas.vbproj|g:\\emily\\src\\pdb_canvas\\pdb_canvas.vbproj||{04B8AB82-A572-4FEF-95CE-5222444B6B64}|",
+      "RelativeMoniker": "D:0:0:{044E4D64-0949-4654-B8B1-522D81E4231A}|src\\PDB_canvas\\PDB_canvas.vbproj|solutionrelative:src\\pdb_canvas\\pdb_canvas.vbproj||{04B8AB82-A572-4FEF-95CE-5222444B6B64}|"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{044E4D64-0949-4654-B8B1-522D81E4231A}|src\\PDB_canvas\\PDB_canvas.vbproj|g:\\emily\\src\\pdb_canvas\\pdb_canvas.vbproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|",
+      "RelativeMoniker": "D:0:0:{044E4D64-0949-4654-B8B1-522D81E4231A}|src\\PDB_canvas\\PDB_canvas.vbproj|solutionrelative:src\\pdb_canvas\\pdb_canvas.vbproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{8EA1E75F-48FE-4BF1-ACFE-2955B16CD968}|src\\zdock\\zdock.vbproj|g:\\emily\\src\\zdock\\zdock.vbproj||{04B8AB82-A572-4FEF-95CE-5222444B6B64}|",
       "RelativeMoniker": "D:0:0:{8EA1E75F-48FE-4BF1-ACFE-2955B16CD968}|src\\zdock\\zdock.vbproj|solutionrelative:src\\zdock\\zdock.vbproj||{04B8AB82-A572-4FEF-95CE-5222444B6B64}|"
     },
@@ -43,6 +51,31 @@
             {
               "$type": "Document",
               "DocumentIndex": 0,
+              "Title": "PDB_canvas",
+              "DocumentMoniker": "G:\\emily\\src\\PDB_canvas\\PDB_canvas.vbproj",
+              "RelativeDocumentMoniker": "src\\PDB_canvas\\PDB_canvas.vbproj",
+              "ToolTip": "G:\\emily\\src\\PDB_canvas\\PDB_canvas.vbproj",
+              "RelativeToolTip": "src\\PDB_canvas\\PDB_canvas.vbproj",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003380|",
+              "WhenOpened": "2025-12-18T00:40:01.333Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "PDB_canvas",
+              "DocumentMoniker": "G:\\emily\\src\\PDB_canvas\\PDB_canvas.vbproj",
+              "RelativeDocumentMoniker": "src\\PDB_canvas\\PDB_canvas.vbproj",
+              "ToolTip": "G:\\emily\\src\\PDB_canvas\\PDB_canvas.vbproj",
+              "RelativeToolTip": "src\\PDB_canvas\\PDB_canvas.vbproj",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003380|",
+              "WhenOpened": "2025-12-18T00:39:58.622Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
               "Title": "zdock",
               "DocumentMoniker": "G:\\emily\\src\\zdock\\zdock.vbproj",
               "RelativeDocumentMoniker": "src\\zdock\\zdock.vbproj",
@@ -54,7 +87,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 3,
               "Title": "ZDockOut.vb",
               "DocumentMoniker": "G:\\emily\\src\\zdock\\ZDockOut.vb",
               "RelativeDocumentMoniker": "src\\zdock\\ZDockOut.vb",
