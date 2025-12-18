@@ -43,3 +43,4 @@ emily.zip
 .vs/emily/CopilotIndices/17.14.1368.60722/CodeChunks.db
 .vs/emily/CopilotIndices/17.14.1368.60722/SemanticSymbols.db
 *.suo
+*.nupkg
