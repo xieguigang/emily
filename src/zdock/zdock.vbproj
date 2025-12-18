@@ -5,7 +5,18 @@
     <TargetFrameworks>net48;net8.0-windows;net8.0</TargetFrameworks>
     <AssemblyName>Emily.ZDock</AssemblyName>
     <Platforms>AnyCPU;x64</Platforms>
+    <GenerateDocumentationFile>True</GenerateDocumentationFile>
+    <GeneratePackageOnBuild>True</GeneratePackageOnBuild>
+    <PackageIcon>icons8-protein-96.png</PackageIcon>
+    <PackageOutputPath>..\..\.nuget</PackageOutputPath>
   </PropertyGroup>
+
+  <ItemGroup>
+    <None Include="..\..\.pkg\icons8-protein-96.png">
+      <Pack>True</Pack>
+      <PackagePath>\</PackagePath>
+    </None>
+  </ItemGroup>
 
   <ItemGroup>
     <ProjectReference Include="..\..\..\GCModeller\src\GCModeller\data\RCSB PDB\RCSB PDB.vbproj" />

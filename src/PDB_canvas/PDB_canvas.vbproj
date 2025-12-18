@@ -12,6 +12,8 @@
     <GeneratePackageOnBuild>True</GeneratePackageOnBuild>
     <IncludeSymbols>True</IncludeSymbols>
     <Title>PDB data visualization</Title>
+    <PackageIcon>icons8-protein-96.png</PackageIcon>
+    <PackageOutputPath>..\..\.nuget</PackageOutputPath>
   </PropertyGroup>
 
   <PropertyGroup Condition="'$(Configuration)|$(TargetFramework)|$(Platform)'=='Debug|net48|AnyCPU'">
@@ -79,6 +81,13 @@
     <Optimize>False</Optimize>
     <DebugType>full</DebugType>
   </PropertyGroup>
+
+  <ItemGroup>
+    <None Include="..\..\.pkg\icons8-protein-96.png">
+      <Pack>True</Pack>
+      <PackagePath>\</PackagePath>
+    </None>
+  </ItemGroup>
 
   <ItemGroup>
     <ProjectReference Include="..\..\..\GCModeller\src\GCModeller\core\Bio.Assembly\biocore-netcore5.vbproj" />
