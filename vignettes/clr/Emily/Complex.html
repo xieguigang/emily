@@ -5,7 +5,7 @@
     <title>Emily.Complex</title>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
-    <link rel="stylesheet" type="text/css" href="https://gcmodeller.org/lib/page.css">
+    <link rel="stylesheet" type="text/css" href="../../_assets/page.css">
 </head>
 
 <body>
@@ -30,8 +30,11 @@
             <code id="clr_ts">
 # namespace Emily
 export class Complex {
+   # Euler angles representing the rotation of the ligand relative to its initial position
    ligandRotation: <a href="/vignettes/clr/SMRUCC/genomics/Data/RCSB/PDB/Keywords/Point3D.html">Point3D</a>;
+   # Translation vector indicating the linear displacement of the ligand's center relative to its initial position
    translationVector: <a href="/vignettes/clr/SMRUCC/genomics/Data/RCSB/PDB/Keywords/Point3D.html">Point3D</a>;
+   # ZDock scoring value, where a higher score indicates better docking quality and a more favorable interaction
    ZDockScore: double;
 }
 </code>
@@ -52,8 +55,8 @@ export class Complex {
     </div>
 </body>
 
-<script type="text/javascript" src="https://gcmodeller.org/lib/R_syntax.js"></script>
-<script type="text/javascript" src="https://gcmodeller.org/lib/highlights.js"></script>
+<script type="text/javascript" src="../../_assets/R_syntax.js"></script>
+<script type="text/javascript" src="../../_assets/highlights.js"></script>
 <script type="text/javascript">r_highlights("clr_ts");</script>
 
 </html>
