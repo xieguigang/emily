@@ -2,7 +2,7 @@
 
   <PropertyGroup>
     <RootNamespace>Emily</RootNamespace>
-    <TargetFrameworks>net48;net8.0-windows;net8.0</TargetFrameworks>
+    <TargetFrameworks>net10.0-windows;net10.0</TargetFrameworks>
     <AssemblyName>Emily.ZDock</AssemblyName>
     <Platforms>AnyCPU;x64</Platforms>
     <GenerateDocumentationFile>True</GenerateDocumentationFile>

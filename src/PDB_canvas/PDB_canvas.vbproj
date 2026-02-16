@@ -2,7 +2,7 @@
 
   <PropertyGroup>
     <RootNamespace>Emily.PDB_Canvas</RootNamespace>
-    <TargetFrameworks>net48;net8.0-windows;net8.0</TargetFrameworks>
+    <TargetFrameworks>net10.0-windows;net10.0</TargetFrameworks>
     <Platforms>AnyCPU;x64</Platforms>
     <OutputType>Library</OutputType>
     <AssemblyName>Emily.PDB_canvas</AssemblyName>

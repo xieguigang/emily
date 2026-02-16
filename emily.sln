@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 18
-VisualStudioVersion = 18.1.11312.151 d18.0
+VisualStudioVersion = 18.1.11312.151
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "framework", "framework", "{76740A1F-2D0A-412E-AC2D-C7027BD026E4}"
 EndProject
@@ -28,8 +28,6 @@ EndProject
 Project("{F184B08F-C81C-45F6-A57F-5ABD9991F28F}") = "html_netcore5", "..\GCModeller\src\runtime\sciBASIC#\mime\text%html\html_netcore5.vbproj", "{D4C238F8-282A-936F-6E6C-02BDE70BBFE2}"
 EndProject
 Project("{F184B08F-C81C-45F6-A57F-5ABD9991F28F}") = "imaging.NET5", "..\GCModeller\src\runtime\sciBASIC#\gr\Microsoft.VisualBasic.Imaging\imaging.NET5.vbproj", "{327160CD-5423-3175-0B01-5395AC3E1DF6}"
-EndProject
-Project("{F184B08F-C81C-45F6-A57F-5ABD9991F28F}") = "Drawing-net4.8", "..\GCModeller\src\runtime\sciBASIC#\gr\Drawing-net4.8\Drawing-net4.8.vbproj", "{E291FDD6-AC16-0A49-E51E-F02F27AFFD9F}"
 EndProject
 Project("{F184B08F-C81C-45F6-A57F-5ABD9991F28F}") = "plots-netcore5", "..\GCModeller\src\runtime\sciBASIC#\Data_science\Visualization\Plots\plots-netcore5.vbproj", "{401B0259-31BB-F9A0-F107-FB577A786B72}"
 EndProject
@@ -167,18 +165,6 @@ Global
 		{327160CD-5423-3175-0B01-5395AC3E1DF6}.Rsharp_app_release|Any CPU.Build.0 = Rsharp_app_release|Any CPU
 		{327160CD-5423-3175-0B01-5395AC3E1DF6}.Rsharp_app_release|x64.ActiveCfg = Rsharp_app_release|x64
 		{327160CD-5423-3175-0B01-5395AC3E1DF6}.Rsharp_app_release|x64.Build.0 = Rsharp_app_release|x64
-		{E291FDD6-AC16-0A49-E51E-F02F27AFFD9F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{E291FDD6-AC16-0A49-E51E-F02F27AFFD9F}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{E291FDD6-AC16-0A49-E51E-F02F27AFFD9F}.Debug|x64.ActiveCfg = Debug|x64
-		{E291FDD6-AC16-0A49-E51E-F02F27AFFD9F}.Debug|x64.Build.0 = Debug|x64
-		{E291FDD6-AC16-0A49-E51E-F02F27AFFD9F}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{E291FDD6-AC16-0A49-E51E-F02F27AFFD9F}.Release|Any CPU.Build.0 = Release|Any CPU
-		{E291FDD6-AC16-0A49-E51E-F02F27AFFD9F}.Release|x64.ActiveCfg = Release|x64
-		{E291FDD6-AC16-0A49-E51E-F02F27AFFD9F}.Release|x64.Build.0 = Release|x64
-		{E291FDD6-AC16-0A49-E51E-F02F27AFFD9F}.Rsharp_app_release|Any CPU.ActiveCfg = nuget_release|Any CPU
-		{E291FDD6-AC16-0A49-E51E-F02F27AFFD9F}.Rsharp_app_release|Any CPU.Build.0 = nuget_release|Any CPU
-		{E291FDD6-AC16-0A49-E51E-F02F27AFFD9F}.Rsharp_app_release|x64.ActiveCfg = Rsharp_app_release|x64
-		{E291FDD6-AC16-0A49-E51E-F02F27AFFD9F}.Rsharp_app_release|x64.Build.0 = Rsharp_app_release|x64
 		{401B0259-31BB-F9A0-F107-FB577A786B72}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{401B0259-31BB-F9A0-F107-FB577A786B72}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{401B0259-31BB-F9A0-F107-FB577A786B72}.Debug|x64.ActiveCfg = Debug|x64
@@ -264,7 +250,6 @@ Global
 		{CB9CA6B6-56D8-EC24-1A1F-C5CBD3FAFCA1} = {76740A1F-2D0A-412E-AC2D-C7027BD026E4}
 		{D4C238F8-282A-936F-6E6C-02BDE70BBFE2} = {76740A1F-2D0A-412E-AC2D-C7027BD026E4}
 		{327160CD-5423-3175-0B01-5395AC3E1DF6} = {76740A1F-2D0A-412E-AC2D-C7027BD026E4}
-		{E291FDD6-AC16-0A49-E51E-F02F27AFFD9F} = {76740A1F-2D0A-412E-AC2D-C7027BD026E4}
 		{401B0259-31BB-F9A0-F107-FB577A786B72} = {76740A1F-2D0A-412E-AC2D-C7027BD026E4}
 		{E1812DB0-3272-730E-CFE0-FE854CB0A779} = {76740A1F-2D0A-412E-AC2D-C7027BD026E4}
 		{CDF04607-C183-6F6C-FE5A-DABFDBB5E7D7} = {F5C4DBF7-6DFE-4326-BCCB-B9783F8C9EA9}
