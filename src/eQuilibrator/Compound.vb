@@ -58,7 +58,7 @@ Namespace EquilibratorApi.Core.Models
         ''' <summary>
         ''' The standard formation Gibbs energy in kJ/mol
         ''' </summary>
-        Public Property StandardFormationEnergy As Double?
+        Public Property StandardFormationEnergy As Double
 
         ''' <summary>
         ''' Whether this compound is a proton

@@ -161,7 +161,7 @@ Namespace EquilibratorApi.Core
                 Dim coeff = compoundCoeff.Value
                 Dim compoundData = Cache.GetCompound(compound.CompoundId)
                 If compoundData?.StandardFormationEnergy IsNot Nothing Then
-                    standardDg += coeff * compoundData.StandardFormationEnergy.Value
+                    standardDg += coeff * compoundData.StandardFormationEnergy
                     uncertainty += Math.Abs(coeff) * 5.0 ' Simplified uncertainty estimation
                 Else
                     ' Use a large uncertainty for unknown compounds

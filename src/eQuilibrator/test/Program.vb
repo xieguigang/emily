@@ -199,7 +199,7 @@ External metabolites: {String.Join(", ", external.Keys)}")
 
         Private Shared Sub DemoBoundsAndConcentrations()
             ' Create default physiological bounds
-            Dim bounds As Bounds = Nothing '= Bounds.GetDefaultPhysiologicalBounds();
+            Dim bounds As Bounds = Bounds.GetDefaultCofactorBounds
             Console.WriteLine($"Default bounds: {bounds.DefaultLowerBound} - {bounds.DefaultUpperBound} M")
 
             ' Set custom bounds
