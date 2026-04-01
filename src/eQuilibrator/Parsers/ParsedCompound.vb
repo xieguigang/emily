@@ -1,18 +1,20 @@
-﻿Namespace EquilibratorApi.Core.Parsers
+﻿Imports SMRUCC.genomics.ComponentModel.EquaionModel
+
+Namespace EquilibratorApi.Core.Parsers
 
     ''' <summary>
     ''' Represents a parsed compound with its coefficient and optional phase information
     ''' </summary>
-    Public Class ParsedCompound
+    Public Class ParsedCompound : Implements ICompoundSpecies
         ''' <summary>
         ''' The compound identifier (name or formula)
         ''' </summary>
-        Public Property CompoundId As String = String.Empty
+        Public Property CompoundId As String = String.Empty Implements ICompoundSpecies.Key
 
         ''' <summary>
         ''' The stoichiometric coefficient (default is 1)
         ''' </summary>
-        Public Property Coefficient As Double = 1.0
+        Public Property Coefficient As Double = 1.0 Implements ICompoundSpecies.Stoichiometry
 
         ''' <summary>
         ''' Optional phase information (e.g., "aqueous", "gas", "solid")
