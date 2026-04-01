@@ -24,12 +24,9 @@
 ' THE SOFTWARE.
 
 Imports eQuilibrator.EquilibratorApi.Core
+Imports eQuilibrator.EquilibratorApi.Core.Extensions
 Imports eQuilibrator.EquilibratorApi.Core.Models
 Imports eQuilibrator.EquilibratorApi.Core.Parsers
-Imports EquilibratorApi.Core
-Imports EquilibratorApi.Core.Extensions
-Imports EquilibratorApi.Core.Models
-Imports EquilibratorApi.Core.Parsers
 
 Namespace EquilibratorApi.Demo
 
@@ -37,7 +34,7 @@ Namespace EquilibratorApi.Demo
     ''' Demo program showing how to use the Equilibrator API
     ''' </summary>
     Friend Class Program
-        Private Shared Sub Main(args As String())
+        Public Shared Sub Main()
             Console.WriteLine("========================================")
             Console.WriteLine("  Equilibrator API - C# Demo")
             Console.WriteLine("========================================")
@@ -177,13 +174,13 @@ Formula: {formula3}")
             model.AddReaction("dihydroxyacetone-phosphate <=> glyceraldehyde-3-phosphate", "TPI")
 
             Console.WriteLine(model.GetSummary())
-            Dim matrixCompoundIdsReactionIds As (matrix As Double(,), compoundIds As List(Of String), reactionIds As List(Of String)) = Nothing
+            Dim t As (matrix As Double(,), compoundIds As List(Of String), reactionIds As List(Of String)) = Nothing
 
             ' Get stoichiometric matrix
-            matrixCompoundIdsReactionIds = model.GetStoichiometricMatrixWithLabels()
+            t = model.GetStoichiometricMatrixWithLabels()
             Console.WriteLine(vbLf & "Stoichiometric Matrix:")
-            Console.WriteLine($"  Compounds: {String.Join(", ", compoundIds.Take(5))}...")
-            Console.WriteLine($"  Reactions: {String.Join(", ", reactionIds)}")
+            Console.WriteLine($"  Compounds: {String.Join(", ", t.compoundIds.Take(5))}...")
+            Console.WriteLine($"  Reactions: {String.Join(", ", t.reactionIds)}")
 
             ' Calculate Gibbs energies
             Dim dgResults = model.CalculateStandardDgPrimes()
@@ -232,7 +229,7 @@ ATP bounds: {bounds.GetLowerBound("ATP")} - {bounds.GetUpperBound("ATP")} M")
             Dim lowerUpper As (lower As Double, upper As Double) = Nothing
             For Each compoundId In {"glucose", "pyruvate", "lactate"}
                 lowerUpper = customBounds.GetBounds(compoundId)
-                Console.WriteLine($"  {compoundId}: {lower:E2} - {upper:E2} M")
+                Console.WriteLine($"  {compoundId}: { lowerUpper.lower:E2} - { lowerUpper.upper:E2} M")
             Next
         End Sub
 
