@@ -7,12 +7,56 @@
       "RelativeMoniker": "D:0:0:{A712EDC3-9352-6289-BD83-897F07C1A196}|eQuilibrator\\eQuilibrator.vbproj|solutionrelative:equilibrator\\componentcontribution.vb||{2C015C70-C72C-11D0-88C3-00A0C9110049}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{A712EDC3-9352-6289-BD83-897F07C1A196}|eQuilibrator\\eQuilibrator.vbproj|g:\\emily\\src\\equilibrator\\exceptions.vb||{2C015C70-C72C-11D0-88C3-00A0C9110049}",
-      "RelativeMoniker": "D:0:0:{A712EDC3-9352-6289-BD83-897F07C1A196}|eQuilibrator\\eQuilibrator.vbproj|solutionrelative:equilibrator\\exceptions.vb||{2C015C70-C72C-11D0-88C3-00A0C9110049}"
+      "AbsoluteMoniker": "D:0:0:{5B8ACC99-FB8D-1CB5-190E-59FE7B06DB4D}|..\\..\\GCModeller\\src\\GCModeller\\core\\Bio.Assembly\\biocore-netcore5.vbproj|g:\\gcmodeller\\src\\gcmodeller\\core\\bio.assembly\\componentmodel\\equations\\equation\\abstract.vb||{2C015C70-C72C-11D0-88C3-00A0C9110049}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{5B8ACC99-FB8D-1CB5-190E-59FE7B06DB4D}|..\\..\\GCModeller\\src\\GCModeller\\core\\Bio.Assembly\\biocore-netcore5.vbproj|g:\\gcmodeller\\src\\gcmodeller\\core\\bio.assembly\\componentmodel\\equations\\equation\\defaulttypes.vb||{2C015C70-C72C-11D0-88C3-00A0C9110049}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{5B8ACC99-FB8D-1CB5-190E-59FE7B06DB4D}|..\\..\\GCModeller\\src\\GCModeller\\core\\Bio.Assembly\\biocore-netcore5.vbproj|g:\\gcmodeller\\src\\gcmodeller\\core\\bio.assembly\\componentmodel\\equations\\equation\\equation.vb||{2C015C70-C72C-11D0-88C3-00A0C9110049}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{5B8ACC99-FB8D-1CB5-190E-59FE7B06DB4D}|..\\..\\GCModeller\\src\\GCModeller\\core\\Bio.Assembly\\biocore-netcore5.vbproj|g:\\gcmodeller\\src\\gcmodeller\\core\\bio.assembly\\componentmodel\\equations\\equation\\equationbuilder.vb||{2C015C70-C72C-11D0-88C3-00A0C9110049}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{5B8ACC99-FB8D-1CB5-190E-59FE7B06DB4D}|..\\..\\GCModeller\\src\\GCModeller\\core\\Bio.Assembly\\biocore-netcore5.vbproj|g:\\gcmodeller\\src\\gcmodeller\\core\\bio.assembly\\componentmodel\\equations\\equation\\equivalence.vb||{2C015C70-C72C-11D0-88C3-00A0C9110049}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{5B8ACC99-FB8D-1CB5-190E-59FE7B06DB4D}|..\\..\\GCModeller\\src\\GCModeller\\core\\Bio.Assembly\\biocore-netcore5.vbproj|g:\\gcmodeller\\src\\gcmodeller\\core\\bio.assembly\\componentmodel\\equations\\compoundspecies.vb||{2C015C70-C72C-11D0-88C3-00A0C9110049}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{5B8ACC99-FB8D-1CB5-190E-59FE7B06DB4D}|..\\..\\GCModeller\\src\\GCModeller\\core\\Bio.Assembly\\biocore-netcore5.vbproj|g:\\gcmodeller\\src\\gcmodeller\\core\\bio.assembly\\componentmodel\\equations\\reaction.vb||{2C015C70-C72C-11D0-88C3-00A0C9110049}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{5B8ACC99-FB8D-1CB5-190E-59FE7B06DB4D}|..\\..\\GCModeller\\src\\GCModeller\\core\\Bio.Assembly\\biocore-netcore5.vbproj|g:\\gcmodeller\\src\\gcmodeller\\core\\bio.assembly\\componentmodel\\equations\\sidecompound.vb||{2C015C70-C72C-11D0-88C3-00A0C9110049}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A712EDC3-9352-6289-BD83-897F07C1A196}|eQuilibrator\\eQuilibrator.vbproj|g:\\emily\\src\\equilibrator\\compound.vb||{2C015C70-C72C-11D0-88C3-00A0C9110049}",
+      "RelativeMoniker": "D:0:0:{A712EDC3-9352-6289-BD83-897F07C1A196}|eQuilibrator\\eQuilibrator.vbproj|solutionrelative:equilibrator\\compound.vb||{2C015C70-C72C-11D0-88C3-00A0C9110049}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A712EDC3-9352-6289-BD83-897F07C1A196}|eQuilibrator\\eQuilibrator.vbproj|g:\\emily\\src\\equilibrator\\compoundcache.vb||{2C015C70-C72C-11D0-88C3-00A0C9110049}",
+      "RelativeMoniker": "D:0:0:{A712EDC3-9352-6289-BD83-897F07C1A196}|eQuilibrator\\eQuilibrator.vbproj|solutionrelative:equilibrator\\compoundcache.vb||{2C015C70-C72C-11D0-88C3-00A0C9110049}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A712EDC3-9352-6289-BD83-897F07C1A196}|eQuilibrator\\eQuilibrator.vbproj|g:\\emily\\src\\equilibrator\\thermodynamicconstants.vb||{2C015C70-C72C-11D0-88C3-00A0C9110049}",
+      "RelativeMoniker": "D:0:0:{A712EDC3-9352-6289-BD83-897F07C1A196}|eQuilibrator\\eQuilibrator.vbproj|solutionrelative:equilibrator\\thermodynamicconstants.vb||{2C015C70-C72C-11D0-88C3-00A0C9110049}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{A712EDC3-9352-6289-BD83-897F07C1A196}|eQuilibrator\\eQuilibrator.vbproj|g:\\emily\\src\\equilibrator\\phasedcompound.vb||{2C015C70-C72C-11D0-88C3-00A0C9110049}",
       "RelativeMoniker": "D:0:0:{A712EDC3-9352-6289-BD83-897F07C1A196}|eQuilibrator\\eQuilibrator.vbproj|solutionrelative:equilibrator\\phasedcompound.vb||{2C015C70-C72C-11D0-88C3-00A0C9110049}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A712EDC3-9352-6289-BD83-897F07C1A196}|eQuilibrator\\eQuilibrator.vbproj|g:\\emily\\src\\equilibrator\\phasedreaction.vb||{2C015C70-C72C-11D0-88C3-00A0C9110049}",
+      "RelativeMoniker": "D:0:0:{A712EDC3-9352-6289-BD83-897F07C1A196}|eQuilibrator\\eQuilibrator.vbproj|solutionrelative:equilibrator\\phasedreaction.vb||{2C015C70-C72C-11D0-88C3-00A0C9110049}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A712EDC3-9352-6289-BD83-897F07C1A196}|eQuilibrator\\eQuilibrator.vbproj|g:\\emily\\src\\equilibrator\\exceptions.vb||{2C015C70-C72C-11D0-88C3-00A0C9110049}",
+      "RelativeMoniker": "D:0:0:{A712EDC3-9352-6289-BD83-897F07C1A196}|eQuilibrator\\eQuilibrator.vbproj|solutionrelative:equilibrator\\exceptions.vb||{2C015C70-C72C-11D0-88C3-00A0C9110049}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A712EDC3-9352-6289-BD83-897F07C1A196}|eQuilibrator\\eQuilibrator.vbproj|g:\\emily\\src\\equilibrator\\stoichiometricmodel.vb||{2C015C70-C72C-11D0-88C3-00A0C9110049}",
+      "RelativeMoniker": "D:0:0:{A712EDC3-9352-6289-BD83-897F07C1A196}|eQuilibrator\\eQuilibrator.vbproj|solutionrelative:equilibrator\\stoichiometricmodel.vb||{2C015C70-C72C-11D0-88C3-00A0C9110049}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{A712EDC3-9352-6289-BD83-897F07C1A196}|eQuilibrator\\eQuilibrator.vbproj|g:\\emily\\src\\equilibrator\\extensions\\extensions.vb||{2C015C70-C72C-11D0-88C3-00A0C9110049}",
@@ -21,10 +65,6 @@
     {
       "AbsoluteMoniker": "D:0:0:{A712EDC3-9352-6289-BD83-897F07C1A196}|eQuilibrator\\eQuilibrator.vbproj|g:\\emily\\src\\equilibrator\\gibbsenergyresult.vb||{2C015C70-C72C-11D0-88C3-00A0C9110049}",
       "RelativeMoniker": "D:0:0:{A712EDC3-9352-6289-BD83-897F07C1A196}|eQuilibrator\\eQuilibrator.vbproj|solutionrelative:equilibrator\\gibbsenergyresult.vb||{2C015C70-C72C-11D0-88C3-00A0C9110049}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{A712EDC3-9352-6289-BD83-897F07C1A196}|eQuilibrator\\eQuilibrator.vbproj|g:\\emily\\src\\equilibrator\\phasedreaction.vb||{2C015C70-C72C-11D0-88C3-00A0C9110049}",
-      "RelativeMoniker": "D:0:0:{A712EDC3-9352-6289-BD83-897F07C1A196}|eQuilibrator\\eQuilibrator.vbproj|solutionrelative:equilibrator\\phasedreaction.vb||{2C015C70-C72C-11D0-88C3-00A0C9110049}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{A712EDC3-9352-6289-BD83-897F07C1A196}|eQuilibrator\\eQuilibrator.vbproj|g:\\emily\\src\\equilibrator\\quantity.vb||{2C015C70-C72C-11D0-88C3-00A0C9110049}",
@@ -37,14 +77,6 @@
     {
       "AbsoluteMoniker": "D:0:0:{A712EDC3-9352-6289-BD83-897F07C1A196}|eQuilibrator\\eQuilibrator.vbproj|g:\\emily\\src\\equilibrator\\parsers\\reactionparser.vb||{2C015C70-C72C-11D0-88C3-00A0C9110049}",
       "RelativeMoniker": "D:0:0:{A712EDC3-9352-6289-BD83-897F07C1A196}|eQuilibrator\\eQuilibrator.vbproj|solutionrelative:equilibrator\\parsers\\reactionparser.vb||{2C015C70-C72C-11D0-88C3-00A0C9110049}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{A712EDC3-9352-6289-BD83-897F07C1A196}|eQuilibrator\\eQuilibrator.vbproj|g:\\emily\\src\\equilibrator\\thermodynamicconstants.vb||{2C015C70-C72C-11D0-88C3-00A0C9110049}",
-      "RelativeMoniker": "D:0:0:{A712EDC3-9352-6289-BD83-897F07C1A196}|eQuilibrator\\eQuilibrator.vbproj|solutionrelative:equilibrator\\thermodynamicconstants.vb||{2C015C70-C72C-11D0-88C3-00A0C9110049}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{A712EDC3-9352-6289-BD83-897F07C1A196}|eQuilibrator\\eQuilibrator.vbproj|g:\\emily\\src\\equilibrator\\stoichiometricmodel.vb||{2C015C70-C72C-11D0-88C3-00A0C9110049}",
-      "RelativeMoniker": "D:0:0:{A712EDC3-9352-6289-BD83-897F07C1A196}|eQuilibrator\\eQuilibrator.vbproj|solutionrelative:equilibrator\\stoichiometricmodel.vb||{2C015C70-C72C-11D0-88C3-00A0C9110049}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{A712EDC3-9352-6289-BD83-897F07C1A196}|eQuilibrator\\eQuilibrator.vbproj|g:\\emily\\src\\equilibrator\\extensions\\stoichiometricmodelextensions.vb||{2C015C70-C72C-11D0-88C3-00A0C9110049}",
@@ -66,7 +98,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 4,
+          "SelectedChildIndex": 14,
           "Children": [
             {
               "$type": "Bookmark",
@@ -86,20 +118,150 @@
             },
             {
               "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "Abstract.vb",
+              "DocumentMoniker": "G:\\GCModeller\\src\\GCModeller\\core\\Bio.Assembly\\ComponentModel\\Equations\\Equation\\Abstract.vb",
+              "RelativeDocumentMoniker": "..\\..\\GCModeller\\src\\GCModeller\\core\\Bio.Assembly\\ComponentModel\\Equations\\Equation\\Abstract.vb",
+              "ToolTip": "G:\\GCModeller\\src\\GCModeller\\core\\Bio.Assembly\\ComponentModel\\Equations\\Equation\\Abstract.vb",
+              "RelativeToolTip": "..\\..\\GCModeller\\src\\GCModeller\\core\\Bio.Assembly\\ComponentModel\\Equations\\Equation\\Abstract.vb",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAFEAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003361|",
+              "WhenOpened": "2026-04-01T19:45:43.227Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "DefaultTypes.vb",
+              "DocumentMoniker": "G:\\GCModeller\\src\\GCModeller\\core\\Bio.Assembly\\ComponentModel\\Equations\\Equation\\DefaultTypes.vb",
+              "RelativeDocumentMoniker": "..\\..\\GCModeller\\src\\GCModeller\\core\\Bio.Assembly\\ComponentModel\\Equations\\Equation\\DefaultTypes.vb",
+              "ToolTip": "G:\\GCModeller\\src\\GCModeller\\core\\Bio.Assembly\\ComponentModel\\Equations\\Equation\\DefaultTypes.vb",
+              "RelativeToolTip": "..\\..\\GCModeller\\src\\GCModeller\\core\\Bio.Assembly\\ComponentModel\\Equations\\Equation\\DefaultTypes.vb",
+              "ViewState": "AgIAANYAAAAAAAAAAAAuwAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003361|",
+              "WhenOpened": "2026-04-01T19:45:37.71Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "Equation.vb",
+              "DocumentMoniker": "G:\\GCModeller\\src\\GCModeller\\core\\Bio.Assembly\\ComponentModel\\Equations\\Equation\\Equation.vb",
+              "RelativeDocumentMoniker": "..\\..\\GCModeller\\src\\GCModeller\\core\\Bio.Assembly\\ComponentModel\\Equations\\Equation\\Equation.vb",
+              "ToolTip": "G:\\GCModeller\\src\\GCModeller\\core\\Bio.Assembly\\ComponentModel\\Equations\\Equation\\Equation.vb",
+              "RelativeToolTip": "..\\..\\GCModeller\\src\\GCModeller\\core\\Bio.Assembly\\ComponentModel\\Equations\\Equation\\Equation.vb",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003361|",
+              "WhenOpened": "2026-04-01T19:45:33.213Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "EquationBuilder.vb",
+              "DocumentMoniker": "G:\\GCModeller\\src\\GCModeller\\core\\Bio.Assembly\\ComponentModel\\Equations\\Equation\\EquationBuilder.vb",
+              "RelativeDocumentMoniker": "..\\..\\GCModeller\\src\\GCModeller\\core\\Bio.Assembly\\ComponentModel\\Equations\\Equation\\EquationBuilder.vb",
+              "ToolTip": "G:\\GCModeller\\src\\GCModeller\\core\\Bio.Assembly\\ComponentModel\\Equations\\Equation\\EquationBuilder.vb",
+              "RelativeToolTip": "..\\..\\GCModeller\\src\\GCModeller\\core\\Bio.Assembly\\ComponentModel\\Equations\\Equation\\EquationBuilder.vb",
+              "ViewState": "AgIAAMUAAAAAAAAAAAAgwAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003361|",
+              "WhenOpened": "2026-04-01T19:45:25.581Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "Equivalence.vb",
+              "DocumentMoniker": "G:\\GCModeller\\src\\GCModeller\\core\\Bio.Assembly\\ComponentModel\\Equations\\Equation\\Equivalence.vb",
+              "RelativeDocumentMoniker": "..\\..\\GCModeller\\src\\GCModeller\\core\\Bio.Assembly\\ComponentModel\\Equations\\Equation\\Equivalence.vb",
+              "ToolTip": "G:\\GCModeller\\src\\GCModeller\\core\\Bio.Assembly\\ComponentModel\\Equations\\Equation\\Equivalence.vb",
+              "RelativeToolTip": "..\\..\\GCModeller\\src\\GCModeller\\core\\Bio.Assembly\\ComponentModel\\Equations\\Equation\\Equivalence.vb",
+              "ViewState": "AgIAAGEAAAAAAAAAAAAiwAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003361|",
+              "WhenOpened": "2026-04-01T19:45:21.749Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "CompoundSpecies.vb",
+              "DocumentMoniker": "G:\\GCModeller\\src\\GCModeller\\core\\Bio.Assembly\\ComponentModel\\Equations\\CompoundSpecies.vb",
+              "RelativeDocumentMoniker": "..\\..\\GCModeller\\src\\GCModeller\\core\\Bio.Assembly\\ComponentModel\\Equations\\CompoundSpecies.vb",
+              "ToolTip": "G:\\GCModeller\\src\\GCModeller\\core\\Bio.Assembly\\ComponentModel\\Equations\\CompoundSpecies.vb",
+              "RelativeToolTip": "..\\..\\GCModeller\\src\\GCModeller\\core\\Bio.Assembly\\ComponentModel\\Equations\\CompoundSpecies.vb",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003361|",
+              "WhenOpened": "2026-04-01T19:45:19.661Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "Reaction.vb",
+              "DocumentMoniker": "G:\\GCModeller\\src\\GCModeller\\core\\Bio.Assembly\\ComponentModel\\Equations\\Reaction.vb",
+              "RelativeDocumentMoniker": "..\\..\\GCModeller\\src\\GCModeller\\core\\Bio.Assembly\\ComponentModel\\Equations\\Reaction.vb",
+              "ToolTip": "G:\\GCModeller\\src\\GCModeller\\core\\Bio.Assembly\\ComponentModel\\Equations\\Reaction.vb",
+              "RelativeToolTip": "..\\..\\GCModeller\\src\\GCModeller\\core\\Bio.Assembly\\ComponentModel\\Equations\\Reaction.vb",
+              "ViewState": "AgIAAFMAAAAAAAAAAAAowAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003361|",
+              "WhenOpened": "2026-04-01T19:45:12.139Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "SideCompound.vb",
+              "DocumentMoniker": "G:\\GCModeller\\src\\GCModeller\\core\\Bio.Assembly\\ComponentModel\\Equations\\SideCompound.vb",
+              "RelativeDocumentMoniker": "..\\..\\GCModeller\\src\\GCModeller\\core\\Bio.Assembly\\ComponentModel\\Equations\\SideCompound.vb",
+              "ToolTip": "G:\\GCModeller\\src\\GCModeller\\core\\Bio.Assembly\\ComponentModel\\Equations\\SideCompound.vb",
+              "RelativeToolTip": "..\\..\\GCModeller\\src\\GCModeller\\core\\Bio.Assembly\\ComponentModel\\Equations\\SideCompound.vb",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003361|",
+              "WhenOpened": "2026-04-01T19:45:11.244Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
+              "Title": "Compound.vb",
+              "DocumentMoniker": "G:\\emily\\src\\eQuilibrator\\Compound.vb",
+              "RelativeDocumentMoniker": "eQuilibrator\\Compound.vb",
+              "ToolTip": "G:\\emily\\src\\eQuilibrator\\Compound.vb",
+              "RelativeToolTip": "eQuilibrator\\Compound.vb",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAYAAAAZAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003361|",
+              "WhenOpened": "2026-04-01T19:43:54.47Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 10,
+              "Title": "CompoundCache.vb",
+              "DocumentMoniker": "G:\\emily\\src\\eQuilibrator\\CompoundCache.vb",
+              "RelativeDocumentMoniker": "eQuilibrator\\CompoundCache.vb",
+              "ToolTip": "G:\\emily\\src\\eQuilibrator\\CompoundCache.vb",
+              "RelativeToolTip": "eQuilibrator\\CompoundCache.vb",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAcAAAAeAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003361|",
+              "WhenOpened": "2026-04-01T19:43:09.197Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
               "DocumentIndex": 0,
               "Title": "ComponentContribution.vb",
               "DocumentMoniker": "G:\\emily\\src\\eQuilibrator\\ComponentContribution.vb",
               "RelativeDocumentMoniker": "eQuilibrator\\ComponentContribution.vb",
               "ToolTip": "G:\\emily\\src\\eQuilibrator\\ComponentContribution.vb",
               "RelativeToolTip": "eQuilibrator\\ComponentContribution.vb",
-              "ViewState": "AgIAAAMAAAAAAAAAAAAAAE4BAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAANkAAAAXAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003361|",
               "WhenOpened": "2026-04-01T19:41:30.502Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 14,
               "Title": "Exceptions.vb",
               "DocumentMoniker": "G:\\emily\\src\\eQuilibrator\\Exceptions.vb",
               "RelativeDocumentMoniker": "eQuilibrator\\Exceptions.vb",
@@ -112,7 +274,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 16,
               "Title": "Extensions.vb",
               "DocumentMoniker": "G:\\emily\\src\\eQuilibrator\\Extensions\\Extensions.vb",
               "RelativeDocumentMoniker": "eQuilibrator\\Extensions\\Extensions.vb",
@@ -125,7 +287,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 17,
               "Title": "GibbsEnergyResult.vb",
               "DocumentMoniker": "G:\\emily\\src\\eQuilibrator\\GibbsEnergyResult.vb",
               "RelativeDocumentMoniker": "eQuilibrator\\GibbsEnergyResult.vb",
@@ -138,7 +300,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 7,
+              "DocumentIndex": 19,
               "Title": "UnitConverter.vb",
               "DocumentMoniker": "G:\\emily\\src\\eQuilibrator\\UnitConverter.vb",
               "RelativeDocumentMoniker": "eQuilibrator\\UnitConverter.vb",
@@ -151,7 +313,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 6,
+              "DocumentIndex": 18,
               "Title": "Quantity.vb",
               "DocumentMoniker": "G:\\emily\\src\\eQuilibrator\\Quantity.vb",
               "RelativeDocumentMoniker": "eQuilibrator\\Quantity.vb",
@@ -164,7 +326,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 5,
+              "DocumentIndex": 13,
               "Title": "PhasedReaction.vb",
               "DocumentMoniker": "G:\\emily\\src\\eQuilibrator\\PhasedReaction.vb",
               "RelativeDocumentMoniker": "eQuilibrator\\PhasedReaction.vb",
@@ -177,46 +339,20 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 12,
               "Title": "PhasedCompound.vb",
               "DocumentMoniker": "G:\\emily\\src\\eQuilibrator\\PhasedCompound.vb",
               "RelativeDocumentMoniker": "eQuilibrator\\PhasedCompound.vb",
               "ToolTip": "G:\\emily\\src\\eQuilibrator\\PhasedCompound.vb",
               "RelativeToolTip": "eQuilibrator\\PhasedCompound.vb",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAFQBAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003361|",
               "WhenOpened": "2026-04-01T19:38:35.596Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 8,
-              "Title": "ReactionParser.vb",
-              "DocumentMoniker": "G:\\emily\\src\\eQuilibrator\\Parsers\\ReactionParser.vb",
-              "RelativeDocumentMoniker": "eQuilibrator\\Parsers\\ReactionParser.vb",
-              "ToolTip": "G:\\emily\\src\\eQuilibrator\\Parsers\\ReactionParser.vb",
-              "RelativeToolTip": "eQuilibrator\\Parsers\\ReactionParser.vb",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAB0AAAAmAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003361|",
-              "WhenOpened": "2026-04-01T19:38:02.334Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 11,
-              "Title": "StoichiometricModelExtensions.vb",
-              "DocumentMoniker": "G:\\emily\\src\\eQuilibrator\\Extensions\\StoichiometricModelExtensions.vb",
-              "RelativeDocumentMoniker": "eQuilibrator\\Extensions\\StoichiometricModelExtensions.vb",
-              "ToolTip": "G:\\emily\\src\\eQuilibrator\\Extensions\\StoichiometricModelExtensions.vb",
-              "RelativeToolTip": "eQuilibrator\\Extensions\\StoichiometricModelExtensions.vb",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAUAAAAvAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003361|",
-              "WhenOpened": "2026-04-01T19:37:35.923Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 10,
+              "DocumentIndex": 15,
               "Title": "StoichiometricModel.vb",
               "DocumentMoniker": "G:\\emily\\src\\eQuilibrator\\StoichiometricModel.vb",
               "RelativeDocumentMoniker": "eQuilibrator\\StoichiometricModel.vb",
@@ -229,20 +365,46 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 9,
+              "DocumentIndex": 11,
               "Title": "ThermodynamicConstants.vb",
               "DocumentMoniker": "G:\\emily\\src\\eQuilibrator\\ThermodynamicConstants.vb",
               "RelativeDocumentMoniker": "eQuilibrator\\ThermodynamicConstants.vb",
               "ToolTip": "G:\\emily\\src\\eQuilibrator\\ThermodynamicConstants.vb",
               "RelativeToolTip": "eQuilibrator\\ThermodynamicConstants.vb",
-              "ViewState": "AgIAAF8AAAAAAAAAAAAIwJUAAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAAAkAAAAAAAAAAAAAAB8AAAAoAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003361|",
               "WhenOpened": "2026-04-01T19:37:19.263Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 12,
+              "DocumentIndex": 20,
+              "Title": "ReactionParser.vb",
+              "DocumentMoniker": "G:\\emily\\src\\eQuilibrator\\Parsers\\ReactionParser.vb",
+              "RelativeDocumentMoniker": "eQuilibrator\\Parsers\\ReactionParser.vb",
+              "ToolTip": "G:\\emily\\src\\eQuilibrator\\Parsers\\ReactionParser.vb",
+              "RelativeToolTip": "eQuilibrator\\Parsers\\ReactionParser.vb",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAB0AAAAmAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003361|",
+              "WhenOpened": "2026-04-01T19:38:02.334Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 21,
+              "Title": "StoichiometricModelExtensions.vb",
+              "DocumentMoniker": "G:\\emily\\src\\eQuilibrator\\Extensions\\StoichiometricModelExtensions.vb",
+              "RelativeDocumentMoniker": "eQuilibrator\\Extensions\\StoichiometricModelExtensions.vb",
+              "ToolTip": "G:\\emily\\src\\eQuilibrator\\Extensions\\StoichiometricModelExtensions.vb",
+              "RelativeToolTip": "eQuilibrator\\Extensions\\StoichiometricModelExtensions.vb",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAUAAAAvAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003361|",
+              "WhenOpened": "2026-04-01T19:37:35.923Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 22,
               "Title": "BoundsExtensions.vb",
               "DocumentMoniker": "G:\\emily\\src\\eQuilibrator\\Extensions\\BoundsExtensions.vb",
               "RelativeDocumentMoniker": "eQuilibrator\\Extensions\\BoundsExtensions.vb",
@@ -255,7 +417,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 13,
+              "DocumentIndex": 23,
               "Title": "Bounds.vb",
               "DocumentMoniker": "G:\\emily\\src\\eQuilibrator\\Bounds.vb",
               "RelativeDocumentMoniker": "eQuilibrator\\Bounds.vb",

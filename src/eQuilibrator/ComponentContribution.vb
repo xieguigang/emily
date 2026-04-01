@@ -26,6 +26,7 @@
 Imports eQuilibrator.EquilibratorApi.Core.Constants
 Imports eQuilibrator.EquilibratorApi.Core.Models
 Imports eQuilibrator.EquilibratorApi.Core.Parsers
+Imports SMRUCC.genomics.ComponentModel.EquaionModel
 
 Namespace EquilibratorApi.Core
 
@@ -312,26 +313,5 @@ Namespace EquilibratorApi.Core
             Return allCompounds.ToList()
         End Function
     End Class
-
-    ''' <summary>
-    ''' Represents the direction of a reaction
-    ''' </summary>
-    Public Enum ReactionDirection
-        ''' <summary>
-        ''' Reaction proceeds in the forward direction
-        ''' </summary>
-        Forward
-
-        ''' <summary>
-        ''' Reaction proceeds in the reverse direction
-        ''' </summary>
-        Reverse
-
-        ''' <summary>
-        ''' Reaction is at or near equilibrium
-        ''' </summary>
-        Equilibrium
-    End Enum
-
 
 End Namespace
