@@ -47,6 +47,8 @@ Project("{D954291E-2A0B-460D-934E-DC6B0785DB48}") = "R_graphic.interop", "..\GCM
 EndProject
 Project("{F184B08F-C81C-45F6-A57F-5ABD9991F28F}") = "R_graphics.common_runtime", "..\GCModeller\src\R-sharp\Library\shares\graphics.common_runtime\R_graphics.common_runtime.vbproj", "{705E51CF-B0F3-0819-C2BE-0AA0D1D5CD78}"
 EndProject
+Project("{F184B08F-C81C-45F6-A57F-5ABD9991F28F}") = "eQuilibrator", "src\eQuilibrator\eQuilibrator.vbproj", "{4FBD81E5-C976-80E6-5D01-DE3380E6FA45}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -237,6 +239,18 @@ Global
 		{705E51CF-B0F3-0819-C2BE-0AA0D1D5CD78}.Rsharp_app_release|Any CPU.Build.0 = Release|Any CPU
 		{705E51CF-B0F3-0819-C2BE-0AA0D1D5CD78}.Rsharp_app_release|x64.ActiveCfg = Release|x64
 		{705E51CF-B0F3-0819-C2BE-0AA0D1D5CD78}.Rsharp_app_release|x64.Build.0 = Release|x64
+		{4FBD81E5-C976-80E6-5D01-DE3380E6FA45}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4FBD81E5-C976-80E6-5D01-DE3380E6FA45}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4FBD81E5-C976-80E6-5D01-DE3380E6FA45}.Debug|x64.ActiveCfg = Debug|x64
+		{4FBD81E5-C976-80E6-5D01-DE3380E6FA45}.Debug|x64.Build.0 = Debug|x64
+		{4FBD81E5-C976-80E6-5D01-DE3380E6FA45}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4FBD81E5-C976-80E6-5D01-DE3380E6FA45}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4FBD81E5-C976-80E6-5D01-DE3380E6FA45}.Release|x64.ActiveCfg = Release|x64
+		{4FBD81E5-C976-80E6-5D01-DE3380E6FA45}.Release|x64.Build.0 = Release|x64
+		{4FBD81E5-C976-80E6-5D01-DE3380E6FA45}.Rsharp_app_release|Any CPU.ActiveCfg = Release|Any CPU
+		{4FBD81E5-C976-80E6-5D01-DE3380E6FA45}.Rsharp_app_release|Any CPU.Build.0 = Release|Any CPU
+		{4FBD81E5-C976-80E6-5D01-DE3380E6FA45}.Rsharp_app_release|x64.ActiveCfg = Release|x64
+		{4FBD81E5-C976-80E6-5D01-DE3380E6FA45}.Rsharp_app_release|x64.Build.0 = Release|x64
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
