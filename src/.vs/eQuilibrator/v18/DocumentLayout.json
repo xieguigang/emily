@@ -3,6 +3,22 @@
   "WorkspaceRootPath": "G:\\emily\\src\\",
   "Documents": [
     {
+      "AbsoluteMoniker": "D:0:0:{A712EDC3-9352-6289-BD83-897F07C1A196}|eQuilibrator\\eQuilibrator.vbproj|g:\\emily\\src\\equilibrator\\componentcontribution.vb||{2C015C70-C72C-11D0-88C3-00A0C9110049}",
+      "RelativeMoniker": "D:0:0:{A712EDC3-9352-6289-BD83-897F07C1A196}|eQuilibrator\\eQuilibrator.vbproj|solutionrelative:equilibrator\\componentcontribution.vb||{2C015C70-C72C-11D0-88C3-00A0C9110049}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A712EDC3-9352-6289-BD83-897F07C1A196}|eQuilibrator\\eQuilibrator.vbproj|g:\\emily\\src\\equilibrator\\exceptions.vb||{2C015C70-C72C-11D0-88C3-00A0C9110049}",
+      "RelativeMoniker": "D:0:0:{A712EDC3-9352-6289-BD83-897F07C1A196}|eQuilibrator\\eQuilibrator.vbproj|solutionrelative:equilibrator\\exceptions.vb||{2C015C70-C72C-11D0-88C3-00A0C9110049}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A712EDC3-9352-6289-BD83-897F07C1A196}|eQuilibrator\\eQuilibrator.vbproj|g:\\emily\\src\\equilibrator\\phasedcompound.vb||{2C015C70-C72C-11D0-88C3-00A0C9110049}",
+      "RelativeMoniker": "D:0:0:{A712EDC3-9352-6289-BD83-897F07C1A196}|eQuilibrator\\eQuilibrator.vbproj|solutionrelative:equilibrator\\phasedcompound.vb||{2C015C70-C72C-11D0-88C3-00A0C9110049}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A712EDC3-9352-6289-BD83-897F07C1A196}|eQuilibrator\\eQuilibrator.vbproj|g:\\emily\\src\\equilibrator\\extensions\\extensions.vb||{2C015C70-C72C-11D0-88C3-00A0C9110049}",
+      "RelativeMoniker": "D:0:0:{A712EDC3-9352-6289-BD83-897F07C1A196}|eQuilibrator\\eQuilibrator.vbproj|solutionrelative:equilibrator\\extensions\\extensions.vb||{2C015C70-C72C-11D0-88C3-00A0C9110049}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{A712EDC3-9352-6289-BD83-897F07C1A196}|eQuilibrator\\eQuilibrator.vbproj|g:\\emily\\src\\equilibrator\\gibbsenergyresult.vb||{2C015C70-C72C-11D0-88C3-00A0C9110049}",
       "RelativeMoniker": "D:0:0:{A712EDC3-9352-6289-BD83-897F07C1A196}|eQuilibrator\\eQuilibrator.vbproj|solutionrelative:equilibrator\\gibbsenergyresult.vb||{2C015C70-C72C-11D0-88C3-00A0C9110049}"
     },
@@ -17,10 +33,6 @@
     {
       "AbsoluteMoniker": "D:0:0:{A712EDC3-9352-6289-BD83-897F07C1A196}|eQuilibrator\\eQuilibrator.vbproj|g:\\emily\\src\\equilibrator\\unitconverter.vb||{2C015C70-C72C-11D0-88C3-00A0C9110049}",
       "RelativeMoniker": "D:0:0:{A712EDC3-9352-6289-BD83-897F07C1A196}|eQuilibrator\\eQuilibrator.vbproj|solutionrelative:equilibrator\\unitconverter.vb||{2C015C70-C72C-11D0-88C3-00A0C9110049}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{A712EDC3-9352-6289-BD83-897F07C1A196}|eQuilibrator\\eQuilibrator.vbproj|g:\\emily\\src\\equilibrator\\phasedcompound.vb||{2C015C70-C72C-11D0-88C3-00A0C9110049}",
-      "RelativeMoniker": "D:0:0:{A712EDC3-9352-6289-BD83-897F07C1A196}|eQuilibrator\\eQuilibrator.vbproj|solutionrelative:equilibrator\\phasedcompound.vb||{2C015C70-C72C-11D0-88C3-00A0C9110049}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{A712EDC3-9352-6289-BD83-897F07C1A196}|eQuilibrator\\eQuilibrator.vbproj|g:\\emily\\src\\equilibrator\\parsers\\reactionparser.vb||{2C015C70-C72C-11D0-88C3-00A0C9110049}",
@@ -75,19 +87,58 @@
             {
               "$type": "Document",
               "DocumentIndex": 0,
+              "Title": "ComponentContribution.vb",
+              "DocumentMoniker": "G:\\emily\\src\\eQuilibrator\\ComponentContribution.vb",
+              "RelativeDocumentMoniker": "eQuilibrator\\ComponentContribution.vb",
+              "ToolTip": "G:\\emily\\src\\eQuilibrator\\ComponentContribution.vb",
+              "RelativeToolTip": "eQuilibrator\\ComponentContribution.vb",
+              "ViewState": "AgIAAAMAAAAAAAAAAAAAAE4BAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003361|",
+              "WhenOpened": "2026-04-01T19:41:30.502Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "Exceptions.vb",
+              "DocumentMoniker": "G:\\emily\\src\\eQuilibrator\\Exceptions.vb",
+              "RelativeDocumentMoniker": "eQuilibrator\\Exceptions.vb",
+              "ToolTip": "G:\\emily\\src\\eQuilibrator\\Exceptions.vb",
+              "RelativeToolTip": "eQuilibrator\\Exceptions.vb",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003361|",
+              "WhenOpened": "2026-04-01T19:41:29.233Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "Extensions.vb",
+              "DocumentMoniker": "G:\\emily\\src\\eQuilibrator\\Extensions\\Extensions.vb",
+              "RelativeDocumentMoniker": "eQuilibrator\\Extensions\\Extensions.vb",
+              "ToolTip": "G:\\emily\\src\\eQuilibrator\\Extensions\\Extensions.vb",
+              "RelativeToolTip": "eQuilibrator\\Extensions\\Extensions.vb",
+              "ViewState": "AgIAAIoAAAAAAAAAAAAqwCIAAAApAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003361|",
+              "WhenOpened": "2026-04-01T19:41:02.643Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
               "Title": "GibbsEnergyResult.vb",
               "DocumentMoniker": "G:\\emily\\src\\eQuilibrator\\GibbsEnergyResult.vb",
               "RelativeDocumentMoniker": "eQuilibrator\\GibbsEnergyResult.vb",
               "ToolTip": "G:\\emily\\src\\eQuilibrator\\GibbsEnergyResult.vb",
               "RelativeToolTip": "eQuilibrator\\GibbsEnergyResult.vb",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAcAAAAiAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAACAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003361|",
               "WhenOpened": "2026-04-01T19:39:34.166Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 7,
               "Title": "UnitConverter.vb",
               "DocumentMoniker": "G:\\emily\\src\\eQuilibrator\\UnitConverter.vb",
               "RelativeDocumentMoniker": "eQuilibrator\\UnitConverter.vb",
@@ -100,7 +151,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 6,
               "Title": "Quantity.vb",
               "DocumentMoniker": "G:\\emily\\src\\eQuilibrator\\Quantity.vb",
               "RelativeDocumentMoniker": "eQuilibrator\\Quantity.vb",
@@ -113,7 +164,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 5,
               "Title": "PhasedReaction.vb",
               "DocumentMoniker": "G:\\emily\\src\\eQuilibrator\\PhasedReaction.vb",
               "RelativeDocumentMoniker": "eQuilibrator\\PhasedReaction.vb",
@@ -126,7 +177,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 2,
               "Title": "PhasedCompound.vb",
               "DocumentMoniker": "G:\\emily\\src\\eQuilibrator\\PhasedCompound.vb",
               "RelativeDocumentMoniker": "eQuilibrator\\PhasedCompound.vb",
@@ -139,7 +190,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 5,
+              "DocumentIndex": 8,
               "Title": "ReactionParser.vb",
               "DocumentMoniker": "G:\\emily\\src\\eQuilibrator\\Parsers\\ReactionParser.vb",
               "RelativeDocumentMoniker": "eQuilibrator\\Parsers\\ReactionParser.vb",
@@ -152,7 +203,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 8,
+              "DocumentIndex": 11,
               "Title": "StoichiometricModelExtensions.vb",
               "DocumentMoniker": "G:\\emily\\src\\eQuilibrator\\Extensions\\StoichiometricModelExtensions.vb",
               "RelativeDocumentMoniker": "eQuilibrator\\Extensions\\StoichiometricModelExtensions.vb",
@@ -165,7 +216,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 7,
+              "DocumentIndex": 10,
               "Title": "StoichiometricModel.vb",
               "DocumentMoniker": "G:\\emily\\src\\eQuilibrator\\StoichiometricModel.vb",
               "RelativeDocumentMoniker": "eQuilibrator\\StoichiometricModel.vb",
@@ -178,7 +229,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 6,
+              "DocumentIndex": 9,
               "Title": "ThermodynamicConstants.vb",
               "DocumentMoniker": "G:\\emily\\src\\eQuilibrator\\ThermodynamicConstants.vb",
               "RelativeDocumentMoniker": "eQuilibrator\\ThermodynamicConstants.vb",
@@ -191,7 +242,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 9,
+              "DocumentIndex": 12,
               "Title": "BoundsExtensions.vb",
               "DocumentMoniker": "G:\\emily\\src\\eQuilibrator\\Extensions\\BoundsExtensions.vb",
               "RelativeDocumentMoniker": "eQuilibrator\\Extensions\\BoundsExtensions.vb",
@@ -204,7 +255,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 10,
+              "DocumentIndex": 13,
               "Title": "Bounds.vb",
               "DocumentMoniker": "G:\\emily\\src\\eQuilibrator\\Bounds.vb",
               "RelativeDocumentMoniker": "eQuilibrator\\Bounds.vb",
