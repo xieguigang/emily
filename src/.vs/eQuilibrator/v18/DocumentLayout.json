@@ -3,14 +3,17 @@
   "WorkspaceRootPath": "G:\\emily\\src\\",
   "Documents": [
     {
+      "AbsoluteMoniker": "D:0:0:{5B8ACC99-FB8D-1CB5-190E-59FE7B06DB4D}|..\\..\\GCModeller\\src\\GCModeller\\core\\Bio.Assembly\\biocore-netcore5.vbproj|g:\\gcmodeller\\src\\gcmodeller\\core\\bio.assembly\\componentmodel\\equations\\equation\\default\\equation.vb||{2C015C70-C72C-11D0-88C3-00A0C9110049}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{5B8ACC99-FB8D-1CB5-190E-59FE7B06DB4D}|..\\..\\GCModeller\\src\\GCModeller\\core\\Bio.Assembly\\biocore-netcore5.vbproj|g:\\gcmodeller\\src\\gcmodeller\\core\\bio.assembly\\componentmodel\\equations\\equation\\default\\compoundspeciereference.vb||{2C015C70-C72C-11D0-88C3-00A0C9110049}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{A712EDC3-9352-6289-BD83-897F07C1A196}|eQuilibrator\\eQuilibrator.vbproj|g:\\emily\\src\\equilibrator\\componentcontribution.vb||{2C015C70-C72C-11D0-88C3-00A0C9110049}",
       "RelativeMoniker": "D:0:0:{A712EDC3-9352-6289-BD83-897F07C1A196}|eQuilibrator\\eQuilibrator.vbproj|solutionrelative:equilibrator\\componentcontribution.vb||{2C015C70-C72C-11D0-88C3-00A0C9110049}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{5B8ACC99-FB8D-1CB5-190E-59FE7B06DB4D}|..\\..\\GCModeller\\src\\GCModeller\\core\\Bio.Assembly\\biocore-netcore5.vbproj|g:\\gcmodeller\\src\\gcmodeller\\core\\bio.assembly\\componentmodel\\equations\\equation\\abstract.vb||{2C015C70-C72C-11D0-88C3-00A0C9110049}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{5B8ACC99-FB8D-1CB5-190E-59FE7B06DB4D}|..\\..\\GCModeller\\src\\GCModeller\\core\\Bio.Assembly\\biocore-netcore5.vbproj|g:\\gcmodeller\\src\\gcmodeller\\core\\bio.assembly\\componentmodel\\equations\\equation\\defaulttypes.vb||{2C015C70-C72C-11D0-88C3-00A0C9110049}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{5B8ACC99-FB8D-1CB5-190E-59FE7B06DB4D}|..\\..\\GCModeller\\src\\GCModeller\\core\\Bio.Assembly\\biocore-netcore5.vbproj|g:\\gcmodeller\\src\\gcmodeller\\core\\bio.assembly\\componentmodel\\equations\\equation\\equation.vb||{2C015C70-C72C-11D0-88C3-00A0C9110049}"
@@ -98,7 +101,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 14,
+          "SelectedChildIndex": 6,
           "Children": [
             {
               "$type": "Bookmark",
@@ -119,6 +122,19 @@
             {
               "$type": "Document",
               "DocumentIndex": 1,
+              "Title": "CompoundSpecieReference.vb",
+              "DocumentMoniker": "G:\\GCModeller\\src\\GCModeller\\core\\Bio.Assembly\\ComponentModel\\Equations\\Equation\\Default\\CompoundSpecieReference.vb",
+              "RelativeDocumentMoniker": "..\\..\\GCModeller\\src\\GCModeller\\core\\Bio.Assembly\\ComponentModel\\Equations\\Equation\\Default\\CompoundSpecieReference.vb",
+              "ToolTip": "G:\\GCModeller\\src\\GCModeller\\core\\Bio.Assembly\\ComponentModel\\Equations\\Equation\\Default\\CompoundSpecieReference.vb",
+              "RelativeToolTip": "..\\..\\GCModeller\\src\\GCModeller\\core\\Bio.Assembly\\ComponentModel\\Equations\\Equation\\Default\\CompoundSpecieReference.vb",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABoAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003361|",
+              "WhenOpened": "2026-04-01T19:47:13.324Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
               "Title": "Abstract.vb",
               "DocumentMoniker": "G:\\GCModeller\\src\\GCModeller\\core\\Bio.Assembly\\ComponentModel\\Equations\\Equation\\Abstract.vb",
               "RelativeDocumentMoniker": "..\\..\\GCModeller\\src\\GCModeller\\core\\Bio.Assembly\\ComponentModel\\Equations\\Equation\\Abstract.vb",
@@ -131,20 +147,20 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "DefaultTypes.vb",
-              "DocumentMoniker": "G:\\GCModeller\\src\\GCModeller\\core\\Bio.Assembly\\ComponentModel\\Equations\\Equation\\DefaultTypes.vb",
-              "RelativeDocumentMoniker": "..\\..\\GCModeller\\src\\GCModeller\\core\\Bio.Assembly\\ComponentModel\\Equations\\Equation\\DefaultTypes.vb",
-              "ToolTip": "G:\\GCModeller\\src\\GCModeller\\core\\Bio.Assembly\\ComponentModel\\Equations\\Equation\\DefaultTypes.vb",
-              "RelativeToolTip": "..\\..\\GCModeller\\src\\GCModeller\\core\\Bio.Assembly\\ComponentModel\\Equations\\Equation\\DefaultTypes.vb",
-              "ViewState": "AgIAANYAAAAAAAAAAAAuwAAAAAAAAAAAAAAAAA==",
+              "DocumentIndex": 0,
+              "Title": "Equation.vb",
+              "DocumentMoniker": "G:\\GCModeller\\src\\GCModeller\\core\\Bio.Assembly\\ComponentModel\\Equations\\Equation\\Default\\Equation.vb",
+              "RelativeDocumentMoniker": "..\\..\\GCModeller\\src\\GCModeller\\core\\Bio.Assembly\\ComponentModel\\Equations\\Equation\\Default\\Equation.vb",
+              "ToolTip": "G:\\GCModeller\\src\\GCModeller\\core\\Bio.Assembly\\ComponentModel\\Equations\\Equation\\Default\\Equation.vb",
+              "RelativeToolTip": "..\\..\\GCModeller\\src\\GCModeller\\core\\Bio.Assembly\\ComponentModel\\Equations\\Equation\\Default\\Equation.vb",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAF4AAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003361|",
               "WhenOpened": "2026-04-01T19:45:37.71Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 4,
               "Title": "Equation.vb",
               "DocumentMoniker": "G:\\GCModeller\\src\\GCModeller\\core\\Bio.Assembly\\ComponentModel\\Equations\\Equation\\Equation.vb",
               "RelativeDocumentMoniker": "..\\..\\GCModeller\\src\\GCModeller\\core\\Bio.Assembly\\ComponentModel\\Equations\\Equation\\Equation.vb",
@@ -157,7 +173,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 5,
               "Title": "EquationBuilder.vb",
               "DocumentMoniker": "G:\\GCModeller\\src\\GCModeller\\core\\Bio.Assembly\\ComponentModel\\Equations\\Equation\\EquationBuilder.vb",
               "RelativeDocumentMoniker": "..\\..\\GCModeller\\src\\GCModeller\\core\\Bio.Assembly\\ComponentModel\\Equations\\Equation\\EquationBuilder.vb",
@@ -170,7 +186,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 5,
+              "DocumentIndex": 6,
               "Title": "Equivalence.vb",
               "DocumentMoniker": "G:\\GCModeller\\src\\GCModeller\\core\\Bio.Assembly\\ComponentModel\\Equations\\Equation\\Equivalence.vb",
               "RelativeDocumentMoniker": "..\\..\\GCModeller\\src\\GCModeller\\core\\Bio.Assembly\\ComponentModel\\Equations\\Equation\\Equivalence.vb",
@@ -183,7 +199,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 6,
+              "DocumentIndex": 7,
               "Title": "CompoundSpecies.vb",
               "DocumentMoniker": "G:\\GCModeller\\src\\GCModeller\\core\\Bio.Assembly\\ComponentModel\\Equations\\CompoundSpecies.vb",
               "RelativeDocumentMoniker": "..\\..\\GCModeller\\src\\GCModeller\\core\\Bio.Assembly\\ComponentModel\\Equations\\CompoundSpecies.vb",
@@ -196,7 +212,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 7,
+              "DocumentIndex": 8,
               "Title": "Reaction.vb",
               "DocumentMoniker": "G:\\GCModeller\\src\\GCModeller\\core\\Bio.Assembly\\ComponentModel\\Equations\\Reaction.vb",
               "RelativeDocumentMoniker": "..\\..\\GCModeller\\src\\GCModeller\\core\\Bio.Assembly\\ComponentModel\\Equations\\Reaction.vb",
@@ -209,7 +225,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 8,
+              "DocumentIndex": 9,
               "Title": "SideCompound.vb",
               "DocumentMoniker": "G:\\GCModeller\\src\\GCModeller\\core\\Bio.Assembly\\ComponentModel\\Equations\\SideCompound.vb",
               "RelativeDocumentMoniker": "..\\..\\GCModeller\\src\\GCModeller\\core\\Bio.Assembly\\ComponentModel\\Equations\\SideCompound.vb",
@@ -222,7 +238,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 9,
+              "DocumentIndex": 10,
               "Title": "Compound.vb",
               "DocumentMoniker": "G:\\emily\\src\\eQuilibrator\\Compound.vb",
               "RelativeDocumentMoniker": "eQuilibrator\\Compound.vb",
@@ -235,7 +251,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 10,
+              "DocumentIndex": 11,
               "Title": "CompoundCache.vb",
               "DocumentMoniker": "G:\\emily\\src\\eQuilibrator\\CompoundCache.vb",
               "RelativeDocumentMoniker": "eQuilibrator\\CompoundCache.vb",
@@ -248,7 +264,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 2,
               "Title": "ComponentContribution.vb",
               "DocumentMoniker": "G:\\emily\\src\\eQuilibrator\\ComponentContribution.vb",
               "RelativeDocumentMoniker": "eQuilibrator\\ComponentContribution.vb",
@@ -261,7 +277,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 14,
+              "DocumentIndex": 15,
               "Title": "Exceptions.vb",
               "DocumentMoniker": "G:\\emily\\src\\eQuilibrator\\Exceptions.vb",
               "RelativeDocumentMoniker": "eQuilibrator\\Exceptions.vb",
@@ -274,7 +290,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 16,
+              "DocumentIndex": 17,
               "Title": "Extensions.vb",
               "DocumentMoniker": "G:\\emily\\src\\eQuilibrator\\Extensions\\Extensions.vb",
               "RelativeDocumentMoniker": "eQuilibrator\\Extensions\\Extensions.vb",
@@ -287,7 +303,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 17,
+              "DocumentIndex": 18,
               "Title": "GibbsEnergyResult.vb",
               "DocumentMoniker": "G:\\emily\\src\\eQuilibrator\\GibbsEnergyResult.vb",
               "RelativeDocumentMoniker": "eQuilibrator\\GibbsEnergyResult.vb",
@@ -300,7 +316,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 19,
+              "DocumentIndex": 20,
               "Title": "UnitConverter.vb",
               "DocumentMoniker": "G:\\emily\\src\\eQuilibrator\\UnitConverter.vb",
               "RelativeDocumentMoniker": "eQuilibrator\\UnitConverter.vb",
@@ -313,7 +329,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 18,
+              "DocumentIndex": 19,
               "Title": "Quantity.vb",
               "DocumentMoniker": "G:\\emily\\src\\eQuilibrator\\Quantity.vb",
               "RelativeDocumentMoniker": "eQuilibrator\\Quantity.vb",
@@ -326,7 +342,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 13,
+              "DocumentIndex": 14,
               "Title": "PhasedReaction.vb",
               "DocumentMoniker": "G:\\emily\\src\\eQuilibrator\\PhasedReaction.vb",
               "RelativeDocumentMoniker": "eQuilibrator\\PhasedReaction.vb",
@@ -339,7 +355,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 12,
+              "DocumentIndex": 13,
               "Title": "PhasedCompound.vb",
               "DocumentMoniker": "G:\\emily\\src\\eQuilibrator\\PhasedCompound.vb",
               "RelativeDocumentMoniker": "eQuilibrator\\PhasedCompound.vb",
@@ -352,7 +368,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 15,
+              "DocumentIndex": 16,
               "Title": "StoichiometricModel.vb",
               "DocumentMoniker": "G:\\emily\\src\\eQuilibrator\\StoichiometricModel.vb",
               "RelativeDocumentMoniker": "eQuilibrator\\StoichiometricModel.vb",
@@ -365,7 +381,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 11,
+              "DocumentIndex": 12,
               "Title": "ThermodynamicConstants.vb",
               "DocumentMoniker": "G:\\emily\\src\\eQuilibrator\\ThermodynamicConstants.vb",
               "RelativeDocumentMoniker": "eQuilibrator\\ThermodynamicConstants.vb",
@@ -378,7 +394,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 20,
+              "DocumentIndex": 21,
               "Title": "ReactionParser.vb",
               "DocumentMoniker": "G:\\emily\\src\\eQuilibrator\\Parsers\\ReactionParser.vb",
               "RelativeDocumentMoniker": "eQuilibrator\\Parsers\\ReactionParser.vb",
@@ -391,7 +407,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 21,
+              "DocumentIndex": 22,
               "Title": "StoichiometricModelExtensions.vb",
               "DocumentMoniker": "G:\\emily\\src\\eQuilibrator\\Extensions\\StoichiometricModelExtensions.vb",
               "RelativeDocumentMoniker": "eQuilibrator\\Extensions\\StoichiometricModelExtensions.vb",
@@ -404,7 +420,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 22,
+              "DocumentIndex": 23,
               "Title": "BoundsExtensions.vb",
               "DocumentMoniker": "G:\\emily\\src\\eQuilibrator\\Extensions\\BoundsExtensions.vb",
               "RelativeDocumentMoniker": "eQuilibrator\\Extensions\\BoundsExtensions.vb",
@@ -417,7 +433,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 23,
+              "DocumentIndex": 24,
               "Title": "Bounds.vb",
               "DocumentMoniker": "G:\\emily\\src\\eQuilibrator\\Bounds.vb",
               "RelativeDocumentMoniker": "eQuilibrator\\Bounds.vb",
