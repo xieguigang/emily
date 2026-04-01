@@ -77,18 +77,18 @@ Namespace EquilibratorApi.Core.Models
         ''' <returns>A new PhasedCompound</returns>
         Public Function ToPhasedCompound(Optional phase As String = ThermodynamicConstants.DefaultPhase) As PhasedCompound
             Return New PhasedCompound(Id, phase) With {
-        .Name = Name,
-        .InchiKey = InchiKey,
-        .Inchi = Inchi,
-        .Smiles = Smiles,
-        .MolecularWeight = MolecularWeight,
-        .Charge = Charge,
-        .ProtonCount = ProtonCount,
-        .AtomBag = New Dictionary(Of String, Integer)(AtomBag),
-        .StandardFormationEnergy = StandardFormationEnergy,
-        .IsProton = IsProton,
-        .IsWater = IsWater
-    }
+                .Name = Name,
+                .InchiKey = InchiKey,
+                .Inchi = Inchi,
+                .Smiles = Smiles,
+                .MolecularWeight = MolecularWeight,
+                .Charge = Charge,
+                .ProtonCount = ProtonCount,
+                .AtomBag = New Dictionary(Of String, Integer)(AtomBag),
+                .StandardFormationEnergy = StandardFormationEnergy,
+                .IsProton = IsProton,
+                .IsWater = IsWater
+            }
         End Function
     End Class
 End Namespace
