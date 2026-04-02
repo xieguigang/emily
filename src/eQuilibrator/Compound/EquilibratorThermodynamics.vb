@@ -3,10 +3,7 @@
 ' 基于基团贡献法估算化合物标准生成能
 ' ============================================================================
 
-Imports System
-Imports System.Collections.Generic
 Imports System.IO
-Imports System.Linq
 Imports System.Text
 
 Namespace EquilibratorThermodynamics
