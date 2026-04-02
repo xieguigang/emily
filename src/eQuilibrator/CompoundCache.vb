@@ -6,8 +6,9 @@ Namespace EquilibratorApi.Core
     ''' A cache for compound data
     ''' </summary>
     Public Class CompoundCache
-        Private ReadOnly _compounds As Dictionary(Of String, Compound) = New Dictionary(Of String, Compound)(StringComparer.OrdinalIgnoreCase)
-        Private ReadOnly _searchIndex As Dictionary(Of String, List(Of String)) = New Dictionary(Of String, List(Of String))(StringComparer.OrdinalIgnoreCase)
+
+        ReadOnly _compounds As New Dictionary(Of String, Compound)(StringComparer.OrdinalIgnoreCase)
+        ReadOnly _searchIndex As New Dictionary(Of String, List(Of String))(StringComparer.OrdinalIgnoreCase)
 
         ''' <summary>
         ''' Gets the proton compound
