@@ -3,10 +3,8 @@
 ' 展示如何使用该库计算化合物标准生成能
 ' ============================================================================
 
-Imports System
-Imports System.Collections.Generic
 Imports System.IO
-Imports System.Linq
+Imports eQuilibrator.EquilibratorThermodynamics
 
 Namespace EquilibratorThermodynamics
 
@@ -18,7 +16,7 @@ Namespace EquilibratorThermodynamics
         ''' <summary>
         ''' 主入口点
         ''' </summary>
-        Public Shared Sub Main(args As String())
+        Public Shared Sub Main2(args As String())
             Console.WriteLine("="c, 60)
             Console.WriteLine("Equilibrator 化合物标准生成能计算示例")
             Console.WriteLine("="c, 60)

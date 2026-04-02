@@ -3,11 +3,7 @@
 ' 用于从SQLite数据库读取化合物数据并反序列化为对象
 ' ============================================================================
 
-Imports System
-Imports System.Collections.Generic
 Imports System.Data
-Imports System.Data.SQLite
-Imports System.IO
 Imports System.Text
 
 Namespace EquilibratorThermodynamics
@@ -19,7 +15,7 @@ Namespace EquilibratorThermodynamics
     Public Class EquilibratorDatabaseReader
         Implements IDisposable
 
-        Private _connection As SQLiteConnection
+        ' Private _connection As SQLiteConnection
         Private _disposed As Boolean = False
 
         ''' <summary>
@@ -33,25 +29,25 @@ Namespace EquilibratorThermodynamics
         Public Sub New(databasePath As String)
             DatabasePath = databasePath
             Dim connectionString As String = $"Data Source={databasePath};Version=3;Read Only=True;"
-            _connection = New SQLiteConnection(connectionString)
+            '    _connection = New SQLiteConnection(connectionString)
         End Sub
 
         ''' <summary>
         ''' 打开数据库连接
         ''' </summary>
         Public Sub Open()
-            If _connection.State <> ConnectionState.Open Then
-                _connection.Open()
-            End If
+            'If _connection.State <> ConnectionState.Open Then
+            '    _connection.Open()
+            'End If
         End Sub
 
         ''' <summary>
         ''' 关闭数据库连接
         ''' </summary>
         Public Sub Close()
-            If _connection.State = ConnectionState.Open Then
-                _connection.Close()
-            End If
+            'If _connection.State = ConnectionState.Open Then
+            '    _connection.Close()
+            'End If
         End Sub
 
         ''' <summary>
@@ -359,15 +355,15 @@ Namespace EquilibratorThermodynamics
 #Region "IDisposable Support"
 
         Protected Overridable Sub Dispose(disposing As Boolean)
-            If Not _disposed Then
-                If disposing Then
-                    If _connection IsNot Nothing Then
-                        _connection.Close()
-                        _connection.Dispose()
-                    End If
-                End If
-                _disposed = True
-            End If
+            'If Not _disposed Then
+            '    If disposing Then
+            '        If _connection IsNot Nothing Then
+            '            _connection.Close()
+            '            _connection.Dispose()
+            '        End If
+            '    End If
+            '    _disposed = True
+            'End If
         End Sub
 
         Public Sub Dispose() Implements IDisposable.Dispose
