@@ -3,8 +3,8 @@
   "WorkspaceRootPath": "G:\\emily\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{8EA1E75F-48FE-4BF1-ACFE-2955B16CD968}|src\\zdock\\zdock.vbproj|g:\\emily\\src\\zdock\\zdockout.vb||{2C015C70-C72C-11D0-88C3-00A0C9110049}",
-      "RelativeMoniker": "D:0:0:{8EA1E75F-48FE-4BF1-ACFE-2955B16CD968}|src\\zdock\\zdock.vbproj|solutionrelative:src\\zdock\\zdockout.vb||{2C015C70-C72C-11D0-88C3-00A0C9110049}"
+      "AbsoluteMoniker": "D:0:0:{4FBD81E5-C976-80E6-5D01-DE3380E6FA45}|src\\eQuilibrator\\eQuilibrator.vbproj|g:\\emily\\src\\equilibrator\\bounds.vb||{2C015C70-C72C-11D0-88C3-00A0C9110049}",
+      "RelativeMoniker": "D:0:0:{4FBD81E5-C976-80E6-5D01-DE3380E6FA45}|src\\eQuilibrator\\eQuilibrator.vbproj|solutionrelative:src\\equilibrator\\bounds.vb||{2C015C70-C72C-11D0-88C3-00A0C9110049}"
     }
   ],
   "DocumentGroupContainers": [
@@ -35,14 +35,14 @@
             {
               "$type": "Document",
               "DocumentIndex": 0,
-              "Title": "ZDockOut.vb",
-              "DocumentMoniker": "G:\\emily\\src\\zdock\\ZDockOut.vb",
-              "RelativeDocumentMoniker": "src\\zdock\\ZDockOut.vb",
-              "ToolTip": "G:\\emily\\src\\zdock\\ZDockOut.vb",
-              "RelativeToolTip": "src\\zdock\\ZDockOut.vb",
+              "Title": "Bounds.vb",
+              "DocumentMoniker": "G:\\emily\\src\\eQuilibrator\\Bounds.vb",
+              "RelativeDocumentMoniker": "src\\eQuilibrator\\Bounds.vb",
+              "ToolTip": "G:\\emily\\src\\eQuilibrator\\Bounds.vb",
+              "RelativeToolTip": "src\\eQuilibrator\\Bounds.vb",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003361|",
-              "WhenOpened": "2026-03-15T10:28:05.815Z",
+              "WhenOpened": "2026-04-01T18:06:46.104Z",
               "EditorCaption": ""
             }
           ]
