@@ -3,13 +3,16 @@
   "WorkspaceRootPath": "G:\\emily\\",
   "Documents": [
     {
+      "AbsoluteMoniker": "D:0:0:{9AC73DC2-1911-EAB3-46C1-E461F271FCF3}|..\\GCModeller\\src\\runtime\\sciBASIC#\\Data\\BinaryData\\BinaryData\\binarydata-netcore5.vbproj|g:\\gcmodeller\\src\\runtime\\scibasic#\\data\\binarydata\\binarydata\\stream\\readonlystream.vb||{2C015C70-C72C-11D0-88C3-00A0C9110049}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{9AC73DC2-1911-EAB3-46C1-E461F271FCF3}|..\\GCModeller\\src\\runtime\\sciBASIC#\\Data\\BinaryData\\BinaryData\\binarydata-netcore5.vbproj|g:\\gcmodeller\\src\\runtime\\scibasic#\\data\\binarydata\\binarydata\\stream\\binarydatareader.vb||{2C015C70-C72C-11D0-88C3-00A0C9110049}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{2E923B80-3CD8-3858-873C-7C3F3EC4E220}|..\\GCModeller\\src\\runtime\\sciBASIC#\\Data\\BinaryData\\SQLite3\\SQLite3.vbproj|g:\\gcmodeller\\src\\runtime\\scibasic#\\data\\binarydata\\sqlite3\\helpers\\streamhelper.vb||{2C015C70-C72C-11D0-88C3-00A0C9110049}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{2E923B80-3CD8-3858-873C-7C3F3EC4E220}|..\\GCModeller\\src\\runtime\\sciBASIC#\\Data\\BinaryData\\SQLite3\\SQLite3.vbproj|g:\\gcmodeller\\src\\runtime\\scibasic#\\data\\binarydata\\sqlite3\\helpers\\sqlitedatastream.vb||{2C015C70-C72C-11D0-88C3-00A0C9110049}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{2E923B80-3CD8-3858-873C-7C3F3EC4E220}|..\\GCModeller\\src\\runtime\\sciBASIC#\\Data\\BinaryData\\SQLite3\\SQLite3.vbproj|g:\\gcmodeller\\src\\runtime\\scibasic#\\data\\binarydata\\sqlite3\\helpers\\readonlystream.vb||{2C015C70-C72C-11D0-88C3-00A0C9110049}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{2E923B80-3CD8-3858-873C-7C3F3EC4E220}|..\\GCModeller\\src\\runtime\\sciBASIC#\\Data\\BinaryData\\SQLite3\\SQLite3.vbproj|g:\\gcmodeller\\src\\runtime\\scibasic#\\data\\binarydata\\sqlite3\\helpers\\btreetools.vb||{2C015C70-C72C-11D0-88C3-00A0C9110049}"
@@ -98,7 +101,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 4,
+          "SelectedChildIndex": 5,
           "Children": [
             {
               "$type": "Bookmark",
@@ -118,7 +121,33 @@
             },
             {
               "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "BinaryDataReader.vb",
+              "DocumentMoniker": "G:\\GCModeller\\src\\runtime\\sciBASIC#\\Data\\BinaryData\\BinaryData\\Stream\\BinaryDataReader.vb",
+              "RelativeDocumentMoniker": "..\\GCModeller\\src\\runtime\\sciBASIC#\\Data\\BinaryData\\BinaryData\\Stream\\BinaryDataReader.vb",
+              "ToolTip": "G:\\GCModeller\\src\\runtime\\sciBASIC#\\Data\\BinaryData\\BinaryData\\Stream\\BinaryDataReader.vb",
+              "RelativeToolTip": "..\\GCModeller\\src\\runtime\\sciBASIC#\\Data\\BinaryData\\BinaryData\\Stream\\BinaryDataReader.vb",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003361|",
+              "WhenOpened": "2026-04-03T15:50:46.612Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
               "DocumentIndex": 0,
+              "Title": "ReadonlyStream.vb",
+              "DocumentMoniker": "G:\\GCModeller\\src\\runtime\\sciBASIC#\\Data\\BinaryData\\BinaryData\\Stream\\ReadonlyStream.vb",
+              "RelativeDocumentMoniker": "..\\GCModeller\\src\\runtime\\sciBASIC#\\Data\\BinaryData\\BinaryData\\Stream\\ReadonlyStream.vb",
+              "ToolTip": "G:\\GCModeller\\src\\runtime\\sciBASIC#\\Data\\BinaryData\\BinaryData\\Stream\\ReadonlyStream.vb",
+              "RelativeToolTip": "..\\GCModeller\\src\\runtime\\sciBASIC#\\Data\\BinaryData\\BinaryData\\Stream\\ReadonlyStream.vb",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAEQAAAASAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003361|",
+              "WhenOpened": "2026-04-03T15:50:42.644Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
               "Title": "StreamHelper.vb",
               "DocumentMoniker": "G:\\GCModeller\\src\\runtime\\sciBASIC#\\Data\\BinaryData\\SQLite3\\Helpers\\StreamHelper.vb",
               "RelativeDocumentMoniker": "..\\GCModeller\\src\\runtime\\sciBASIC#\\Data\\BinaryData\\SQLite3\\Helpers\\StreamHelper.vb",
@@ -131,7 +160,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 3,
               "Title": "SqliteDataStream.vb",
               "DocumentMoniker": "G:\\GCModeller\\src\\runtime\\sciBASIC#\\Data\\BinaryData\\SQLite3\\Helpers\\SqliteDataStream.vb",
               "RelativeDocumentMoniker": "..\\GCModeller\\src\\runtime\\sciBASIC#\\Data\\BinaryData\\SQLite3\\Helpers\\SqliteDataStream.vb",
@@ -144,20 +173,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "ReadonlyStream.vb",
-              "DocumentMoniker": "G:\\GCModeller\\src\\runtime\\sciBASIC#\\Data\\BinaryData\\SQLite3\\Helpers\\ReadonlyStream.vb",
-              "RelativeDocumentMoniker": "..\\GCModeller\\src\\runtime\\sciBASIC#\\Data\\BinaryData\\SQLite3\\Helpers\\ReadonlyStream.vb",
-              "ToolTip": "G:\\GCModeller\\src\\runtime\\sciBASIC#\\Data\\BinaryData\\SQLite3\\Helpers\\ReadonlyStream.vb",
-              "RelativeToolTip": "..\\GCModeller\\src\\runtime\\sciBASIC#\\Data\\BinaryData\\SQLite3\\Helpers\\ReadonlyStream.vb",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAADwAAAArAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003361|",
-              "WhenOpened": "2026-04-03T15:49:53.201Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 4,
               "Title": "BTreeTools.vb",
               "DocumentMoniker": "G:\\GCModeller\\src\\runtime\\sciBASIC#\\Data\\BinaryData\\SQLite3\\Helpers\\BTreeTools.vb",
               "RelativeDocumentMoniker": "..\\GCModeller\\src\\runtime\\sciBASIC#\\Data\\BinaryData\\SQLite3\\Helpers\\BTreeTools.vb",
@@ -170,7 +186,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 5,
               "Title": "ReaderBase.vb",
               "DocumentMoniker": "G:\\GCModeller\\src\\runtime\\sciBASIC#\\Data\\BinaryData\\SQLite3\\Internal\\ReaderBase.vb",
               "RelativeDocumentMoniker": "..\\GCModeller\\src\\runtime\\sciBASIC#\\Data\\BinaryData\\SQLite3\\Internal\\ReaderBase.vb",
@@ -183,7 +199,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 5,
+              "DocumentIndex": 6,
               "Title": "SqliteEncoding.vb",
               "DocumentMoniker": "G:\\GCModeller\\src\\runtime\\sciBASIC#\\Data\\BinaryData\\SQLite3\\Objects\\Enums\\SqliteEncoding.vb",
               "RelativeDocumentMoniker": "..\\GCModeller\\src\\runtime\\sciBASIC#\\Data\\BinaryData\\SQLite3\\Objects\\Enums\\SqliteEncoding.vb",
@@ -196,7 +212,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 6,
+              "DocumentIndex": 7,
               "Title": "SqliteDataType.vb",
               "DocumentMoniker": "G:\\GCModeller\\src\\runtime\\sciBASIC#\\Data\\BinaryData\\SQLite3\\Objects\\Enums\\SqliteDataType.vb",
               "RelativeDocumentMoniker": "..\\GCModeller\\src\\runtime\\sciBASIC#\\Data\\BinaryData\\SQLite3\\Objects\\Enums\\SqliteDataType.vb",
@@ -209,7 +225,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 7,
+              "DocumentIndex": 8,
               "Title": "FileWriteVersion.vb",
               "DocumentMoniker": "G:\\GCModeller\\src\\runtime\\sciBASIC#\\Data\\BinaryData\\SQLite3\\Objects\\Enums\\FileWriteVersion.vb",
               "RelativeDocumentMoniker": "..\\GCModeller\\src\\runtime\\sciBASIC#\\Data\\BinaryData\\SQLite3\\Objects\\Enums\\FileWriteVersion.vb",
@@ -222,7 +238,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 8,
+              "DocumentIndex": 9,
               "Title": "FileReadVersion.vb",
               "DocumentMoniker": "G:\\GCModeller\\src\\runtime\\sciBASIC#\\Data\\BinaryData\\SQLite3\\Objects\\Enums\\FileReadVersion.vb",
               "RelativeDocumentMoniker": "..\\GCModeller\\src\\runtime\\sciBASIC#\\Data\\BinaryData\\SQLite3\\Objects\\Enums\\FileReadVersion.vb",
@@ -235,7 +251,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 9,
+              "DocumentIndex": 10,
               "Title": "BTreeType.vb",
               "DocumentMoniker": "G:\\GCModeller\\src\\runtime\\sciBASIC#\\Data\\BinaryData\\SQLite3\\Objects\\Enums\\BTreeType.vb",
               "RelativeDocumentMoniker": "..\\GCModeller\\src\\runtime\\sciBASIC#\\Data\\BinaryData\\SQLite3\\Objects\\Enums\\BTreeType.vb",
@@ -248,7 +264,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 11,
+              "DocumentIndex": 12,
               "Title": "DatabaseHeader.vb",
               "DocumentMoniker": "G:\\GCModeller\\src\\runtime\\sciBASIC#\\Data\\BinaryData\\SQLite3\\Objects\\Headers\\DatabaseHeader.vb",
               "RelativeDocumentMoniker": "..\\GCModeller\\src\\runtime\\sciBASIC#\\Data\\BinaryData\\SQLite3\\Objects\\Headers\\DatabaseHeader.vb",
@@ -261,7 +277,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 10,
+              "DocumentIndex": 11,
               "Title": "BTreeHeader.vb",
               "DocumentMoniker": "G:\\GCModeller\\src\\runtime\\sciBASIC#\\Data\\BinaryData\\SQLite3\\Objects\\Headers\\BTreeHeader.vb",
               "RelativeDocumentMoniker": "..\\GCModeller\\src\\runtime\\sciBASIC#\\Data\\BinaryData\\SQLite3\\Objects\\Headers\\BTreeHeader.vb",
@@ -274,7 +290,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 12,
+              "DocumentIndex": 13,
               "Title": "BTreeCellData.vb",
               "DocumentMoniker": "G:\\GCModeller\\src\\runtime\\sciBASIC#\\Data\\BinaryData\\SQLite3\\Objects\\BTreeCellData.vb",
               "RelativeDocumentMoniker": "..\\GCModeller\\src\\runtime\\sciBASIC#\\Data\\BinaryData\\SQLite3\\Objects\\BTreeCellData.vb",
@@ -287,7 +303,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 14,
+              "DocumentIndex": 15,
               "Title": "BTreeInteriorTablePage.vb",
               "DocumentMoniker": "G:\\GCModeller\\src\\runtime\\sciBASIC#\\Data\\BinaryData\\SQLite3\\Objects\\BTreeInteriorTablePage.vb",
               "RelativeDocumentMoniker": "..\\GCModeller\\src\\runtime\\sciBASIC#\\Data\\BinaryData\\SQLite3\\Objects\\BTreeInteriorTablePage.vb",
@@ -300,7 +316,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 13,
+              "DocumentIndex": 14,
               "Title": "BTreeLeafTablePage.vb",
               "DocumentMoniker": "G:\\GCModeller\\src\\runtime\\sciBASIC#\\Data\\BinaryData\\SQLite3\\Objects\\BTreeLeafTablePage.vb",
               "RelativeDocumentMoniker": "..\\GCModeller\\src\\runtime\\sciBASIC#\\Data\\BinaryData\\SQLite3\\Objects\\BTreeLeafTablePage.vb",
@@ -313,7 +329,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 15,
+              "DocumentIndex": 16,
               "Title": "BTreePage.vb",
               "DocumentMoniker": "G:\\GCModeller\\src\\runtime\\sciBASIC#\\Data\\BinaryData\\SQLite3\\Objects\\BTreePage.vb",
               "RelativeDocumentMoniker": "..\\GCModeller\\src\\runtime\\sciBASIC#\\Data\\BinaryData\\SQLite3\\Objects\\BTreePage.vb",
@@ -326,7 +342,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 16,
+              "DocumentIndex": 17,
               "Title": "ColumnDataMeta.vb",
               "DocumentMoniker": "G:\\GCModeller\\src\\runtime\\sciBASIC#\\Data\\BinaryData\\SQLite3\\Objects\\ColumnDataMeta.vb",
               "RelativeDocumentMoniker": "..\\GCModeller\\src\\runtime\\sciBASIC#\\Data\\BinaryData\\SQLite3\\Objects\\ColumnDataMeta.vb",
@@ -339,7 +355,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 17,
+              "DocumentIndex": 18,
               "Title": "Extensions.vb",
               "DocumentMoniker": "G:\\GCModeller\\src\\runtime\\sciBASIC#\\Data\\BinaryData\\SQLite3\\Schema\\Extensions.vb",
               "RelativeDocumentMoniker": "..\\GCModeller\\src\\runtime\\sciBASIC#\\Data\\BinaryData\\SQLite3\\Schema\\Extensions.vb",
@@ -352,7 +368,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 18,
+              "DocumentIndex": 19,
               "Title": "Schema.vb",
               "DocumentMoniker": "G:\\GCModeller\\src\\runtime\\sciBASIC#\\Data\\BinaryData\\SQLite3\\Schema\\Schema.vb",
               "RelativeDocumentMoniker": "..\\GCModeller\\src\\runtime\\sciBASIC#\\Data\\BinaryData\\SQLite3\\Schema\\Schema.vb",
@@ -365,7 +381,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 19,
+              "DocumentIndex": 20,
               "Title": "SQLParser.vb",
               "DocumentMoniker": "G:\\GCModeller\\src\\runtime\\sciBASIC#\\Data\\BinaryData\\SQLite3\\Schema\\SQLParser.vb",
               "RelativeDocumentMoniker": "..\\GCModeller\\src\\runtime\\sciBASIC#\\Data\\BinaryData\\SQLite3\\Schema\\SQLParser.vb",
@@ -378,7 +394,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 20,
+              "DocumentIndex": 21,
               "Title": "Sqlite3MasterTable.vb",
               "DocumentMoniker": "G:\\GCModeller\\src\\runtime\\sciBASIC#\\Data\\BinaryData\\SQLite3\\Tables\\Sqlite3MasterTable.vb",
               "RelativeDocumentMoniker": "..\\GCModeller\\src\\runtime\\sciBASIC#\\Data\\BinaryData\\SQLite3\\Tables\\Sqlite3MasterTable.vb",
@@ -391,7 +407,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 21,
+              "DocumentIndex": 22,
               "Title": "Sqlite3Row.vb",
               "DocumentMoniker": "G:\\GCModeller\\src\\runtime\\sciBASIC#\\Data\\BinaryData\\SQLite3\\Tables\\Sqlite3Row.vb",
               "RelativeDocumentMoniker": "..\\GCModeller\\src\\runtime\\sciBASIC#\\Data\\BinaryData\\SQLite3\\Tables\\Sqlite3Row.vb",
@@ -404,7 +420,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 22,
+              "DocumentIndex": 23,
               "Title": "Sqlite3SchemaRow.vb",
               "DocumentMoniker": "G:\\GCModeller\\src\\runtime\\sciBASIC#\\Data\\BinaryData\\SQLite3\\Tables\\Sqlite3SchemaRow.vb",
               "RelativeDocumentMoniker": "..\\GCModeller\\src\\runtime\\sciBASIC#\\Data\\BinaryData\\SQLite3\\Tables\\Sqlite3SchemaRow.vb",
@@ -417,7 +433,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 23,
+              "DocumentIndex": 24,
               "Title": "Sqlite3Table.vb",
               "DocumentMoniker": "G:\\GCModeller\\src\\runtime\\sciBASIC#\\Data\\BinaryData\\SQLite3\\Tables\\Sqlite3Table.vb",
               "RelativeDocumentMoniker": "..\\GCModeller\\src\\runtime\\sciBASIC#\\Data\\BinaryData\\SQLite3\\Tables\\Sqlite3Table.vb",
@@ -430,7 +446,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 24,
+              "DocumentIndex": 25,
               "Title": "Extensions.vb",
               "DocumentMoniker": "G:\\GCModeller\\src\\runtime\\sciBASIC#\\Data\\BinaryData\\SQLite3\\Extensions.vb",
               "RelativeDocumentMoniker": "..\\GCModeller\\src\\runtime\\sciBASIC#\\Data\\BinaryData\\SQLite3\\Extensions.vb",
@@ -443,7 +459,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 27,
+              "DocumentIndex": 28,
               "Title": "SQLite3",
               "DocumentMoniker": "G:\\GCModeller\\src\\runtime\\sciBASIC#\\Data\\BinaryData\\SQLite3\\SQLite3.vbproj",
               "RelativeDocumentMoniker": "..\\GCModeller\\src\\runtime\\sciBASIC#\\Data\\BinaryData\\SQLite3\\SQLite3.vbproj",
@@ -456,7 +472,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 25,
+              "DocumentIndex": 26,
               "Title": "Sqlite3Database.vb",
               "DocumentMoniker": "G:\\GCModeller\\src\\runtime\\sciBASIC#\\Data\\BinaryData\\SQLite3\\Sqlite3Database.vb",
               "RelativeDocumentMoniker": "..\\GCModeller\\src\\runtime\\sciBASIC#\\Data\\BinaryData\\SQLite3\\Sqlite3Database.vb",
@@ -469,7 +485,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 26,
+              "DocumentIndex": 27,
               "Title": "Sqlite3Settings.vb",
               "DocumentMoniker": "G:\\GCModeller\\src\\runtime\\sciBASIC#\\Data\\BinaryData\\SQLite3\\Sqlite3Settings.vb",
               "RelativeDocumentMoniker": "..\\GCModeller\\src\\runtime\\sciBASIC#\\Data\\BinaryData\\SQLite3\\Sqlite3Settings.vb",
@@ -482,7 +498,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 28,
+              "DocumentIndex": 29,
               "Title": "EquilibratorDatabaseReader.vb",
               "DocumentMoniker": "G:\\emily\\src\\eQuilibrator\\Compound\\EquilibratorDatabaseReader.vb",
               "RelativeDocumentMoniker": "src\\eQuilibrator\\Compound\\EquilibratorDatabaseReader.vb",
