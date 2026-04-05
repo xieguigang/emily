@@ -1,4 +1,5 @@
-﻿Imports System.Text
+﻿Imports System.Runtime.CompilerServices
+Imports System.Text
 
 Namespace EquilibratorThermodynamics
 
@@ -11,7 +12,7 @@ Namespace EquilibratorThermodynamics
         ''' <summary>
         ''' 获取化合物的分子式
         ''' </summary>
-        <System.Runtime.CompilerServices.Extension>
+        <Extension>
         Public Function GetMolecularFormula(compound As Compound) As String
             If compound.AtomBag Is Nothing OrElse compound.AtomBag.Count = 0 Then
                 Return String.Empty
@@ -51,7 +52,7 @@ Namespace EquilibratorThermodynamics
         ''' <summary>
         ''' 获取化合物的净电荷
         ''' </summary>
-        <System.Runtime.CompilerServices.Extension>
+        <Extension>
         Public Function GetNetCharge(compound As Compound) As Integer
             If compound.Microspecies Is Nothing OrElse compound.Microspecies.Count = 0 Then
                 Return 0
@@ -68,7 +69,7 @@ Namespace EquilibratorThermodynamics
         ''' <summary>
         ''' 获取化合物的pKa值列表
         ''' </summary>
-        <System.Runtime.CompilerServices.Extension>
+        <Extension>
         Public Function GetpKaValues(compound As Compound) As List(Of Double)
             If compound.DissociationConstants Is Nothing OrElse compound.DissociationConstants.Count = 0 Then
                 Return New List(Of Double)()
@@ -81,7 +82,7 @@ Namespace EquilibratorThermodynamics
         ''' <summary>
         ''' 获取化合物的简要描述
         ''' </summary>
-        <System.Runtime.CompilerServices.Extension>
+        <Extension>
         Public Function GetDescription(compound As Compound) As String
             Dim sb As New StringBuilder()
             sb.AppendLine($"化合物ID: {compound.Id}")
