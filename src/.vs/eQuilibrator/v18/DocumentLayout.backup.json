@@ -3,71 +3,22 @@
   "WorkspaceRootPath": "G:\\emily\\src\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{896A1DF9-BF52-17C7-D41C-F7730E5B1968}|..\\..\\GCModeller\\src\\runtime\\sciBASIC#\\Microsoft.VisualBasic.Core\\src\\Core.vbproj|g:\\gcmodeller\\src\\runtime\\scibasic#\\microsoft.visualbasic.core\\src\\componentmodel\\datasource\\schemamaps\\datasource\\class1.vb||{2C015C70-C72C-11D0-88C3-00A0C9110049}"
+      "AbsoluteMoniker": "D:0:0:{F5171153-AEE8-69B3-0273-1D621019EC9B}|..\\..\\GCModeller\\src\\runtime\\sciBASIC#\\Data\\DataFrame\\dataframework-netcore5.vbproj|g:\\gcmodeller\\src\\runtime\\scibasic#\\data\\dataframe\\dataset\\datarows.vb||{2C015C70-C72C-11D0-88C3-00A0C9110049}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{896A1DF9-BF52-17C7-D41C-F7730E5B1968}|..\\..\\GCModeller\\src\\runtime\\sciBASIC#\\Microsoft.VisualBasic.Core\\src\\Core.vbproj|g:\\gcmodeller\\src\\runtime\\scibasic#\\microsoft.visualbasic.core\\src\\componentmodel\\datasource\\schemamaps\\datasource\\datasource.vb||{2C015C70-C72C-11D0-88C3-00A0C9110049}"
+      "AbsoluteMoniker": "D:0:0:{F5171153-AEE8-69B3-0273-1D621019EC9B}|..\\..\\GCModeller\\src\\runtime\\sciBASIC#\\Data\\DataFrame\\dataframework-netcore5.vbproj|g:\\gcmodeller\\src\\runtime\\scibasic#\\data\\dataframe\\dataframe\\numericdataset.vb||{2C015C70-C72C-11D0-88C3-00A0C9110049}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{896A1DF9-BF52-17C7-D41C-F7730E5B1968}|..\\..\\GCModeller\\src\\runtime\\sciBASIC#\\Microsoft.VisualBasic.Core\\src\\Core.vbproj|g:\\gcmodeller\\src\\runtime\\scibasic#\\microsoft.visualbasic.core\\src\\componentmodel\\datasource\\schemamaps\\datasource\\class2.vb||{2C015C70-C72C-11D0-88C3-00A0C9110049}"
+      "AbsoluteMoniker": "D:0:0:{F5171153-AEE8-69B3-0273-1D621019EC9B}|..\\..\\GCModeller\\src\\runtime\\sciBASIC#\\Data\\DataFrame\\dataframework-netcore5.vbproj|g:\\gcmodeller\\src\\runtime\\scibasic#\\data\\dataframe\\dataframe\\filewriter.vb||{2C015C70-C72C-11D0-88C3-00A0C9110049}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{896A1DF9-BF52-17C7-D41C-F7730E5B1968}|..\\..\\GCModeller\\src\\runtime\\sciBASIC#\\Microsoft.VisualBasic.Core\\src\\Core.vbproj|g:\\gcmodeller\\src\\runtime\\scibasic#\\microsoft.visualbasic.core\\src\\componentmodel\\datasource\\schemamaps\\datasource\\class3.vb||{2C015C70-C72C-11D0-88C3-00A0C9110049}"
+      "AbsoluteMoniker": "D:0:0:{F5171153-AEE8-69B3-0273-1D621019EC9B}|..\\..\\GCModeller\\src\\runtime\\sciBASIC#\\Data\\DataFrame\\dataframework-netcore5.vbproj|g:\\gcmodeller\\src\\runtime\\scibasic#\\data\\dataframe\\dataframe\\featurevector.vb||{2C015C70-C72C-11D0-88C3-00A0C9110049}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{896A1DF9-BF52-17C7-D41C-F7730E5B1968}|..\\..\\GCModeller\\src\\runtime\\sciBASIC#\\Microsoft.VisualBasic.Core\\src\\Core.vbproj|g:\\gcmodeller\\src\\runtime\\scibasic#\\microsoft.visualbasic.core\\src\\componentmodel\\datasource\\schemamaps\\bindproperty.vb||{2C015C70-C72C-11D0-88C3-00A0C9110049}"
+      "AbsoluteMoniker": "D:0:0:{F5171153-AEE8-69B3-0273-1D621019EC9B}|..\\..\\GCModeller\\src\\runtime\\sciBASIC#\\Data\\DataFrame\\dataframework-netcore5.vbproj|g:\\gcmodeller\\src\\runtime\\scibasic#\\data\\dataframe\\dataframe\\fastloader.vb||{2C015C70-C72C-11D0-88C3-00A0C9110049}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{896A1DF9-BF52-17C7-D41C-F7730E5B1968}|..\\..\\GCModeller\\src\\runtime\\sciBASIC#\\Microsoft.VisualBasic.Core\\src\\Core.vbproj|g:\\gcmodeller\\src\\runtime\\scibasic#\\microsoft.visualbasic.core\\src\\componentmodel\\datasource\\schemamaps\\mappings.vb||{2C015C70-C72C-11D0-88C3-00A0C9110049}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{896A1DF9-BF52-17C7-D41C-F7730E5B1968}|..\\..\\GCModeller\\src\\runtime\\sciBASIC#\\Microsoft.VisualBasic.Core\\src\\Core.vbproj|g:\\gcmodeller\\src\\runtime\\scibasic#\\microsoft.visualbasic.core\\src\\componentmodel\\datasource\\schemamaps\\objectschema.vb||{2C015C70-C72C-11D0-88C3-00A0C9110049}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{896A1DF9-BF52-17C7-D41C-F7730E5B1968}|..\\..\\GCModeller\\src\\runtime\\sciBASIC#\\Microsoft.VisualBasic.Core\\src\\Core.vbproj|g:\\gcmodeller\\src\\runtime\\scibasic#\\microsoft.visualbasic.core\\src\\componentmodel\\datasource\\schemamaps\\propertyvalue.vb||{2C015C70-C72C-11D0-88C3-00A0C9110049}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{896A1DF9-BF52-17C7-D41C-F7730E5B1968}|..\\..\\GCModeller\\src\\runtime\\sciBASIC#\\Microsoft.VisualBasic.Core\\src\\Core.vbproj|g:\\gcmodeller\\src\\runtime\\scibasic#\\microsoft.visualbasic.core\\src\\componentmodel\\datasource\\schemamaps\\schema.vb||{2C015C70-C72C-11D0-88C3-00A0C9110049}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{896A1DF9-BF52-17C7-D41C-F7730E5B1968}|..\\..\\GCModeller\\src\\runtime\\sciBASIC#\\Microsoft.VisualBasic.Core\\src\\Core.vbproj|g:\\gcmodeller\\src\\runtime\\scibasic#\\microsoft.visualbasic.core\\src\\componentmodel\\datasource\\schemamaps\\sql.vb||{2C015C70-C72C-11D0-88C3-00A0C9110049}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{896A1DF9-BF52-17C7-D41C-F7730E5B1968}|..\\..\\GCModeller\\src\\runtime\\sciBASIC#\\Microsoft.VisualBasic.Core\\src\\Core.vbproj|g:\\gcmodeller\\src\\runtime\\scibasic#\\microsoft.visualbasic.core\\src\\componentmodel\\datasource\\repository\\cuckoofilter.vb||{2C015C70-C72C-11D0-88C3-00A0C9110049}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{896A1DF9-BF52-17C7-D41C-F7730E5B1968}|..\\..\\GCModeller\\src\\runtime\\sciBASIC#\\Microsoft.VisualBasic.Core\\src\\Core.vbproj|g:\\gcmodeller\\src\\runtime\\scibasic#\\microsoft.visualbasic.core\\src\\componentmodel\\datasource\\repository\\querycache.vb||{2C015C70-C72C-11D0-88C3-00A0C9110049}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{896A1DF9-BF52-17C7-D41C-F7730E5B1968}|..\\..\\GCModeller\\src\\runtime\\sciBASIC#\\Microsoft.VisualBasic.Core\\src\\Core.vbproj|g:\\gcmodeller\\src\\runtime\\scibasic#\\microsoft.visualbasic.core\\src\\componentmodel\\datasource\\repository\\repository.vb||{2C015C70-C72C-11D0-88C3-00A0C9110049}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{896A1DF9-BF52-17C7-D41C-F7730E5B1968}|..\\..\\GCModeller\\src\\runtime\\sciBASIC#\\Microsoft.VisualBasic.Core\\src\\Core.vbproj|g:\\gcmodeller\\src\\runtime\\scibasic#\\microsoft.visualbasic.core\\src\\componentmodel\\datasource\\repository\\searchframework.vb||{2C015C70-C72C-11D0-88C3-00A0C9110049}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{53B9345F-EED2-8CDB-98D7-C3400A7D38AA}|..\\..\\GCModeller\\src\\runtime\\sciBASIC#\\Data\\BinaryData\\SQLite3\\SQLite3.vbproj|g:\\gcmodeller\\src\\runtime\\scibasic#\\data\\binarydata\\sqlite3\\schema\\schema.vb||{2C015C70-C72C-11D0-88C3-00A0C9110049}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{53B9345F-EED2-8CDB-98D7-C3400A7D38AA}|..\\..\\GCModeller\\src\\runtime\\sciBASIC#\\Data\\BinaryData\\SQLite3\\SQLite3.vbproj|g:\\gcmodeller\\src\\runtime\\scibasic#\\data\\binarydata\\sqlite3\\tables\\sqlite3table.vb||{2C015C70-C72C-11D0-88C3-00A0C9110049}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{53B9345F-EED2-8CDB-98D7-C3400A7D38AA}|..\\..\\GCModeller\\src\\runtime\\sciBASIC#\\Data\\BinaryData\\SQLite3\\SQLite3.vbproj|g:\\gcmodeller\\src\\runtime\\scibasic#\\data\\binarydata\\sqlite3\\tables\\sqlite3row.vb||{2C015C70-C72C-11D0-88C3-00A0C9110049}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{896A1DF9-BF52-17C7-D41C-F7730E5B1968}|..\\..\\GCModeller\\src\\runtime\\sciBASIC#\\Microsoft.VisualBasic.Core\\src\\Core.vbproj|g:\\gcmodeller\\src\\runtime\\scibasic#\\microsoft.visualbasic.core\\src\\componentmodel\\datasource\\property\\namedvalue.vb||{2C015C70-C72C-11D0-88C3-00A0C9110049}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{A712EDC3-9352-6289-BD83-897F07C1A196}|eQuilibrator\\eQuilibrator.vbproj|g:\\emily\\src\\equilibrator\\compound\\equilibratordatabase\\equilibratordatabasereader.vb||{2C015C70-C72C-11D0-88C3-00A0C9110049}",
-      "RelativeMoniker": "D:0:0:{A712EDC3-9352-6289-BD83-897F07C1A196}|eQuilibrator\\eQuilibrator.vbproj|solutionrelative:equilibrator\\compound\\equilibratordatabase\\equilibratordatabasereader.vb||{2C015C70-C72C-11D0-88C3-00A0C9110049}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{53B9345F-EED2-8CDB-98D7-C3400A7D38AA}|..\\..\\GCModeller\\src\\runtime\\sciBASIC#\\Data\\BinaryData\\SQLite3\\SQLite3.vbproj|g:\\gcmodeller\\src\\runtime\\scibasic#\\data\\binarydata\\sqlite3\\tables\\sqlite3schemarow.vb||{2C015C70-C72C-11D0-88C3-00A0C9110049}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{53B9345F-EED2-8CDB-98D7-C3400A7D38AA}|..\\..\\GCModeller\\src\\runtime\\sciBASIC#\\Data\\BinaryData\\SQLite3\\SQLite3.vbproj|g:\\gcmodeller\\src\\runtime\\scibasic#\\data\\binarydata\\sqlite3\\sqlite3database.vb||{2C015C70-C72C-11D0-88C3-00A0C9110049}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{53B9345F-EED2-8CDB-98D7-C3400A7D38AA}|..\\..\\GCModeller\\src\\runtime\\sciBASIC#\\Data\\BinaryData\\SQLite3\\SQLite3.vbproj|g:\\gcmodeller\\src\\runtime\\scibasic#\\data\\binarydata\\sqlite3\\extensions.vb||{2C015C70-C72C-11D0-88C3-00A0C9110049}"
+      "AbsoluteMoniker": "D:0:0:{F5171153-AEE8-69B3-0273-1D621019EC9B}|..\\..\\GCModeller\\src\\runtime\\sciBASIC#\\Data\\DataFrame\\dataframework-netcore5.vbproj|g:\\gcmodeller\\src\\runtime\\scibasic#\\data\\dataframe\\dataframe\\dataframe.vb||{2C015C70-C72C-11D0-88C3-00A0C9110049}"
     }
   ],
   "DocumentGroupContainers": [
@@ -77,294 +28,8 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 2,
+          "SelectedChildIndex": 4,
           "Children": [
-            {
-              "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "Class3.vb",
-              "DocumentMoniker": "G:\\GCModeller\\src\\runtime\\sciBASIC#\\Microsoft.VisualBasic.Core\\src\\ComponentModel\\DataSource\\SchemaMaps\\DataSource\\Class3.vb",
-              "RelativeDocumentMoniker": "..\\..\\GCModeller\\src\\runtime\\sciBASIC#\\Microsoft.VisualBasic.Core\\src\\ComponentModel\\DataSource\\SchemaMaps\\DataSource\\Class3.vb",
-              "ToolTip": "G:\\GCModeller\\src\\runtime\\sciBASIC#\\Microsoft.VisualBasic.Core\\src\\ComponentModel\\DataSource\\SchemaMaps\\DataSource\\Class3.vb",
-              "RelativeToolTip": "..\\..\\GCModeller\\src\\runtime\\sciBASIC#\\Microsoft.VisualBasic.Core\\src\\ComponentModel\\DataSource\\SchemaMaps\\DataSource\\Class3.vb",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAEAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003361|",
-              "WhenOpened": "2026-04-05T08:24:52.725Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "Class2.vb",
-              "DocumentMoniker": "G:\\GCModeller\\src\\runtime\\sciBASIC#\\Microsoft.VisualBasic.Core\\src\\ComponentModel\\DataSource\\SchemaMaps\\DataSource\\Class2.vb",
-              "RelativeDocumentMoniker": "..\\..\\GCModeller\\src\\runtime\\sciBASIC#\\Microsoft.VisualBasic.Core\\src\\ComponentModel\\DataSource\\SchemaMaps\\DataSource\\Class2.vb",
-              "ToolTip": "G:\\GCModeller\\src\\runtime\\sciBASIC#\\Microsoft.VisualBasic.Core\\src\\ComponentModel\\DataSource\\SchemaMaps\\DataSource\\Class2.vb",
-              "RelativeToolTip": "..\\..\\GCModeller\\src\\runtime\\sciBASIC#\\Microsoft.VisualBasic.Core\\src\\ComponentModel\\DataSource\\SchemaMaps\\DataSource\\Class2.vb",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAMAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003361|",
-              "WhenOpened": "2026-04-05T08:24:49.203Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "Class1.vb",
-              "DocumentMoniker": "G:\\GCModeller\\src\\runtime\\sciBASIC#\\Microsoft.VisualBasic.Core\\src\\ComponentModel\\DataSource\\SchemaMaps\\DataSource\\Class1.vb",
-              "RelativeDocumentMoniker": "..\\..\\GCModeller\\src\\runtime\\sciBASIC#\\Microsoft.VisualBasic.Core\\src\\ComponentModel\\DataSource\\SchemaMaps\\DataSource\\Class1.vb",
-              "ToolTip": "G:\\GCModeller\\src\\runtime\\sciBASIC#\\Microsoft.VisualBasic.Core\\src\\ComponentModel\\DataSource\\SchemaMaps\\DataSource\\Class1.vb",
-              "RelativeToolTip": "..\\..\\GCModeller\\src\\runtime\\sciBASIC#\\Microsoft.VisualBasic.Core\\src\\ComponentModel\\DataSource\\SchemaMaps\\DataSource\\Class1.vb",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAwAAAANAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003361|",
-              "WhenOpened": "2026-04-05T08:24:46.047Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 4,
-              "Title": "BindProperty.vb",
-              "DocumentMoniker": "G:\\GCModeller\\src\\runtime\\sciBASIC#\\Microsoft.VisualBasic.Core\\src\\ComponentModel\\DataSource\\SchemaMaps\\BindProperty.vb",
-              "RelativeDocumentMoniker": "..\\..\\GCModeller\\src\\runtime\\sciBASIC#\\Microsoft.VisualBasic.Core\\src\\ComponentModel\\DataSource\\SchemaMaps\\BindProperty.vb",
-              "ToolTip": "G:\\GCModeller\\src\\runtime\\sciBASIC#\\Microsoft.VisualBasic.Core\\src\\ComponentModel\\DataSource\\SchemaMaps\\BindProperty.vb",
-              "RelativeToolTip": "..\\..\\GCModeller\\src\\runtime\\sciBASIC#\\Microsoft.VisualBasic.Core\\src\\ComponentModel\\DataSource\\SchemaMaps\\BindProperty.vb",
-              "ViewState": "AgIAANsAAAAAAAAAAAAmwAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003361|",
-              "WhenOpened": "2026-04-05T08:24:15.719Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "DataSource.vb",
-              "DocumentMoniker": "G:\\GCModeller\\src\\runtime\\sciBASIC#\\Microsoft.VisualBasic.Core\\src\\ComponentModel\\DataSource\\SchemaMaps\\DataSource\\DataSource.vb",
-              "RelativeDocumentMoniker": "..\\..\\GCModeller\\src\\runtime\\sciBASIC#\\Microsoft.VisualBasic.Core\\src\\ComponentModel\\DataSource\\SchemaMaps\\DataSource\\DataSource.vb",
-              "ToolTip": "G:\\GCModeller\\src\\runtime\\sciBASIC#\\Microsoft.VisualBasic.Core\\src\\ComponentModel\\DataSource\\SchemaMaps\\DataSource\\DataSource.vb",
-              "RelativeToolTip": "..\\..\\GCModeller\\src\\runtime\\sciBASIC#\\Microsoft.VisualBasic.Core\\src\\ComponentModel\\DataSource\\SchemaMaps\\DataSource\\DataSource.vb",
-              "ViewState": "AgIAAPcAAAAAAAAAAAAqwBsBAAANAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003361|",
-              "WhenOpened": "2026-04-05T08:24:05.073Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 5,
-              "Title": "Mappings.vb",
-              "DocumentMoniker": "G:\\GCModeller\\src\\runtime\\sciBASIC#\\Microsoft.VisualBasic.Core\\src\\ComponentModel\\DataSource\\SchemaMaps\\Mappings.vb",
-              "RelativeDocumentMoniker": "..\\..\\GCModeller\\src\\runtime\\sciBASIC#\\Microsoft.VisualBasic.Core\\src\\ComponentModel\\DataSource\\SchemaMaps\\Mappings.vb",
-              "ToolTip": "G:\\GCModeller\\src\\runtime\\sciBASIC#\\Microsoft.VisualBasic.Core\\src\\ComponentModel\\DataSource\\SchemaMaps\\Mappings.vb",
-              "RelativeToolTip": "..\\..\\GCModeller\\src\\runtime\\sciBASIC#\\Microsoft.VisualBasic.Core\\src\\ComponentModel\\DataSource\\SchemaMaps\\Mappings.vb",
-              "ViewState": "AgIAAOAAAAAAAAAAAAAUwFcAAAAVAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003361|",
-              "WhenOpened": "2026-04-05T08:23:19.328Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 6,
-              "Title": "ObjectSchema.vb",
-              "DocumentMoniker": "G:\\GCModeller\\src\\runtime\\sciBASIC#\\Microsoft.VisualBasic.Core\\src\\ComponentModel\\DataSource\\SchemaMaps\\ObjectSchema.vb",
-              "RelativeDocumentMoniker": "..\\..\\GCModeller\\src\\runtime\\sciBASIC#\\Microsoft.VisualBasic.Core\\src\\ComponentModel\\DataSource\\SchemaMaps\\ObjectSchema.vb",
-              "ToolTip": "G:\\GCModeller\\src\\runtime\\sciBASIC#\\Microsoft.VisualBasic.Core\\src\\ComponentModel\\DataSource\\SchemaMaps\\ObjectSchema.vb",
-              "RelativeToolTip": "..\\..\\GCModeller\\src\\runtime\\sciBASIC#\\Microsoft.VisualBasic.Core\\src\\ComponentModel\\DataSource\\SchemaMaps\\ObjectSchema.vb",
-              "ViewState": "AgIAAB4BAAAAAAAAAAAQwAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003361|",
-              "WhenOpened": "2026-04-05T08:23:01.699Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 7,
-              "Title": "PropertyValue.vb",
-              "DocumentMoniker": "G:\\GCModeller\\src\\runtime\\sciBASIC#\\Microsoft.VisualBasic.Core\\src\\ComponentModel\\DataSource\\SchemaMaps\\PropertyValue.vb",
-              "RelativeDocumentMoniker": "..\\..\\GCModeller\\src\\runtime\\sciBASIC#\\Microsoft.VisualBasic.Core\\src\\ComponentModel\\DataSource\\SchemaMaps\\PropertyValue.vb",
-              "ToolTip": "G:\\GCModeller\\src\\runtime\\sciBASIC#\\Microsoft.VisualBasic.Core\\src\\ComponentModel\\DataSource\\SchemaMaps\\PropertyValue.vb",
-              "RelativeToolTip": "..\\..\\GCModeller\\src\\runtime\\sciBASIC#\\Microsoft.VisualBasic.Core\\src\\ComponentModel\\DataSource\\SchemaMaps\\PropertyValue.vb",
-              "ViewState": "AgIAAHcAAAAAAAAAAAAUwAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003361|",
-              "WhenOpened": "2026-04-05T08:22:54.786Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 8,
-              "Title": "Schema.vb",
-              "DocumentMoniker": "G:\\GCModeller\\src\\runtime\\sciBASIC#\\Microsoft.VisualBasic.Core\\src\\ComponentModel\\DataSource\\SchemaMaps\\Schema.vb",
-              "RelativeDocumentMoniker": "..\\..\\GCModeller\\src\\runtime\\sciBASIC#\\Microsoft.VisualBasic.Core\\src\\ComponentModel\\DataSource\\SchemaMaps\\Schema.vb",
-              "ToolTip": "G:\\GCModeller\\src\\runtime\\sciBASIC#\\Microsoft.VisualBasic.Core\\src\\ComponentModel\\DataSource\\SchemaMaps\\Schema.vb",
-              "RelativeToolTip": "..\\..\\GCModeller\\src\\runtime\\sciBASIC#\\Microsoft.VisualBasic.Core\\src\\ComponentModel\\DataSource\\SchemaMaps\\Schema.vb",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAFUAAABSAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003361|",
-              "WhenOpened": "2026-04-05T08:22:44.114Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 9,
-              "Title": "SQL.vb",
-              "DocumentMoniker": "G:\\GCModeller\\src\\runtime\\sciBASIC#\\Microsoft.VisualBasic.Core\\src\\ComponentModel\\DataSource\\SchemaMaps\\SQL.vb",
-              "RelativeDocumentMoniker": "..\\..\\GCModeller\\src\\runtime\\sciBASIC#\\Microsoft.VisualBasic.Core\\src\\ComponentModel\\DataSource\\SchemaMaps\\SQL.vb",
-              "ToolTip": "G:\\GCModeller\\src\\runtime\\sciBASIC#\\Microsoft.VisualBasic.Core\\src\\ComponentModel\\DataSource\\SchemaMaps\\SQL.vb",
-              "RelativeToolTip": "..\\..\\GCModeller\\src\\runtime\\sciBASIC#\\Microsoft.VisualBasic.Core\\src\\ComponentModel\\DataSource\\SchemaMaps\\SQL.vb",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAFUAAAAVAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003361|",
-              "WhenOpened": "2026-04-05T08:22:32.833Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 10,
-              "Title": "CuckooFilter.vb",
-              "DocumentMoniker": "G:\\GCModeller\\src\\runtime\\sciBASIC#\\Microsoft.VisualBasic.Core\\src\\ComponentModel\\DataSource\\Repository\\CuckooFilter.vb",
-              "RelativeDocumentMoniker": "..\\..\\GCModeller\\src\\runtime\\sciBASIC#\\Microsoft.VisualBasic.Core\\src\\ComponentModel\\DataSource\\Repository\\CuckooFilter.vb",
-              "ToolTip": "G:\\GCModeller\\src\\runtime\\sciBASIC#\\Microsoft.VisualBasic.Core\\src\\ComponentModel\\DataSource\\Repository\\CuckooFilter.vb",
-              "RelativeToolTip": "..\\..\\GCModeller\\src\\runtime\\sciBASIC#\\Microsoft.VisualBasic.Core\\src\\ComponentModel\\DataSource\\Repository\\CuckooFilter.vb",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003361|",
-              "WhenOpened": "2026-04-05T08:22:25.849Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 11,
-              "Title": "QueryCache.vb",
-              "DocumentMoniker": "G:\\GCModeller\\src\\runtime\\sciBASIC#\\Microsoft.VisualBasic.Core\\src\\ComponentModel\\DataSource\\Repository\\QueryCache.vb",
-              "RelativeDocumentMoniker": "..\\..\\GCModeller\\src\\runtime\\sciBASIC#\\Microsoft.VisualBasic.Core\\src\\ComponentModel\\DataSource\\Repository\\QueryCache.vb",
-              "ToolTip": "G:\\GCModeller\\src\\runtime\\sciBASIC#\\Microsoft.VisualBasic.Core\\src\\ComponentModel\\DataSource\\Repository\\QueryCache.vb",
-              "RelativeToolTip": "..\\..\\GCModeller\\src\\runtime\\sciBASIC#\\Microsoft.VisualBasic.Core\\src\\ComponentModel\\DataSource\\Repository\\QueryCache.vb",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003361|",
-              "WhenOpened": "2026-04-05T08:22:16.758Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 12,
-              "Title": "Repository.vb",
-              "DocumentMoniker": "G:\\GCModeller\\src\\runtime\\sciBASIC#\\Microsoft.VisualBasic.Core\\src\\ComponentModel\\DataSource\\Repository\\Repository.vb",
-              "RelativeDocumentMoniker": "..\\..\\GCModeller\\src\\runtime\\sciBASIC#\\Microsoft.VisualBasic.Core\\src\\ComponentModel\\DataSource\\Repository\\Repository.vb",
-              "ToolTip": "G:\\GCModeller\\src\\runtime\\sciBASIC#\\Microsoft.VisualBasic.Core\\src\\ComponentModel\\DataSource\\Repository\\Repository.vb",
-              "RelativeToolTip": "..\\..\\GCModeller\\src\\runtime\\sciBASIC#\\Microsoft.VisualBasic.Core\\src\\ComponentModel\\DataSource\\Repository\\Repository.vb",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003361|",
-              "WhenOpened": "2026-04-05T08:22:15.862Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 13,
-              "Title": "SearchFramework.vb",
-              "DocumentMoniker": "G:\\GCModeller\\src\\runtime\\sciBASIC#\\Microsoft.VisualBasic.Core\\src\\ComponentModel\\DataSource\\Repository\\SearchFramework.vb",
-              "RelativeDocumentMoniker": "..\\..\\GCModeller\\src\\runtime\\sciBASIC#\\Microsoft.VisualBasic.Core\\src\\ComponentModel\\DataSource\\Repository\\SearchFramework.vb",
-              "ToolTip": "G:\\GCModeller\\src\\runtime\\sciBASIC#\\Microsoft.VisualBasic.Core\\src\\ComponentModel\\DataSource\\Repository\\SearchFramework.vb",
-              "RelativeToolTip": "..\\..\\GCModeller\\src\\runtime\\sciBASIC#\\Microsoft.VisualBasic.Core\\src\\ComponentModel\\DataSource\\Repository\\SearchFramework.vb",
-              "ViewState": "AgIAAJsAAAAAAAAAAAAAwAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003361|",
-              "WhenOpened": "2026-04-05T08:22:09.387Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 17,
-              "Title": "NamedValue.vb",
-              "DocumentMoniker": "G:\\GCModeller\\src\\runtime\\sciBASIC#\\Microsoft.VisualBasic.Core\\src\\ComponentModel\\DataSource\\Property\\NamedValue.vb",
-              "RelativeDocumentMoniker": "..\\..\\GCModeller\\src\\runtime\\sciBASIC#\\Microsoft.VisualBasic.Core\\src\\ComponentModel\\DataSource\\Property\\NamedValue.vb",
-              "ToolTip": "G:\\GCModeller\\src\\runtime\\sciBASIC#\\Microsoft.VisualBasic.Core\\src\\ComponentModel\\DataSource\\Property\\NamedValue.vb",
-              "RelativeToolTip": "..\\..\\GCModeller\\src\\runtime\\sciBASIC#\\Microsoft.VisualBasic.Core\\src\\ComponentModel\\DataSource\\Property\\NamedValue.vb",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAEQAAAAHAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003361|",
-              "WhenOpened": "2026-04-05T08:17:11.293Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 16,
-              "Title": "Sqlite3Row.vb",
-              "DocumentMoniker": "G:\\GCModeller\\src\\runtime\\sciBASIC#\\Data\\BinaryData\\SQLite3\\Tables\\Sqlite3Row.vb",
-              "RelativeDocumentMoniker": "..\\..\\GCModeller\\src\\runtime\\sciBASIC#\\Data\\BinaryData\\SQLite3\\Tables\\Sqlite3Row.vb",
-              "ToolTip": "G:\\GCModeller\\src\\runtime\\sciBASIC#\\Data\\BinaryData\\SQLite3\\Tables\\Sqlite3Row.vb",
-              "RelativeToolTip": "..\\..\\GCModeller\\src\\runtime\\sciBASIC#\\Data\\BinaryData\\SQLite3\\Tables\\Sqlite3Row.vb",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAD8AAAAxAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003361|",
-              "WhenOpened": "2026-04-05T08:16:31.688Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 15,
-              "Title": "Sqlite3Table.vb",
-              "DocumentMoniker": "G:\\GCModeller\\src\\runtime\\sciBASIC#\\Data\\BinaryData\\SQLite3\\Tables\\Sqlite3Table.vb",
-              "RelativeDocumentMoniker": "..\\..\\GCModeller\\src\\runtime\\sciBASIC#\\Data\\BinaryData\\SQLite3\\Tables\\Sqlite3Table.vb",
-              "ToolTip": "G:\\GCModeller\\src\\runtime\\sciBASIC#\\Data\\BinaryData\\SQLite3\\Tables\\Sqlite3Table.vb",
-              "RelativeToolTip": "..\\..\\GCModeller\\src\\runtime\\sciBASIC#\\Data\\BinaryData\\SQLite3\\Tables\\Sqlite3Table.vb",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAqwEkAAAAvAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003361|",
-              "WhenOpened": "2026-04-05T08:13:48.399Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 19,
-              "Title": "Sqlite3SchemaRow.vb",
-              "DocumentMoniker": "G:\\GCModeller\\src\\runtime\\sciBASIC#\\Data\\BinaryData\\SQLite3\\Tables\\Sqlite3SchemaRow.vb",
-              "RelativeDocumentMoniker": "..\\..\\GCModeller\\src\\runtime\\sciBASIC#\\Data\\BinaryData\\SQLite3\\Tables\\Sqlite3SchemaRow.vb",
-              "ToolTip": "G:\\GCModeller\\src\\runtime\\sciBASIC#\\Data\\BinaryData\\SQLite3\\Tables\\Sqlite3SchemaRow.vb",
-              "RelativeToolTip": "..\\..\\GCModeller\\src\\runtime\\sciBASIC#\\Data\\BinaryData\\SQLite3\\Tables\\Sqlite3SchemaRow.vb",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAADwAAAARAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003361|",
-              "WhenOpened": "2026-04-05T08:12:39.239Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 14,
-              "Title": "Schema.vb",
-              "DocumentMoniker": "G:\\GCModeller\\src\\runtime\\sciBASIC#\\Data\\BinaryData\\SQLite3\\Schema\\Schema.vb",
-              "RelativeDocumentMoniker": "..\\..\\GCModeller\\src\\runtime\\sciBASIC#\\Data\\BinaryData\\SQLite3\\Schema\\Schema.vb",
-              "ToolTip": "G:\\GCModeller\\src\\runtime\\sciBASIC#\\Data\\BinaryData\\SQLite3\\Schema\\Schema.vb",
-              "RelativeToolTip": "..\\..\\GCModeller\\src\\runtime\\sciBASIC#\\Data\\BinaryData\\SQLite3\\Schema\\Schema.vb",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAEsAAABCAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003361|",
-              "WhenOpened": "2026-04-05T08:09:43.357Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 21,
-              "Title": "Extensions.vb",
-              "DocumentMoniker": "G:\\GCModeller\\src\\runtime\\sciBASIC#\\Data\\BinaryData\\SQLite3\\Extensions.vb",
-              "RelativeDocumentMoniker": "..\\..\\GCModeller\\src\\runtime\\sciBASIC#\\Data\\BinaryData\\SQLite3\\Extensions.vb",
-              "ToolTip": "G:\\GCModeller\\src\\runtime\\sciBASIC#\\Data\\BinaryData\\SQLite3\\Extensions.vb",
-              "RelativeToolTip": "..\\..\\GCModeller\\src\\runtime\\sciBASIC#\\Data\\BinaryData\\SQLite3\\Extensions.vb",
-              "ViewState": "AgIAADsAAAAAAAAAAAAcwFIAAAAtAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003361|",
-              "WhenOpened": "2026-04-05T08:09:24.4Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 20,
-              "Title": "Sqlite3Database.vb",
-              "DocumentMoniker": "G:\\GCModeller\\src\\runtime\\sciBASIC#\\Data\\BinaryData\\SQLite3\\Sqlite3Database.vb",
-              "RelativeDocumentMoniker": "..\\..\\GCModeller\\src\\runtime\\sciBASIC#\\Data\\BinaryData\\SQLite3\\Sqlite3Database.vb",
-              "ToolTip": "G:\\GCModeller\\src\\runtime\\sciBASIC#\\Data\\BinaryData\\SQLite3\\Sqlite3Database.vb",
-              "RelativeToolTip": "..\\..\\GCModeller\\src\\runtime\\sciBASIC#\\Data\\BinaryData\\SQLite3\\Sqlite3Database.vb",
-              "ViewState": "AgIAAGkAAAAAAAAAAAAowAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003361|",
-              "WhenOpened": "2026-04-05T08:05:02.674Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 18,
-              "Title": "EquilibratorDatabaseReader.vb",
-              "DocumentMoniker": "G:\\emily\\src\\eQuilibrator\\Compound\\EquilibratorDatabase\\EquilibratorDatabaseReader.vb",
-              "RelativeDocumentMoniker": "eQuilibrator\\Compound\\EquilibratorDatabase\\EquilibratorDatabaseReader.vb",
-              "ToolTip": "G:\\emily\\src\\eQuilibrator\\Compound\\EquilibratorDatabase\\EquilibratorDatabaseReader.vb",
-              "RelativeToolTip": "eQuilibrator\\Compound\\EquilibratorDatabase\\EquilibratorDatabaseReader.vb",
-              "ViewState": "AgIAAAkAAAAAAAAAAAAAACoAAAAmAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003361|",
-              "WhenOpened": "2026-04-05T07:56:33.589Z",
-              "EditorCaption": ""
-            },
             {
               "$type": "Bookmark",
               "Name": "ST:0:0:{e506b91c-c606-466a-90a9-123d1d1e12b3}"
@@ -380,6 +45,84 @@
             {
               "$type": "Bookmark",
               "Name": "ST:0:0:{aa2115a1-9712-457b-9047-dbb71ca2cdd2}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "DataRows.vb",
+              "DocumentMoniker": "G:\\GCModeller\\src\\runtime\\sciBASIC#\\Data\\DataFrame\\DataSet\\DataRows.vb",
+              "RelativeDocumentMoniker": "..\\..\\GCModeller\\src\\runtime\\sciBASIC#\\Data\\DataFrame\\DataSet\\DataRows.vb",
+              "ToolTip": "G:\\GCModeller\\src\\runtime\\sciBASIC#\\Data\\DataFrame\\DataSet\\DataRows.vb",
+              "RelativeToolTip": "..\\..\\GCModeller\\src\\runtime\\sciBASIC#\\Data\\DataFrame\\DataSet\\DataRows.vb",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAD8AAAAUAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003361|",
+              "WhenOpened": "2026-04-05T08:29:15.811Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "NumericDataSet.vb",
+              "DocumentMoniker": "G:\\GCModeller\\src\\runtime\\sciBASIC#\\Data\\DataFrame\\DataFrame\\NumericDataSet.vb",
+              "RelativeDocumentMoniker": "..\\..\\GCModeller\\src\\runtime\\sciBASIC#\\Data\\DataFrame\\DataFrame\\NumericDataSet.vb",
+              "ToolTip": "G:\\GCModeller\\src\\runtime\\sciBASIC#\\Data\\DataFrame\\DataFrame\\NumericDataSet.vb",
+              "RelativeToolTip": "..\\..\\GCModeller\\src\\runtime\\sciBASIC#\\Data\\DataFrame\\DataFrame\\NumericDataSet.vb",
+              "ViewState": "AgIAALYAAAAAAAAAAAAAwAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003361|",
+              "WhenOpened": "2026-04-05T08:28:51.008Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "FileWriter.vb",
+              "DocumentMoniker": "G:\\GCModeller\\src\\runtime\\sciBASIC#\\Data\\DataFrame\\DataFrame\\FileWriter.vb",
+              "RelativeDocumentMoniker": "..\\..\\GCModeller\\src\\runtime\\sciBASIC#\\Data\\DataFrame\\DataFrame\\FileWriter.vb",
+              "ToolTip": "G:\\GCModeller\\src\\runtime\\sciBASIC#\\Data\\DataFrame\\DataFrame\\FileWriter.vb",
+              "RelativeToolTip": "..\\..\\GCModeller\\src\\runtime\\sciBASIC#\\Data\\DataFrame\\DataFrame\\FileWriter.vb",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003361|",
+              "WhenOpened": "2026-04-05T08:28:44.853Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "FeatureVector.vb",
+              "DocumentMoniker": "G:\\GCModeller\\src\\runtime\\sciBASIC#\\Data\\DataFrame\\DataFrame\\FeatureVector.vb",
+              "RelativeDocumentMoniker": "..\\..\\GCModeller\\src\\runtime\\sciBASIC#\\Data\\DataFrame\\DataFrame\\FeatureVector.vb",
+              "ToolTip": "G:\\GCModeller\\src\\runtime\\sciBASIC#\\Data\\DataFrame\\DataFrame\\FeatureVector.vb",
+              "RelativeToolTip": "..\\..\\GCModeller\\src\\runtime\\sciBASIC#\\Data\\DataFrame\\DataFrame\\FeatureVector.vb",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAEUAAAAUAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003361|",
+              "WhenOpened": "2026-04-05T08:28:31.569Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "FastLoader.vb",
+              "DocumentMoniker": "G:\\GCModeller\\src\\runtime\\sciBASIC#\\Data\\DataFrame\\DataFrame\\FastLoader.vb",
+              "RelativeDocumentMoniker": "..\\..\\GCModeller\\src\\runtime\\sciBASIC#\\Data\\DataFrame\\DataFrame\\FastLoader.vb",
+              "ToolTip": "G:\\GCModeller\\src\\runtime\\sciBASIC#\\Data\\DataFrame\\DataFrame\\FastLoader.vb",
+              "RelativeToolTip": "..\\..\\GCModeller\\src\\runtime\\sciBASIC#\\Data\\DataFrame\\DataFrame\\FastLoader.vb",
+              "ViewState": "AgIAAJcAAAAAAAAAAAA7wAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003361|",
+              "WhenOpened": "2026-04-05T08:28:15.321Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "DataFrame.vb",
+              "DocumentMoniker": "G:\\GCModeller\\src\\runtime\\sciBASIC#\\Data\\DataFrame\\DataFrame\\DataFrame.vb",
+              "RelativeDocumentMoniker": "..\\..\\GCModeller\\src\\runtime\\sciBASIC#\\Data\\DataFrame\\DataFrame\\DataFrame.vb",
+              "ToolTip": "G:\\GCModeller\\src\\runtime\\sciBASIC#\\Data\\DataFrame\\DataFrame\\DataFrame.vb",
+              "RelativeToolTip": "..\\..\\GCModeller\\src\\runtime\\sciBASIC#\\Data\\DataFrame\\DataFrame\\DataFrame.vb",
+              "ViewState": "AgIAAF0AAAAAAAAAAAAiwAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003361|",
+              "WhenOpened": "2026-04-05T08:28:10.504Z",
+              "EditorCaption": ""
             }
           ]
         },
