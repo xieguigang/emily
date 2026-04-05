@@ -27,7 +27,7 @@ Namespace EquilibratorThermodynamics
         ''' </summary>
         Public Sub New(databasePath As String)
             _DatabasePath = databasePath
-            _connection = Sqlite3Database.OpenFile(databasePath, False)
+            _connection = Sqlite3Database.OpenFile(databasePath, blobAsBase64:=False)
         End Sub
 
         ''' <summary>
