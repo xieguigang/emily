@@ -3,23 +3,11 @@
   "WorkspaceRootPath": "G:\\emily\\src\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{53B9345F-EED2-8CDB-98D7-C3400A7D38AA}|..\\..\\GCModeller\\src\\runtime\\sciBASIC#\\Data\\BinaryData\\SQLite3\\SQLite3.vbproj|g:\\gcmodeller\\src\\runtime\\scibasic#\\data\\binarydata\\sqlite3\\schema\\schema.vb||{2C015C70-C72C-11D0-88C3-00A0C9110049}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{53B9345F-EED2-8CDB-98D7-C3400A7D38AA}|..\\..\\GCModeller\\src\\runtime\\sciBASIC#\\Data\\BinaryData\\SQLite3\\SQLite3.vbproj|g:\\gcmodeller\\src\\runtime\\scibasic#\\data\\binarydata\\sqlite3\\tables\\sqlite3table.vb||{2C015C70-C72C-11D0-88C3-00A0C9110049}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{F5171153-AEE8-69B3-0273-1D621019EC9B}|..\\..\\GCModeller\\src\\runtime\\sciBASIC#\\Data\\DataFrame\\dataframework-netcore5.vbproj|g:\\gcmodeller\\src\\runtime\\scibasic#\\data\\dataframe\\storageprovider\\dataframe\\headerschema.vb||{2C015C70-C72C-11D0-88C3-00A0C9110049}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{53B9345F-EED2-8CDB-98D7-C3400A7D38AA}|..\\..\\GCModeller\\src\\runtime\\sciBASIC#\\Data\\BinaryData\\SQLite3\\SQLite3.vbproj|g:\\gcmodeller\\src\\runtime\\scibasic#\\data\\binarydata\\sqlite3\\schema\\extensions.vb||{2C015C70-C72C-11D0-88C3-00A0C9110049}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{A712EDC3-9352-6289-BD83-897F07C1A196}|eQuilibrator\\eQuilibrator.vbproj|g:\\emily\\src\\equilibrator\\compound\\equilibratordatabase\\equilibratordatabasereader.vb||{2C015C70-C72C-11D0-88C3-00A0C9110049}",
       "RelativeMoniker": "D:0:0:{A712EDC3-9352-6289-BD83-897F07C1A196}|eQuilibrator\\eQuilibrator.vbproj|solutionrelative:equilibrator\\compound\\equilibratordatabase\\equilibratordatabasereader.vb||{2C015C70-C72C-11D0-88C3-00A0C9110049}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{F5171153-AEE8-69B3-0273-1D621019EC9B}|..\\..\\GCModeller\\src\\runtime\\sciBASIC#\\Data\\DataFrame\\dataframework-netcore5.vbproj|g:\\gcmodeller\\src\\runtime\\scibasic#\\data\\dataframe\\extensions\\streamiohandler.vb||{2C015C70-C72C-11D0-88C3-00A0C9110049}"
+      "AbsoluteMoniker": "D:0:0:{53B9345F-EED2-8CDB-98D7-C3400A7D38AA}|..\\..\\GCModeller\\src\\runtime\\sciBASIC#\\Data\\BinaryData\\SQLite3\\SQLite3.vbproj|g:\\gcmodeller\\src\\runtime\\scibasic#\\data\\binarydata\\sqlite3\\tables\\sqlite3row.vb||{2C015C70-C72C-11D0-88C3-00A0C9110049}"
     }
   ],
   "DocumentGroupContainers": [
@@ -29,34 +17,8 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 6,
+          "SelectedChildIndex": 5,
           "Children": [
-            {
-              "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "Sqlite3Table.vb",
-              "DocumentMoniker": "G:\\GCModeller\\src\\runtime\\sciBASIC#\\Data\\BinaryData\\SQLite3\\Tables\\Sqlite3Table.vb",
-              "RelativeDocumentMoniker": "..\\..\\GCModeller\\src\\runtime\\sciBASIC#\\Data\\BinaryData\\SQLite3\\Tables\\Sqlite3Table.vb",
-              "ToolTip": "G:\\GCModeller\\src\\runtime\\sciBASIC#\\Data\\BinaryData\\SQLite3\\Tables\\Sqlite3Table.vb",
-              "RelativeToolTip": "..\\..\\GCModeller\\src\\runtime\\sciBASIC#\\Data\\BinaryData\\SQLite3\\Tables\\Sqlite3Table.vb",
-              "ViewState": "AgIAAD0AAAAAAAAAAAAcwF0AAAA6AAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003361|",
-              "WhenOpened": "2026-04-05T08:51:20.801Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "HeaderSchema.vb",
-              "DocumentMoniker": "G:\\GCModeller\\src\\runtime\\sciBASIC#\\Data\\DataFrame\\StorageProvider\\DataFrame\\HeaderSchema.vb",
-              "RelativeDocumentMoniker": "..\\..\\GCModeller\\src\\runtime\\sciBASIC#\\Data\\DataFrame\\StorageProvider\\DataFrame\\HeaderSchema.vb",
-              "ToolTip": "G:\\GCModeller\\src\\runtime\\sciBASIC#\\Data\\DataFrame\\StorageProvider\\DataFrame\\HeaderSchema.vb",
-              "RelativeToolTip": "..\\..\\GCModeller\\src\\runtime\\sciBASIC#\\Data\\DataFrame\\StorageProvider\\DataFrame\\HeaderSchema.vb",
-              "ViewState": "AgIAAEYAAAAAAAAAAAAkwGYAAAAMAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003361|",
-              "WhenOpened": "2026-04-05T08:47:09.904Z",
-              "EditorCaption": ""
-            },
             {
               "$type": "Bookmark",
               "Name": "ST:0:0:{e506b91c-c606-466a-90a9-123d1d1e12b3}"
@@ -76,53 +38,14 @@
             {
               "$type": "Document",
               "DocumentIndex": 0,
-              "Title": "Schema.vb",
-              "DocumentMoniker": "G:\\GCModeller\\src\\runtime\\sciBASIC#\\Data\\BinaryData\\SQLite3\\Schema\\Schema.vb",
-              "RelativeDocumentMoniker": "..\\..\\GCModeller\\src\\runtime\\sciBASIC#\\Data\\BinaryData\\SQLite3\\Schema\\Schema.vb",
-              "ToolTip": "G:\\GCModeller\\src\\runtime\\sciBASIC#\\Data\\BinaryData\\SQLite3\\Schema\\Schema.vb",
-              "RelativeToolTip": "..\\..\\GCModeller\\src\\runtime\\sciBASIC#\\Data\\BinaryData\\SQLite3\\Schema\\Schema.vb",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAADoAAAALAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003361|",
-              "WhenOpened": "2026-04-05T08:46:05.469Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "Extensions.vb",
-              "DocumentMoniker": "G:\\GCModeller\\src\\runtime\\sciBASIC#\\Data\\BinaryData\\SQLite3\\Schema\\Extensions.vb",
-              "RelativeDocumentMoniker": "..\\..\\GCModeller\\src\\runtime\\sciBASIC#\\Data\\BinaryData\\SQLite3\\Schema\\Extensions.vb",
-              "ToolTip": "G:\\GCModeller\\src\\runtime\\sciBASIC#\\Data\\BinaryData\\SQLite3\\Schema\\Extensions.vb",
-              "RelativeToolTip": "..\\..\\GCModeller\\src\\runtime\\sciBASIC#\\Data\\BinaryData\\SQLite3\\Schema\\Extensions.vb",
-              "ViewState": "AgIAAEEAAAAAAAAAAAAYwAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003361|",
-              "WhenOpened": "2026-04-05T08:46:00.906Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 4,
               "Title": "EquilibratorDatabaseReader.vb",
               "DocumentMoniker": "G:\\emily\\src\\eQuilibrator\\Compound\\EquilibratorDatabase\\EquilibratorDatabaseReader.vb",
               "RelativeDocumentMoniker": "eQuilibrator\\Compound\\EquilibratorDatabase\\EquilibratorDatabaseReader.vb",
               "ToolTip": "G:\\emily\\src\\eQuilibrator\\Compound\\EquilibratorDatabase\\EquilibratorDatabaseReader.vb",
               "RelativeToolTip": "eQuilibrator\\Compound\\EquilibratorDatabase\\EquilibratorDatabaseReader.vb",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAACAAAAAVAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAB4AAAAPAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003361|",
               "WhenOpened": "2026-04-05T08:44:47.651Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 5,
-              "Title": "StreamIOHandler.vb",
-              "DocumentMoniker": "G:\\GCModeller\\src\\runtime\\sciBASIC#\\Data\\DataFrame\\Extensions\\StreamIOHandler.vb",
-              "RelativeDocumentMoniker": "..\\..\\GCModeller\\src\\runtime\\sciBASIC#\\Data\\DataFrame\\Extensions\\StreamIOHandler.vb",
-              "ToolTip": "G:\\GCModeller\\src\\runtime\\sciBASIC#\\Data\\DataFrame\\Extensions\\StreamIOHandler.vb",
-              "RelativeToolTip": "..\\..\\GCModeller\\src\\runtime\\sciBASIC#\\Data\\DataFrame\\Extensions\\StreamIOHandler.vb",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAEUAAABIAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003361|",
-              "WhenOpened": "2026-04-05T08:44:21.855Z",
               "EditorCaption": ""
             }
           ]
@@ -134,6 +57,40 @@
             {
               "$type": "Bookmark",
               "Name": "ST:0:0:{d78612c7-9962-4b83-95d9-268046dad23a}"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "FloatingWindowState": {
+        "Id": "2b12b56e-9490-4c71-84da-9847c18957c9",
+        "Display": 1,
+        "X": 305,
+        "Y": 93,
+        "Width": 2136,
+        "Height": 1326,
+        "WindowState": 0
+      },
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 0,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "Sqlite3Row.vb",
+              "DocumentMoniker": "G:\\GCModeller\\src\\runtime\\sciBASIC#\\Data\\BinaryData\\SQLite3\\Tables\\Sqlite3Row.vb",
+              "RelativeDocumentMoniker": "..\\..\\GCModeller\\src\\runtime\\sciBASIC#\\Data\\BinaryData\\SQLite3\\Tables\\Sqlite3Row.vb",
+              "ToolTip": "G:\\GCModeller\\src\\runtime\\sciBASIC#\\Data\\BinaryData\\SQLite3\\Tables\\Sqlite3Row.vb",
+              "RelativeToolTip": "..\\..\\GCModeller\\src\\runtime\\sciBASIC#\\Data\\BinaryData\\SQLite3\\Tables\\Sqlite3Row.vb",
+              "ViewState": "AgIAAEoAAAAAAAAAAAAAwGIAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003361|",
+              "WhenOpened": "2026-04-05T08:52:33.982Z",
+              "EditorCaption": ""
             }
           ]
         }

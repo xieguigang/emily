@@ -33,7 +33,7 @@ Namespace EquilibratorThermodynamics
         ''' <summary>
         ''' 读取所有化合物数据
         ''' </summary>
-        Public Iterator Function ReadAllCompounds() As IEnumerable(Of Compound)
+        Public Function ReadAllCompounds() As IEnumerable(Of Compound)
             Dim compounds As New List(Of Compound)()
 
             ' 读取化合物主表
@@ -83,73 +83,67 @@ Namespace EquilibratorThermodynamics
                 compoundDict(compound.Id) = compound
             Next
 
-            '' 读取微物种数据
-            'Using cmd As New SQLiteCommand("SELECT * FROM compound_microspecies", _connection)
-            '    Using reader As SQLiteDataReader = cmd.ExecuteReader()
-            '        While reader.Read()
-            '            Dim ms As New CompoundMicrospecies With {
-            '                .Id = reader.GetInt32(reader.GetOrdinal("id")),
-            '                .CompoundId = reader.GetInt32(reader.GetOrdinal("compound_id")),
-            '                .Charge = reader.GetInt32(reader.GetOrdinal("charge")),
-            '                .NumberProtons = reader.GetInt32(reader.GetOrdinal("number_protons")),
-            '                .NumberMagnesiums = reader.GetInt32(reader.GetOrdinal("number_magnesiums")),
-            '                .IsMajor = reader.GetBoolean(reader.GetOrdinal("is_major"))
-            '            }
+            ' 读取微物种数据
+            Dim compound_microspecies As Sqlite3Table = _connection.GetTable("compound_microspecies")
 
-            '            Dim ddgIdx As Integer = reader.GetOrdinal("ddg_over_rt")
-            '            If Not reader.IsDBNull(ddgIdx) Then
-            '                ms.DdGOverRt = reader.GetDouble(ddgIdx)
-            '            End If
+            For Each reader As Sqlite3Row In compound_microspecies.EnumerateRows
+                Dim ms As New CompoundMicrospecies With {
+                            .Id = reader.GetInt32(reader.GetOrdinal("id")),
+                                .CompoundId = reader.GetInt32(reader.GetOrdinal("compound_id")),
+                                .Charge = reader.GetInt32(reader.GetOrdinal("charge")),
+                                .NumberProtons = reader.GetInt32(reader.GetOrdinal("number_protons")),
+                                .NumberMagnesiums = reader.GetInt32(reader.GetOrdinal("number_magnesiums")),
+                                .IsMajor = reader.GetBoolean(reader.GetOrdinal("is_major"))
+                            }
 
-            '            If compoundDict.ContainsKey(ms.CompoundId) Then
-            '                ms.Compound = compoundDict(ms.CompoundId)
-            '                compoundDict(ms.CompoundId).Microspecies.Add(ms)
-            '            End If
-            '        End While
-            '    End Using
-            'End Using
+                Dim ddgIdx As Integer = reader.GetOrdinal("ddg_over_rt")
+                If Not reader.IsDBNull(ddgIdx) Then
+                    ms.DdGOverRt = reader.GetDouble(ddgIdx)
+                End If
 
-            '' 读取镁解离常数
-            'Using cmd As New SQLiteCommand("SELECT * FROM magnesium_dissociation_constant", _connection)
-            '    Using reader As SQLiteDataReader = cmd.ExecuteReader()
-            '        While reader.Read()
-            '            Dim mgDiss As New MagnesiumDissociationConstant With {
-            '                .Id = reader.GetInt32(reader.GetOrdinal("id")),
-            '                .CompoundId = reader.GetInt32(reader.GetOrdinal("compound_id")),
-            '                .NumberProtons = reader.GetInt32(reader.GetOrdinal("number_protons")),
-            '                .NumberMagnesiums = reader.GetInt32(reader.GetOrdinal("number_magnesiums")),
-            '                .DissociationConstant = reader.GetDouble(reader.GetOrdinal("dissociation_constant"))
-            '            }
+                If compoundDict.ContainsKey(ms.CompoundId) Then
+                    ms.Compound = compoundDict(ms.CompoundId)
+                    compoundDict(ms.CompoundId).Microspecies.Add(ms)
+                End If
+            Next
 
-            '            If compoundDict.ContainsKey(mgDiss.CompoundId) Then
-            '                mgDiss.Compound = compoundDict(mgDiss.CompoundId)
-            '                compoundDict(mgDiss.CompoundId).MagnesiumDissociationConstants.Add(mgDiss)
-            '            End If
-            '        End While
-            '    End Using
-            'End Using
+            ' 读取镁解离常数
+            Dim magnesium_dissociation_constant = _connection.GetTable("magnesium_dissociation_constant")
 
-            '' 读取标识符数据
-            'Using cmd As New SQLiteCommand("SELECT * FROM compound_identifiers", _connection)
-            '    Using reader As SQLiteDataReader = cmd.ExecuteReader()
-            '        While reader.Read()
-            '            Dim identifier As New CompoundIdentifier With {
-            '                .Id = reader.GetInt32(reader.GetOrdinal("id")),
-            '                .CompoundId = reader.GetInt32(reader.GetOrdinal("compound_id")),
-            '                .RegistryId = reader.GetInt32(reader.GetOrdinal("registry_id")),
-            '                .Accession = reader.GetString(reader.GetOrdinal("accession"))
-            '            }
+            For Each reader As Sqlite3Row In magnesium_dissociation_constant.EnumerateRows
+                Dim mgDiss As New MagnesiumDissociationConstant With {
+                    .Id = reader.GetInt32(reader.GetOrdinal("id")),
+                    .CompoundId = reader.GetInt32(reader.GetOrdinal("compound_id")),
+                    .NumberProtons = reader.GetInt32(reader.GetOrdinal("number_protons")),
+                    .NumberMagnesiums = reader.GetInt32(reader.GetOrdinal("number_magnesiums")),
+                    .DissociationConstant = reader.GetDouble(reader.GetOrdinal("dissociation_constant"))
+                }
 
-            '            If compoundDict.ContainsKey(identifier.CompoundId) Then
-            '                identifier.Compound = compoundDict(identifier.CompoundId)
-            '                compoundDict(identifier.CompoundId).Identifiers.Add(identifier)
-            '            End If
-            '        End While
-            '    End Using
-            'End Using
+                If compoundDict.ContainsKey(mgDiss.CompoundId) Then
+                    mgDiss.Compound = compoundDict(mgDiss.CompoundId)
+                    compoundDict(mgDiss.CompoundId).MagnesiumDissociationConstants.Add(mgDiss)
+                End If
+            Next
 
-            'compounds.AddRange(compoundDict.Values)
-            'Return compounds
+            ' 读取标识符数据
+            Dim compound_identifiers = _connection.GetTable("compound_identifiers")
+
+            For Each reader As Sqlite3Row In compound_identifiers.EnumerateRows
+                Dim identifier As New CompoundIdentifier With {
+                                .Id = reader.GetInt32(reader.GetOrdinal("id")),
+                                .CompoundId = reader.GetInt32(reader.GetOrdinal("compound_id")),
+                                .RegistryId = reader.GetInt32(reader.GetOrdinal("registry_id")),
+                                .Accession = reader.GetString(reader.GetOrdinal("accession"))
+                            }
+
+                If compoundDict.ContainsKey(identifier.CompoundId) Then
+                    identifier.Compound = compoundDict(identifier.CompoundId)
+                    compoundDict(identifier.CompoundId).Identifiers.Add(identifier)
+                End If
+            Next
+
+            compounds.AddRange(compoundDict.Values)
+            Return compounds
         End Function
 
         ''' <summary>
