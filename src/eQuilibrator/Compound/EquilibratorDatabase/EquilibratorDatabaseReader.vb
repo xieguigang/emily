@@ -256,9 +256,7 @@ Namespace EquilibratorThermodynamics
         ''' 根据InChI Key读取化合物
         ''' </summary>
         Public Function ReadCompoundByInChIKey(inchiKey As String) As Compound
-            'Open()
-
-            'Dim compoundId As Integer = -1
+            Dim compoundId As Integer = -1
 
             '' 首先找到化合物ID
             'Using cmd As New SQLiteCommand("SELECT id FROM compounds WHERE inchi_key = @key", _connection)
@@ -280,9 +278,7 @@ Namespace EquilibratorThermodynamics
         ''' 根据SMILES读取化合物
         ''' </summary>
         Public Function ReadCompoundBySmiles(smiles As String) As Compound
-            'Open()
-
-            'Dim compoundId As Integer = -1
+            Dim compoundId As Integer = -1
 
             'Using cmd As New SQLiteCommand("SELECT id FROM compounds WHERE smiles = @smiles", _connection)
             '    cmd.Parameters.AddWithValue("@smiles", smiles)
