@@ -1,13 +1,12 @@
-' ============================================================================
-' Equilibrator SQLite 数据库读取器
-' 用于从SQLite数据库读取化合物数据并反序列化为对象
-' ============================================================================
-
-Imports System.Data
-Imports System.Text
 Imports Microsoft.VisualBasic.Data.IO.ManagedSqlite.Core
+Imports Microsoft.VisualBasic.Data.IO.ManagedSqlite.Core.Tables
 
 Namespace EquilibratorThermodynamics
+
+    ' ============================================================================
+    ' Equilibrator SQLite 数据库读取器
+    ' 用于从SQLite数据库读取化合物数据并反序列化为对象
+    ' ============================================================================
 
     ''' <summary>
     ''' SQLite数据库读取器
@@ -35,58 +34,54 @@ Namespace EquilibratorThermodynamics
         ''' 读取所有化合物数据
         ''' </summary>
         Public Iterator Function ReadAllCompounds() As IEnumerable(Of Compound)
-            'Dim compounds As New List(Of Compound)()
+            Dim compounds As New List(Of Compound)()
 
-            'Open()
+            ' 读取化合物主表
+            Dim compoundDict As New Dictionary(Of Integer, Compound)()
+            Dim compoundsTable As Sqlite3Table = _connection.GetTable("compounds")
 
-            '' 读取化合物主表
-            'Dim compoundDict As New Dictionary(Of Integer, Compound)()
-            'Using cmd As New SQLiteCommand("SELECT * FROM compounds", _connection)
-            '    Using reader As SQLiteDataReader = cmd.ExecuteReader()
-            '        While reader.Read()
-            '            Dim compound As New Compound With {
-            '                .Id = reader.GetInt32(reader.GetOrdinal("id")),
-            '                .InChIKey = If(reader.IsDBNull(reader.GetOrdinal("inchi_key")), Nothing, reader.GetString(reader.GetOrdinal("inchi_key"))),
-            '                .InChI = If(reader.IsDBNull(reader.GetOrdinal("inchi")), Nothing, reader.GetString(reader.GetOrdinal("inchi"))),
-            '                .Smiles = If(reader.IsDBNull(reader.GetOrdinal("smiles")), Nothing, reader.GetString(reader.GetOrdinal("smiles"))),
-            '                .Mass = If(reader.IsDBNull(reader.GetOrdinal("mass")), 0.0, reader.GetDouble(reader.GetOrdinal("mass"))),
-            '                .Microspecies = New List(Of CompoundMicrospecies)(),
-            '                .Identifiers = New List(Of CompoundIdentifier)(),
-            '                .MagnesiumDissociationConstants = New List(Of MagnesiumDissociationConstant)()
-            '            }
+            For Each reader As Sqlite3Row In compoundsTable.EnumerateRows
+                Dim compound As New Compound With {
+                    .Id = reader.GetInt32(reader.GetOrdinal("id")),
+                    .InChIKey = If(reader.IsDBNull(reader.GetOrdinal("inchi_key")), Nothing, reader.GetString(reader.GetOrdinal("inchi_key"))),
+                    .InChI = If(reader.IsDBNull(reader.GetOrdinal("inchi")), Nothing, reader.GetString(reader.GetOrdinal("inchi"))),
+                    .Smiles = If(reader.IsDBNull(reader.GetOrdinal("smiles")), Nothing, reader.GetString(reader.GetOrdinal("smiles"))),
+                    .Mass = If(reader.IsDBNull(reader.GetOrdinal("mass")), 0.0, reader.GetDouble(reader.GetOrdinal("mass"))),
+                    .Microspecies = New List(Of CompoundMicrospecies)(),
+                    .Identifiers = New List(Of CompoundIdentifier)(),
+                    .MagnesiumDissociationConstants = New List(Of MagnesiumDissociationConstant)()
+                }
 
-            '            ' 读取BLOB字段
-            '            Dim atomBagIdx As Integer = reader.GetOrdinal("atom_bag")
-            '            Dim dissocIdx As Integer = reader.GetOrdinal("dissociation_constants")
-            '            Dim groupVecIdx As Integer = reader.GetOrdinal("group_vector")
+                ' 读取BLOB字段
+                Dim atomBagIdx As Integer = reader.GetOrdinal("atom_bag")
+                Dim dissocIdx As Integer = reader.GetOrdinal("dissociation_constants")
+                Dim groupVecIdx As Integer = reader.GetOrdinal("group_vector")
 
-            '            If Not reader.IsDBNull(atomBagIdx) Then
-            '                compound.AtomBagRaw = DirectCast(reader(atomBagIdx), Byte())
-            '            End If
+                If Not reader.IsDBNull(atomBagIdx) Then
+                    compound.AtomBagRaw = DirectCast(reader(atomBagIdx), Byte())
+                End If
 
-            '            If Not reader.IsDBNull(dissocIdx) Then
-            '                compound.DissociationConstantsRaw = DirectCast(reader(dissocIdx), Byte())
-            '            End If
+                If Not reader.IsDBNull(dissocIdx) Then
+                    compound.DissociationConstantsRaw = DirectCast(reader(dissocIdx), Byte())
+                End If
 
-            '            If Not reader.IsDBNull(groupVecIdx) Then
-            '                compound.GroupVectorRaw = DirectCast(reader(groupVecIdx), Byte())
-            '            End If
+                If Not reader.IsDBNull(groupVecIdx) Then
+                    compound.GroupVectorRaw = DirectCast(reader(groupVecIdx), Byte())
+                End If
 
-            '            ' 解析BLOB数据
-            '            If compound.AtomBagRaw IsNot Nothing Then
-            '                compound.AtomBag = EquilibratorBlobParser.ParseAtomBag(compound.AtomBagRaw)
-            '            End If
-            '            If compound.GroupVectorRaw IsNot Nothing Then
-            '                compound.GroupVector = EquilibratorBlobParser.ParseGroupVector(compound.GroupVectorRaw)
-            '            End If
-            '            If compound.DissociationConstantsRaw IsNot Nothing Then
-            '                compound.DissociationConstants = EquilibratorBlobParser.ParseDissociationConstants(compound.DissociationConstantsRaw)
-            '            End If
+                ' 解析BLOB数据
+                If compound.AtomBagRaw IsNot Nothing Then
+                    compound.AtomBag = EquilibratorBlobParser.ParseAtomBag(compound.AtomBagRaw)
+                End If
+                If compound.GroupVectorRaw IsNot Nothing Then
+                    compound.GroupVector = EquilibratorBlobParser.ParseGroupVector(compound.GroupVectorRaw)
+                End If
+                If compound.DissociationConstantsRaw IsNot Nothing Then
+                    compound.DissociationConstants = EquilibratorBlobParser.ParseDissociationConstants(compound.DissociationConstantsRaw)
+                End If
 
-            '            compoundDict(compound.Id) = compound
-            '        End While
-            '    End Using
-            'End Using
+                compoundDict(compound.Id) = compound
+            Next
 
             '' 读取微物种数据
             'Using cmd As New SQLiteCommand("SELECT * FROM compound_microspecies", _connection)

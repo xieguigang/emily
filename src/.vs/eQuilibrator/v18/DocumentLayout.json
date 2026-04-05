@@ -3,36 +3,10 @@
   "WorkspaceRootPath": "G:\\emily\\src\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{8D0B6370-2531-42BF-B7FB-1A24C3CE79F2}|eQuilibrator\\test\\test.vbproj|g:\\emily\\src\\equilibrator\\test\\equilibratorexamples.vb||{2C015C70-C72C-11D0-88C3-00A0C9110049}",
-      "RelativeMoniker": "D:0:0:{8D0B6370-2531-42BF-B7FB-1A24C3CE79F2}|eQuilibrator\\test\\test.vbproj|solutionrelative:equilibrator\\test\\equilibratorexamples.vb||{2C015C70-C72C-11D0-88C3-00A0C9110049}"
+      "AbsoluteMoniker": "D:0:0:{53B9345F-EED2-8CDB-98D7-C3400A7D38AA}|..\\..\\GCModeller\\src\\runtime\\sciBASIC#\\Data\\BinaryData\\SQLite3\\SQLite3.vbproj|g:\\gcmodeller\\src\\runtime\\scibasic#\\data\\binarydata\\sqlite3\\tables\\sqlite3table.vb||{2C015C70-C72C-11D0-88C3-00A0C9110049}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{8D0B6370-2531-42BF-B7FB-1A24C3CE79F2}|eQuilibrator\\test\\test.vbproj|g:\\emily\\src\\equilibrator\\test\\example2.vb||{2C015C70-C72C-11D0-88C3-00A0C9110049}",
-      "RelativeMoniker": "D:0:0:{8D0B6370-2531-42BF-B7FB-1A24C3CE79F2}|eQuilibrator\\test\\test.vbproj|solutionrelative:equilibrator\\test\\example2.vb||{2C015C70-C72C-11D0-88C3-00A0C9110049}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{A712EDC3-9352-6289-BD83-897F07C1A196}|eQuilibrator\\eQuilibrator.vbproj|g:\\emily\\src\\equilibrator\\compound\\equilibratorthermodynamics.vb||{2C015C70-C72C-11D0-88C3-00A0C9110049}",
-      "RelativeMoniker": "D:0:0:{A712EDC3-9352-6289-BD83-897F07C1A196}|eQuilibrator\\eQuilibrator.vbproj|solutionrelative:equilibrator\\compound\\equilibratorthermodynamics.vb||{2C015C70-C72C-11D0-88C3-00A0C9110049}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{A712EDC3-9352-6289-BD83-897F07C1A196}|eQuilibrator\\eQuilibrator.vbproj|g:\\emily\\src\\equilibrator\\compound\\microspeciesdistributioncalculator.vb||{2C015C70-C72C-11D0-88C3-00A0C9110049}",
-      "RelativeMoniker": "D:0:0:{A712EDC3-9352-6289-BD83-897F07C1A196}|eQuilibrator\\eQuilibrator.vbproj|solutionrelative:equilibrator\\compound\\microspeciesdistributioncalculator.vb||{2C015C70-C72C-11D0-88C3-00A0C9110049}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{A712EDC3-9352-6289-BD83-897F07C1A196}|eQuilibrator\\eQuilibrator.vbproj|g:\\emily\\src\\equilibrator\\compound\\groupcontributionparameters.vb||{2C015C70-C72C-11D0-88C3-00A0C9110049}",
-      "RelativeMoniker": "D:0:0:{A712EDC3-9352-6289-BD83-897F07C1A196}|eQuilibrator\\eQuilibrator.vbproj|solutionrelative:equilibrator\\compound\\groupcontributionparameters.vb||{2C015C70-C72C-11D0-88C3-00A0C9110049}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{A712EDC3-9352-6289-BD83-897F07C1A196}|eQuilibrator\\eQuilibrator.vbproj|g:\\emily\\src\\equilibrator\\compound\\equilibratordatabase\\equilibratorblobparser.vb||{2C015C70-C72C-11D0-88C3-00A0C9110049}",
-      "RelativeMoniker": "D:0:0:{A712EDC3-9352-6289-BD83-897F07C1A196}|eQuilibrator\\eQuilibrator.vbproj|solutionrelative:equilibrator\\compound\\equilibratordatabase\\equilibratorblobparser.vb||{2C015C70-C72C-11D0-88C3-00A0C9110049}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{A712EDC3-9352-6289-BD83-897F07C1A196}|eQuilibrator\\eQuilibrator.vbproj|g:\\emily\\src\\equilibrator\\compound\\equilibratordatabase\\compoundextensions.vb||{2C015C70-C72C-11D0-88C3-00A0C9110049}",
-      "RelativeMoniker": "D:0:0:{A712EDC3-9352-6289-BD83-897F07C1A196}|eQuilibrator\\eQuilibrator.vbproj|solutionrelative:equilibrator\\compound\\equilibratordatabase\\compoundextensions.vb||{2C015C70-C72C-11D0-88C3-00A0C9110049}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{A712EDC3-9352-6289-BD83-897F07C1A196}|eQuilibrator\\eQuilibrator.vbproj|g:\\emily\\src\\equilibrator\\compound\\equilibratordatabase\\tabledata.vb||{2C015C70-C72C-11D0-88C3-00A0C9110049}",
-      "RelativeMoniker": "D:0:0:{A712EDC3-9352-6289-BD83-897F07C1A196}|eQuilibrator\\eQuilibrator.vbproj|solutionrelative:equilibrator\\compound\\equilibratordatabase\\tabledata.vb||{2C015C70-C72C-11D0-88C3-00A0C9110049}"
+      "AbsoluteMoniker": "D:0:0:{53B9345F-EED2-8CDB-98D7-C3400A7D38AA}|..\\..\\GCModeller\\src\\runtime\\sciBASIC#\\Data\\BinaryData\\SQLite3\\SQLite3.vbproj|g:\\gcmodeller\\src\\runtime\\scibasic#\\data\\binarydata\\sqlite3\\tables\\sqlite3schemarow.vb||{2C015C70-C72C-11D0-88C3-00A0C9110049}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{A712EDC3-9352-6289-BD83-897F07C1A196}|eQuilibrator\\eQuilibrator.vbproj|g:\\emily\\src\\equilibrator\\compound\\equilibratordatabase\\equilibratordatabasereader.vb||{2C015C70-C72C-11D0-88C3-00A0C9110049}",
@@ -40,6 +14,9 @@
     },
     {
       "AbsoluteMoniker": "D:0:0:{53B9345F-EED2-8CDB-98D7-C3400A7D38AA}|..\\..\\GCModeller\\src\\runtime\\sciBASIC#\\Data\\BinaryData\\SQLite3\\SQLite3.vbproj|g:\\gcmodeller\\src\\runtime\\scibasic#\\data\\binarydata\\sqlite3\\sqlite3database.vb||{2C015C70-C72C-11D0-88C3-00A0C9110049}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{53B9345F-EED2-8CDB-98D7-C3400A7D38AA}|..\\..\\GCModeller\\src\\runtime\\sciBASIC#\\Data\\BinaryData\\SQLite3\\SQLite3.vbproj|g:\\gcmodeller\\src\\runtime\\scibasic#\\data\\binarydata\\sqlite3\\schema\\schema.vb||{2C015C70-C72C-11D0-88C3-00A0C9110049}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{53B9345F-EED2-8CDB-98D7-C3400A7D38AA}|..\\..\\GCModeller\\src\\runtime\\sciBASIC#\\Data\\BinaryData\\SQLite3\\SQLite3.vbproj|g:\\gcmodeller\\src\\runtime\\scibasic#\\data\\binarydata\\sqlite3\\extensions.vb||{2C015C70-C72C-11D0-88C3-00A0C9110049}"
@@ -57,131 +34,79 @@
             {
               "$type": "Document",
               "DocumentIndex": 0,
-              "Title": "EquilibratorExamples.vb",
-              "DocumentMoniker": "G:\\emily\\src\\eQuilibrator\\test\\EquilibratorExamples.vb",
-              "RelativeDocumentMoniker": "eQuilibrator\\test\\EquilibratorExamples.vb",
-              "ToolTip": "G:\\emily\\src\\eQuilibrator\\test\\EquilibratorExamples.vb",
-              "RelativeToolTip": "eQuilibrator\\test\\EquilibratorExamples.vb",
-              "ViewState": "AgIAAJsAAAAAAAAAAAAowAAAAAAAAAAAAAAAAA==",
+              "Title": "Sqlite3Table.vb",
+              "DocumentMoniker": "G:\\GCModeller\\src\\runtime\\sciBASIC#\\Data\\BinaryData\\SQLite3\\Tables\\Sqlite3Table.vb",
+              "RelativeDocumentMoniker": "..\\..\\GCModeller\\src\\runtime\\sciBASIC#\\Data\\BinaryData\\SQLite3\\Tables\\Sqlite3Table.vb",
+              "ToolTip": "G:\\GCModeller\\src\\runtime\\sciBASIC#\\Data\\BinaryData\\SQLite3\\Tables\\Sqlite3Table.vb",
+              "RelativeToolTip": "..\\..\\GCModeller\\src\\runtime\\sciBASIC#\\Data\\BinaryData\\SQLite3\\Tables\\Sqlite3Table.vb",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAADwAAAAgAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003361|",
-              "WhenOpened": "2026-04-05T08:03:24.51Z",
+              "WhenOpened": "2026-04-05T08:13:48.399Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 1,
-              "Title": "Example2.vb",
-              "DocumentMoniker": "G:\\emily\\src\\eQuilibrator\\test\\Example2.vb",
-              "RelativeDocumentMoniker": "eQuilibrator\\test\\Example2.vb",
-              "ToolTip": "G:\\emily\\src\\eQuilibrator\\test\\Example2.vb",
-              "RelativeToolTip": "eQuilibrator\\test\\Example2.vb",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAPYAAAAAAAAAAAAAAA==",
+              "Title": "Sqlite3SchemaRow.vb",
+              "DocumentMoniker": "G:\\GCModeller\\src\\runtime\\sciBASIC#\\Data\\BinaryData\\SQLite3\\Tables\\Sqlite3SchemaRow.vb",
+              "RelativeDocumentMoniker": "..\\..\\GCModeller\\src\\runtime\\sciBASIC#\\Data\\BinaryData\\SQLite3\\Tables\\Sqlite3SchemaRow.vb",
+              "ToolTip": "G:\\GCModeller\\src\\runtime\\sciBASIC#\\Data\\BinaryData\\SQLite3\\Tables\\Sqlite3SchemaRow.vb",
+              "RelativeToolTip": "..\\..\\GCModeller\\src\\runtime\\sciBASIC#\\Data\\BinaryData\\SQLite3\\Tables\\Sqlite3SchemaRow.vb",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAADwAAAARAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003361|",
-              "WhenOpened": "2026-04-05T08:03:08.795Z",
+              "WhenOpened": "2026-04-05T08:12:39.239Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 4,
-              "Title": "GroupContributionParameters.vb",
-              "DocumentMoniker": "G:\\emily\\src\\eQuilibrator\\Compound\\GroupContributionParameters.vb",
-              "RelativeDocumentMoniker": "eQuilibrator\\Compound\\GroupContributionParameters.vb",
-              "ToolTip": "G:\\emily\\src\\eQuilibrator\\Compound\\GroupContributionParameters.vb",
-              "RelativeToolTip": "eQuilibrator\\Compound\\GroupContributionParameters.vb",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAB4AAAAWAAAAAAAAAA==",
+              "Title": "Schema.vb",
+              "DocumentMoniker": "G:\\GCModeller\\src\\runtime\\sciBASIC#\\Data\\BinaryData\\SQLite3\\Schema\\Schema.vb",
+              "RelativeDocumentMoniker": "..\\..\\GCModeller\\src\\runtime\\sciBASIC#\\Data\\BinaryData\\SQLite3\\Schema\\Schema.vb",
+              "ToolTip": "G:\\GCModeller\\src\\runtime\\sciBASIC#\\Data\\BinaryData\\SQLite3\\Schema\\Schema.vb",
+              "RelativeToolTip": "..\\..\\GCModeller\\src\\runtime\\sciBASIC#\\Data\\BinaryData\\SQLite3\\Schema\\Schema.vb",
+              "ViewState": "AgIAAEQAAAAAAAAAAAAYwJ0AAAAQAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003361|",
-              "WhenOpened": "2026-04-05T08:02:04.174Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "MicrospeciesDistributionCalculator.vb",
-              "DocumentMoniker": "G:\\emily\\src\\eQuilibrator\\Compound\\MicrospeciesDistributionCalculator.vb",
-              "RelativeDocumentMoniker": "eQuilibrator\\Compound\\MicrospeciesDistributionCalculator.vb",
-              "ToolTip": "G:\\emily\\src\\eQuilibrator\\Compound\\MicrospeciesDistributionCalculator.vb",
-              "RelativeToolTip": "eQuilibrator\\Compound\\MicrospeciesDistributionCalculator.vb",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAACcAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003361|",
-              "WhenOpened": "2026-04-05T08:01:59.975Z",
+              "WhenOpened": "2026-04-05T08:09:43.357Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 5,
-              "Title": "EquilibratorBlobParser.vb",
-              "DocumentMoniker": "G:\\emily\\src\\eQuilibrator\\Compound\\EquilibratorDatabase\\EquilibratorBlobParser.vb",
-              "RelativeDocumentMoniker": "eQuilibrator\\Compound\\EquilibratorDatabase\\EquilibratorBlobParser.vb",
-              "ToolTip": "G:\\emily\\src\\eQuilibrator\\Compound\\EquilibratorDatabase\\EquilibratorBlobParser.vb",
-              "RelativeToolTip": "eQuilibrator\\Compound\\EquilibratorDatabase\\EquilibratorBlobParser.vb",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAMAAAAAAAAAAAAAAA==",
+              "Title": "Extensions.vb",
+              "DocumentMoniker": "G:\\GCModeller\\src\\runtime\\sciBASIC#\\Data\\BinaryData\\SQLite3\\Extensions.vb",
+              "RelativeDocumentMoniker": "..\\..\\GCModeller\\src\\runtime\\sciBASIC#\\Data\\BinaryData\\SQLite3\\Extensions.vb",
+              "ToolTip": "G:\\GCModeller\\src\\runtime\\sciBASIC#\\Data\\BinaryData\\SQLite3\\Extensions.vb",
+              "RelativeToolTip": "..\\..\\GCModeller\\src\\runtime\\sciBASIC#\\Data\\BinaryData\\SQLite3\\Extensions.vb",
+              "ViewState": "AgIAADsAAAAAAAAAAAAcwFIAAAAtAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003361|",
-              "WhenOpened": "2026-04-05T08:00:29.07Z",
+              "WhenOpened": "2026-04-05T08:09:24.4Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 7,
-              "Title": "TableData.vb",
-              "DocumentMoniker": "G:\\emily\\src\\eQuilibrator\\Compound\\EquilibratorDatabase\\TableData.vb",
-              "RelativeDocumentMoniker": "eQuilibrator\\Compound\\EquilibratorDatabase\\TableData.vb",
-              "ToolTip": "G:\\emily\\src\\eQuilibrator\\Compound\\EquilibratorDatabase\\TableData.vb",
-              "RelativeToolTip": "eQuilibrator\\Compound\\EquilibratorDatabase\\TableData.vb",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAF8AAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003361|",
-              "WhenOpened": "2026-04-05T07:59:54.233Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 6,
-              "Title": "CompoundExtensions.vb",
-              "DocumentMoniker": "G:\\emily\\src\\eQuilibrator\\Compound\\EquilibratorDatabase\\CompoundExtensions.vb",
-              "RelativeDocumentMoniker": "eQuilibrator\\Compound\\EquilibratorDatabase\\CompoundExtensions.vb",
-              "ToolTip": "G:\\emily\\src\\eQuilibrator\\Compound\\EquilibratorDatabase\\CompoundExtensions.vb",
-              "RelativeToolTip": "eQuilibrator\\Compound\\EquilibratorDatabase\\CompoundExtensions.vb",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAFIAAAAWAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003361|",
-              "WhenOpened": "2026-04-05T07:59:00.858Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "EquilibratorThermodynamics.vb",
-              "DocumentMoniker": "G:\\emily\\src\\eQuilibrator\\Compound\\EquilibratorThermodynamics.vb",
-              "RelativeDocumentMoniker": "eQuilibrator\\Compound\\EquilibratorThermodynamics.vb",
-              "ToolTip": "G:\\emily\\src\\eQuilibrator\\Compound\\EquilibratorThermodynamics.vb",
-              "RelativeToolTip": "eQuilibrator\\Compound\\EquilibratorThermodynamics.vb",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAF4BAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003361|",
-              "WhenOpened": "2026-04-05T07:56:47.549Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 8,
-              "Title": "EquilibratorDatabaseReader.vb",
-              "DocumentMoniker": "G:\\emily\\src\\eQuilibrator\\Compound\\EquilibratorDatabase\\EquilibratorDatabaseReader.vb",
-              "RelativeDocumentMoniker": "eQuilibrator\\Compound\\EquilibratorDatabase\\EquilibratorDatabaseReader.vb",
-              "ToolTip": "G:\\emily\\src\\eQuilibrator\\Compound\\EquilibratorDatabase\\EquilibratorDatabaseReader.vb",
-              "RelativeToolTip": "eQuilibrator\\Compound\\EquilibratorDatabase\\EquilibratorDatabaseReader.vb",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAGQBAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003361|",
-              "WhenOpened": "2026-04-05T07:56:33.589Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 9,
+              "DocumentIndex": 3,
               "Title": "Sqlite3Database.vb",
               "DocumentMoniker": "G:\\GCModeller\\src\\runtime\\sciBASIC#\\Data\\BinaryData\\SQLite3\\Sqlite3Database.vb",
               "RelativeDocumentMoniker": "..\\..\\GCModeller\\src\\runtime\\sciBASIC#\\Data\\BinaryData\\SQLite3\\Sqlite3Database.vb",
               "ToolTip": "G:\\GCModeller\\src\\runtime\\sciBASIC#\\Data\\BinaryData\\SQLite3\\Sqlite3Database.vb",
               "RelativeToolTip": "..\\..\\GCModeller\\src\\runtime\\sciBASIC#\\Data\\BinaryData\\SQLite3\\Sqlite3Database.vb",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAEwAAAAgAAAAAAAAAA==",
+              "ViewState": "AgIAAGkAAAAAAAAAAAAowAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003361|",
-              "WhenOpened": "2026-04-05T07:55:16.675Z",
+              "WhenOpened": "2026-04-05T08:05:02.674Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "EquilibratorDatabaseReader.vb",
+              "DocumentMoniker": "G:\\emily\\src\\eQuilibrator\\Compound\\EquilibratorDatabase\\EquilibratorDatabaseReader.vb",
+              "RelativeDocumentMoniker": "eQuilibrator\\Compound\\EquilibratorDatabase\\EquilibratorDatabaseReader.vb",
+              "ToolTip": "G:\\emily\\src\\eQuilibrator\\Compound\\EquilibratorDatabase\\EquilibratorDatabaseReader.vb",
+              "RelativeToolTip": "eQuilibrator\\Compound\\EquilibratorDatabase\\EquilibratorDatabaseReader.vb",
+              "ViewState": "AgIAAAkAAAAAAAAAAAAAACoAAAAmAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003361|",
+              "WhenOpened": "2026-04-05T07:56:33.589Z",
               "EditorCaption": ""
             },
             {
@@ -199,19 +124,6 @@
             {
               "$type": "Bookmark",
               "Name": "ST:0:0:{aa2115a1-9712-457b-9047-dbb71ca2cdd2}"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 10,
-              "Title": "Extensions.vb",
-              "DocumentMoniker": "G:\\GCModeller\\src\\runtime\\sciBASIC#\\Data\\BinaryData\\SQLite3\\Extensions.vb",
-              "RelativeDocumentMoniker": "..\\..\\GCModeller\\src\\runtime\\sciBASIC#\\Data\\BinaryData\\SQLite3\\Extensions.vb",
-              "ToolTip": "G:\\GCModeller\\src\\runtime\\sciBASIC#\\Data\\BinaryData\\SQLite3\\Extensions.vb",
-              "RelativeToolTip": "..\\..\\GCModeller\\src\\runtime\\sciBASIC#\\Data\\BinaryData\\SQLite3\\Extensions.vb",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAHcAAAA4AAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003361|",
-              "WhenOpened": "2026-04-05T07:54:40.903Z",
-              "EditorCaption": ""
             }
           ]
         },
