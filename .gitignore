@@ -44,3 +44,8 @@ emily.zip
 .vs/emily/CopilotIndices/17.14.1368.60722/SemanticSymbols.db
 *.suo
 *.nupkg
+/data/eQuilibrator/compounds.csv
+/data/eQuilibrator/compound_identifiers.csv
+/data/eQuilibrator/compound_microspecies.csv
+/data/eQuilibrator/magnesium_dissociation_constant.csv
+/data/eQuilibrator/registries.csv
