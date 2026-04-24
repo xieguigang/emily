@@ -3,6 +3,10 @@
   "WorkspaceRootPath": "G:\\emily\\src\\",
   "Documents": [
     {
+      "AbsoluteMoniker": "D:0:0:{A712EDC3-9352-6289-BD83-897F07C1A196}|eQuilibrator\\eQuilibrator.vbproj|g:\\emily\\src\\equilibrator\\compound\\equilibratordatabase\\equilibratordatabasereader.vb||{2C015C70-C72C-11D0-88C3-00A0C9110049}",
+      "RelativeMoniker": "D:0:0:{A712EDC3-9352-6289-BD83-897F07C1A196}|eQuilibrator\\eQuilibrator.vbproj|solutionrelative:equilibrator\\compound\\equilibratordatabase\\equilibratordatabasereader.vb||{2C015C70-C72C-11D0-88C3-00A0C9110049}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{8D0B6370-2531-42BF-B7FB-1A24C3CE79F2}|eQuilibrator\\test\\test.vbproj|g:\\emily\\src\\equilibrator\\test\\equilibratorexamples.vb||{2C015C70-C72C-11D0-88C3-00A0C9110049}",
       "RelativeMoniker": "D:0:0:{8D0B6370-2531-42BF-B7FB-1A24C3CE79F2}|eQuilibrator\\test\\test.vbproj|solutionrelative:equilibrator\\test\\equilibratorexamples.vb||{2C015C70-C72C-11D0-88C3-00A0C9110049}"
     },
@@ -23,10 +27,6 @@
       "RelativeMoniker": "D:0:0:{8D0B6370-2531-42BF-B7FB-1A24C3CE79F2}|eQuilibrator\\test\\test.vbproj|solutionrelative:equilibrator\\test\\test.vbproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{A712EDC3-9352-6289-BD83-897F07C1A196}|eQuilibrator\\eQuilibrator.vbproj|g:\\emily\\src\\equilibrator\\compound\\equilibratordatabase\\equilibratordatabasereader.vb||{2C015C70-C72C-11D0-88C3-00A0C9110049}",
-      "RelativeMoniker": "D:0:0:{A712EDC3-9352-6289-BD83-897F07C1A196}|eQuilibrator\\eQuilibrator.vbproj|solutionrelative:equilibrator\\compound\\equilibratordatabase\\equilibratordatabasereader.vb||{2C015C70-C72C-11D0-88C3-00A0C9110049}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{A712EDC3-9352-6289-BD83-897F07C1A196}|eQuilibrator\\eQuilibrator.vbproj|g:\\emily\\src\\equilibrator\\compound\\equilibratordatabase\\equilibratorblobparser.vb||{2C015C70-C72C-11D0-88C3-00A0C9110049}",
       "RelativeMoniker": "D:0:0:{A712EDC3-9352-6289-BD83-897F07C1A196}|eQuilibrator\\eQuilibrator.vbproj|solutionrelative:equilibrator\\compound\\equilibratordatabase\\equilibratorblobparser.vb||{2C015C70-C72C-11D0-88C3-00A0C9110049}"
     },
@@ -42,7 +42,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 11,
+          "SelectedChildIndex": 7,
           "Children": [
             {
               "$type": "Bookmark",
@@ -62,7 +62,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 4,
               "Title": "test",
               "DocumentMoniker": "G:\\emily\\src\\eQuilibrator\\test\\test.vbproj",
               "RelativeDocumentMoniker": "eQuilibrator\\test\\test.vbproj",
@@ -74,7 +74,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 5,
               "Title": "test",
               "DocumentMoniker": "G:\\emily\\src\\eQuilibrator\\test\\test.vbproj",
               "RelativeDocumentMoniker": "eQuilibrator\\test\\test.vbproj",
@@ -87,7 +87,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 2,
               "Title": "Program.vb",
               "DocumentMoniker": "G:\\emily\\src\\eQuilibrator\\test\\Program.vb",
               "RelativeDocumentMoniker": "eQuilibrator\\test\\Program.vb",
@@ -100,13 +100,13 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 5,
+              "DocumentIndex": 0,
               "Title": "EquilibratorDatabaseReader.vb",
               "DocumentMoniker": "G:\\emily\\src\\eQuilibrator\\Compound\\EquilibratorDatabase\\EquilibratorDatabaseReader.vb",
               "RelativeDocumentMoniker": "eQuilibrator\\Compound\\EquilibratorDatabase\\EquilibratorDatabaseReader.vb",
               "ToolTip": "G:\\emily\\src\\eQuilibrator\\Compound\\EquilibratorDatabase\\EquilibratorDatabaseReader.vb",
               "RelativeToolTip": "eQuilibrator\\Compound\\EquilibratorDatabase\\EquilibratorDatabaseReader.vb",
-              "ViewState": "AgIAAAEAAAAAAAAAAAAIwCMAAAAYAAAAAAAAAA==",
+              "ViewState": "AgIAABcAAAAAAAAAAAAiwCoAAABEAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003361|",
               "WhenOpened": "2026-04-24T08:52:17.941Z",
               "EditorCaption": ""
@@ -139,7 +139,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 3,
               "Title": "Example2.vb",
               "DocumentMoniker": "G:\\emily\\src\\eQuilibrator\\test\\Example2.vb",
               "RelativeDocumentMoniker": "eQuilibrator\\test\\Example2.vb",
@@ -152,13 +152,13 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 1,
               "Title": "EquilibratorExamples.vb",
               "DocumentMoniker": "G:\\emily\\src\\eQuilibrator\\test\\EquilibratorExamples.vb",
               "RelativeDocumentMoniker": "eQuilibrator\\test\\EquilibratorExamples.vb",
               "ToolTip": "G:\\emily\\src\\eQuilibrator\\test\\EquilibratorExamples.vb",
               "RelativeToolTip": "eQuilibrator\\test\\EquilibratorExamples.vb",
-              "ViewState": "AgIAAEcAAAAAAAAAAAAowGUAAAAfAAAAAAAAAA==",
+              "ViewState": "AgIAAFMAAAAAAAAAAAAowHEAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003361|",
               "WhenOpened": "2026-04-24T08:51:15.09Z",
               "EditorCaption": ""

@@ -3,12 +3,12 @@
   "WorkspaceRootPath": "G:\\emily\\src\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{8D0B6370-2531-42BF-B7FB-1A24C3CE79F2}|eQuilibrator\\test\\test.vbproj|g:\\emily\\src\\equilibrator\\test\\program.vb||{2C015C70-C72C-11D0-88C3-00A0C9110049}",
-      "RelativeMoniker": "D:0:0:{8D0B6370-2531-42BF-B7FB-1A24C3CE79F2}|eQuilibrator\\test\\test.vbproj|solutionrelative:equilibrator\\test\\program.vb||{2C015C70-C72C-11D0-88C3-00A0C9110049}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{8D0B6370-2531-42BF-B7FB-1A24C3CE79F2}|eQuilibrator\\test\\test.vbproj|g:\\emily\\src\\equilibrator\\test\\equilibratorexamples.vb||{2C015C70-C72C-11D0-88C3-00A0C9110049}",
       "RelativeMoniker": "D:0:0:{8D0B6370-2531-42BF-B7FB-1A24C3CE79F2}|eQuilibrator\\test\\test.vbproj|solutionrelative:equilibrator\\test\\equilibratorexamples.vb||{2C015C70-C72C-11D0-88C3-00A0C9110049}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{8D0B6370-2531-42BF-B7FB-1A24C3CE79F2}|eQuilibrator\\test\\test.vbproj|g:\\emily\\src\\equilibrator\\test\\program.vb||{2C015C70-C72C-11D0-88C3-00A0C9110049}",
+      "RelativeMoniker": "D:0:0:{8D0B6370-2531-42BF-B7FB-1A24C3CE79F2}|eQuilibrator\\test\\test.vbproj|solutionrelative:equilibrator\\test\\program.vb||{2C015C70-C72C-11D0-88C3-00A0C9110049}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{8D0B6370-2531-42BF-B7FB-1A24C3CE79F2}|eQuilibrator\\test\\test.vbproj|g:\\emily\\src\\equilibrator\\test\\example2.vb||{2C015C70-C72C-11D0-88C3-00A0C9110049}",
@@ -42,7 +42,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 6,
+          "SelectedChildIndex": 11,
           "Children": [
             {
               "$type": "Bookmark",
@@ -87,7 +87,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 1,
               "Title": "Program.vb",
               "DocumentMoniker": "G:\\emily\\src\\eQuilibrator\\test\\Program.vb",
               "RelativeDocumentMoniker": "eQuilibrator\\test\\Program.vb",
@@ -152,13 +152,13 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 0,
               "Title": "EquilibratorExamples.vb",
               "DocumentMoniker": "G:\\emily\\src\\eQuilibrator\\test\\EquilibratorExamples.vb",
               "RelativeDocumentMoniker": "eQuilibrator\\test\\EquilibratorExamples.vb",
               "ToolTip": "G:\\emily\\src\\eQuilibrator\\test\\EquilibratorExamples.vb",
               "RelativeToolTip": "eQuilibrator\\test\\EquilibratorExamples.vb",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA0AAAAgAAAAAAAAAA==",
+              "ViewState": "AgIAAEcAAAAAAAAAAAAowGUAAAAfAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003361|",
               "WhenOpened": "2026-04-24T08:51:15.09Z",
               "EditorCaption": ""
