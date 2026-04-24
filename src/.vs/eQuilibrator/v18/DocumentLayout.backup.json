@@ -3,7 +3,28 @@
   "WorkspaceRootPath": "G:\\emily\\src\\",
   "Documents": [
     {
+      "AbsoluteMoniker": "D:0:0:{5DABC780-D6D8-63AC-1C11-12B8D5B5CDC4}|..\\..\\GCModeller\\src\\runtime\\sciBASIC#\\Data\\BinaryData\\BinaryData\\binarydata-netcore5.vbproj|g:\\gcmodeller\\src\\runtime\\scibasic#\\data\\binarydata\\binarydata\\pickleserializer\\class3.vb||{2C015C70-C72C-11D0-88C3-00A0C9110049}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{5DABC780-D6D8-63AC-1C11-12B8D5B5CDC4}|..\\..\\GCModeller\\src\\runtime\\sciBASIC#\\Data\\BinaryData\\BinaryData\\binarydata-netcore5.vbproj|g:\\gcmodeller\\src\\runtime\\scibasic#\\data\\binarydata\\binarydata\\pickleserializer\\class4.vb||{2C015C70-C72C-11D0-88C3-00A0C9110049}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{5DABC780-D6D8-63AC-1C11-12B8D5B5CDC4}|..\\..\\GCModeller\\src\\runtime\\sciBASIC#\\Data\\BinaryData\\BinaryData\\binarydata-netcore5.vbproj|g:\\gcmodeller\\src\\runtime\\scibasic#\\data\\binarydata\\binarydata\\pickleserializer\\minimalpickleunpickler.vb||{2C015C70-C72C-11D0-88C3-00A0C9110049}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{5DABC780-D6D8-63AC-1C11-12B8D5B5CDC4}|..\\..\\GCModeller\\src\\runtime\\sciBASIC#\\Data\\BinaryData\\BinaryData\\binarydata-netcore5.vbproj|g:\\gcmodeller\\src\\runtime\\scibasic#\\data\\binarydata\\binarydata\\pickleserializer\\class2.vb||{2C015C70-C72C-11D0-88C3-00A0C9110049}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{5DABC780-D6D8-63AC-1C11-12B8D5B5CDC4}|..\\..\\GCModeller\\src\\runtime\\sciBASIC#\\Data\\BinaryData\\BinaryData\\binarydata-netcore5.vbproj|g:\\gcmodeller\\src\\runtime\\scibasic#\\data\\binarydata\\binarydata\\pickleserializer\\class1.vb||{2C015C70-C72C-11D0-88C3-00A0C9110049}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{5DABC780-D6D8-63AC-1C11-12B8D5B5CDC4}|..\\..\\GCModeller\\src\\runtime\\sciBASIC#\\Data\\BinaryData\\BinaryData\\binarydata-netcore5.vbproj|g:\\gcmodeller\\src\\runtime\\scibasic#\\data\\binarydata\\binarydata\\pickleserializer\\pythonobject.vb||{2C015C70-C72C-11D0-88C3-00A0C9110049}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{5DABC780-D6D8-63AC-1C11-12B8D5B5CDC4}|..\\..\\GCModeller\\src\\runtime\\sciBASIC#\\Data\\BinaryData\\BinaryData\\binarydata-netcore5.vbproj|g:\\gcmodeller\\src\\runtime\\scibasic#\\data\\binarydata\\binarydata\\pickleserializer\\pythonset.vb||{2C015C70-C72C-11D0-88C3-00A0C9110049}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{5DABC780-D6D8-63AC-1C11-12B8D5B5CDC4}|..\\..\\GCModeller\\src\\runtime\\sciBASIC#\\Data\\BinaryData\\BinaryData\\binarydata-netcore5.vbproj|g:\\gcmodeller\\src\\runtime\\scibasic#\\data\\binarydata\\binarydata\\pickleserializer\\pythontuple.vb||{2C015C70-C72C-11D0-88C3-00A0C9110049}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{A712EDC3-9352-6289-BD83-897F07C1A196}|eQuilibrator\\eQuilibrator.vbproj|g:\\emily\\src\\equilibrator\\compound\\equilibratordatabase\\equilibratorblobparser.vb||{2C015C70-C72C-11D0-88C3-00A0C9110049}",
@@ -21,7 +42,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 4,
+          "SelectedChildIndex": 5,
           "Children": [
             {
               "$type": "Bookmark",
@@ -41,20 +62,111 @@
             },
             {
               "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "Class4.vb",
+              "DocumentMoniker": "G:\\GCModeller\\src\\runtime\\sciBASIC#\\Data\\BinaryData\\BinaryData\\PickleSerializer\\Class4.vb",
+              "RelativeDocumentMoniker": "..\\..\\GCModeller\\src\\runtime\\sciBASIC#\\Data\\BinaryData\\BinaryData\\PickleSerializer\\Class4.vb",
+              "ToolTip": "G:\\GCModeller\\src\\runtime\\sciBASIC#\\Data\\BinaryData\\BinaryData\\PickleSerializer\\Class4.vb",
+              "RelativeToolTip": "..\\..\\GCModeller\\src\\runtime\\sciBASIC#\\Data\\BinaryData\\BinaryData\\PickleSerializer\\Class4.vb",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAACUAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003361|",
+              "WhenOpened": "2026-04-24T10:38:02.64Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
               "DocumentIndex": 0,
+              "Title": "Class3.vb",
+              "DocumentMoniker": "G:\\GCModeller\\src\\runtime\\sciBASIC#\\Data\\BinaryData\\BinaryData\\PickleSerializer\\Class3.vb",
+              "RelativeDocumentMoniker": "..\\..\\GCModeller\\src\\runtime\\sciBASIC#\\Data\\BinaryData\\BinaryData\\PickleSerializer\\Class3.vb",
+              "ToolTip": "G:\\GCModeller\\src\\runtime\\sciBASIC#\\Data\\BinaryData\\BinaryData\\PickleSerializer\\Class3.vb",
+              "RelativeToolTip": "..\\..\\GCModeller\\src\\runtime\\sciBASIC#\\Data\\BinaryData\\BinaryData\\PickleSerializer\\Class3.vb",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAEAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003361|",
+              "WhenOpened": "2026-04-24T10:37:59.827Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "Class2.vb",
+              "DocumentMoniker": "G:\\GCModeller\\src\\runtime\\sciBASIC#\\Data\\BinaryData\\BinaryData\\PickleSerializer\\Class2.vb",
+              "RelativeDocumentMoniker": "..\\..\\GCModeller\\src\\runtime\\sciBASIC#\\Data\\BinaryData\\BinaryData\\PickleSerializer\\Class2.vb",
+              "ToolTip": "G:\\GCModeller\\src\\runtime\\sciBASIC#\\Data\\BinaryData\\BinaryData\\PickleSerializer\\Class2.vb",
+              "RelativeToolTip": "..\\..\\GCModeller\\src\\runtime\\sciBASIC#\\Data\\BinaryData\\BinaryData\\PickleSerializer\\Class2.vb",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAqwAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003361|",
+              "WhenOpened": "2026-04-24T10:37:56.951Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "Class1.vb",
+              "DocumentMoniker": "G:\\GCModeller\\src\\runtime\\sciBASIC#\\Data\\BinaryData\\BinaryData\\PickleSerializer\\Class1.vb",
+              "RelativeDocumentMoniker": "..\\..\\GCModeller\\src\\runtime\\sciBASIC#\\Data\\BinaryData\\BinaryData\\PickleSerializer\\Class1.vb",
+              "ToolTip": "G:\\GCModeller\\src\\runtime\\sciBASIC#\\Data\\BinaryData\\BinaryData\\PickleSerializer\\Class1.vb",
+              "RelativeToolTip": "..\\..\\GCModeller\\src\\runtime\\sciBASIC#\\Data\\BinaryData\\BinaryData\\PickleSerializer\\Class1.vb",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAqwAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003361|",
+              "WhenOpened": "2026-04-24T10:37:54.024Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "PythonTuple.vb",
+              "DocumentMoniker": "G:\\GCModeller\\src\\runtime\\sciBASIC#\\Data\\BinaryData\\BinaryData\\PickleSerializer\\PythonTuple.vb",
+              "RelativeDocumentMoniker": "..\\..\\GCModeller\\src\\runtime\\sciBASIC#\\Data\\BinaryData\\BinaryData\\PickleSerializer\\PythonTuple.vb",
+              "ToolTip": "G:\\GCModeller\\src\\runtime\\sciBASIC#\\Data\\BinaryData\\BinaryData\\PickleSerializer\\PythonTuple.vb",
+              "RelativeToolTip": "..\\..\\GCModeller\\src\\runtime\\sciBASIC#\\Data\\BinaryData\\BinaryData\\PickleSerializer\\PythonTuple.vb",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAgAAAAcAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003361|",
+              "WhenOpened": "2026-04-24T10:36:23.951Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "PythonSet.vb",
+              "DocumentMoniker": "G:\\GCModeller\\src\\runtime\\sciBASIC#\\Data\\BinaryData\\BinaryData\\PickleSerializer\\PythonSet.vb",
+              "RelativeDocumentMoniker": "..\\..\\GCModeller\\src\\runtime\\sciBASIC#\\Data\\BinaryData\\BinaryData\\PickleSerializer\\PythonSet.vb",
+              "ToolTip": "G:\\GCModeller\\src\\runtime\\sciBASIC#\\Data\\BinaryData\\BinaryData\\PickleSerializer\\PythonSet.vb",
+              "RelativeToolTip": "..\\..\\GCModeller\\src\\runtime\\sciBASIC#\\Data\\BinaryData\\BinaryData\\PickleSerializer\\PythonSet.vb",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABQAAAAoAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003361|",
+              "WhenOpened": "2026-04-24T10:36:21.104Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "PythonObject.vb",
+              "DocumentMoniker": "G:\\GCModeller\\src\\runtime\\sciBASIC#\\Data\\BinaryData\\BinaryData\\PickleSerializer\\PythonObject.vb",
+              "RelativeDocumentMoniker": "..\\..\\GCModeller\\src\\runtime\\sciBASIC#\\Data\\BinaryData\\BinaryData\\PickleSerializer\\PythonObject.vb",
+              "ToolTip": "G:\\GCModeller\\src\\runtime\\sciBASIC#\\Data\\BinaryData\\BinaryData\\PickleSerializer\\PythonObject.vb",
+              "RelativeToolTip": "..\\..\\GCModeller\\src\\runtime\\sciBASIC#\\Data\\BinaryData\\BinaryData\\PickleSerializer\\PythonObject.vb",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABYAAAAmAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003361|",
+              "WhenOpened": "2026-04-24T10:36:18.098Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
               "Title": "MinimalPickleUnpickler.vb",
               "DocumentMoniker": "G:\\GCModeller\\src\\runtime\\sciBASIC#\\Data\\BinaryData\\BinaryData\\PickleSerializer\\MinimalPickleUnpickler.vb",
               "RelativeDocumentMoniker": "..\\..\\GCModeller\\src\\runtime\\sciBASIC#\\Data\\BinaryData\\BinaryData\\PickleSerializer\\MinimalPickleUnpickler.vb",
               "ToolTip": "G:\\GCModeller\\src\\runtime\\sciBASIC#\\Data\\BinaryData\\BinaryData\\PickleSerializer\\MinimalPickleUnpickler.vb",
               "RelativeToolTip": "..\\..\\GCModeller\\src\\runtime\\sciBASIC#\\Data\\BinaryData\\BinaryData\\PickleSerializer\\MinimalPickleUnpickler.vb",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAIAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAcAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003361|",
               "WhenOpened": "2026-04-24T09:42:56.068Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 8,
               "Title": "EquilibratorBlobParser.vb",
               "DocumentMoniker": "G:\\emily\\src\\eQuilibrator\\Compound\\EquilibratorDatabase\\EquilibratorBlobParser.vb",
               "RelativeDocumentMoniker": "eQuilibrator\\Compound\\EquilibratorDatabase\\EquilibratorBlobParser.vb",
@@ -67,7 +179,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 9,
               "Title": "PhasedCompound.vb",
               "DocumentMoniker": "G:\\emily\\src\\eQuilibrator\\PhasedCompound.vb",
               "RelativeDocumentMoniker": "eQuilibrator\\PhasedCompound.vb",
