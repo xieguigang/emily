@@ -27,6 +27,7 @@ Imports eQuilibrator.EquilibratorApi.Core
 Imports eQuilibrator.EquilibratorApi.Core.Extensions
 Imports eQuilibrator.EquilibratorApi.Core.Models
 Imports eQuilibrator.EquilibratorApi.Core.Parsers
+Imports test.EquilibratorThermodynamics
 
 Namespace EquilibratorApi.Demo
 
@@ -35,6 +36,8 @@ Namespace EquilibratorApi.Demo
     ''' </summary>
     Friend Class Program
         Public Shared Sub Main()
+            Call CompleteExample.Main2(Nothing)
+
             Console.WriteLine("========================================")
             Console.WriteLine("  Equilibrator API - C# Demo")
             Console.WriteLine("========================================")

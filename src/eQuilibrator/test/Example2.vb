@@ -220,10 +220,9 @@ Module Example2
             Dim calculator As New StandardFormationEnergyCalculator()
 
             ' 模拟从数据库读取的化合物列表
-            Dim compounds As New List(Of Compound)()
+            Dim compounds As New List(Of Compound)(New EquilibratorDatabaseReader("G:\compounds_2.sqlite").ReadAllCompounds)
 
             ' 添加化合物 (实际应用中从数据库读取)
-            ' compounds = LoadCompoundsFromDatabase("path/to/database.db")
 
             ' 加载到计算器
             calculator.LoadCompounds(compounds)

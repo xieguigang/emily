@@ -110,7 +110,7 @@ Namespace EquilibratorThermodynamics
             Console.WriteLine("示例2: 从数据库加载化合物并计算")
             Console.WriteLine("-"c, 60)
 
-            Dim dbPath As String = "path/to/equilibrator_compounds.sqlite"
+            Dim dbPath As String = "G:\compounds_2.sqlite"
 
             If Not File.Exists(dbPath) Then
                 Console.WriteLine($"数据库文件不存在: {dbPath}")

@@ -3,13 +3,13 @@
   "WorkspaceRootPath": "G:\\emily\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{9AC73DC2-1911-EAB3-46C1-E461F271FCF3}|..\\GCModeller\\src\\runtime\\sciBASIC#\\Data\\BinaryData\\BinaryData\\binarydata-netcore5.vbproj|g:\\gcmodeller\\src\\runtime\\scibasic#\\data\\binarydata\\binarydata\\stream\\readonlystream.vb||{2C015C70-C72C-11D0-88C3-00A0C9110049}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{9AC73DC2-1911-EAB3-46C1-E461F271FCF3}|..\\GCModeller\\src\\runtime\\sciBASIC#\\Data\\BinaryData\\BinaryData\\binarydata-netcore5.vbproj|g:\\gcmodeller\\src\\runtime\\scibasic#\\data\\binarydata\\binarydata\\stream\\binarydatareader.vb||{2C015C70-C72C-11D0-88C3-00A0C9110049}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{2E923B80-3CD8-3858-873C-7C3F3EC4E220}|..\\GCModeller\\src\\runtime\\sciBASIC#\\Data\\BinaryData\\SQLite3\\SQLite3.vbproj|g:\\gcmodeller\\src\\runtime\\scibasic#\\data\\binarydata\\sqlite3\\helpers\\streamhelper.vb||{2C015C70-C72C-11D0-88C3-00A0C9110049}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{9AC73DC2-1911-EAB3-46C1-E461F271FCF3}|..\\GCModeller\\src\\runtime\\sciBASIC#\\Data\\BinaryData\\BinaryData\\binarydata-netcore5.vbproj|g:\\gcmodeller\\src\\runtime\\scibasic#\\data\\binarydata\\binarydata\\stream\\readonlystream.vb||{2C015C70-C72C-11D0-88C3-00A0C9110049}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{2E923B80-3CD8-3858-873C-7C3F3EC4E220}|..\\GCModeller\\src\\runtime\\sciBASIC#\\Data\\BinaryData\\SQLite3\\SQLite3.vbproj|g:\\gcmodeller\\src\\runtime\\scibasic#\\data\\binarydata\\sqlite3\\helpers\\sqlitedatastream.vb||{2C015C70-C72C-11D0-88C3-00A0C9110049}"
@@ -101,7 +101,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 6,
+          "SelectedChildIndex": 4,
           "Children": [
             {
               "$type": "Bookmark",
@@ -121,7 +121,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 0,
               "Title": "BinaryDataReader.vb",
               "DocumentMoniker": "G:\\GCModeller\\src\\runtime\\sciBASIC#\\Data\\BinaryData\\BinaryData\\Stream\\BinaryDataReader.vb",
               "RelativeDocumentMoniker": "..\\GCModeller\\src\\runtime\\sciBASIC#\\Data\\BinaryData\\BinaryData\\Stream\\BinaryDataReader.vb",
@@ -129,11 +129,12 @@
               "RelativeToolTip": "..\\GCModeller\\src\\runtime\\sciBASIC#\\Data\\BinaryData\\BinaryData\\Stream\\BinaryDataReader.vb",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003361|",
-              "WhenOpened": "2026-04-03T15:50:46.612Z"
+              "WhenOpened": "2026-04-03T15:50:46.612Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 2,
               "Title": "ReadonlyStream.vb",
               "DocumentMoniker": "G:\\GCModeller\\src\\runtime\\sciBASIC#\\Data\\BinaryData\\BinaryData\\Stream\\ReadonlyStream.vb",
               "RelativeDocumentMoniker": "..\\GCModeller\\src\\runtime\\sciBASIC#\\Data\\BinaryData\\BinaryData\\Stream\\ReadonlyStream.vb",
@@ -141,12 +142,11 @@
               "RelativeToolTip": "..\\GCModeller\\src\\runtime\\sciBASIC#\\Data\\BinaryData\\BinaryData\\Stream\\ReadonlyStream.vb",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAEMAAAAbAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003361|",
-              "WhenOpened": "2026-04-03T15:50:42.644Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-04-03T15:50:42.644Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 1,
               "Title": "StreamHelper.vb",
               "DocumentMoniker": "G:\\GCModeller\\src\\runtime\\sciBASIC#\\Data\\BinaryData\\SQLite3\\Helpers\\StreamHelper.vb",
               "RelativeDocumentMoniker": "..\\GCModeller\\src\\runtime\\sciBASIC#\\Data\\BinaryData\\SQLite3\\Helpers\\StreamHelper.vb",
@@ -154,7 +154,8 @@
               "RelativeToolTip": "..\\GCModeller\\src\\runtime\\sciBASIC#\\Data\\BinaryData\\SQLite3\\Helpers\\StreamHelper.vb",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003361|",
-              "WhenOpened": "2026-04-03T15:50:16.388Z"
+              "WhenOpened": "2026-04-03T15:50:16.388Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
