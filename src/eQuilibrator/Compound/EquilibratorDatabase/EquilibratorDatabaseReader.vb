@@ -80,6 +80,8 @@ Namespace EquilibratorThermodynamics
                     compound.DissociationConstants = EquilibratorBlobParser.ParseDissociationConstants(compound.DissociationConstantsRaw)
                 End If
 
+                Call Console.WriteLine(compound.InChIKey)
+
                 compoundDict(compound.Id) = compound
             Next
 
