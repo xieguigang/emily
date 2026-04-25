@@ -3,6 +3,30 @@
   "WorkspaceRootPath": "G:\\emily\\src\\",
   "Documents": [
     {
+      "AbsoluteMoniker": "D:0:0:{A712EDC3-9352-6289-BD83-897F07C1A196}|eQuilibrator\\eQuilibrator.vbproj|g:\\emily\\src\\equilibrator\\equilibratorcache\\reaction.vb||{2C015C70-C72C-11D0-88C3-00A0C9110049}",
+      "RelativeMoniker": "D:0:0:{A712EDC3-9352-6289-BD83-897F07C1A196}|eQuilibrator\\eQuilibrator.vbproj|solutionrelative:equilibrator\\equilibratorcache\\reaction.vb||{2C015C70-C72C-11D0-88C3-00A0C9110049}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A712EDC3-9352-6289-BD83-897F07C1A196}|eQuilibrator\\eQuilibrator.vbproj|g:\\emily\\src\\equilibrator\\thermodynamicconstants.vb||{2C015C70-C72C-11D0-88C3-00A0C9110049}",
+      "RelativeMoniker": "D:0:0:{A712EDC3-9352-6289-BD83-897F07C1A196}|eQuilibrator\\eQuilibrator.vbproj|solutionrelative:equilibrator\\thermodynamicconstants.vb||{2C015C70-C72C-11D0-88C3-00A0C9110049}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A712EDC3-9352-6289-BD83-897F07C1A196}|eQuilibrator\\eQuilibrator.vbproj|g:\\emily\\src\\equilibrator\\extensions\\extensions.vb||{2C015C70-C72C-11D0-88C3-00A0C9110049}",
+      "RelativeMoniker": "D:0:0:{A712EDC3-9352-6289-BD83-897F07C1A196}|eQuilibrator\\eQuilibrator.vbproj|solutionrelative:equilibrator\\extensions\\extensions.vb||{2C015C70-C72C-11D0-88C3-00A0C9110049}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A712EDC3-9352-6289-BD83-897F07C1A196}|eQuilibrator\\eQuilibrator.vbproj|g:\\emily\\src\\equilibrator\\equilibratorcache\\models\\registry.vb||{2C015C70-C72C-11D0-88C3-00A0C9110049}",
+      "RelativeMoniker": "D:0:0:{A712EDC3-9352-6289-BD83-897F07C1A196}|eQuilibrator\\eQuilibrator.vbproj|solutionrelative:equilibrator\\equilibratorcache\\models\\registry.vb||{2C015C70-C72C-11D0-88C3-00A0C9110049}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A712EDC3-9352-6289-BD83-897F07C1A196}|eQuilibrator\\eQuilibrator.vbproj|g:\\emily\\src\\equilibrator\\equilibratorcache\\stubs\\thirdpartystubs.vb||{2C015C70-C72C-11D0-88C3-00A0C9110049}",
+      "RelativeMoniker": "D:0:0:{A712EDC3-9352-6289-BD83-897F07C1A196}|eQuilibrator\\eQuilibrator.vbproj|solutionrelative:equilibrator\\equilibratorcache\\stubs\\thirdpartystubs.vb||{2C015C70-C72C-11D0-88C3-00A0C9110049}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A712EDC3-9352-6289-BD83-897F07C1A196}|eQuilibrator\\eQuilibrator.vbproj|g:\\emily\\src\\equilibrator\\equilibratorcache\\stubs\\sqlalchemy.vb||{2C015C70-C72C-11D0-88C3-00A0C9110049}",
+      "RelativeMoniker": "D:0:0:{A712EDC3-9352-6289-BD83-897F07C1A196}|eQuilibrator\\eQuilibrator.vbproj|solutionrelative:equilibrator\\equilibratorcache\\stubs\\sqlalchemy.vb||{2C015C70-C72C-11D0-88C3-00A0C9110049}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{A712EDC3-9352-6289-BD83-897F07C1A196}|eQuilibrator\\eQuilibrator.vbproj|g:\\emily\\src\\equilibrator\\equilibratorcache\\stubs\\pandas.vb||{2C015C70-C72C-11D0-88C3-00A0C9110049}",
       "RelativeMoniker": "D:0:0:{A712EDC3-9352-6289-BD83-897F07C1A196}|eQuilibrator\\eQuilibrator.vbproj|solutionrelative:equilibrator\\equilibratorcache\\stubs\\pandas.vb||{2C015C70-C72C-11D0-88C3-00A0C9110049}"
     },
@@ -29,14 +53,6 @@
     {
       "AbsoluteMoniker": "D:0:0:{A712EDC3-9352-6289-BD83-897F07C1A196}|eQuilibrator\\eQuilibrator.vbproj|g:\\emily\\src\\equilibrator\\equilibratorcache\\exceptions.vb||{2C015C70-C72C-11D0-88C3-00A0C9110049}",
       "RelativeMoniker": "D:0:0:{A712EDC3-9352-6289-BD83-897F07C1A196}|eQuilibrator\\eQuilibrator.vbproj|solutionrelative:equilibrator\\equilibratorcache\\exceptions.vb||{2C015C70-C72C-11D0-88C3-00A0C9110049}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{A712EDC3-9352-6289-BD83-897F07C1A196}|eQuilibrator\\eQuilibrator.vbproj|g:\\emily\\src\\equilibrator\\equilibratorcache\\reaction.vb||{2C015C70-C72C-11D0-88C3-00A0C9110049}",
-      "RelativeMoniker": "D:0:0:{A712EDC3-9352-6289-BD83-897F07C1A196}|eQuilibrator\\eQuilibrator.vbproj|solutionrelative:equilibrator\\equilibratorcache\\reaction.vb||{2C015C70-C72C-11D0-88C3-00A0C9110049}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{A712EDC3-9352-6289-BD83-897F07C1A196}|eQuilibrator\\eQuilibrator.vbproj|g:\\emily\\src\\equilibrator\\equilibratorcache\\thermodynamicconstants.vb||{2C015C70-C72C-11D0-88C3-00A0C9110049}",
-      "RelativeMoniker": "D:0:0:{A712EDC3-9352-6289-BD83-897F07C1A196}|eQuilibrator\\eQuilibrator.vbproj|solutionrelative:equilibrator\\equilibratorcache\\thermodynamicconstants.vb||{2C015C70-C72C-11D0-88C3-00A0C9110049}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{A712EDC3-9352-6289-BD83-897F07C1A196}|eQuilibrator\\eQuilibrator.vbproj|g:\\emily\\src\\equilibrator\\equilibratorcache\\zenodo.vb||{2C015C70-C72C-11D0-88C3-00A0C9110049}",
@@ -79,8 +95,21 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 4,
+          "SelectedChildIndex": 15,
           "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "ThermodynamicConstants.vb",
+              "DocumentMoniker": "G:\\emily\\src\\eQuilibrator\\ThermodynamicConstants.vb",
+              "RelativeDocumentMoniker": "eQuilibrator\\ThermodynamicConstants.vb",
+              "ToolTip": "G:\\emily\\src\\eQuilibrator\\ThermodynamicConstants.vb",
+              "RelativeToolTip": "eQuilibrator\\ThermodynamicConstants.vb",
+              "ViewState": "AgIAAJQAAAAAAAAAAAAQwLkAAAAVAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003361|",
+              "WhenOpened": "2026-04-25T09:00:53.069Z",
+              "EditorCaption": ""
+            },
             {
               "$type": "Bookmark",
               "Name": "ST:0:0:{e506b91c-c606-466a-90a9-123d1d1e12b3}"
@@ -99,20 +128,72 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 2,
+              "Title": "Extensions.vb",
+              "DocumentMoniker": "G:\\emily\\src\\eQuilibrator\\Extensions\\Extensions.vb",
+              "RelativeDocumentMoniker": "eQuilibrator\\Extensions\\Extensions.vb",
+              "ToolTip": "G:\\emily\\src\\eQuilibrator\\Extensions\\Extensions.vb",
+              "RelativeToolTip": "eQuilibrator\\Extensions\\Extensions.vb",
+              "ViewState": "AgIAAB4AAAAAAAAAAAAnwDoAAABrAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003361|",
+              "WhenOpened": "2026-04-25T08:59:25.721Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "Registry.vb",
+              "DocumentMoniker": "G:\\emily\\src\\eQuilibrator\\EquilibratorCache\\Models\\Registry.vb",
+              "RelativeDocumentMoniker": "eQuilibrator\\EquilibratorCache\\Models\\Registry.vb",
+              "ToolTip": "G:\\emily\\src\\eQuilibrator\\EquilibratorCache\\Models\\Registry.vb",
+              "RelativeToolTip": "eQuilibrator\\EquilibratorCache\\Models\\Registry.vb",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAACEAAAAiAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003361|",
+              "WhenOpened": "2026-04-25T08:58:12.603Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "ThirdPartyStubs.vb",
+              "DocumentMoniker": "G:\\emily\\src\\eQuilibrator\\EquilibratorCache\\Stubs\\ThirdPartyStubs.vb",
+              "RelativeDocumentMoniker": "eQuilibrator\\EquilibratorCache\\Stubs\\ThirdPartyStubs.vb",
+              "ToolTip": "G:\\emily\\src\\eQuilibrator\\EquilibratorCache\\Stubs\\ThirdPartyStubs.vb",
+              "RelativeToolTip": "eQuilibrator\\EquilibratorCache\\Stubs\\ThirdPartyStubs.vb",
+              "ViewState": "AgIAAFgAAAAAAAAAAADwv3cAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003361|",
+              "WhenOpened": "2026-04-25T08:57:36.507Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "SqlAlchemy.vb",
+              "DocumentMoniker": "G:\\emily\\src\\eQuilibrator\\EquilibratorCache\\Stubs\\SqlAlchemy.vb",
+              "RelativeDocumentMoniker": "eQuilibrator\\EquilibratorCache\\Stubs\\SqlAlchemy.vb",
+              "ToolTip": "G:\\emily\\src\\eQuilibrator\\EquilibratorCache\\Stubs\\SqlAlchemy.vb",
+              "RelativeToolTip": "eQuilibrator\\EquilibratorCache\\Stubs\\SqlAlchemy.vb",
+              "ViewState": "AgIAAM0AAAAAAAAAAAA7wAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003361|",
+              "WhenOpened": "2026-04-25T08:57:17.989Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
               "Title": "Pandas.vb",
               "DocumentMoniker": "G:\\emily\\src\\eQuilibrator\\EquilibratorCache\\Stubs\\Pandas.vb",
               "RelativeDocumentMoniker": "eQuilibrator\\EquilibratorCache\\Stubs\\Pandas.vb",
               "ToolTip": "G:\\emily\\src\\eQuilibrator\\EquilibratorCache\\Stubs\\Pandas.vb",
               "RelativeToolTip": "eQuilibrator\\EquilibratorCache\\Stubs\\Pandas.vb",
-              "ViewState": "AgIAAGIAAAAAAAAAAAAQwAAAAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAAGIAAAAAAAAAAAAQwJkAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003361|",
               "WhenOpened": "2026-04-24T12:44:38.648Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 7,
               "Title": "Numpy.vb",
               "DocumentMoniker": "G:\\emily\\src\\eQuilibrator\\EquilibratorCache\\Stubs\\Numpy.vb",
               "RelativeDocumentMoniker": "eQuilibrator\\EquilibratorCache\\Stubs\\Numpy.vb",
@@ -120,12 +201,11 @@
               "RelativeToolTip": "eQuilibrator\\EquilibratorCache\\Stubs\\Numpy.vb",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003361|",
-              "WhenOpened": "2026-04-24T12:44:07.067Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-04-24T12:44:07.067Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 9,
               "Title": "Compatibility.vb",
               "DocumentMoniker": "G:\\emily\\src\\eQuilibrator\\EquilibratorCache\\Compatibility.vb",
               "RelativeDocumentMoniker": "eQuilibrator\\EquilibratorCache\\Compatibility.vb",
@@ -133,12 +213,11 @@
               "RelativeToolTip": "eQuilibrator\\EquilibratorCache\\Compatibility.vb",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003361|",
-              "WhenOpened": "2026-04-24T12:43:54.774Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-04-24T12:43:54.774Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 10,
               "Title": "CompoundCache.vb",
               "DocumentMoniker": "G:\\emily\\src\\eQuilibrator\\EquilibratorCache\\CompoundCache.vb",
               "RelativeDocumentMoniker": "eQuilibrator\\EquilibratorCache\\CompoundCache.vb",
@@ -146,12 +225,11 @@
               "RelativeToolTip": "eQuilibrator\\EquilibratorCache\\CompoundCache.vb",
               "ViewState": "AgIAAEoAAAAAAAAAAAA5wAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003361|",
-              "WhenOpened": "2026-04-24T12:43:49.288Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-04-24T12:43:49.288Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 5,
+              "DocumentIndex": 11,
               "Title": "EquilibratorConstants.vb",
               "DocumentMoniker": "G:\\emily\\src\\eQuilibrator\\EquilibratorCache\\EquilibratorConstants.vb",
               "RelativeDocumentMoniker": "eQuilibrator\\EquilibratorCache\\EquilibratorConstants.vb",
@@ -159,12 +237,11 @@
               "RelativeToolTip": "eQuilibrator\\EquilibratorCache\\EquilibratorConstants.vb",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003361|",
-              "WhenOpened": "2026-04-24T12:43:42.377Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-04-24T12:43:42.377Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 6,
+              "DocumentIndex": 12,
               "Title": "Exceptions.vb",
               "DocumentMoniker": "G:\\emily\\src\\eQuilibrator\\EquilibratorCache\\Exceptions.vb",
               "RelativeDocumentMoniker": "eQuilibrator\\EquilibratorCache\\Exceptions.vb",
@@ -172,38 +249,24 @@
               "RelativeToolTip": "eQuilibrator\\EquilibratorCache\\Exceptions.vb",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003361|",
-              "WhenOpened": "2026-04-24T12:43:38.215Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-04-24T12:43:38.215Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 7,
+              "DocumentIndex": 0,
               "Title": "Reaction.vb",
               "DocumentMoniker": "G:\\emily\\src\\eQuilibrator\\EquilibratorCache\\Reaction.vb",
               "RelativeDocumentMoniker": "eQuilibrator\\EquilibratorCache\\Reaction.vb",
               "ToolTip": "G:\\emily\\src\\eQuilibrator\\EquilibratorCache\\Reaction.vb",
               "RelativeToolTip": "eQuilibrator\\EquilibratorCache\\Reaction.vb",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAALABAAAAAAAAAADwv9QBAAAlAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003361|",
               "WhenOpened": "2026-04-24T12:43:30.961Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 8,
-              "Title": "ThermodynamicConstants.vb",
-              "DocumentMoniker": "G:\\emily\\src\\eQuilibrator\\EquilibratorCache\\ThermodynamicConstants.vb",
-              "RelativeDocumentMoniker": "eQuilibrator\\EquilibratorCache\\ThermodynamicConstants.vb",
-              "ToolTip": "G:\\emily\\src\\eQuilibrator\\EquilibratorCache\\ThermodynamicConstants.vb",
-              "RelativeToolTip": "eQuilibrator\\EquilibratorCache\\ThermodynamicConstants.vb",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003361|",
-              "WhenOpened": "2026-04-24T12:43:26.331Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 9,
+              "DocumentIndex": 13,
               "Title": "Zenodo.vb",
               "DocumentMoniker": "G:\\emily\\src\\eQuilibrator\\EquilibratorCache\\Zenodo.vb",
               "RelativeDocumentMoniker": "eQuilibrator\\EquilibratorCache\\Zenodo.vb",
@@ -211,12 +274,11 @@
               "RelativeToolTip": "eQuilibrator\\EquilibratorCache\\Zenodo.vb",
               "ViewState": "AgIAACIAAAAAAAAAAAAzwAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003361|",
-              "WhenOpened": "2026-04-24T12:43:08.36Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-04-24T12:43:08.36Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 8,
               "Title": "Api.vb",
               "DocumentMoniker": "G:\\emily\\src\\eQuilibrator\\EquilibratorCache\\Api.vb",
               "RelativeDocumentMoniker": "eQuilibrator\\EquilibratorCache\\Api.vb",
@@ -224,12 +286,11 @@
               "RelativeToolTip": "eQuilibrator\\EquilibratorCache\\Api.vb",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003361|",
-              "WhenOpened": "2026-04-24T12:42:56.752Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-04-24T12:42:56.752Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 13,
+              "DocumentIndex": 17,
               "Title": "ComplexNumber.vb",
               "DocumentMoniker": "G:\\GCModeller\\src\\runtime\\sciBASIC#\\Data\\BinaryData\\BinaryData\\PickleSerializer\\ComplexNumber.vb",
               "RelativeDocumentMoniker": "..\\..\\GCModeller\\src\\runtime\\sciBASIC#\\Data\\BinaryData\\BinaryData\\PickleSerializer\\ComplexNumber.vb",
@@ -241,7 +302,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 12,
+              "DocumentIndex": 16,
               "Title": "PythonGlobalRef.vb",
               "DocumentMoniker": "G:\\GCModeller\\src\\runtime\\sciBASIC#\\Data\\BinaryData\\BinaryData\\PickleSerializer\\PythonGlobalRef.vb",
               "RelativeDocumentMoniker": "..\\..\\GCModeller\\src\\runtime\\sciBASIC#\\Data\\BinaryData\\BinaryData\\PickleSerializer\\PythonGlobalRef.vb",
@@ -253,7 +314,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 11,
+              "DocumentIndex": 15,
               "Title": "MinimalPicklePickler.vb",
               "DocumentMoniker": "G:\\GCModeller\\src\\runtime\\sciBASIC#\\Data\\BinaryData\\BinaryData\\PickleSerializer\\MinimalPicklePickler.vb",
               "RelativeDocumentMoniker": "..\\..\\GCModeller\\src\\runtime\\sciBASIC#\\Data\\BinaryData\\BinaryData\\PickleSerializer\\MinimalPicklePickler.vb",
@@ -265,7 +326,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 16,
+              "DocumentIndex": 20,
               "Title": "PythonTuple.vb",
               "DocumentMoniker": "G:\\GCModeller\\src\\runtime\\sciBASIC#\\Data\\BinaryData\\BinaryData\\PickleSerializer\\PythonTuple.vb",
               "RelativeDocumentMoniker": "..\\..\\GCModeller\\src\\runtime\\sciBASIC#\\Data\\BinaryData\\BinaryData\\PickleSerializer\\PythonTuple.vb",
@@ -277,7 +338,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 15,
+              "DocumentIndex": 19,
               "Title": "PythonSet.vb",
               "DocumentMoniker": "G:\\GCModeller\\src\\runtime\\sciBASIC#\\Data\\BinaryData\\BinaryData\\PickleSerializer\\PythonSet.vb",
               "RelativeDocumentMoniker": "..\\..\\GCModeller\\src\\runtime\\sciBASIC#\\Data\\BinaryData\\BinaryData\\PickleSerializer\\PythonSet.vb",
@@ -289,7 +350,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 14,
+              "DocumentIndex": 18,
               "Title": "PythonObject.vb",
               "DocumentMoniker": "G:\\GCModeller\\src\\runtime\\sciBASIC#\\Data\\BinaryData\\BinaryData\\PickleSerializer\\PythonObject.vb",
               "RelativeDocumentMoniker": "..\\..\\GCModeller\\src\\runtime\\sciBASIC#\\Data\\BinaryData\\BinaryData\\PickleSerializer\\PythonObject.vb",
@@ -301,7 +362,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 10,
+              "DocumentIndex": 14,
               "Title": "MinimalPickleUnpickler.vb",
               "DocumentMoniker": "G:\\GCModeller\\src\\runtime\\sciBASIC#\\Data\\BinaryData\\BinaryData\\PickleSerializer\\MinimalPickleUnpickler.vb",
               "RelativeDocumentMoniker": "..\\..\\GCModeller\\src\\runtime\\sciBASIC#\\Data\\BinaryData\\BinaryData\\PickleSerializer\\MinimalPickleUnpickler.vb",
@@ -309,12 +370,11 @@
               "RelativeToolTip": "..\\..\\GCModeller\\src\\runtime\\sciBASIC#\\Data\\BinaryData\\BinaryData\\PickleSerializer\\MinimalPickleUnpickler.vb",
               "ViewState": "AgIAAFkAAAAAAAAAAAAIwAEAAAAMAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003361|",
-              "WhenOpened": "2026-04-24T09:42:56.068Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-04-24T09:42:56.068Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 17,
+              "DocumentIndex": 21,
               "Title": "EquilibratorBlobParser.vb",
               "DocumentMoniker": "G:\\emily\\src\\eQuilibrator\\Compound\\EquilibratorDatabase\\EquilibratorBlobParser.vb",
               "RelativeDocumentMoniker": "eQuilibrator\\Compound\\EquilibratorDatabase\\EquilibratorBlobParser.vb",
@@ -326,7 +386,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 18,
+              "DocumentIndex": 22,
               "Title": "PhasedCompound.vb",
               "DocumentMoniker": "G:\\emily\\src\\eQuilibrator\\PhasedCompound.vb",
               "RelativeDocumentMoniker": "eQuilibrator\\PhasedCompound.vb",

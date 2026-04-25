@@ -122,7 +122,7 @@ End Module
 ' Python: import cobra
 ' 用途: 约束基建模（COBRA）工具箱的 Python 接口
 ' ============================================================================
-Public Namespace CobraStub
+Namespace CobraStub
 
     ''' <summary>
     ''' COBRA 模型的占位类。

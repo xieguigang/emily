@@ -98,6 +98,21 @@ Namespace EquilibratorApi.Core.Models
             Return GetValueIn(targetUnit)
         End Function
 
+        ''' <summary>
+        ''' 将当前量转换为指定单位并返回数值。
+        ''' 等价于 pint 的 Quantity.m_as(unit)。
+        ''' </summary>
+        Public Function MAs(targetUnit As String) As Double
+            ' 占位实现：简单返回当前值
+            ' 实际实现中应进行单位换算
+            Select Case targetUnit
+                Case "K", "kJ/mol/K", "M", ""
+                    Return Value
+                Case Else
+                    Return Value
+            End Select
+        End Function
+
 #Region "Operators"
 
         Public Shared Operator +(a As Quantity, b As Quantity) As Quantity
@@ -261,15 +276,6 @@ Namespace EquilibratorApi.Core.Models
                 Return False
             End Try
         End Function
-
-        Private Class CSharpImpl
-            <Obsolete("Please refactor calling code to use normal Visual Basic assignment")>
-            Shared Function __Assign(Of T)(ByRef target As T, value As T) As T
-                target = value
-                Return value
-            End Function
-        End Class
-
 #End Region
     End Structure
 
@@ -277,6 +283,25 @@ Namespace EquilibratorApi.Core.Models
     ''' Extension methods for creating quantities
     ''' </summary>
     Public Module QuantityExtensions
+
+        ''' <summary>全局单位注册表</summary>
+        Public ReadOnly ureg As UnitRegistry = UnitRegistry.Instance
+
+        ''' <summary>
+        ''' 创建带单位的物理量。
+        ''' 等价于 Q_(value, unit)。
+        ''' </summary>
+        Public Function Q_(value As Double, unit As String) As Quantity
+            Return New Quantity(value, unit)
+        End Function
+
+        ''' <summary>
+        ''' 创建带单位的物理量（仅指定数值，单位为空）。
+        ''' </summary>
+        Public Function Q_(unit As String) As Quantity
+            Return New Quantity(0.0, unit)
+        End Function
+
         ''' <summary>
         ''' Creates a quantity from a double value with the specified unit
         ''' </summary>
@@ -293,4 +318,32 @@ Namespace EquilibratorApi.Core.Models
             Return New Quantity(value)
         End Function
     End Module
+
+    ''' <summary>
+    ''' Pint 物理单位库的 VB.NET 占位实现。
+    ''' 提供带单位的物理量（Quantity）的简单封装。
+    ''' 由于不引入第三方 NuGet 包，此处仅实现最小功能集。
+    ''' </summary>
+    Public Class UnitRegistry
+
+        ''' <summary>单位注册表的单例</summary>
+        Public Shared ReadOnly Instance As New UnitRegistry()
+
+        ''' <summary>
+        ''' 创建一个带单位的物理量。
+        ''' </summary>
+        Public Function CreateQuantity(value As Double, unit As String) As Quantity
+            Return New Quantity(value, unit)
+        End Function
+
+        ''' <summary>
+        ''' 检查参数单位是否符合要求（占位实现，始终返回 True）。
+        ''' 等价于 pint 的 ureg.check() 装饰器。
+        ''' </summary>
+        Public Function Check(ParamArray dimensionality() As String) As Boolean
+            ' 占位实现：不进行实际单位检查
+            Return True
+        End Function
+
+    End Class
 End Namespace

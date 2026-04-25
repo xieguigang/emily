@@ -4,20 +4,8 @@
 ''' 定义了反应类和化学计量矩阵构建函数。
 ''' </summary>
 Imports System.Text.RegularExpressions
+Imports eQuilibrator.EquilibratorApi.Core.Constants
 Imports EquilibratorCache.Stubs
-
-''' <summary>
-''' 可能的反应箭头符号列表。
-''' 等价于 Python POSSIBLE_REACTION_ARROWS。
-''' </summary>
-Public ReadOnly POSSIBLE_REACTION_ARROWS As String() = {
-    ' 三字符箭头
-    "<=>", "<->", "-->", "<--",
-    ' 两字符箭头
-    "=>", "<=", "->", "<-",
-    ' 单字符箭头
-    "=", ChrW(&H21CC), ChrW(&H2100), ChrW(&H210B), ChrW(&H21BD)
-}
 
 ''' <summary>
 ''' 生化反应类。
@@ -25,6 +13,16 @@ Public ReadOnly POSSIBLE_REACTION_ARROWS As String() = {
 ''' 表示一个生化反应，包含反应物、产物及其化学计量系数。
 ''' </summary>
 Public Class Reaction
+
+    ''' <summary>
+    ''' 可能的反应箭头符号列表。
+    ''' 等价于 Python POSSIBLE_REACTION_ARROWS。
+    ''' </summary>
+    Public Shared ReadOnly POSSIBLE_REACTION_ARROWS As String() = {
+        "<=>", "<->", "-->", "<--", ' 三字符箭头       
+        "=>", "<=", "->", "<-",  ' 两字符箭头       
+        "=", ChrW(&H21CC), ChrW(&H2100), ChrW(&H210B), ChrW(&H21BD)  ' 单字符箭头
+    }
 
     ' =========================================================================
     ' 属性
@@ -686,7 +684,7 @@ Public Module StoichiometricMatrix
 
         ' 收集所有化合物（排除质子）
         Dim compounds As New HashSet(Of Compound)()
-        For Each r In reactions
+        For Each r As Reaction In reactions
             For Each c In r.Sparse.Keys
                 If Not isProton(c) Then
                     compounds.Add(c)

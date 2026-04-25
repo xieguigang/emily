@@ -25,7 +25,7 @@ Public Class Registry
     ''' 命名空间名称。
     ''' 例如 "metanetx.chemical"、"kegg.compound" 等。
     ''' </summary>
-    Public Property Namespace As String
+    Public Property [Namespace] As String
 
     ''' <summary>
     ''' 注册表的可读名称。
@@ -129,7 +129,7 @@ Public Class Registry
     ''' 等价于 Python __repr__。
     ''' </summary>
     Public Overrides Function ToString() As String
-        Return $"Registry(namespace={Namespace})"
+        Return $"Registry(namespace={[Namespace]})"
     End Function
 
 End Class
