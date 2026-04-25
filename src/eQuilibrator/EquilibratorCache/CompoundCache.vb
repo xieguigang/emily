@@ -5,6 +5,7 @@
 ''' </summary>
 Imports System.Data.Common
 Imports System.Text.RegularExpressions
+Imports eQuilibrator.EquilibratorApi.Core.Models
 
 Public Class CompoundCache
 

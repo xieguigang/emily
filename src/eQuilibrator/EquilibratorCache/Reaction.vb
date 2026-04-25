@@ -5,6 +5,7 @@
 ''' </summary>
 Imports System.Text.RegularExpressions
 Imports eQuilibrator.EquilibratorApi.Core.Constants
+Imports eQuilibrator.EquilibratorApi.Core.Models
 Imports EquilibratorCache.Stubs
 
 ''' <summary>
@@ -465,7 +466,7 @@ Public Class Reaction
     ''' <returns>变换后的相对 Gibbs 自由能</returns>
     Public Function Transform(pH As Quantity, ionicStrength As Quantity,
                                temperature As Quantity,
-                               Optional pMg As Quantity = Nothing) As Quantity
+                               Optional pMg As Quantity? = Nothing) As Quantity
         If pMg Is Nothing Then pMg = ThermodynamicConstants.default_pMg_Quantity
 
         Dim ddg As New Quantity(0.0, "kJ/mol")
@@ -494,7 +495,7 @@ Public Class Reaction
     ''' </summary>
     Public Function SensitivityToPH(pH As Quantity, ionicStrength As Quantity,
                                      temperature As Quantity,
-                                     Optional pMg As Quantity = Nothing) As Quantity
+                                     Optional pMg As Quantity? = Nothing) As Quantity
         If pMg Is Nothing Then pMg = ThermodynamicConstants.default_pMg_Quantity
 
         Dim sensitivity As New Quantity(0.0, "kJ/mol")
@@ -522,7 +523,7 @@ Public Class Reaction
     ''' </summary>
     Public Function SensitivityToI(pH As Quantity, ionicStrength As Quantity,
                                     temperature As Quantity,
-                                    Optional pMg As Quantity = Nothing) As Quantity
+                                    Optional pMg As Quantity? = Nothing) As Quantity
         If pMg Is Nothing Then pMg = ThermodynamicConstants.default_pMg_Quantity
 
         Dim sensitivity As New Quantity(0.0, "kJ/mol/molar")

@@ -38,7 +38,7 @@ Public Module Zenodo
         If filename Is Nothing Then filename = DEFAULT_CACHE_FILENAME
 
         ' 使用平台特定的缓存目录
-        Dim cacheDir As String = AppDirsStub.GetUserCacheDir("equilibrator_cache")
+        Dim cacheDir As String = AppDirsStub.UserCacheDir("equilibrator_cache")
         Dim cachePath As String = System.IO.Path.Combine(cacheDir, recordId, filename)
 
         ' 如果文件不存在，需要下载
@@ -93,7 +93,7 @@ Public Module Zenodo
         If recordId Is Nothing Then recordId = DEFAULT_RECORD_ID
         If filename Is Nothing Then filename = DEFAULT_CACHE_FILENAME
 
-        Dim cacheDir As String = AppDirsStub.GetUserCacheDir("equilibrator_cache")
+        Dim cacheDir As String = AppDirsStub.UserCacheDir("equilibrator_cache")
         Dim cachePath As String = System.IO.Path.Combine(cacheDir, recordId, filename)
 
         Return System.IO.File.Exists(cachePath)

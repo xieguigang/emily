@@ -185,6 +185,10 @@ Namespace EquilibratorApi.Core.Models
             Return Not a.Equals(b)
         End Operator
 
+        Public Shared Narrowing Operator CType(q As Quantity) As Double
+            Return q.Value
+        End Operator
+
 #End Region
 
 #Region "IComparable<Quantity>"

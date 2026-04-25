@@ -1,4 +1,6 @@
-﻿Namespace EquilibratorThermodynamics
+﻿Imports eQuilibrator.Cache
+
+Namespace EquilibratorThermodynamics
 
     ' ========================================================================
     ' 微物种分布计算器
@@ -35,7 +37,7 @@
 
             For Each ms In compound.Microspecies
                 ' ΔG/RT = ddg_over_rt + (nH_major - nH) * ln(10) * pH
-                Dim ddg As Double = If(ms.DdGOverRt, 0.0)
+                Dim ddg As Double = If(ms.DdgOverRt, 0.0)
                 Dim deltaH As Integer = majorMs.NumberProtons - ms.NumberProtons
 
                 ' 相对浓度 = exp(-ΔG/RT)

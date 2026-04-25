@@ -23,6 +23,8 @@
 ' OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 ' THE SOFTWARE.
 
+Imports eQuilibrator.EquilibratorApi.Core.Models
+
 Namespace EquilibratorApi.Core.Constants
 
     ''' <summary>
@@ -183,7 +185,7 @@ Namespace EquilibratorApi.Core.Constants
         ''' Gas constant in kJ/(K·mol)
         ''' R = 8.314462618 J/(K·mol) = 0.008314462618 kJ/(K·mol)
         ''' </summary>
-        Public Const R As Double = 0.008314462618 ' kJ/(K·mol)
+       ' Public Const R As Double = 0.008314462618 ' kJ/(K·mol)
 
         ''' <summary>
         ''' Default pH value for physiological conditions

@@ -3,6 +3,8 @@
 ' 基于基团贡献法估算化合物标准生成能
 ' ============================================================================
 
+Imports eQuilibrator.Cache
+
 Namespace EquilibratorThermodynamics
 
     ' ========================================================================
@@ -230,7 +232,7 @@ Namespace EquilibratorThermodynamics
 
             ' 计算pH修正
             ' 找到主要微物种的质子数
-            Dim majorMs = compound.Microspecies?.FirstOrDefault(Function(m) m.IsMajor)
+            Dim majorMs = compound.Microspecies.Where(Function(m) m.IsMajor).FirstOrDefault
             Dim nH As Integer = If(majorMs?.NumberProtons, 0)
 
             ' pH修正项
@@ -277,8 +279,8 @@ Namespace EquilibratorThermodynamics
         ''' </summary>
         Public Function CalculateMicrospeciesTransitionEnergy(ms1 As CompoundMicrospecies, ms2 As CompoundMicrospecies) As Double
             ' ΔG = (ddg2 - ddg1) * RT
-            Dim ddg1 As Double = If(ms1.DdGOverRt, 0.0)
-            Dim ddg2 As Double = If(ms2.DdGOverRt, 0.0)
+            Dim ddg1 As Double = ms1.DdgOverRt
+            Dim ddg2 As Double = ms2.DdgOverRt
 
             Return (ddg2 - ddg1) * RT
         End Function
