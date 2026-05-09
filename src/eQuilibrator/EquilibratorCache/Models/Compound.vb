@@ -134,6 +134,9 @@ Namespace Cache
         ' 运行时计算属性
         ' =========================================================================
 
+        Dim _atomBag As Dictionary(Of String, Integer)
+        Dim _groupVector As Double()
+
         ''' <summary>
         ''' 获取原子袋字典（从 Base64 编码的 Pickle 数据反序列化）。
         ''' 等价于 Python 中的 atom_bag 属性（PickleType 自动反序列化）。
@@ -141,18 +144,26 @@ Namespace Cache
         ''' </summary>
         Public ReadOnly Property AtomBag As Dictionary(Of String, Integer)
             Get
-                If String.IsNullOrEmpty(AtomBagBase64) Then Return Nothing
-                Try
-                    Dim obj As Object = MinimalPickleUnpickler.Unpickle(AtomBagBase64)
-                    If TypeOf obj Is Dictionary(Of String, Integer) Then
-                        Return DirectCast(obj, Dictionary(Of String, Integer))
-                    End If
-                    Return Nothing
-                Catch
-                    Return Nothing
-                End Try
+                If _atomBag Is Nothing Then
+                    _atomBag = ParseAtomBag()
+                End If
+
+                Return _atomBag
             End Get
         End Property
+
+        Private Function ParseAtomBag() As Dictionary(Of String, Integer)
+            If String.IsNullOrEmpty(AtomBagBase64) Then Return Nothing
+            Try
+                Dim obj As Object = MinimalPickleUnpickler.Unpickle(AtomBagBase64)
+                If TypeOf obj Is Dictionary(Of String, Integer) Then
+                    Return DirectCast(obj, Dictionary(Of String, Integer))
+                End If
+                Return Nothing
+            Catch
+                Return Nothing
+            End Try
+        End Function
 
         ''' <summary>
         ''' 获取解离常数列表（从 Base64 编码的 Pickle 数据反序列化）。
@@ -179,18 +190,34 @@ Namespace Cache
         ''' </summary>
         Public ReadOnly Property GroupVector As Double()
             Get
-                If String.IsNullOrEmpty(GroupVectorBase64) Then Return Nothing
-                Try
-                    Dim obj As Object = MinimalPickleUnpickler.Unpickle(GroupVectorBase64)
-                    If TypeOf obj Is Double() Then
-                        Return DirectCast(obj, Double())
-                    End If
-                    Return Nothing
-                Catch
-                    Return Nothing
-                End Try
+                If _groupVector Is Nothing Then
+                    _groupVector = ParseGroupVector()
+                End If
+
+                Return _groupVector
             End Get
         End Property
+
+        Private Function ParseGroupVector() As Double()
+            If String.IsNullOrEmpty(GroupVectorBase64) Then Return Nothing
+            Try
+                Dim obj As Object = MinimalPickleUnpickler.Unpickle(GroupVectorBase64)
+                If TypeOf obj Is Double() Then
+                    Return DirectCast(obj, Double())
+                End If
+                Return Nothing
+            Catch
+                Return Nothing
+            End Try
+        End Function
+
+        Sub New()
+        End Sub
+
+        Sub New(atomBag As Dictionary(Of String, Integer), groupVector As Double())
+            _atomBag = atomBag
+            _groupVector = groupVector
+        End Sub
 
         ' =========================================================================
         ' 方法

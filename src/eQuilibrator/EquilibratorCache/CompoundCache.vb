@@ -284,13 +284,13 @@ Public Class CompoundCache
 
         ' 占位实现：实际应从数据库查询 Synonyms 注册表中的标识符
         ' 并按 "|" 分割每个标识符
-        For Each id In compound.Identifiers
-            If id.Registry IsNot Nothing AndAlso id.Registry.Name = "Synonyms" Then
-                For Each name In id.Accession.Split("|"c)
-                    names.Add(name)
-                Next
-            End If
-        Next
+        'For Each id In compound.Identifiers
+        '    If id.Registry IsNot Nothing AndAlso id.Registry.Name = "Synonyms" Then
+        '        For Each name In id.Accession.Split("|"c)
+        '            names.Add(name)
+        '        Next
+        '    End If
+        'Next
 
         Return names
     End Function

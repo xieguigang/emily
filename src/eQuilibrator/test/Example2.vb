@@ -1,4 +1,5 @@
-﻿Imports eQuilibrator.EquilibratorThermodynamics
+﻿Imports eQuilibrator.Cache
+Imports eQuilibrator.EquilibratorThermodynamics
 
 Module Example2
 
@@ -19,17 +20,16 @@ Module Example2
             Dim calculator As New StandardFormationEnergyCalculator()
 
             ' 创建磷酸根化合物对象 (示例数据)
-            Dim phosphate As New Compound With {
+            Dim phosphate As New Compound(atomBag:=New Dictionary(Of String, Integer) From {
+                    {"O", 4},
+                    {"P", 1}
+                },
+                groupVector:=New Double() {0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0}) With {
                 .Id = 12,
                 .InChIKey = "NBIIXXVUZAFLBC-UHFFFAOYSA-L",
                 .InChI = "InChI=1S/H3O4P/c1-5(2,3)4/h(H3,1,2,3,4)/p-2",
                 .Smiles = "OP([O-])([O-])=O",
-                .Mass = 95.979,
-                .AtomBag = New Dictionary(Of String, Integer) From {
-                    {"O", 4},
-                    {"P", 1}
-                },
-                .GroupVector = New Double() {0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0},
+                .MolecularWeight = 95.979,
                 .Microspecies = New List(Of CompoundMicrospecies)()
             }
 
@@ -42,7 +42,7 @@ Module Example2
                 .NumberProtons = 3,
                 .NumberMagnesiums = 0,
                 .IsMajor = False,
-                .DdGOverRt = -4.6 ' 相对于HPO4(2-)
+                .DdgOverRt = -4.6 ' 相对于HPO4(2-)
             })
 
             ' H2PO4-
@@ -53,7 +53,7 @@ Module Example2
                 .NumberProtons = 2,
                 .NumberMagnesiums = 0,
                 .IsMajor = False,
-                .DdGOverRt = -2.2
+                .DdgOverRt = -2.2
             })
 
             ' HPO4(2-)
@@ -64,7 +64,7 @@ Module Example2
                 .NumberProtons = 1,
                 .NumberMagnesiums = 0,
                 .IsMajor = True,
-                .DdGOverRt = 0.0
+                .DdgOverRt = 0.0
             })
 
             ' PO4(3-)
@@ -75,7 +75,7 @@ Module Example2
                 .NumberProtons = 0,
                 .NumberMagnesiums = 0,
                 .IsMajor = False,
-                .DdGOverRt = 6.2
+                .DdgOverRt = 6.2
             })
 
             ' 计算标准生成能
@@ -122,10 +122,9 @@ Module Example2
             Dim calculator As New StandardFormationEnergyCalculator()
 
             ' 创建化合物对象 (简化示例)
-            Dim atp As New Compound With {
+            Dim atp As New Compound(Nothing, groupVector:=New Double() {0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 3, 0, 0, 0, 0, 0, 0}) With {
                 .Id = 1,
                 .Smiles = "ATP",
-                .GroupVector = New Double() {0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 3, 0, 0, 0, 0, 0, 0},
                 .Microspecies = New List(Of CompoundMicrospecies)()
             }
             atp.Microspecies.Add(New CompoundMicrospecies With {
@@ -134,13 +133,12 @@ Module Example2
                 .Charge = -4,
                 .NumberProtons = 12,
                 .IsMajor = True,
-                .DdGOverRt = 0.0
+                .DdgOverRt = 0.0
             })
 
-            Dim adp As New Compound With {
+            Dim adp As New Compound(Nothing, groupVector:=New Double() {0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 2, 0, 0, 0, 0, 0, 0}) With {
                 .Id = 2,
                 .Smiles = "ADP",
-                .GroupVector = New Double() {0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 2, 0, 0, 0, 0, 0, 0},
                 .Microspecies = New List(Of CompoundMicrospecies)()
             }
             adp.Microspecies.Add(New CompoundMicrospecies With {
@@ -149,13 +147,12 @@ Module Example2
                 .Charge = -3,
                 .NumberProtons = 12,
                 .IsMajor = True,
-                .DdGOverRt = 0.0
+                .DdgOverRt = 0.0
             })
 
-            Dim pi As New Compound With {
+            Dim pi As New Compound(Nothing, groupVector:=New Double() {0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0}) With {
                 .Id = 3,
                 .Smiles = "Pi",
-                .GroupVector = New Double() {0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0},
                 .Microspecies = New List(Of CompoundMicrospecies)()
             }
             pi.Microspecies.Add(New CompoundMicrospecies With {
@@ -164,13 +161,12 @@ Module Example2
                 .Charge = -2,
                 .NumberProtons = 1,
                 .IsMajor = True,
-                .DdGOverRt = 0.0
+                .DdgOverRt = 0.0
             })
 
-            Dim h2o As New Compound With {
+            Dim h2o As New Compound(Nothing, groupVector:=New Double() {0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0}) With {
                 .Id = 4,
                 .Smiles = "O",
-                .GroupVector = New Double() {0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0},
                 .Microspecies = New List(Of CompoundMicrospecies)()
             }
             h2o.Microspecies.Add(New CompoundMicrospecies With {
@@ -179,7 +175,7 @@ Module Example2
                 .Charge = 0,
                 .NumberProtons = 2,
                 .IsMajor = True,
-                .DdGOverRt = 0.0
+                .DdgOverRt = 0.0
             })
 
             ' 定义反应: ATP + H2O -> ADP + Pi
@@ -210,38 +206,38 @@ Module Example2
             End Try
         End Sub
 
-        ''' <summary>
-        ''' 示例：从数据库加载数据并计算
-        ''' </summary>
-        Public Shared Sub ExampleLoadFromDatabase()
-            ' 假设已经从SQLite数据库读取数据
-            ' 这里展示如何使用这些数据
+        '''' <summary>
+        '''' 示例：从数据库加载数据并计算
+        '''' </summary>
+        'Public Shared Sub ExampleLoadFromDatabase()
+        '    ' 假设已经从SQLite数据库读取数据
+        '    ' 这里展示如何使用这些数据
 
-            Dim calculator As New StandardFormationEnergyCalculator()
+        '    Dim calculator As New StandardFormationEnergyCalculator()
 
-            ' 模拟从数据库读取的化合物列表
-            Dim compounds As New List(Of Compound)(New EquilibratorDatabaseReader("G:\compounds_2.sqlite").ReadAllCompounds)
+        '    ' 模拟从数据库读取的化合物列表
+        '    Dim compounds As New List(Of Compound)(New EquilibratorDatabaseReader("G:\compounds_2.sqlite").ReadAllCompounds)
 
-            ' 添加化合物 (实际应用中从数据库读取)
+        '    ' 添加化合物 (实际应用中从数据库读取)
 
-            ' 加载到计算器
-            calculator.LoadCompounds(compounds)
+        '    ' 加载到计算器
+        '    calculator.LoadCompounds(compounds)
 
-            ' 通过ID获取化合物并计算
-            Dim compoundId As Integer = 12 ' 磷酸根的ID
-            Dim compound = calculator.GetCompound(compoundId)
+        '    ' 通过ID获取化合物并计算
+        '    Dim compoundId As Integer = 12 ' 磷酸根的ID
+        '    Dim compound = calculator.GetCompound(compoundId)
 
-            If compound IsNot Nothing Then
-                Try
-                    Dim deltaG As Double = calculator.CalculateStandardFormationEnergy(compound)
-                    Console.WriteLine($"化合物 {compound.InChIKey} 的标准生成能 = {deltaG:F2} kJ/mol")
-                Catch ex As Exception
-                    Console.WriteLine($"计算失败: {ex.Message}")
-                End Try
-            Else
-                Console.WriteLine($"未找到ID为 {compoundId} 的化合物")
-            End If
-        End Sub
+        '    If compound IsNot Nothing Then
+        '        Try
+        '            Dim deltaG As Double = calculator.CalculateStandardFormationEnergy(compound)
+        '            Console.WriteLine($"化合物 {compound.InChIKey} 的标准生成能 = {deltaG:F2} kJ/mol")
+        '        Catch ex As Exception
+        '            Console.WriteLine($"计算失败: {ex.Message}")
+        '        End Try
+        '    Else
+        '        Console.WriteLine($"未找到ID为 {compoundId} 的化合物")
+        '    End If
+        'End Sub
     End Class
 
 End Module

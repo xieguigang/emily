@@ -35,7 +35,7 @@ Namespace EquilibratorThermodynamics
             Dim concentrations As New Dictionary(Of Integer, Double)()
             Dim totalConc As Double = 0.0
 
-            For Each ms In compound.Microspecies
+            For Each ms As CompoundMicrospecies In compound.Microspecies
                 ' ΔG/RT = ddg_over_rt + (nH_major - nH) * ln(10) * pH
                 Dim ddg As Double = If(ms.DdgOverRt, 0.0)
                 Dim deltaH As Integer = majorMs.NumberProtons - ms.NumberProtons

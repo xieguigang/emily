@@ -6,7 +6,6 @@
 Imports System.Text.RegularExpressions
 Imports eQuilibrator.EquilibratorApi.Core.Constants
 Imports eQuilibrator.EquilibratorApi.Core.Models
-Imports EquilibratorCache.Stubs
 
 ''' <summary>
 ''' 生化反应类。
@@ -33,7 +32,7 @@ Public Class Reaction
     ''' 稀疏表示的反应物字典。
     ''' 键为化合物，值为化学计量系数（负数为反应物，正数为产物）。
     ''' </summary>
-    Public Property Sparse As Dictionary(Of Compound, Double)
+    Public Property Sparse As Dictionary(Of Cache.Compound, Double)
 
     ''' <summary>
     ''' 反应箭头符号。
@@ -56,11 +55,11 @@ Public Class Reaction
     ''' <param name="sparse">反应物字典（化合物 -> 化学计量系数）</param>
     ''' <param name="arrow">反应箭头符号</param>
     ''' <param name="rid">反应 ID</param>
-    Public Sub New(sparse As Dictionary(Of Compound, Double),
+    Public Sub New(sparse As Dictionary(Of Cache.Compound, Double),
                    Optional arrow As String = Nothing,
                    Optional rid As String = Nothing)
         ' 过滤掉系数为 0 的化合物
-        Me.Sparse = New Dictionary(Of Compound, Double)()
+        Me.Sparse = New Dictionary(Of Cache.Compound, Double)()
         For Each kvp In sparse
             If kvp.Value <> 0 Then
                 Me.Sparse(kvp.Key) = kvp.Value
@@ -90,7 +89,7 @@ Public Class Reaction
     ''' </summary>
     ''' <returns>新的 Reaction 对象</returns>
     Public Function Clone() As Reaction
-        Return New Reaction(New Dictionary(Of Compound, Double)(Sparse), Arrow, Rid)
+        Return New Reaction(New Dictionary(Of Cache.Compound, Double)(Sparse), Arrow, Rid)
     End Function
 
     ''' <summary>
@@ -101,7 +100,7 @@ Public Class Reaction
     ''' <param name="water">是否包含水</param>
     ''' <returns>化合物迭代器</returns>
     Public Iterator Function Keys(Optional protons As Boolean = True,
-                                   Optional water As Boolean = True) As IEnumerable(Of Compound)
+                                   Optional water As Boolean = True) As IEnumerable(Of Cache.Compound)
         For Each c In Sparse.Keys
             If Not water AndAlso c.InChI = EquilibratorConstants.WATER_INCHI Then Continue For
             If Not protons AndAlso c.InChI = EquilibratorConstants.PROTON_INCHI Then Continue For
@@ -117,10 +116,10 @@ Public Class Reaction
     ''' <param name="water">是否包含水</param>
     ''' <returns>键值对迭代器</returns>
     Public Iterator Function Items(Optional protons As Boolean = True,
-                                    Optional water As Boolean = True) As IEnumerable(Of KeyValuePair(Of Compound, Double))
+                                    Optional water As Boolean = True) As IEnumerable(Of KeyValuePair(Of Cache.Compound, Double))
         For Each kvp In Sparse
-            If Not water AndAlso kvp.Key.InChI = EquilibratorConstants.WATER_INCHI Then Continue For
-            If Not protons AndAlso kvp.Key.InChI = EquilibratorConstants.PROTON_INCHI Then Continue For
+            If Not water AndAlso kvp.Key.Inchi = EquilibratorConstants.WATER_INCHI Then Continue For
+            If Not protons AndAlso kvp.Key.Inchi = EquilibratorConstants.PROTON_INCHI Then Continue For
             Yield kvp
         Next
     End Function
@@ -131,7 +130,7 @@ Public Class Reaction
     ''' </summary>
     ''' <param name="compound">目标化合物</param>
     ''' <returns>化学计量系数，如果化合物不在反应中则返回 0</returns>
-    Public Function GetCoeff(compound As Compound) As Double
+    Public Function GetCoeff(compound As Cache.Compound) As Double
         If Sparse.ContainsKey(compound) Then
             Return Sparse(compound)
         Else
@@ -146,7 +145,7 @@ Public Class Reaction
     ''' </summary>
     ''' <returns>反向反应</returns>
     Public Function Reverse() As Reaction
-        Dim newSparse As New Dictionary(Of Compound, Double)()
+        Dim newSparse As New Dictionary(Of Cache.Compound, Double)()
         For Each kvp In Sparse
             newSparse(kvp.Key) = -kvp.Value
         Next
@@ -161,11 +160,10 @@ Public Class Reaction
     ''' <param name="s">反应式一侧的字符串</param>
     ''' <param name="strToCompound">将字符串转换为化合物的函数</param>
     ''' <returns>化合物到化学计量系数的字典</returns>
-    Public Shared Function ParseFormulaSide(s As String,
-                                             strToCompound As Func(Of String, Compound)) As Dictionary(Of Compound, Double)
-        If s.Trim() = "null" Then Return New Dictionary(Of Compound, Double)()
+    Public Shared Function ParseFormulaSide(s As String, strToCompound As Func(Of String, Cache.Compound)) As Dictionary(Of Cache.Compound, Double)
+        If s.Trim() = "null" Then Return New Dictionary(Of Cache.Compound, Double)()
 
-        Dim compoundBag As New Dictionary(Of Compound, Double)()
+        Dim compoundBag As New Dictionary(Of Cache.Compound, Double)()
         Dim members As String() = Regex.Split(s, "\s+\+\s+")
 
         For Each member In members
@@ -174,7 +172,7 @@ Public Class Reaction
             If tokens.Length = 0 Then Continue For
 
             Dim amount As Double
-            Dim compound As Compound
+            Dim compound As Cache.Compound
 
             If tokens.Length = 1 Then
                 amount = 1.0
@@ -211,7 +209,7 @@ Public Class Reaction
     ''' <param name="formula">反应式字符串</param>
     ''' <param name="rid">反应 ID（可选）</param>
     ''' <returns>解析后的 Reaction 对象</returns>
-    Public Shared Function ParseFormula(strToCompound As Func(Of String, Compound),
+    Public Shared Function ParseFormula(strToCompound As Func(Of String, Cache.Compound),
                                           formula As String,
                                           Optional rid As String = Nothing) As Reaction
         Dim tokens As String() = Nothing
@@ -233,9 +231,9 @@ Public Class Reaction
         Dim left As String = tokens(0).Trim()
         Dim right As String = tokens(1).Trim()
 
-        Dim sparseReaction As New Dictionary(Of Compound, Double)()
-        Dim leftDict As Dictionary(Of Compound, Double) = ParseFormulaSide(left, strToCompound)
-        Dim rightDict As Dictionary(Of Compound, Double) = ParseFormulaSide(right, strToCompound)
+        Dim sparseReaction As New Dictionary(Of Cache.Compound, Double)()
+        Dim leftDict As Dictionary(Of Cache.Compound, Double) = ParseFormulaSide(left, strToCompound)
+        Dim rightDict As Dictionary(Of Cache.Compound, Double) = ParseFormulaSide(right, strToCompound)
 
         For Each kvp In leftDict
             If sparseReaction.ContainsKey(kvp.Key) Then
@@ -254,7 +252,7 @@ Public Class Reaction
         Next
 
         ' 移除系数为 0 的化合物
-        Dim filtered As New Dictionary(Of Compound, Double)()
+        Dim filtered As New Dictionary(Of Cache.Compound, Double)()
         For Each kvp In sparseReaction
             If kvp.Value <> 0 Then filtered(kvp.Key) = kvp.Value
         Next
@@ -266,7 +264,7 @@ Public Class Reaction
     ''' 将化合物和系数格式化为字符串。
     ''' 等价于 Python write_compound_and_coeff(compound, coeff)。
     ''' </summary>
-    Public Shared Function WriteCompoundAndCoeff(compound As Compound, coeff As Double) As String
+    Public Shared Function WriteCompoundAndCoeff(compound As Cache.Compound, coeff As Double) As String
         If Math.Abs(coeff - 1.0) < Double.Epsilon Then
             Return compound.ToString()
         Else
@@ -299,7 +297,7 @@ Public Class Reaction
     ''' </summary>
     ''' <returns>元素组成 DataFrame</returns>
     Public Function GetElementDataFrame() As DataFrame
-        Dim atomBags As New Dictionary(Of Compound, Dictionary(Of String, Integer))()
+        Dim atomBags As New Dictionary(Of Cache.Compound, Dictionary(Of String, Integer))()
         For Each c In Keys()
             atomBags(c) = If(c.AtomBag, New Dictionary(Of String, Integer)())
         Next
@@ -331,7 +329,7 @@ Public Class Reaction
     ''' </summary>
     ''' <param name="cpd">化合物</param>
     ''' <param name="coeff">要添加的系数</param>
-    Public Sub AddStoichiometry(cpd As Compound, coeff As Double)
+    Public Sub AddStoichiometry(cpd As Cache.Compound, coeff As Double)
         If Sparse.ContainsKey(cpd) Then
             If Sparse(cpd) = -coeff Then
                 Sparse.Remove(cpd)
@@ -369,8 +367,7 @@ Public Class Reaction
     ''' <param name="compound">用于平衡的化合物</param>
     ''' <param name="ignoreAtoms">要忽略的元素元组</param>
     ''' <returns>平衡后的反应，如果无法平衡则返回 Nothing</returns>
-    Public Function BalanceWithCompound(compound As Compound,
-                                         Optional ignoreAtoms As String() = Nothing) As Reaction
+    Public Function BalanceWithCompound(compound As Cache.Compound, Optional ignoreAtoms As String() = Nothing) As Reaction
         If ignoreAtoms Is Nothing Then ignoreAtoms = New String() {"H"}
 
         If IsBalanced(ignoreAtoms) Then Return Me
@@ -427,7 +424,7 @@ Public Class Reaction
     ''' </summary>
     ''' <param name="cids">化合物顺序列表</param>
     ''' <returns>化学计量系数数组</returns>
-    Public Function Dense(cids As List(Of Compound)) As Double()
+    Public Function Dense(cids As List(Of Cache.Compound)) As Double()
         Dim s(cids.Count - 1) As Double
         For Each kvp In Items()
             Dim idx As Integer = cids.IndexOf(kvp.Key)
@@ -600,7 +597,7 @@ Public Class Reaction
     ''' 生成可哈希的反应物元组。
     ''' 等价于 Python _hashable_reactants(sparse)。
     ''' </summary>
-    Private Shared Function HashableReactants(sparse As Dictionary(Of Compound, Double)) As Tuple(Of Integer, Double)()
+    Private Shared Function HashableReactants(sparse As Dictionary(Of Cache.Compound, Double)) As Tuple(Of Integer, Double)()
         If sparse.Count = 0 Then Return Array.Empty(Of Tuple(Of Integer, Double))()
 
         ' 按 Compound.ID 排序
@@ -637,7 +634,7 @@ Public Class Reaction
         If TypeOf obj IsNot Reaction Then Return False
         Dim other As Reaction = DirectCast(obj, Reaction)
 
-        Dim cpds As New HashSet(Of Compound)()
+        Dim cpds As New HashSet(Of Cache.Compound)()
         For Each c In Keys(protons:=False) : cpds.Add(c) : Next
         For Each c In other.Keys(protons:=False) : cpds.Add(c) : Next
 
@@ -679,12 +676,12 @@ Public Module StoichiometricMatrix
     ''' <returns>化学计量矩阵（DataFrame 形式）</returns>
     Public Function CreateStoichiometricMatrixFromReactions(
         reactions As IEnumerable(Of Reaction),
-        isProton As Func(Of Compound, Boolean),
-        isWater As Func(Of Compound, Boolean),
-        water As Compound) As DataFrame
+        isProton As Func(Of Cache.Compound, Boolean),
+        isWater As Func(Of Cache.Compound, Boolean),
+        water As Cache.Compound) As DataFrame
 
         ' 收集所有化合物（排除质子）
-        Dim compounds As New HashSet(Of Compound)()
+        Dim compounds As New HashSet(Of Cache.Compound)()
         For Each r As Reaction In reactions
             For Each c In r.Sparse.Keys
                 If Not isProton(c) Then

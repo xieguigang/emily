@@ -74,17 +74,6 @@ Namespace EquilibratorThermodynamics
             _microspecies.Clear()
 
             For Each compound In compounds
-                ' 解析BLOB数据
-                If compound.GroupVectorRaw IsNot Nothing Then
-                    compound.GroupVector = EquilibratorBlobParser.ParseGroupVector(compound.GroupVectorRaw)
-                End If
-                If compound.AtomBagRaw IsNot Nothing Then
-                    compound.AtomBag = EquilibratorBlobParser.ParseAtomBag(compound.AtomBagRaw)
-                End If
-                If compound.DissociationConstantsRaw IsNot Nothing Then
-                    compound.DissociationConstants = EquilibratorBlobParser.ParseDissociationConstants(compound.DissociationConstantsRaw)
-                End If
-
                 _compounds(compound.Id) = compound
 
                 ' 加载微物种数据

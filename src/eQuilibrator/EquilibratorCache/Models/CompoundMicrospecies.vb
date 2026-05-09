@@ -24,7 +24,7 @@ Namespace Cache
         ''' 微物种相对于最稳定物种的标准 Gibbs 自由能差（单位 RT）。
         ''' 等价于 Python ddg_over_rt = Column(Float)。
         ''' </summary>
-        Public Property DdgOverRt As Double
+        Public Property DdgOverRt As Double?
 
         ''' <summary>
         ''' 微物种的电荷数。
@@ -40,6 +40,8 @@ Namespace Cache
         ''' 镁离子数。
         ''' </summary>
         Public Property NumberMagnesiums As Integer
+
+        Public Property IsMajor As Boolean
 
         ' =========================================================================
         ' 方法

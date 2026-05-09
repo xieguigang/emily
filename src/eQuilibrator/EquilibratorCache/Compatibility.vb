@@ -1,3 +1,6 @@
+Imports eQuilibrator.EquilibratorApi.Core.Models
+
+
 ''' <summary>
 ''' COBRA 兼容性模块。
 ''' 等价于 Python equilibrator_cache/compatibility.py。

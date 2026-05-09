@@ -4,6 +4,8 @@
 ' ============================================================================
 
 Imports System.IO
+Imports eQuilibrator.Cache
+Imports eQuilibrator.EquilibratorApi.Core
 Imports eQuilibrator.EquilibratorThermodynamics
 
 Namespace EquilibratorThermodynamics
@@ -26,7 +28,7 @@ Namespace EquilibratorThermodynamics
             Example1_DirectCalculation()
 
             ' 示例2: 从数据库加载并计算
-            Example2_DatabaseCalculation()
+            ' Example2_DatabaseCalculation()
 
             ' 示例3: 计算化学反应Gibbs自由能
             Example3_ReactionCalculation()
@@ -54,24 +56,23 @@ Namespace EquilibratorThermodynamics
             Dim calculator As New StandardFormationEnergyCalculator()
 
             ' 创建葡萄糖化合物
-            Dim glucose As New Compound With {
-                .Id = 1,
-                .InChIKey = "WQZGKKKJIJFFOK-GASJEMHNSA-N",
-                .Smiles = "OC[C@H]1OC(O)[C@H](O)[C@@H](O)[C@@H]1O",
-                .Mass = 180.156,
-                .AtomBag = New Dictionary(Of String, Integer) From {
+            Dim glucose As New Compound(atomBag:=New Dictionary(Of String, Integer) From {
                     {"C", 6},
                     {"H", 12},
                     {"O", 6}
                 },
-                .GroupVector = New Double() {
+                groupVector:=New Double() {
                     0, 0, 0, 0, 0,  ' 基础基团
                     5,  ' 5个-OH基团
                     0, 0, 0, 0, 0,  ' 其他基团
                     1,  ' 1个环状-O-
                     0, 0, 0, 0, 0,  ' 更多基团
                     1   ' 六元环
-                },
+                }) With {
+                .Id = 1,
+                .InChIKey = "WQZGKKKJIJFFOK-GASJEMHNSA-N",
+                .Smiles = "OC[C@H]1OC(O)[C@H](O)[C@@H](O)[C@@H]1O",
+                .MolecularWeight = 180.156,
                 .Microspecies = New List(Of CompoundMicrospecies)()
             }
 
@@ -83,7 +84,7 @@ Namespace EquilibratorThermodynamics
                 .NumberProtons = 12,
                 .NumberMagnesiums = 0,
                 .IsMajor = True,
-                .DdGOverRt = 0.0
+                .DdgOverRt = 0.0
             })
 
             Try
@@ -102,61 +103,61 @@ Namespace EquilibratorThermodynamics
             Console.WriteLine()
         End Sub
 
-        ''' <summary>
-        ''' 示例2: 从数据库加载化合物并计算
-        ''' </summary>
-        Public Shared Sub Example2_DatabaseCalculation()
-            Console.WriteLine("-"c, 60)
-            Console.WriteLine("示例2: 从数据库加载化合物并计算")
-            Console.WriteLine("-"c, 60)
+        '''' <summary>
+        '''' 示例2: 从数据库加载化合物并计算
+        '''' </summary>
+        'Public Shared Sub Example2_DatabaseCalculation()
+        '    Console.WriteLine("-"c, 60)
+        '    Console.WriteLine("示例2: 从数据库加载化合物并计算")
+        '    Console.WriteLine("-"c, 60)
 
-            Dim dbPath As String = "G:\compounds_2.sqlite"
+        '    Dim dbPath As String = "G:\compounds_2.sqlite"
 
-            If Not File.Exists(dbPath) Then
-                Console.WriteLine($"数据库文件不存在: {dbPath}")
-                Console.WriteLine("请将dbPath变量设置为实际的数据库路径")
-                Console.WriteLine()
-                Return
-            End If
+        '    If Not File.Exists(dbPath) Then
+        '        Console.WriteLine($"数据库文件不存在: {dbPath}")
+        '        Console.WriteLine("请将dbPath变量设置为实际的数据库路径")
+        '        Console.WriteLine()
+        '        Return
+        '    End If
 
-            Try
-                ' 创建数据库读取器
-                Using reader As New EquilibratorDatabaseReader(dbPath)
-                    ' 读取所有化合物
-                    Dim compounds = reader.ReadAllCompounds()
-                    Console.WriteLine($"从数据库读取了 {compounds.Count} 个化合物")
+        '    Try
+        '        ' 创建数据库读取器
+        '        Using reader As New EquilibratorDatabaseReader(dbPath)
+        '            ' 读取所有化合物
+        '            Dim compounds = reader.ReadAllCompounds()
+        '            Console.WriteLine($"从数据库读取了 {compounds.Count} 个化合物")
 
-                    ' 创建计算器并加载数据
-                    Dim calculator As New StandardFormationEnergyCalculator()
-                    calculator.LoadCompounds(compounds)
+        '            ' 创建计算器并加载数据
+        '            Dim calculator As New StandardFormationEnergyCalculator()
+        '            calculator.LoadCompounds(compounds)
 
-                    ' 计算前10个化合物的标准生成能
-                    Console.WriteLine()
-                    Console.WriteLine("前10个化合物的标准生成能:")
-                    For Each compound In compounds.Take(10)
-                        Try
-                            Dim deltaG As Double = calculator.CalculateStandardFormationEnergy(compound)
-                            Console.WriteLine($"  {compound.InChIKey}: ΔfG° = {deltaG:F2} kJ/mol")
-                        Catch ex As Exception
-                            Console.WriteLine($"  {compound.InChIKey}: 计算失败 - {ex.Message}")
-                        End Try
-                    Next
+        '            ' 计算前10个化合物的标准生成能
+        '            Console.WriteLine()
+        '            Console.WriteLine("前10个化合物的标准生成能:")
+        '            For Each compound In compounds.Take(10)
+        '                Try
+        '                    Dim deltaG As Double = calculator.CalculateStandardFormationEnergy(compound)
+        '                    Console.WriteLine($"  {compound.InChIKey}: ΔfG° = {deltaG:F2} kJ/mol")
+        '                Catch ex As Exception
+        '                    Console.WriteLine($"  {compound.InChIKey}: 计算失败 - {ex.Message}")
+        '                End Try
+        '            Next
 
-                    ' 通过InChI Key查找特定化合物
-                    Console.WriteLine()
-                    Dim phosphate = calculator.GetCompoundByInChIKey("NBIIXXVUZAFLBC-UHFFFAOYSA-L")
-                    If phosphate IsNot Nothing Then
-                        Dim deltaG As Double = calculator.CalculateStandardFormationEnergy(phosphate)
-                        Console.WriteLine($"磷酸根的标准生成能: ΔfG° = {deltaG:F2} kJ/mol")
-                    End If
-                End Using
+        '            ' 通过InChI Key查找特定化合物
+        '            Console.WriteLine()
+        '            Dim phosphate = calculator.GetCompoundByInChIKey("NBIIXXVUZAFLBC-UHFFFAOYSA-L")
+        '            If phosphate IsNot Nothing Then
+        '                Dim deltaG As Double = calculator.CalculateStandardFormationEnergy(phosphate)
+        '                Console.WriteLine($"磷酸根的标准生成能: ΔfG° = {deltaG:F2} kJ/mol")
+        '            End If
+        '        End Using
 
-            Catch ex As Exception
-                Console.WriteLine($"数据库读取错误: {ex.Message}")
-            End Try
+        '    Catch ex As Exception
+        '        Console.WriteLine($"数据库读取错误: {ex.Message}")
+        '    End Try
 
-            Console.WriteLine()
-        End Sub
+        '    Console.WriteLine()
+        'End Sub
 
         ''' <summary>
         ''' 示例3: 计算化学反应的Gibbs自由能变化
@@ -172,51 +173,47 @@ Namespace EquilibratorThermodynamics
             ' 反应: 葡萄糖 + ATP -> 葡萄糖-6-磷酸 + ADP
 
             ' 葡萄糖
-            Dim glucose As New Compound With {
+            Dim glucose As New Compound(atomBag:=New Dictionary(Of String, Integer) From {{"C", 6}, {"H", 12}, {"O", 6}},
+                groupVector:=New Double() {0, 0, 0, 0, 5, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1}) With {
                 .Id = 1,
                 .Smiles = "Glucose",
-                .AtomBag = New Dictionary(Of String, Integer) From {{"C", 6}, {"H", 12}, {"O", 6}},
-                .GroupVector = New Double() {0, 0, 0, 0, 5, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1},
                 .Microspecies = New List(Of CompoundMicrospecies)()
             }
             glucose.Microspecies.Add(New CompoundMicrospecies With {
-                .Id = 1, .CompoundId = 1, .Charge = 0, .NumberProtons = 12, .IsMajor = True, .DdGOverRt = 0.0
+                .Id = 1, .CompoundId = 1, .Charge = 0, .NumberProtons = 12, .IsMajor = True, .DdgOverRt = 0.0
             })
 
             ' ATP
-            Dim atp As New Compound With {
+            Dim atp As New Compound(atomBag:=New Dictionary(Of String, Integer) From {{"C", 10}, {"H", 16}, {"N", 5}, {"O", 13}, {"P", 3}},
+                groupVector:=New Double() {0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 3, 0, 0, 0, 0, 0}) With {
                 .Id = 2,
                 .Smiles = "ATP",
-                .AtomBag = New Dictionary(Of String, Integer) From {{"C", 10}, {"H", 16}, {"N", 5}, {"O", 13}, {"P", 3}},
-                .GroupVector = New Double() {0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 3, 0, 0, 0, 0, 0},
                 .Microspecies = New List(Of CompoundMicrospecies)()
             }
             atp.Microspecies.Add(New CompoundMicrospecies With {
-                .Id = 2, .CompoundId = 2, .Charge = -4, .NumberProtons = 12, .IsMajor = True, .DdGOverRt = 0.0
+                .Id = 2, .CompoundId = 2, .Charge = -4, .NumberProtons = 12, .IsMajor = True, .DdgOverRt = 0.0
             })
 
             ' 葡萄糖-6-磷酸
-            Dim g6p As New Compound With {
+            Dim g6p As New Compound(atomBag:=New Dictionary(Of String, Integer) From {{"C", 6}, {"H", 13}, {"O", 9}, {"P", 1}},
+                groupVector:=New Double() {0, 0, 0, 0, 4, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1}) With {
                 .Id = 3,
                 .Smiles = "G6P",
-                .AtomBag = New Dictionary(Of String, Integer) From {{"C", 6}, {"H", 13}, {"O", 9}, {"P", 1}},
-                .GroupVector = New Double() {0, 0, 0, 0, 4, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1},
                 .Microspecies = New List(Of CompoundMicrospecies)()
             }
             g6p.Microspecies.Add(New CompoundMicrospecies With {
-                .Id = 3, .CompoundId = 3, .Charge = -2, .NumberProtons = 11, .IsMajor = True, .DdGOverRt = 0.0
+                .Id = 3, .CompoundId = 3, .Charge = -2, .NumberProtons = 11, .IsMajor = True, .DdgOverRt = 0.0
             })
 
             ' ADP
-            Dim adp As New Compound With {
+            Dim adp As New Compound(atomBag:=New Dictionary(Of String, Integer) From {{"C", 10}, {"H", 15}, {"N", 5}, {"O", 10}, {"P", 2}},
+                groupVector:=New Double() {0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 2, 0, 0, 0, 0, 0}) With {
                 .Id = 4,
                 .Smiles = "ADP",
-                .AtomBag = New Dictionary(Of String, Integer) From {{"C", 10}, {"H", 15}, {"N", 5}, {"O", 10}, {"P", 2}},
-                .GroupVector = New Double() {0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 2, 0, 0, 0, 0, 0},
                 .Microspecies = New List(Of CompoundMicrospecies)()
             }
             adp.Microspecies.Add(New CompoundMicrospecies With {
-                .Id = 4, .CompoundId = 4, .Charge = -3, .NumberProtons = 12, .IsMajor = True, .DdGOverRt = 0.0
+                .Id = 4, .CompoundId = 4, .Charge = -3, .NumberProtons = 12, .IsMajor = True, .DdgOverRt = 0.0
             })
 
             ' 定义反应
@@ -263,26 +260,25 @@ Namespace EquilibratorThermodynamics
             Dim calculator As New StandardFormationEnergyCalculator()
 
             ' 创建磷酸根化合物
-            Dim phosphate As New Compound With {
+            Dim phosphate As New Compound(atomBag:=New Dictionary(Of String, Integer) From {{"O", 4}, {"P", 1}},
+                groupVector:=New Double() {0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0}) With {
                 .Id = 1,
                 .Smiles = "OP([O-])([O-])=O",
-                .AtomBag = New Dictionary(Of String, Integer) From {{"O", 4}, {"P", 1}},
-                .GroupVector = New Double() {0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0},
                 .Microspecies = New List(Of CompoundMicrospecies)()
             }
 
             ' 添加微物种 (H3PO4, H2PO4-, HPO4(2-), PO4(3-))
             phosphate.Microspecies.Add(New CompoundMicrospecies With {
-                .Id = 1, .CompoundId = 1, .Charge = 0, .NumberProtons = 3, .IsMajor = False, .DdGOverRt = -4.6
+                .Id = 1, .CompoundId = 1, .Charge = 0, .NumberProtons = 3, .IsMajor = False, .DdgOverRt = -4.6
             })
             phosphate.Microspecies.Add(New CompoundMicrospecies With {
-                .Id = 2, .CompoundId = 1, .Charge = -1, .NumberProtons = 2, .IsMajor = False, .DdGOverRt = -2.2
+                .Id = 2, .CompoundId = 1, .Charge = -1, .NumberProtons = 2, .IsMajor = False, .DdgOverRt = -2.2
             })
             phosphate.Microspecies.Add(New CompoundMicrospecies With {
-                .Id = 3, .CompoundId = 1, .Charge = -2, .NumberProtons = 1, .IsMajor = True, .DdGOverRt = 0.0
+                .Id = 3, .CompoundId = 1, .Charge = -2, .NumberProtons = 1, .IsMajor = True, .DdgOverRt = 0.0
             })
             phosphate.Microspecies.Add(New CompoundMicrospecies With {
-                .Id = 4, .CompoundId = 1, .Charge = -3, .NumberProtons = 0, .IsMajor = False, .DdGOverRt = 6.2
+                .Id = 4, .CompoundId = 1, .Charge = -3, .NumberProtons = 0, .IsMajor = False, .DdgOverRt = 6.2
             })
 
             Console.WriteLine("磷酸根在不同pH下的标准生成能:")
@@ -318,16 +314,16 @@ Namespace EquilibratorThermodynamics
 
             ' 添加微物种
             phosphate.Microspecies.Add(New CompoundMicrospecies With {
-                .Id = 1, .CompoundId = 1, .Charge = 0, .NumberProtons = 3, .IsMajor = False, .DdGOverRt = -4.6
+                .Id = 1, .CompoundId = 1, .Charge = 0, .NumberProtons = 3, .IsMajor = False, .DdgOverRt = -4.6
             })
             phosphate.Microspecies.Add(New CompoundMicrospecies With {
-                .Id = 2, .CompoundId = 1, .Charge = -1, .NumberProtons = 2, .IsMajor = False, .DdGOverRt = -2.2
+                .Id = 2, .CompoundId = 1, .Charge = -1, .NumberProtons = 2, .IsMajor = False, .DdgOverRt = -2.2
             })
             phosphate.Microspecies.Add(New CompoundMicrospecies With {
-                .Id = 3, .CompoundId = 1, .Charge = -2, .NumberProtons = 1, .IsMajor = True, .DdGOverRt = 0.0
+                .Id = 3, .CompoundId = 1, .Charge = -2, .NumberProtons = 1, .IsMajor = True, .DdgOverRt = 0.0
             })
             phosphate.Microspecies.Add(New CompoundMicrospecies With {
-                .Id = 4, .CompoundId = 1, .Charge = -3, .NumberProtons = 0, .IsMajor = False, .DdGOverRt = 6.2
+                .Id = 4, .CompoundId = 1, .Charge = -3, .NumberProtons = 0, .IsMajor = False, .DdgOverRt = 6.2
             })
 
             Dim distCalc As New MicrospeciesDistributionCalculator()
@@ -432,7 +428,7 @@ Namespace EquilibratorThermodynamics
                     If results.ContainsKey(compound.Id) Then
                         Dim deltaG As Double = results(compound.Id)
                         Dim deltaGStr As String = If(Double.IsNaN(deltaG), "NA", deltaG.ToString("F2"))
-                        writer.WriteLine($"{compound.Id},{compound.InChIKey},{compound.Smiles},{compound.Mass:F3},{deltaGStr}")
+                        writer.WriteLine($"{compound.Id},{compound.InChIKey},{compound.Smiles},{compound.MolecularWeight:F3},{deltaGStr}")
                     End If
                 Next
             End Using
