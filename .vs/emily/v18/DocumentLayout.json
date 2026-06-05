@@ -1,12 +1,7 @@
 {
   "Version": 1,
   "WorkspaceRootPath": "G:\\emily\\",
-  "Documents": [
-    {
-      "AbsoluteMoniker": "D:0:0:{8E503B13-3CFE-4E51-0F13-EFEC1E014FBF}|src\\emily\\emily.vbproj|g:\\emily\\src\\emily\\emily.vbproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|",
-      "RelativeMoniker": "D:0:0:{8E503B13-3CFE-4E51-0F13-EFEC1E014FBF}|src\\emily\\emily.vbproj|solutionrelative:src\\emily\\emily.vbproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|"
-    }
-  ],
+  "Documents": [],
   "DocumentGroupContainers": [
     {
       "Orientation": 0,
@@ -14,7 +9,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 4,
+          "SelectedChildIndex": -1,
           "Children": [
             {
               "$type": "Bookmark",
@@ -31,19 +26,6 @@
             {
               "$type": "Bookmark",
               "Name": "ST:0:0:{aa2115a1-9712-457b-9047-dbb71ca2cdd2}"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "emily.vbproj",
-              "DocumentMoniker": "G:\\emily\\src\\emily\\emily.vbproj",
-              "RelativeDocumentMoniker": "src\\emily\\emily.vbproj",
-              "ToolTip": "G:\\emily\\src\\emily\\emily.vbproj",
-              "RelativeToolTip": "src\\emily\\emily.vbproj",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAB4AAABlAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003380|",
-              "WhenOpened": "2026-05-15T03:49:53.814Z",
-              "EditorCaption": ""
             }
           ]
         },
