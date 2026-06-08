@@ -7,14 +7,6 @@ Imports Microsoft.VisualBasic.Imaging.d3js.scale
 Imports Microsoft.VisualBasic.Imaging.Drawing2D
 Imports Microsoft.VisualBasic.Imaging.Drawing3D
 
-#If NET48 Then
-Imports Brushes = System.Drawing.Brushes
-Imports DashStyle = System.Drawing.Drawing2D.DashStyle
-#Else
-Imports Brushes = Microsoft.VisualBasic.Imaging.Brushes
-Imports DashStyle = Microsoft.VisualBasic.Imaging.DashStyle
-#End If
-
 Public Class AtomModel : Inherits ShapePoint
 
     Public Property IsResidue As Boolean
