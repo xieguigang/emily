@@ -3,8 +3,6 @@
 ''' 等价于 Python equilibrator_cache/compound_cache.py。
 ''' 提供对化合物缓存数据库的查询和搜索功能。
 ''' </summary>
-Imports System.Data.Common
-Imports System.Text.RegularExpressions
 Imports eQuilibrator.EquilibratorApi.Core.Models
 
 Public Class CompoundCache
