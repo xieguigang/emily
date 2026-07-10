@@ -185,7 +185,7 @@ Module SmilesGibbsExample
     ''' 将 FunctionalGroupDetector 的 Notation 映射到 GroupContributionParameters 的基团 ID。
     ''' 返回 Nothing 表示该基团暂无对应参数（将被忽略）。
     ''' </summary>
-    Private Shared Function MapNotationToGroupId(notation As String) As Integer?
+    Private Function MapNotationToGroupId(notation As String) As Integer?
         ' 简单官能团：与参数表 ID 直接对应
         Dim direct As New Dictionary(Of String, Integer) From {
             {"-CH3", 1}, {"-CH2-", 2}, {"=CH-", 3}, {">C<", 4},
@@ -218,7 +218,7 @@ Module SmilesGibbsExample
     End Function
 
     ''' <summary>字典计数自增辅助。</summary>
-    Private Shared Sub Increment(bag As Dictionary(Of String, Integer), key As String, Optional by As Integer = 1)
+    Private Sub Increment(bag As Dictionary(Of String, Integer), key As String, Optional by As Integer = 1)
         bag(key) = If(bag.ContainsKey(key), bag(key), 0) + by
     End Sub
 
