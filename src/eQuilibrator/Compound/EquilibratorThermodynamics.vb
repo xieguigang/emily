@@ -93,11 +93,16 @@ Namespace EquilibratorThermodynamics
         ''' </summary>
         Public Shared Function StandardFormationEnergyTransformed(
             compound As Compound,
-            pH As Double, pMg As Double, ionicStrength As Double, T_in_K As Double) As Double?
+            pH As Double, pMg As Double, ionicStrength As Double, T_in_K As Double,
+            Optional baseFreeEnergy As Double? = Nothing) As Double?
 
             If compound Is Nothing OrElse compound.Microspecies Is Nothing OrElse compound.Microspecies.Count = 0 Then
                 Return Nothing
             End If
+
+            ' 绝对基线：SMILES 衍生化合物传入组贡献法估算的全分子 ΔfG°；
+            ' CSV 化合物（microspecies 的 ddg 已为绝对基准）不传，默认 0 保持原行为。
+            Dim baseEnergy As Double = If(baseFreeEnergy.HasValue, baseFreeEnergy.Value, 0.0)
 
             Dim RT = ThermodynamicConstants.default_R_in_kJ_per_mol_per_K * T_in_K
             Dim args(compound.Microspecies.Count - 1) As Double
@@ -109,9 +114,9 @@ Namespace EquilibratorThermodynamics
                 args(i) = -x
             Next
 
-            ' logsumexp(-x) 再乘以 -RT
+            ' logsumexp(-x) 再乘以 -RT，并叠加绝对基线
             Dim lse As Object = LogSumExp(args)
-            Return -RT * CDbl(lse)
+            Return baseEnergy - RT * CDbl(lse)
         End Function
 
         ' =====================================================================

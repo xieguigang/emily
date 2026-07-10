@@ -7,8 +7,10 @@
 '
 ' 重要说明（结果只能用于定性/演示，不能对标 equilibrator.org 定量值）：
 '   * 本项目基团能量为占位值（非官方训练结果，见 GroupContributionParameters）。
-'   * 对无微物种的化合物，组贡献法用“分子总质子数”近似 Alberty Legendre
-'     变换中的 nH（严格应为“可解离质子数”）。这会让 pH 斜率偏大。
+'   * 对可解离化合物：BuildCompoundFromSMILES 先用 PkaPredictor 预测 pKa，再用
+'     MicrospeciesBuilder 构造微物种阶梯，最终走组件贡献法（微物种 Legendre 分区函数
+'     + 组贡献基线）。此时 Legendre 变换的 nH 为“可解离质子数”，pH 形状正确。
+'   * 对无可解离位点的化合物（如醇）：回退组贡献法，仍用“分子总质子数”近似 nH。
 '   * FunctionalGroupDetector 的基团词汇与官方 component-contribution 不保证一致，
 '     未匹配上的基团会被忽略。
 ' ============================================================================
@@ -36,6 +38,7 @@ Module SmilesGibbsExample
         DemonstrateSingleCompound("c1ccccc1", "苯 (benzene)")
         DemonstrateSingleCompound("CCO", "乙醇 (ethanol)")
 
+        DemonstratePkaAndMicrospecies()
         DemonstrateReactionWithCustomCompound()
     End Sub
 
@@ -113,6 +116,132 @@ Module SmilesGibbsExample
     End Sub
 
     ' ------------------------------------------------------------------
+    ' 3) pKa 预测 → 微物种 → 组件贡献法 ΔfG'°
+    ' ------------------------------------------------------------------
+
+    ''' <summary>
+    ''' 演示：对某 SMILES，先用官能团预测 pKa，再构造微物种，
+    ''' 最后用组件贡献法（微物种分区函数 + 组贡献基线）计算多 pH 下的 ΔfG'°。
+    ''' </summary>
+    Private Sub DemonstratePkaAndMicrospecies()
+        Console.WriteLine()
+        Console.WriteLine("======================================================")
+        Console.WriteLine(" pKa 预测 → 微物种 → 组件贡献法 ΔfG'°（推荐方案）")
+        Console.WriteLine("======================================================")
+
+        DemonstratePkaMicrospeciesItem("CC(=O)O", "乙酸 (acetic acid)")
+        DemonstratePkaMicrospeciesItem("NCC(=O)O", "甘氨酸 (glycine)")
+        DemonstratePkaMicrospeciesItem("c1ccc(cc1)O", "苯酚 (phenol)")
+        DemonstratePkaMicrospeciesItem("c1ccncc1", "吡啶 (pyridine)")
+        DemonstratePkaMicrospeciesItem("CCO", "乙醇 (ethanol, 无可解离位点)")
+    End Sub
+
+    ''' <summary>
+    ''' 单个化合物：打印 pKa 预测、微物种列表、pH=7 微物种分布，以及多 pH 的 ΔfG'°。
+    ''' </summary>
+    Private Sub DemonstratePkaMicrospeciesItem(smiles As String, label As String)
+        Console.WriteLine()
+        Console.WriteLine($"--- {label}  (SMILES: {smiles}) ---")
+
+        Dim mol = (New SmilesParser()).Parse(smiles)
+        If mol Is Nothing Then
+            Console.WriteLine("   解析失败，跳过。")
+            Return
+        End If
+
+        Dim groups = (New FunctionalGroupDetector()).Detect(mol)
+        Dim predictions = PkaPredictor.Predict(mol, groups)
+
+        Console.WriteLine("   预测 pKa:")
+        If predictions.Count = 0 Then
+            Console.WriteLine("     （无识别到的解离位点）")
+        Else
+            For Each p In predictions
+                Dim tag = If(p.IsSignificant, If(p.IsAcidic, "酸性", "碱性"), "水相中基本不离解(忽略)")
+                Console.WriteLine($"     {p.GroupNotation,-9} pKa={p.Pka,7:F2}  [{tag}]  {p.Description}")
+            Next
+        End If
+
+        Dim compound = BuildCompoundFromSMILES(smiles, label)
+        If compound Is Nothing Then Return
+
+        If compound.Microspecies Is Nothing OrElse compound.Microspecies.Count = 0 Then
+            Console.WriteLine("   无微物种 → 组贡献法回退（无 pH 依赖形状修正）。")
+        Else
+            Console.WriteLine($"   微物种数 : {compound.Microspecies.Count}")
+            For Each ms In compound.Microspecies
+                Console.WriteLine($"     k 电荷={ms.Charge,3} 质子={ms.NumberProtons,3} ddg_over_rt={If(ms.DdgOverRt, 0.0),10:F3}")
+            Next
+
+            Console.WriteLine("   pH=7 微物种分布 (按分区函数 exp(-x)，与 ΔfG'° 一致):")
+            Dim dist = ComputeMicrospeciesDistribution(compound, 7.0)
+            For Each kvp In dist
+                Dim ms = compound.Microspecies.First(Function(m) m.Id = kvp.Key)
+                Console.WriteLine($"     电荷={ms.Charge,3} 质子={ms.NumberProtons,3} 摩尔分数={kvp.Value,8:P3}")
+            Next
+        End If
+
+        Console.WriteLine("   ΔfG'° (kJ/mol, 组件贡献 + 组贡献基线):")
+        For Each pH In New Double() {5.0, 7.0, 9.0}
+            Dim dg = ComputeDgPrime(compound, pH)
+            If dg.HasValue Then
+                Console.WriteLine($"     pH {pH,4:F1} -> ΔfG'° = {dg.Value,12:F4}")
+            Else
+                Console.WriteLine($"     pH {pH,4:F1} -> (无法估算)")
+            End If
+        Next
+    End Sub
+
+    ''' <summary>
+    ''' 计算化合物在指定 pH 下的 ΔfG'°：优先组件贡献（微物种 + 组贡献基线），
+    ''' 无微物种时回退组贡献法。与 ComponentContribution 中 StandardDgPrimeCore 的逻辑一致。
+    ''' </summary>
+    Private Function ComputeDgPrime(compound As Compound, pH As Double) As Double?
+        If compound.Microspecies IsNot Nothing AndAlso compound.Microspecies.Count > 0 Then
+            Dim baseE As Double = 0.0
+            If compound.GroupVector IsNot Nothing AndAlso compound.GroupVector.Length > 0 Then
+                baseE = StandardFormationEnergyCalculator.CalculateFromGroupVector(compound.GroupVector)
+            End If
+            Dim dg = StandardFormationEnergyCalculator.StandardFormationEnergyTransformed(
+                         compound, pH,
+                         ThermodynamicConstants.DefaultPMg,
+                         ThermodynamicConstants.DefaultIonicStrength,
+                         ThermodynamicConstants.DefaultTemperature, baseE)
+            If dg.HasValue Then Return dg
+        End If
+        Return StandardFormationEnergyCalculator.StandardFormationEnergyGroupContribution(
+                   compound, pH,
+                   ThermodynamicConstants.DefaultPMg,
+                   ThermodynamicConstants.DefaultIonicStrength,
+                   ThermodynamicConstants.DefaultTemperature)
+    End Function
+
+    ''' <summary>
+    ''' 按与 StandardFormationEnergyTransformed 一致的分区函数 exp(-x) 计算各微物种摩尔分数。
+    ''' （注意：既有的 MicrospeciesDistributionCalculator 的质子项符号与分区函数相反，
+    '''  此处直接使用 TransformedDdgOverRt 以保证与 ΔfG'° 一致。）
+    ''' </summary>
+    Private Function ComputeMicrospeciesDistribution(compound As Compound, pH As Double) As Dictionary(Of Integer, Double)
+        Dim dist As New Dictionary(Of Integer, Double)()
+        If compound.Microspecies Is Nothing OrElse compound.Microspecies.Count = 0 Then Return dist
+
+        Dim weights As New List(Of Double)()
+        Dim total As Double = 0.0
+        For Each ms In compound.Microspecies
+            Dim x = ms.TransformedDdgOverRt(pH, ThermodynamicConstants.DefaultPMg,
+                                            ThermodynamicConstants.DefaultIonicStrength,
+                                            ThermodynamicConstants.DefaultTemperature)
+            Dim w = Math.Exp(-x)
+            weights.Add(w)
+            total += w
+        Next
+        For i As Integer = 0 To compound.Microspecies.Count - 1
+            dist(compound.Microspecies(i).Id) = If(total > 0, weights(i) / total, 0.0)
+        Next
+        Return dist
+    End Function
+
+    ' ------------------------------------------------------------------
     ' 核心：SMILES → Compound
     ' ------------------------------------------------------------------
 
@@ -155,13 +284,21 @@ Module SmilesGibbsExample
         Dim totalCharge = mol.Atoms.Sum(Function(a) a.Charge)
         Dim protonCount = If(atomBag.ContainsKey("H"), atomBag("H"), 0)
 
+        ' ---- SMILES 衍生：pKa 预测 → 构造微物种（组件贡献路径）----
+        ' 仅用已识别的基团推断可解离位点；对酚/醇、吡啶/吡咯做环上下文修正。
+        Dim predictions = PkaPredictor.Predict(mol, groups)
+        Dim microspecies = MicrospeciesBuilder.Build(predictions, totalCharge, protonCount)
+
         Return New Compound() With {
             .Id = id,
             .SMILES = smiles,
             .AtomBag = atomBag,
             .GroupVector = groupVector,
             .Charge = totalCharge,
-            .ProtonCount = protonCount
+            .ProtonCount = protonCount,
+            .StandardFormationEnergy = StandardFormationEnergyCalculator.CalculateFromGroupVector(groupVector),
+            .IsSmilesDerived = True,
+            .Microspecies = microspecies
         }
     End Function
 

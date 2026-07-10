@@ -201,7 +201,13 @@ Namespace EquilibratorApi.Core
                     If full.IsProton OrElse full.IsWater Then
                         dg = 0.0
                     ElseIf useComponentContribution Then
-                        dg = StandardFormationEnergyCalculator.StandardFormationEnergyTransformed(full, PH, PMg, IonicStrength, Temperature)
+                        ' 对 SMILES 衍生化合物，把组贡献法估算的全分子 ΔfG° 作为绝对基线传入，
+                        ' 与微物种分区函数的 pH 修正融合；CSV 化合物（IsSmilesDerived=False）保持 base=0。
+                        Dim baseE As Double? = Nothing
+                        If full.IsSmilesDerived AndAlso full.GroupVector IsNot Nothing AndAlso full.GroupVector.Length > 0 Then
+                            baseE = StandardFormationEnergyCalculator.CalculateFromGroupVector(full.GroupVector)
+                        End If
+                        dg = StandardFormationEnergyCalculator.StandardFormationEnergyTransformed(full, PH, PMg, IonicStrength, Temperature, baseE)
                         If Not dg.HasValue Then
                             dg = StandardFormationEnergyCalculator.StandardFormationEnergyGroupContribution(full, PH, PMg, IonicStrength, Temperature)
                         End If

@@ -105,6 +105,9 @@ Namespace EquilibratorApi.Core.Models
         ''' <summary>是否为水（H2O）。</summary>
         Public Property IsWater As Boolean
 
+        ''' <summary>是否由 SMILES 解析衍生构造（启用 pKa→微物种→组贡献基线 流程）。</summary>
+        Public Property IsSmilesDerived As Boolean = False
+
         ' =========================================================================
         ' 注册表优先级（用于选取最佳 accession）
         ' =========================================================================
