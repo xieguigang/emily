@@ -7,12 +7,11 @@
 Imports eQuilibrator.EquilibratorApi.Core
 Imports eQuilibrator.EquilibratorApi.Core.Models
 Imports eQuilibrator.EquilibratorThermodynamics
-Imports eQuilibrator.EquilibratorApi.Core.Parsers
 
 Module Program
 
     ' 默认 CSV 目录（eQuilibrator 文件夹）。可用命令行参数或环境变量 EQuilibratorCsv 覆盖。
-    Private Const DefaultCsvDir As String = "g:/emily/src/eQuilibrator/eQuilibrator/"
+    Private Const DefaultCsvDir As String = "G:\emily\data\eQuilibrator"
 
     Private _pass As Integer = 0
     Private _fail As Integer = 0
