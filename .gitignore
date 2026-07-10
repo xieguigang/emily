@@ -49,3 +49,8 @@ emily.zip
 /data/eQuilibrator/compound_microspecies.csv
 /data/eQuilibrator/magnesium_dissociation_constant.csv
 /data/eQuilibrator/registries.csv
+/src/eQuilibrator/eQuilibrator/compounds.csv
+/src/eQuilibrator/eQuilibrator/compound_identifiers.csv
+/src/eQuilibrator/eQuilibrator/compound_microspecies.csv
+/src/eQuilibrator/eQuilibrator/magnesium_dissociation_constant.csv
+/src/eQuilibrator/eQuilibrator/registries.csv
