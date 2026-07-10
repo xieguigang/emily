@@ -34,9 +34,9 @@ Module SmilesGibbsExample
         Console.WriteLine(" SMILES → 基团 → ΔfG'°（CSV 外化合物）完整示例")
         Console.WriteLine("======================================================")
 
-        DemonstrateSingleCompound("CC(=O)O", "乙酸 (acetic acid)")
-        DemonstrateSingleCompound("c1ccccc1", "苯 (benzene)")
-        DemonstrateSingleCompound("CCO", "乙醇 (ethanol)")
+        ' DemonstrateSingleCompound("CC(=O)O", "乙酸 (acetic acid)")
+        ' DemonstrateSingleCompound("c1ccccc1", "苯 (benzene)")
+        ' DemonstrateSingleCompound("CCO", "乙醇 (ethanol)")
 
         DemonstratePkaAndMicrospecies()
         DemonstrateReactionWithCustomCompound()
