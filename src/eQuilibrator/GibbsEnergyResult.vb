@@ -3,6 +3,18 @@
 Namespace EquilibratorApi.Core.Models
 
     ''' <summary>
+    ''' 反应在给定条件下自发进行的方向。
+    ''' </summary>
+    Public Enum ReactionDirection
+        ''' <summary>正向自发（ΔG' &lt; -RT）</summary>
+        Forward
+        ''' <summary>逆向自发（ΔG' &gt; RT）</summary>
+        Reverse
+        ''' <summary>接近平衡（|ΔG'| ≤ RT）</summary>
+        Equilibrium
+    End Enum
+
+    ''' <summary>
     ''' Represents the result of a Gibbs energy calculation
     ''' </summary>
     Public Class GibbsEnergyResult

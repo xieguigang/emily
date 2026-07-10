@@ -1,4 +1,4 @@
-﻿Imports eQuilibrator.Cache
+﻿Imports eQuilibrator.EquilibratorApi.Core.Models
 
 Namespace EquilibratorThermodynamics
 

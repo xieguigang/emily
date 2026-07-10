@@ -40,6 +40,25 @@
             End Get
         End Property
 
+        ''' <summary>进程内共享的默认基团贡献参数（占位值，非官方训练结果）。</summary>
+        Private Shared ReadOnly _default As New GroupContributionParameters()
+
+        ''' <summary>
+        ''' 获取进程内默认基团贡献参数（与 <see cref="_default"/> 等价）。
+        ''' 用于无需构造实例即可估算标准生成能的场景（如 CSV 懒加载器）。
+        ''' </summary>
+        Public Shared Function DefaultParameters() As GroupContributionParameters
+            Return _default
+        End Function
+
+        ''' <summary>
+        ''' 按基团 ID 读取默认参数表中的贡献值（无量纲权重，占位近似）。
+        ''' 不存在的基团返回 0。
+        ''' </summary>
+        Public Shared Function DefaultGroupEnergy(groupId As Integer) As Double
+            Return _default.GetGroupEnergy(groupId)
+        End Function
+
         Public Sub New()
             GroupEnergies = New Dictionary(Of Integer, Double)()
             GroupNames = New Dictionary(Of Integer, String)()

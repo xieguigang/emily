@@ -26,6 +26,7 @@
 Imports eQuilibrator.EquilibratorApi.Core.Constants
 Imports eQuilibrator.EquilibratorApi.Core.Models
 Imports eQuilibrator.EquilibratorApi.Core.Parsers
+Imports eQuilibrator.EquilibratorThermodynamics
 Imports SMRUCC.genomics.ComponentModel.EquaionModel
 
 Namespace EquilibratorApi.Core
@@ -146,60 +147,87 @@ Namespace EquilibratorApi.Core
         End Function
 
         ''' <summary>
-        ''' Calculates the standard transformed Gibbs energy for a reaction
+        ''' 组件贡献法：计算反应在指定条件下的标准变换 Gibbs 自由能 ΔrG'°。
+        ''' 每个化合物优先采用其微物种 Legendre 分区函数（组件贡献），无微物种时回退到基团向量（组贡献）。
+        ''' 质子/水作为参考物种取 ΔfG'° = 0。
         ''' </summary>
-        ''' <paramname="reaction">The reaction</param>
-        ''' <returns>The Gibbs energy result</returns>
         Public Function StandardDgPrime(reaction As PhasedReaction) As GibbsEnergyResult
-            ' Calculate standard ΔG'° using component contribution method
-            ' This is a simplified implementation
-            Dim standardDg = 0.0
-            Dim uncertainty = 0.0
-
-            For Each compoundCoeff In reaction.Sparse
-                Dim compound = compoundCoeff.Key
-                Dim coeff = compoundCoeff.Value
-                Dim compoundData = Cache.GetCompound(compound.CompoundId)
-                If compoundData?.StandardFormationEnergy IsNot Nothing Then
-                    standardDg += coeff * compoundData.StandardFormationEnergy
-                    uncertainty += Math.Abs(coeff) * 5.0 ' Simplified uncertainty estimation
-                Else
-                    ' Use a large uncertainty for unknown compounds
-                    uncertainty += Math.Abs(coeff) * DefaultRmseInf
-                End If
-            Next
-
-            ' Apply pH correction for reactions involving protons
-            Dim netProtons = reaction.GetNetProtons()
-            Dim phCorrection = netProtons * Ln10RT(Temperature) * PH
-            standardDg += phCorrection
-
-            ' Calculate physiological ΔG'
-            Dim physiologicalCorrection = reaction.CalculatePhysiologicalCorrection()
-            Dim physiologicalDg = standardDg + RT(Temperature) * physiologicalCorrection
-
-            ' Calculate actual ΔG' with current concentrations
-            Dim concentrationCorrection = reaction.CalculateConcentrationCorrection()
-            Dim dgPrime = standardDg + RT(Temperature) * concentrationCorrection
-
-            ' Calculate p-value (simplified)
-            Dim pValue = CalculatePValue(dgPrime, uncertainty)
-
-            Return New GibbsEnergyResult(standardDg, uncertainty, physiologicalDg, dgPrime, pValue, Temperature)
+            Return StandardDgPrimeCore(reaction, useComponentContribution:=True)
         End Function
 
         ''' <summary>
-        ''' Calculates the standard transformed Gibbs energy for a reaction formula
+        ''' 组贡献法：计算反应在指定条件下的标准变换 Gibbs 自由能 ΔrG'°。
+        ''' 每个化合物优先采用基团向量估算（组贡献），无基团向量时回退到组件贡献。
         ''' </summary>
-        ''' <paramname="formula">The reaction formula</param>
-        ''' <returns>The Gibbs energy result</returns>
+        Public Function StandardDgPrimeGroupContribution(reaction As PhasedReaction) As GibbsEnergyResult
+            Return StandardDgPrimeCore(reaction, useComponentContribution:=False)
+        End Function
+
+        ''' <summary>
+        ''' 计算反应公式（字符串）对应的标准变换 Gibbs 自由能（组件贡献法）。
+        ''' </summary>
         Public Function StandardDgPrime(formula As String) As GibbsEnergyResult
             Dim reaction = Me.Reaction(formula)
             If reaction Is Nothing Then
                 Throw New ArgumentException($"Could not parse reaction: {formula}")
             End If
-
             Return Me.StandardDgPrime(reaction)
+        End Function
+
+        ''' <summary>
+        ''' 计算反应公式（字符串）对应的标准变换 Gibbs 自由能（组贡献法）。
+        ''' </summary>
+        Public Function StandardDgPrimeGroupContribution(formula As String) As GibbsEnergyResult
+            Dim reaction = Me.Reaction(formula)
+            If reaction Is Nothing Then
+                Throw New ArgumentException($"Could not parse reaction: {formula}")
+            End If
+            Return Me.StandardDgPrimeGroupContribution(reaction)
+        End Function
+
+        ''' <summary>核心计算：对反应中的每个化合物求和 ΔfG'° × 化学计量系数。</summary>
+        Private Function StandardDgPrimeCore(reaction As PhasedReaction, useComponentContribution As Boolean) As GibbsEnergyResult
+            Dim standardDg = 0.0
+            Dim uncertainty = 0.0
+            Dim missing As Integer = 0
+
+            For Each compoundCoeff In reaction.Sparse
+                Dim phased = compoundCoeff.Key
+                Dim coeff = compoundCoeff.Value
+                Dim full = Cache.GetCompound(phased.CompoundId)
+                Dim dg As Double? = Nothing
+
+                If full IsNot Nothing Then
+                    If full.IsProton OrElse full.IsWater Then
+                        dg = 0.0
+                    ElseIf useComponentContribution Then
+                        dg = StandardFormationEnergyCalculator.StandardFormationEnergyTransformed(full, PH, PMg, IonicStrength, Temperature)
+                        If Not dg.HasValue Then
+                            dg = StandardFormationEnergyCalculator.StandardFormationEnergyGroupContribution(full, PH, PMg, IonicStrength, Temperature)
+                        End If
+                    Else
+                        dg = StandardFormationEnergyCalculator.StandardFormationEnergyGroupContribution(full, PH, PMg, IonicStrength, Temperature)
+                        If Not dg.HasValue Then
+                            dg = StandardFormationEnergyCalculator.StandardFormationEnergyTransformed(full, PH, PMg, IonicStrength, Temperature)
+                        End If
+                    End If
+                End If
+
+                If dg.HasValue Then
+                    standardDg += coeff * dg.Value
+                    uncertainty += Math.Abs(coeff) * 5.0 ' 近似组分 RMSE
+                Else
+                    missing += 1
+                    uncertainty += Math.Abs(coeff) * ThermodynamicConstants.DefaultRmseInf
+                End If
+            Next
+
+            ' 生理/实际浓度修正（基于各化合物丰度）
+            Dim physiologicalDg = standardDg + ThermodynamicConstants.RT(Temperature) * reaction.CalculatePhysiologicalCorrection()
+            Dim dgPrime = standardDg + ThermodynamicConstants.RT(Temperature) * reaction.CalculateConcentrationCorrection()
+
+            Dim pValue = CalculatePValue(dgPrime, uncertainty)
+            Return New GibbsEnergyResult(standardDg, uncertainty, physiologicalDg, dgPrime, pValue, Temperature)
         End Function
 
         ''' <summary>
@@ -207,15 +235,15 @@ Namespace EquilibratorApi.Core
         ''' </summary>
         ''' <paramname="reaction">The reaction</param>
         ''' <returns>The reaction direction (forward, reverse, or equilibrium)</returns>
-        Public Function GetReactionDirection(reaction As PhasedReaction) As ReactionDirection
+        Public Function GetReactionDirection(reaction As PhasedReaction) As EquilibratorApi.Core.Models.ReactionDirection
             Dim result = StandardDgPrime(reaction)
 
-            If result.DgPrime.Value < -RT(Temperature) Then
-                Return ReactionDirection.Forward
-            ElseIf result.DgPrime.Value > RT(Temperature) Then
-                Return ReactionDirection.Reverse
+            If result.DgPrime.Value < -ThermodynamicConstants.RT(Temperature) Then
+                Return EquilibratorApi.Core.Models.ReactionDirection.Forward
+            ElseIf result.DgPrime.Value > ThermodynamicConstants.RT(Temperature) Then
+                Return EquilibratorApi.Core.Models.ReactionDirection.Reverse
             Else
-                Return ReactionDirection.Equilibrium
+                Return EquilibratorApi.Core.Models.ReactionDirection.Equilibrium
             End If
         End Function
 

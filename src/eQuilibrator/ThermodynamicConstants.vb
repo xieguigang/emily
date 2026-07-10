@@ -84,6 +84,22 @@ Namespace EquilibratorApi.Core.Constants
         Public ReadOnly standard_dh_formation_mg As Double = -466.9
 
         ' =========================================================================
+        ' 特殊化合物标识（合并自原 EquilibratorConstants）
+        ' =========================================================================
+
+        ''' <summary>质子的 InChI 标识符。</summary>
+        Public Const PROTON_INCHI As String = "InChI=1S/p+1"
+
+        ''' <summary>质子的 InChI Key。</summary>
+        Public Const PROTON_INCHI_KEY As String = "GPRLSGONYQIRFK-UHFFFAOYSA-N"
+
+        ''' <summary>水的 InChI 标识符。</summary>
+        Public Const WATER_INCHI As String = "InChI=1S/H2O/h1H2"
+
+        ''' <summary>水的 InChI Key。</summary>
+        Public Const WATER_INCHI_KEY As String = "XLYOFNOQVPJJNP-UHFFFAOYSA-N"
+
+        ' =========================================================================
         ' Debye-Hückel 方程
         ' =========================================================================
 
