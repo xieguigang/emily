@@ -16,6 +16,7 @@
 Imports System.Linq
 Imports System.Text.RegularExpressions
 Imports eQuilibrator.SmilesChem
+Imports eQuilibrator.EquilibratorApi.Core
 Imports eQuilibrator.EquilibratorApi.Core.Constants
 Imports eQuilibrator.EquilibratorApi.Core.Models
 Imports eQuilibrator.EquilibratorThermodynamics
@@ -91,7 +92,7 @@ Module SmilesGibbsExample
     Private Sub DemonstrateReactionWithCustomCompound()
         Console.WriteLine()
         Console.WriteLine("--- 反应热力学（自定义化合物入缓存）---")
-        Console.WriteLine("   反应式: acetic_acid <=> acetate + H+")
+        Console.WriteLine("   反应式: 2 CCO <=> CCOCC + H2O  (乙醇脱水生成二乙醚)")
 
         Dim cc As New ComponentContribution()
         cc.PH = 7.0
@@ -99,15 +100,16 @@ Module SmilesGibbsExample
         cc.IonicStrength = ThermodynamicConstants.DefaultIonicStrength
         cc.Temperature = ThermodynamicConstants.DefaultTemperature
 
-        ' 必须先把 CSV 外的化合物加入缓存，否则反应式中的 id 会被当作 missing 而不计入
-        cc.Cache.AddCompound(BuildCompoundFromSMILES("CC(=O)O", "acetic_acid"))
-        cc.Cache.AddCompound(BuildCompoundFromSMILES("CC(=O)[O-]", "acetate"))
+        ' 必须先把 CSV 外的化合物加入缓存，否则反应式中的 id 会被当作 missing 而不计入。
+        ' 这里两种有机物都能被官能团检测器拆解成已知基团；H2O 由缓存以“水”特例处理（ΔfG'°=0）。
+        cc.Cache.AddCompound(BuildCompoundFromSMILES("CCO", "CCO"))
+        cc.Cache.AddCompound(BuildCompoundFromSMILES("CCOCC", "CCOCC"))
 
-        Dim result = cc.StandardDgPrime("acetic_acid <=> acetate + H+")
+        Dim result = cc.StandardDgPrime("2 CCO <=> CCOCC + H2O")
         Console.WriteLine($"   ΔrG'°   (标准变换) = {result.StandardDgPrime.Value,12:F4} ± {result.Uncertainty.Value,8:F4} kJ/mol")
         Console.WriteLine($"   ΔrG'    (指定浓度) = {result.DgPrime.Value,12:F4} kJ/mol")
         Console.WriteLine($"   平衡常数 K'        = {result.EquilibriumConstant,12:E3}")
-        Console.WriteLine($"   反应方向            = {cc.GetReactionDirection(cc.Reaction("acetic_acid <=> acetate + H+"))}")
+        Console.WriteLine($"   反应方向            = {cc.GetReactionDirection(cc.Reaction("2 CCO <=> CCOCC + H2O"))}")
     End Sub
 
     ' ------------------------------------------------------------------
