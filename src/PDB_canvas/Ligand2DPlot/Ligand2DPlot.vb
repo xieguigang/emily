@@ -221,7 +221,7 @@ Public Class Ligand2DPlot : Inherits Plot
     End Sub
 
     Protected Overrides Sub PlotInternal(ByRef g As IGraphics, canvas As GraphicsRegion)
-        Dim camera As New Camera(canvas, ViewPoint) With {.fov = 10000000}
+        Dim camera As New Camera(canvas, ViewPoint) With {.FieldOfView = 10000000}
         Dim norm As New List(Of Element3D)
 
         For Each element As Element3D In models
