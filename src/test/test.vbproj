@@ -2,9 +2,10 @@
 
   <PropertyGroup>
     <RootNamespace>test</RootNamespace>
-    <TargetFrameworks>net10.0-windows;net10.0</TargetFrameworks>
+    <TargetFrameworks>net10.0</TargetFrameworks>
     <Platforms>AnyCPU;x64</Platforms>
     <OutputType>Exe</OutputType>
+    <Configurations>Debug;Release;nuget_release</Configurations>
   </PropertyGroup>
 
   <ItemGroup>

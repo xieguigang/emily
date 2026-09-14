@@ -1,6 +1,7 @@
 <Solution>
   <Configurations>
     <BuildType Name="Debug" />
+    <BuildType Name="nuget_release" />
     <BuildType Name="Release" />
     <BuildType Name="Rsharp_app_release" />
     <Platform Name="Any CPU" />
@@ -18,6 +19,7 @@
     </Project>
     <Project Path="../GCModeller/src/runtime/sciBASIC#/Data_science/Mathematica/Math/Math/Math.NET5.vbproj">
       <Platform Solution="*|x64" Project="x64" />
+      <Platform Solution="nuget_release|Any CPU" Project="x86" />
     </Project>
     <Project Path="../GCModeller/src/runtime/sciBASIC#/Data_science/Visualization/Plots/plots-netcore5.vbproj">
       <Platform Solution="*|x64" Project="x64" />
@@ -30,6 +32,7 @@
     </Project>
     <Project Path="../GCModeller/src/runtime/sciBASIC#/Microsoft.VisualBasic.Core/src/Core.vbproj">
       <Platform Solution="*|x64" Project="x64" />
+      <Platform Solution="nuget_release|Any CPU" Project="ARM64" />
     </Project>
     <Project Path="../GCModeller/src/runtime/sciBASIC#/mime/text%html/html_netcore5.vbproj">
       <Platform Solution="*|x64" Project="x64" />
@@ -62,6 +65,7 @@
     <Project Path="src/zdock/zdock.vbproj">
       <BuildType Solution="Rsharp_app_release|*" Project="Release" />
       <Platform Solution="Debug|x64" Project="x64" />
+      <Platform Solution="nuget_release|x64" Project="x64" />
       <Platform Solution="Rsharp_app_release|x64" Project="x64" />
     </Project>
   </Folder>
@@ -86,6 +90,7 @@
     <BuildType Solution="Rsharp_app_release|Any CPU" Project="Release" />
     <BuildType Solution="Rsharp_app_release|x64" Project="Debug" />
     <Platform Solution="Debug|x64" Project="x64" />
+    <Platform Solution="nuget_release|x64" Project="x64" />
     <Platform Solution="Rsharp_app_release|x64" Project="x64" />
   </Project>
 </Solution>
