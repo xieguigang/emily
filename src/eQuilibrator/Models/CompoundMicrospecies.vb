@@ -1,4 +1,4 @@
-Imports eQuilibrator.EquilibratorApi.Core.Constants
+Imports Emily.eQuilibrator.Core.Constants
 
 Namespace Core.Models
 

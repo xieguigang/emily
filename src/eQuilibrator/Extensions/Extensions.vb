@@ -25,7 +25,7 @@
 
 Imports System.Runtime.CompilerServices
 Imports System.Text
-Imports eQuilibrator.EquilibratorApi.Core.Constants
+Imports Emily.eQuilibrator.Core.Constants
 
 Namespace Core.Extensions
 
@@ -52,8 +52,8 @@ Namespace Core.Extensions
         ''' <summary>
         ''' Calculates the equilibrium constant from Gibbs energy
         ''' </summary>
-        ''' <paramname="dg">Gibbs energy in kJ/mol</param>
-        ''' <paramname="temperature">Temperature in Kelvin</param>
+        ''' <param name="dg">Gibbs energy in kJ/mol</param>
+        ''' <param name="temperature">Temperature in Kelvin</param>
         ''' <returns>The equilibrium constant</returns>
         <Extension()>
         Public Function ToEquilibriumConstant(dg As Double, Optional temperature As Double = ThermodynamicConstants.DefaultTemperature) As Double
@@ -63,8 +63,8 @@ Namespace Core.Extensions
         ''' <summary>
         ''' Calculates Gibbs energy from equilibrium constant
         ''' </summary>
-        ''' <paramname="keq">Equilibrium constant</param>
-        ''' <paramname="temperature">Temperature in Kelvin</param>
+        ''' <param name="keq">Equilibrium constant</param>
+        ''' <param name="temperature">Temperature in Kelvin</param>
         ''' <returns>Gibbs energy in kJ/mol</returns>
         <Extension()>
         Public Function ToGibbsEnergy(keq As Double, Optional temperature As Double = DefaultTemperature) As Double
@@ -74,8 +74,8 @@ Namespace Core.Extensions
         ''' <summary>
         ''' Calculates the reduction potential from Gibbs energy
         ''' </summary>
-        ''' <paramname="dg">Gibbs energy in kJ/mol</param>
-        ''' <paramname="nElectrons">Number of electrons transferred</param>
+        ''' <param name="dg">Gibbs energy in kJ/mol</param>
+        ''' <param name="nElectrons">Number of electrons transferred</param>
         ''' <returns>Reduction potential in volts</returns>
         <Extension()>
         Public Function ToReductionPotential(dg As Double, nElectrons As Integer) As Double
@@ -85,8 +85,8 @@ Namespace Core.Extensions
         ''' <summary>
         ''' Calculates Gibbs energy from reduction potential
         ''' </summary>
-        ''' <paramname="e0">Reduction potential in volts</param>
-        ''' <paramname="nElectrons">Number of electrons transferred</param>
+        ''' <param name="e0">Reduction potential in volts</param>
+        ''' <param name="nElectrons">Number of electrons transferred</param>
         ''' <returns>Gibbs energy in kJ/mol</returns>
         <Extension()>
         Public Function ToGibbsEnergyFromPotential(e0 As Double, nElectrons As Integer) As Double

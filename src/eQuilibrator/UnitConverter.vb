@@ -60,8 +60,8 @@
         ''' <summary>
         ''' Gets the conversion factor from one unit to another
         ''' </summary>
-        ''' <paramname="fromUnit">Source unit</param>
-        ''' <paramname="toUnit">Target unit</param>
+        ''' <param name="fromUnit">Source unit</param>
+        ''' <param name="toUnit">Target unit</param>
         ''' <returns>Conversion factor</returns>
         Public Function GetConversionFactor(fromUnit As String, toUnit As String) As Double
             If String.IsNullOrEmpty(fromUnit) AndAlso String.IsNullOrEmpty(toUnit) Then Return 1.0
@@ -83,8 +83,8 @@
         ''' <summary>
         ''' Checks if conversion between two units is supported
         ''' </summary>
-        ''' <paramname="fromUnit">Source unit</param>
-        ''' <paramname="toUnit">Target unit</param>
+        ''' <param name="fromUnit">Source unit</param>
+        ''' <param name="toUnit">Target unit</param>
         ''' <returns>True if conversion is supported</returns>
         Public Function CanConvert(fromUnit As String, toUnit As String) As Boolean
             If Equals(fromUnit, toUnit) Then Return True
@@ -95,9 +95,9 @@
         ''' <summary>
         ''' Registers a new conversion factor
         ''' </summary>
-        ''' <paramname="fromUnit">Source unit</param>
-        ''' <paramname="toUnit">Target unit</param>
-        ''' <paramname="factor">Conversion factor</param>
+        ''' <param name="fromUnit">Source unit</param>
+        ''' <param name="toUnit">Target unit</param>
+        ''' <param name="factor">Conversion factor</param>
         Public Sub RegisterConversion(fromUnit As String, toUnit As String, factor As Double)
             ConversionFactors((fromUnit, toUnit)) = factor
         End Sub

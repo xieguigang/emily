@@ -23,11 +23,10 @@
 ' OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 ' THE SOFTWARE.
 
-Imports eQuilibrator.EquilibratorApi.Core.Constants
-Imports eQuilibrator.EquilibratorApi.Core.Models
-Imports eQuilibrator.EquilibratorApi.Core.Parsers
-Imports eQuilibrator.EquilibratorThermodynamics
-Imports SMRUCC.genomics.ComponentModel.EquaionModel
+Imports Emily.eQuilibrator.Core.Constants
+Imports Emily.eQuilibrator.Core.Models
+Imports Emily.eQuilibrator.Core.Parsers
+Imports Emily.eQuilibrator.EquilibratorThermodynamics
 
 Namespace Core
 
@@ -76,7 +75,7 @@ Namespace Core
         ''' <summary>
         ''' Creates a new ComponentContribution instance with a custom cache
         ''' </summary>
-        ''' <paramname="cache">The compound cache to use</param>
+        ''' <param name="cache">The compound cache to use</param>
         Public Sub New(cache As CompoundCache)
             Me.Cache = cache
         End Sub
@@ -84,7 +83,7 @@ Namespace Core
         ''' <summary>
         ''' Gets a compound by its identifier
         ''' </summary>
-        ''' <paramname="compoundId">The compound identifier</param>
+        ''' <param name="compoundId">The compound identifier</param>
         ''' <returns>The compound, or null if not found</returns>
         Public Function GetCompound(compoundId As String) As Compound
             Return Cache.GetCompound(compoundId)
@@ -93,7 +92,7 @@ Namespace Core
         ''' <summary>
         ''' Searches for compounds by name or identifier
         ''' </summary>
-        ''' <paramname="query">The search query</param>
+        ''' <param name="query">The search query</param>
         ''' <returns>A list of matching compounds</returns>
         Public Function SearchCompounds(query As String) As List(Of Compound)
             Return Cache.SearchCompounds(query)
@@ -102,7 +101,7 @@ Namespace Core
         ''' <summary>
         ''' Parses a reaction formula string
         ''' </summary>
-        ''' <paramname="formula">The reaction formula</param>
+        ''' <param name="formula">The reaction formula</param>
         ''' <returns>A ParsedReaction object</returns>
         Public Function ParseFormula(formula As String) As ParsedReaction
             Return _parser.Parse(formula)
@@ -111,7 +110,7 @@ Namespace Core
         ''' <summary>
         ''' Creates a PhasedReaction from a formula string
         ''' </summary>
-        ''' <paramname="formula">The reaction formula</param>
+        ''' <param name="formula">The reaction formula</param>
         ''' <returns>A PhasedReaction object</returns>
         Public Function Reaction(formula As String) As PhasedReaction
             Dim parsed = _parser.Parse(formula)
@@ -239,17 +238,17 @@ Namespace Core
         ''' <summary>
         ''' Calculates the direction of a reaction at given conditions
         ''' </summary>
-        ''' <paramname="reaction">The reaction</param>
+        ''' <param name="reaction">The reaction</param>
         ''' <returns>The reaction direction (forward, reverse, or equilibrium)</returns>
-        Public Function GetReactionDirection(reaction As PhasedReaction) As EquilibratorApi.Core.Models.ReactionDirection
+        Public Function GetReactionDirection(reaction As PhasedReaction) As Core.Models.ReactionDirection
             Dim result = StandardDgPrime(reaction)
 
             If result.DgPrime.Value < -ThermodynamicConstants.RT(Temperature) Then
-                Return EquilibratorApi.Core.Models.ReactionDirection.Forward
+                Return Core.Models.ReactionDirection.Forward
             ElseIf result.DgPrime.Value > ThermodynamicConstants.RT(Temperature) Then
-                Return EquilibratorApi.Core.Models.ReactionDirection.Reverse
+                Return Core.Models.ReactionDirection.Reverse
             Else
-                Return EquilibratorApi.Core.Models.ReactionDirection.Equilibrium
+                Return Core.Models.ReactionDirection.Equilibrium
             End If
         End Function
 
@@ -288,7 +287,7 @@ Namespace Core
         ''' <summary>
         ''' Creates a stoichiometric matrix from reaction formulas
         ''' </summary>
-        ''' <paramname="formulas">The reaction formulas</param>
+        ''' <param name="formulas">The reaction formulas</param>
         ''' <returns>A stoichiometric matrix as a 2D array</returns>
         Public Function CreateStoichiometricMatrix(formulas As IEnumerable(Of String)) As Double(,)
             Dim parsedReactions = formulas.[Select](Function(f) _parser.Parse(f)).ToList()
@@ -298,7 +297,7 @@ Namespace Core
         ''' <summary>
         ''' Creates a stoichiometric matrix from parsed reactions
         ''' </summary>
-        ''' <paramname="reactions">The parsed reactions</param>
+        ''' <param name="reactions">The parsed reactions</param>
         ''' <returns>A stoichiometric matrix as a 2D array</returns>
         Public Function CreateStoichiometricMatrix(reactions As IEnumerable(Of ParsedReaction)) As Double(,)
             Dim reactionList As List(Of ParsedReaction) = reactions.ToList()
@@ -332,7 +331,7 @@ Namespace Core
         ''' <summary>
         ''' Gets the compound IDs used in the stoichiometric matrix
         ''' </summary>
-        ''' <paramname="formulas">The reaction formulas</param>
+        ''' <param name="formulas">The reaction formulas</param>
         ''' <returns>List of compound IDs in order</returns>
         Public Function GetCompoundIds(formulas As IEnumerable(Of String)) As List(Of String)
             Dim allCompounds = New HashSet(Of String)()

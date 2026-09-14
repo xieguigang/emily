@@ -23,8 +23,8 @@
 ' OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 ' THE SOFTWARE.
 
-Imports eQuilibrator.EquilibratorApi.Core.Constants
-Imports eQuilibrator.EquilibratorApi.Core.Parsers
+Imports Emily.eQuilibrator.Core.Constants
+Imports Emily.eQuilibrator.Core.Parsers
 
 Namespace Core.Models
 
@@ -91,9 +91,9 @@ Namespace Core.Models
         ''' <summary>
         ''' Creates a new PhasedReaction
         ''' </summary>
-        ''' <paramname="sparse">The stoichiometry dictionary</param>
-        ''' <paramname="arrow">The arrow type</param>
-        ''' <paramname="rid">Optional reaction identifier</param>
+        ''' <param name="sparse">The stoichiometry dictionary</param>
+        ''' <param name="arrow">The arrow type</param>
+        ''' <param name="rid">Optional reaction identifier</param>
         Public Sub New(sparse As Dictionary(Of PhasedCompound, Double), Optional arrow As String = "=>", Optional rid As String = Nothing)
             Me.Sparse = sparse
             Me.Arrow = If(arrow, "=>")
@@ -103,10 +103,10 @@ Namespace Core.Models
         ''' <summary>
         ''' Creates a PhasedReaction from a stoichiometry dictionary with compound IDs
         ''' </summary>
-        ''' <paramname="sparse">Dictionary mapping compound IDs to coefficients</param>
-        ''' <paramname="compoundLookup">Function to lookup compounds by ID</param>
-        ''' <paramname="arrow">The arrow type</param>
-        ''' <paramname="rid">Optional reaction identifier</param>
+        ''' <param name="sparse">Dictionary mapping compound IDs to coefficients</param>
+        ''' <param name="compoundLookup">Function to lookup compounds by ID</param>
+        ''' <param name="arrow">The arrow type</param>
+        ''' <param name="rid">Optional reaction identifier</param>
         Public Shared Function FromSparse(sparse As Dictionary(Of String, Double), compoundLookup As Func(Of String, PhasedCompound), Optional arrow As String = "=>", Optional rid As String = Nothing) As PhasedReaction
             Dim phasedSparse = sparse.ToDictionary(Function(kv) compoundLookup(kv.Key), Function(kv) kv.Value)
 
@@ -116,8 +116,8 @@ Namespace Core.Models
         ''' <summary>
         ''' Parses a reaction formula string and creates a PhasedReaction
         ''' </summary>
-        ''' <paramname="formula">The reaction formula</param>
-        ''' <paramname="compoundLookup">Function to lookup compounds by ID</param>
+        ''' <param name="formula">The reaction formula</param>
+        ''' <param name="compoundLookup">Function to lookup compounds by ID</param>
         ''' <returns>A new PhasedReaction</returns>
         Public Shared Function Parse(formula As String, compoundLookup As Func(Of String, PhasedCompound)) As PhasedReaction
             Dim parser = New ReactionParser()
@@ -143,7 +143,7 @@ Namespace Core.Models
         ''' <summary>
         ''' Gets the coefficient for a specific compound
         ''' </summary>
-        ''' <paramname="compound">The compound to look up</param>
+        ''' <param name="compound">The compound to look up</param>
         ''' <returns>The stoichiometric coefficient</returns>
         Public Function GetCoefficient(compound As PhasedCompound) As Double
             Dim coeff As Double = Nothing
@@ -153,7 +153,7 @@ Namespace Core.Models
         ''' <summary>
         ''' Checks if the reaction contains a specific compound
         ''' </summary>
-        ''' <paramname="compound">The compound to check</param>
+        ''' <param name="compound">The compound to check</param>
         ''' <returns>True if the compound is in the reaction</returns>
         Public Function ContainsCompound(compound As PhasedCompound) As Boolean
             Return Sparse.ContainsKey(compound)
@@ -184,7 +184,7 @@ Namespace Core.Models
         ''' <summary>
         ''' Checks if the reaction is atom-balanced
         ''' </summary>
-        ''' <paramname="tolerance">Tolerance for floating point comparison</param>
+        ''' <param name="tolerance">Tolerance for floating point comparison</param>
         ''' <returns>True if the reaction is balanced</returns>
         Public Function IsBalanced(Optional tolerance As Double = 0.000001) As Boolean
             Return GetAtomBalance().Values.All(Function(v) Math.Abs(v) < tolerance)
@@ -225,8 +225,8 @@ Namespace Core.Models
         ''' <summary>
         ''' Sets the concentration for a compound in this reaction
         ''' </summary>
-        ''' <paramname="compound">The compound</param>
-        ''' <paramname="concentration">The concentration in molar</param>
+        ''' <param name="compound">The compound</param>
+        ''' <param name="concentration">The concentration in molar</param>
         Public Sub SetCompoundConcentration(compound As PhasedCompound, concentration As Double)
             If Sparse.ContainsKey(compound) Then
                 compound.SetConcentration(concentration)
@@ -236,7 +236,7 @@ Namespace Core.Models
         ''' <summary>
         ''' Sets concentrations for multiple compounds
         ''' </summary>
-        ''' <paramname="concentrations">Dictionary mapping compounds to concentrations</param>
+        ''' <param name="concentrations">Dictionary mapping compounds to concentrations</param>
         Public Sub SetConcentrations(concentrations As Dictionary(Of PhasedCompound, Double))
             For Each compoundConc In concentrations
                 Dim compound = compoundConc.Key
@@ -268,7 +268,7 @@ Namespace Core.Models
         ''' <summary>
         ''' Scales the reaction by a factor
         ''' </summary>
-        ''' <paramname="factor">The scaling factor</param>
+        ''' <param name="factor">The scaling factor</param>
         ''' <returns>A new scaled PhasedReaction</returns>
         Public Function Scale(factor As Double) As PhasedReaction
             Dim scaledSparse = Sparse.ToDictionary(Function(kv) kv.Key, Function(kv) kv.Value * factor)
@@ -279,7 +279,7 @@ Namespace Core.Models
         ''' <summary>
         ''' Combines this reaction with another reaction
         ''' </summary>
-        ''' <paramname="other">The other reaction</param>
+        ''' <param name="other">The other reaction</param>
         ''' <returns>A new combined PhasedReaction</returns>
         Public Function Combine(other As PhasedReaction) As PhasedReaction
             Dim combinedSparse = New Dictionary(Of PhasedCompound, Double)(Sparse)

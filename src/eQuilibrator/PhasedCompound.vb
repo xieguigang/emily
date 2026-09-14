@@ -23,7 +23,7 @@
 ' OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 ' THE SOFTWARE.
 
-Imports eQuilibrator.EquilibratorApi.Core.Constants
+Imports Emily.eQuilibrator.Core.Constants
 
 Namespace Core.Models
 
@@ -133,8 +133,8 @@ Namespace Core.Models
         ''' <summary>
         ''' Creates a new PhasedCompound
         ''' </summary>
-        ''' <paramname="compoundId">The compound identifier</param>
-        ''' <paramname="phase">The phase of the compound</param>
+        ''' <param name="compoundId">The compound identifier</param>
+        ''' <param name="phase">The phase of the compound</param>
         Public Sub New(compoundId As String, Optional phase As String = ThermodynamicConstants.DefaultPhase)
             Me.CompoundId = compoundId
             Me.Phase = If(phase, DefaultPhase)
@@ -144,7 +144,7 @@ Namespace Core.Models
         ''' <summary>
         ''' Creates a copy of this compound with a different phase
         ''' </summary>
-        ''' <paramname="newPhase">The new phase</param>
+        ''' <param name="newPhase">The new phase</param>
         ''' <returns>A new PhasedCompound with the specified phase</returns>
         Public Function WithPhase(newPhase As String) As PhasedCompound
             Return New PhasedCompound(CompoundId, newPhase) With {
@@ -170,7 +170,7 @@ Namespace Core.Models
         ''' <summary>
         ''' Sets the concentration for this compound
         ''' </summary>
-        ''' <paramname="concentration">Concentration in molar</param>
+        ''' <param name="concentration">Concentration in molar</param>
         ''' <returns>This compound for method chaining</returns>
         Public Function SetConcentration(concentration As Double) As PhasedCompound
             Me.Concentration = concentration
@@ -181,7 +181,7 @@ Namespace Core.Models
         ''' <summary>
         ''' Sets the concentration using a Quantity
         ''' </summary>
-        ''' <paramname="concentration">Concentration as a Quantity</param>
+        ''' <param name="concentration">Concentration as a Quantity</param>
         ''' <returns>This compound for method chaining</returns>
         Public Function SetConcentration(concentration As Quantity) As PhasedCompound
             Return SetConcentration(concentration.GetValueIn("M"))
@@ -190,7 +190,7 @@ Namespace Core.Models
         ''' <summary>
         ''' Sets the electrical potential for redox compounds
         ''' </summary>
-        ''' <paramname="potential">Electrical potential in volts</param>
+        ''' <param name="potential">Electrical potential in volts</param>
         ''' <returns>This compound for method chaining</returns>
         Public Function SetElectricalPotential(potential As Double) As PhasedCompound
             ElectricalPotential = potential
@@ -200,7 +200,7 @@ Namespace Core.Models
         ''' <summary>
         ''' Sets the partial pressure for gas compounds
         ''' </summary>
-        ''' <paramname="pressure">Partial pressure in atm</param>
+        ''' <param name="pressure">Partial pressure in atm</param>
         ''' <returns>This compound for method chaining</returns>
         Public Function SetPartialPressure(pressure As Double) As PhasedCompound
             PartialPressure = pressure
@@ -247,10 +247,10 @@ Namespace Core.Models
         ''' <summary>
         ''' Gets the standard formation Gibbs energy at the given conditions
         ''' </summary>
-        ''' <paramname="pH">The pH value</param>
-        ''' <paramname="ionicStrength">The ionic strength in molar</param>
-        ''' <paramname="temperature">The temperature in Kelvin</param>
-        ''' <paramname="pMg">The pMg value</param>
+        ''' <param name="pH">The pH value</param>
+        ''' <param name="ionicStrength">The ionic strength in molar</param>
+        ''' <param name="temperature">The temperature in Kelvin</param>
+        ''' <param name="pMg">The pMg value</param>
         ''' <returns>The standard formation Gibbs energy in kJ/mol</returns>
         Public Function GetStandardFormationEnergyPrime(Optional pH As Double = DefaultPH, Optional ionicStrength As Double = DefaultIonicStrength, Optional temperature As Double = DefaultTemperature, Optional pMg As Double = DefaultPMg) As Double
             ' For now, return the standard formation energy

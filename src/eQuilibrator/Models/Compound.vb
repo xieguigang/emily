@@ -1,7 +1,7 @@
 Imports System.Text.RegularExpressions
 Imports System.Collections
 Imports Microsoft.VisualBasic.Data.IO.Pickle
-Imports eQuilibrator.EquilibratorApi.Core.Constants
+Imports Emily.eQuilibrator.Core.Constants
 
 Namespace Core.Models
 

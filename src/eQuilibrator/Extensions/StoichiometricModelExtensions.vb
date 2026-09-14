@@ -7,8 +7,8 @@
         ''' <summary>
         ''' Creates a StoichiometricModel from a list of reaction formulas
         ''' </summary>
-        ''' <paramname="formulas">The reaction formulas</param>
-        ''' <paramname="compContrib">Optional ComponentContribution instance</param>
+        ''' <param name="formulas">The reaction formulas</param>
+        ''' <param name="compContrib">Optional ComponentContribution instance</param>
         ''' <returns>A new StoichiometricModel</returns>
         Public Function FromFormulas(formulas As IEnumerable(Of String), Optional compContrib As ComponentContribution = Nothing) As StoichiometricModel
             Dim model = New StoichiometricModel(If(compContrib, New ComponentContribution()))

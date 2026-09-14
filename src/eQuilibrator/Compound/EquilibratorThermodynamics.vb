@@ -4,9 +4,9 @@
 ' 估算化合物在任意 pH / pMg / 离子强度 / 温度下的标准生成吉布斯自由能 ΔfG'°。
 ' ============================================================================
 
-Imports eQuilibrator.EquilibratorApi.Core.Models
-Imports eQuilibrator.EquilibratorApi.Core.Constants
-Imports eQuilibrator.EquilibratorApi.Core.Numerics
+Imports Emily.eQuilibrator.Core.Models
+Imports Emily.eQuilibrator.Core.Constants
+Imports Emily.eQuilibrator.Core.Numerics
 
 Namespace EquilibratorThermodynamics
 

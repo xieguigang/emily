@@ -1,6 +1,6 @@
-﻿Imports eQuilibrator.EquilibratorApi.Core.Constants
-Imports eQuilibrator.EquilibratorApi.Core.Models
-Imports eQuilibrator.EquilibratorApi.Core.Data
+﻿Imports Emily.eQuilibrator.Core.Constants
+Imports Emily.eQuilibrator.Core.Models
+Imports Emily.eQuilibrator.Core.Data
 
 Namespace Core
 

@@ -47,8 +47,8 @@ Namespace Core.Models
         ''' <summary>
         ''' Creates a new Quantity with the specified value and unit
         ''' </summary>
-        ''' <paramname="value">The numerical value</param>
-        ''' <paramname="unit">The unit of measurement</param>
+        ''' <param name="value">The numerical value</param>
+        ''' <param name="unit">The unit of measurement</param>
         Public Sub New(value As Double, unit As String)
             Me.Value = value
             Me.Unit = unit
@@ -57,7 +57,7 @@ Namespace Core.Models
         ''' <summary>
         ''' Creates a dimensionless quantity
         ''' </summary>
-        ''' <paramname="value">The numerical value</param>
+        ''' <param name="value">The numerical value</param>
         Public Sub New(value As Double)
             Me.Value = value
             Unit = ""
@@ -73,7 +73,7 @@ Namespace Core.Models
         ''' <summary>
         ''' Converts this quantity to the specified unit
         ''' </summary>
-        ''' <paramname="targetUnit">The target unit</param>
+        ''' <param name="targetUnit">The target unit</param>
         ''' <returns>A new Quantity in the target unit</returns>
         Public Function [To](targetUnit As String) As Quantity
             Dim conversionFactor = GetConversionFactor(Unit, targetUnit)
@@ -83,7 +83,7 @@ Namespace Core.Models
         ''' <summary>
         ''' Gets the value in the specified unit
         ''' </summary>
-        ''' <paramname="targetUnit">The target unit</param>
+        ''' <param name="targetUnit">The target unit</param>
         ''' <returns>The value converted to the target unit</returns>
         Public Function GetValueIn(targetUnit As String) As Double
             Return [To](targetUnit).Value
@@ -92,7 +92,7 @@ Namespace Core.Models
         ''' <summary>
         ''' Gets the magnitude (value) in the specified unit (alias for GetValueIn)
         ''' </summary>
-        ''' <paramname="targetUnit">The target unit</param>
+        ''' <param name="targetUnit">The target unit</param>
         ''' <returns>The value converted to the target unit</returns>
         Public Function MagnitudeAs(targetUnit As String) As Double
             Return GetValueIn(targetUnit)
@@ -253,7 +253,7 @@ Namespace Core.Models
         ''' <summary>
         ''' Creates a quantity from a string representation (e.g., "1.0 M", "298.15 K")
         ''' </summary>
-        ''' <paramname="quantityString">The string representation</param>
+        ''' <param name="quantityString">The string representation</param>
         ''' <returns>A new Quantity</returns>
         Public Shared Function Parse(quantityString As String) As Quantity
             Dim parts = quantityString.Trim().Split({" "c}, 2, StringSplitOptions.RemoveEmptyEntries)
@@ -268,8 +268,8 @@ Namespace Core.Models
         ''' <summary>
         ''' Tries to parse a quantity from a string representation
         ''' </summary>
-        ''' <paramname="quantityString">The string representation</param>
-        ''' <paramname="result">The parsed quantity</param>
+        ''' <param name="quantityString">The string representation</param>
+        ''' <param name="result">The parsed quantity</param>
         ''' <returns>True if parsing succeeded</returns>
         Public Shared Function TryParse(quantityString As String, <Out> ByRef result As Quantity) As Boolean
             Try

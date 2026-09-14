@@ -1,4 +1,4 @@
-﻿Imports eQuilibrator.EquilibratorApi.Core.Models
+﻿Imports Emily.eQuilibrator.Core.Models
 
 Namespace EquilibratorThermodynamics
 

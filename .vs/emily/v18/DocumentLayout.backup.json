@@ -3,21 +3,32 @@
   "WorkspaceRootPath": "G:\\emily\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{8EA1E75F-48FE-4BF1-ACFE-2955B16CD968}|src\\zdock\\zdock.vbproj|g:\\emily\\src\\zdock\\zdock.vbproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|",
-      "RelativeMoniker": "D:0:0:{8EA1E75F-48FE-4BF1-ACFE-2955B16CD968}|src\\zdock\\zdock.vbproj|solutionrelative:src\\zdock\\zdock.vbproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|"
+      "AbsoluteMoniker": "D:0:0:{4FBD81E5-C976-80E6-5D01-DE3380E6FA45}|src\\eQuilibrator\\eQuilibrator.vbproj|g:\\emily\\src\\equilibrator\\parsers\\reactionparser.vb||{2C015C70-C72C-11D0-88C3-00A0C9110049}",
+      "RelativeMoniker": "D:0:0:{4FBD81E5-C976-80E6-5D01-DE3380E6FA45}|src\\eQuilibrator\\eQuilibrator.vbproj|solutionrelative:src\\equilibrator\\parsers\\reactionparser.vb||{2C015C70-C72C-11D0-88C3-00A0C9110049}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{044E4D64-0949-4654-B8B1-522D81E4231A}|src\\PDB_canvas\\PDB_canvas.vbproj|g:\\emily\\src\\pdb_canvas\\pdb_canvas.vbproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|",
-      "RelativeMoniker": "D:0:0:{044E4D64-0949-4654-B8B1-522D81E4231A}|src\\PDB_canvas\\PDB_canvas.vbproj|solutionrelative:src\\pdb_canvas\\pdb_canvas.vbproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|"
+      "AbsoluteMoniker": "D:0:0:{4FBD81E5-C976-80E6-5D01-DE3380E6FA45}|src\\eQuilibrator\\eQuilibrator.vbproj|g:\\emily\\src\\equilibrator\\smilesparser\\smilesparser.vb||{2C015C70-C72C-11D0-88C3-00A0C9110049}",
+      "RelativeMoniker": "D:0:0:{4FBD81E5-C976-80E6-5D01-DE3380E6FA45}|src\\eQuilibrator\\eQuilibrator.vbproj|solutionrelative:src\\equilibrator\\smilesparser\\smilesparser.vb||{2C015C70-C72C-11D0-88C3-00A0C9110049}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{705E51CF-B0F3-0819-C2BE-0AA0D1D5CD78}|..\\GCModeller\\src\\R-sharp\\Library\\shares\\graphics.common_runtime\\R_graphics.common_runtime.vbproj|g:\\gcmodeller\\src\\r-sharp\\library\\shares\\graphics.common_runtime\\r_graphics.common_runtime.vbproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|"
+      "AbsoluteMoniker": "D:0:0:{4FBD81E5-C976-80E6-5D01-DE3380E6FA45}|src\\eQuilibrator\\eQuilibrator.vbproj|g:\\emily\\src\\equilibrator\\thermodynamicconstants.vb||{2C015C70-C72C-11D0-88C3-00A0C9110049}",
+      "RelativeMoniker": "D:0:0:{4FBD81E5-C976-80E6-5D01-DE3380E6FA45}|src\\eQuilibrator\\eQuilibrator.vbproj|solutionrelative:src\\equilibrator\\thermodynamicconstants.vb||{2C015C70-C72C-11D0-88C3-00A0C9110049}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{33CC05B1-BD48-776F-F90A-541F80A22D67}|..\\GCModeller\\src\\R-sharp\\studio\\R-terminal\\R-cmd.NET5.vbproj|g:\\gcmodeller\\src\\r-sharp\\studio\\r-terminal\\r-cmd.net5.vbproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|"
+      "AbsoluteMoniker": "D:0:0:{4FBD81E5-C976-80E6-5D01-DE3380E6FA45}|src\\eQuilibrator\\eQuilibrator.vbproj|g:\\emily\\src\\equilibrator\\componentcontribution.vb||{2C015C70-C72C-11D0-88C3-00A0C9110049}",
+      "RelativeMoniker": "D:0:0:{4FBD81E5-C976-80E6-5D01-DE3380E6FA45}|src\\eQuilibrator\\eQuilibrator.vbproj|solutionrelative:src\\equilibrator\\componentcontribution.vb||{2C015C70-C72C-11D0-88C3-00A0C9110049}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{CDF04607-C183-6F6C-FE5A-DABFDBB5E7D7}|..\\GCModeller\\src\\R-sharp\\R#\\Rsharp-netcore5.vbproj|g:\\gcmodeller\\src\\r-sharp\\r#\\rsharp-netcore5.vbproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|"
+      "AbsoluteMoniker": "D:0:0:{4FBD81E5-C976-80E6-5D01-DE3380E6FA45}|src\\eQuilibrator\\eQuilibrator.vbproj|g:\\emily\\src\\equilibrator\\data\\equilibratorcsvloader.vb||{2C015C70-C72C-11D0-88C3-00A0C9110049}",
+      "RelativeMoniker": "D:0:0:{4FBD81E5-C976-80E6-5D01-DE3380E6FA45}|src\\eQuilibrator\\eQuilibrator.vbproj|solutionrelative:src\\equilibrator\\data\\equilibratorcsvloader.vb||{2C015C70-C72C-11D0-88C3-00A0C9110049}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{4FBD81E5-C976-80E6-5D01-DE3380E6FA45}|src\\eQuilibrator\\eQuilibrator.vbproj|g:\\emily\\src\\equilibrator\\compound\\microspeciesbuilder.vb||{2C015C70-C72C-11D0-88C3-00A0C9110049}",
+      "RelativeMoniker": "D:0:0:{4FBD81E5-C976-80E6-5D01-DE3380E6FA45}|src\\eQuilibrator\\eQuilibrator.vbproj|solutionrelative:src\\equilibrator\\compound\\microspeciesbuilder.vb||{2C015C70-C72C-11D0-88C3-00A0C9110049}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{8E503B13-3CFE-4E51-0F13-EFEC1E014FBF}|src\\emily\\emily.vbproj|g:\\emily\\src\\emily\\rscript.vb||{2C015C70-C72C-11D0-88C3-00A0C9110049}",
+      "RelativeMoniker": "D:0:0:{8E503B13-3CFE-4E51-0F13-EFEC1E014FBF}|src\\emily\\emily.vbproj|solutionrelative:src\\emily\\rscript.vb||{2C015C70-C72C-11D0-88C3-00A0C9110049}"
     }
   ],
   "DocumentGroupContainers": [
@@ -48,66 +59,92 @@
             {
               "$type": "Document",
               "DocumentIndex": 0,
-              "Title": "zdock",
-              "DocumentMoniker": "G:\\emily\\src\\zdock\\zdock.vbproj",
-              "RelativeDocumentMoniker": "src\\zdock\\zdock.vbproj",
-              "ToolTip": "G:\\emily\\src\\zdock\\zdock.vbproj",
-              "RelativeToolTip": "src\\zdock\\zdock.vbproj",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003380|",
-              "WhenOpened": "2026-09-14T13:24:15.571Z",
+              "Title": "ReactionParser.vb",
+              "DocumentMoniker": "G:\\emily\\src\\eQuilibrator\\Parsers\\ReactionParser.vb",
+              "RelativeDocumentMoniker": "src\\eQuilibrator\\Parsers\\ReactionParser.vb",
+              "ToolTip": "G:\\emily\\src\\eQuilibrator\\Parsers\\ReactionParser.vb",
+              "RelativeToolTip": "src\\eQuilibrator\\Parsers\\ReactionParser.vb",
+              "ViewState": "AgIAACUAAAAAAAAAAAAEwEEAAAAdAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003361|",
+              "WhenOpened": "2026-09-14T13:28:19.662Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 1,
-              "Title": "PDB_canvas",
-              "DocumentMoniker": "G:\\emily\\src\\PDB_canvas\\PDB_canvas.vbproj",
-              "RelativeDocumentMoniker": "src\\PDB_canvas\\PDB_canvas.vbproj",
-              "ToolTip": "G:\\emily\\src\\PDB_canvas\\PDB_canvas.vbproj",
-              "RelativeToolTip": "src\\PDB_canvas\\PDB_canvas.vbproj",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003380|",
-              "WhenOpened": "2026-09-14T13:24:14.154Z",
+              "Title": "SmilesParser.vb",
+              "DocumentMoniker": "G:\\emily\\src\\eQuilibrator\\SmilesParser\\SmilesParser.vb",
+              "RelativeDocumentMoniker": "src\\eQuilibrator\\SmilesParser\\SmilesParser.vb",
+              "ToolTip": "G:\\emily\\src\\eQuilibrator\\SmilesParser\\SmilesParser.vb",
+              "RelativeToolTip": "src\\eQuilibrator\\SmilesParser\\SmilesParser.vb",
+              "ViewState": "AgIAAIMAAAAAAAAAAAAEwJ0AAAAzAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003361|",
+              "WhenOpened": "2026-09-14T13:27:56.183Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 2,
-              "Title": "R_graphics.common_runtime",
-              "DocumentMoniker": "G:\\GCModeller\\src\\R-sharp\\Library\\shares\\graphics.common_runtime\\R_graphics.common_runtime.vbproj",
-              "RelativeDocumentMoniker": "..\\GCModeller\\src\\R-sharp\\Library\\shares\\graphics.common_runtime\\R_graphics.common_runtime.vbproj",
-              "ToolTip": "G:\\GCModeller\\src\\R-sharp\\Library\\shares\\graphics.common_runtime\\R_graphics.common_runtime.vbproj",
-              "RelativeToolTip": "..\\GCModeller\\src\\R-sharp\\Library\\shares\\graphics.common_runtime\\R_graphics.common_runtime.vbproj",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003380|",
-              "WhenOpened": "2026-09-14T13:24:10.286Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "R-cmd.NET5",
-              "DocumentMoniker": "G:\\GCModeller\\src\\R-sharp\\studio\\R-terminal\\R-cmd.NET5.vbproj",
-              "RelativeDocumentMoniker": "..\\GCModeller\\src\\R-sharp\\studio\\R-terminal\\R-cmd.NET5.vbproj",
-              "ToolTip": "G:\\GCModeller\\src\\R-sharp\\studio\\R-terminal\\R-cmd.NET5.vbproj",
-              "RelativeToolTip": "..\\GCModeller\\src\\R-sharp\\studio\\R-terminal\\R-cmd.NET5.vbproj",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003380|",
-              "WhenOpened": "2026-09-14T13:24:07.709Z",
+              "Title": "ThermodynamicConstants.vb",
+              "DocumentMoniker": "G:\\emily\\src\\eQuilibrator\\ThermodynamicConstants.vb",
+              "RelativeDocumentMoniker": "src\\eQuilibrator\\ThermodynamicConstants.vb",
+              "ToolTip": "G:\\emily\\src\\eQuilibrator\\ThermodynamicConstants.vb",
+              "RelativeToolTip": "src\\eQuilibrator\\ThermodynamicConstants.vb",
+              "ViewState": "AgIAAKsAAAAAAAAAAAAEwMcAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003361|",
+              "WhenOpened": "2026-09-14T13:27:42.973Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 4,
-              "Title": "Rsharp-netcore5",
-              "DocumentMoniker": "G:\\GCModeller\\src\\R-sharp\\R#\\Rsharp-netcore5.vbproj",
-              "RelativeDocumentMoniker": "..\\GCModeller\\src\\R-sharp\\R#\\Rsharp-netcore5.vbproj",
-              "ToolTip": "G:\\GCModeller\\src\\R-sharp\\R#\\Rsharp-netcore5.vbproj",
-              "RelativeToolTip": "..\\GCModeller\\src\\R-sharp\\R#\\Rsharp-netcore5.vbproj",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003380|",
-              "WhenOpened": "2026-09-14T13:24:06.164Z",
+              "Title": "EquilibratorCsvLoader.vb",
+              "DocumentMoniker": "G:\\emily\\src\\eQuilibrator\\Data\\EquilibratorCsvLoader.vb",
+              "RelativeDocumentMoniker": "src\\eQuilibrator\\Data\\EquilibratorCsvLoader.vb",
+              "ToolTip": "G:\\emily\\src\\eQuilibrator\\Data\\EquilibratorCsvLoader.vb",
+              "RelativeToolTip": "src\\eQuilibrator\\Data\\EquilibratorCsvLoader.vb",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAEAAAATAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003361|",
+              "WhenOpened": "2026-09-14T13:26:50.785Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "ComponentContribution.vb",
+              "DocumentMoniker": "G:\\emily\\src\\eQuilibrator\\ComponentContribution.vb",
+              "RelativeDocumentMoniker": "src\\eQuilibrator\\ComponentContribution.vb",
+              "ToolTip": "G:\\emily\\src\\eQuilibrator\\ComponentContribution.vb",
+              "RelativeToolTip": "src\\eQuilibrator\\ComponentContribution.vb",
+              "ViewState": "AgIAAAEAAAAAAAAAAAAEwBwAAAAVAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003361|",
+              "WhenOpened": "2026-09-14T13:26:37.95Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "MicrospeciesBuilder.vb",
+              "DocumentMoniker": "G:\\emily\\src\\eQuilibrator\\Compound\\MicrospeciesBuilder.vb",
+              "RelativeDocumentMoniker": "src\\eQuilibrator\\Compound\\MicrospeciesBuilder.vb",
+              "ToolTip": "G:\\emily\\src\\eQuilibrator\\Compound\\MicrospeciesBuilder.vb",
+              "RelativeToolTip": "src\\eQuilibrator\\Compound\\MicrospeciesBuilder.vb",
+              "ViewState": "AgIAAAkAAAAAAAAAAAAEwBEAAAAOAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003361|",
+              "WhenOpened": "2026-09-14T13:26:31.18Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "Rscript.vb",
+              "DocumentMoniker": "G:\\emily\\src\\emily\\Rscript.vb",
+              "RelativeDocumentMoniker": "src\\emily\\Rscript.vb",
+              "ToolTip": "G:\\emily\\src\\emily\\Rscript.vb",
+              "RelativeToolTip": "src\\emily\\Rscript.vb",
+              "ViewState": "AgIAADkAAAAAAAAAAAAlwFUAAAA5AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003361|",
+              "WhenOpened": "2026-09-14T13:26:25.802Z",
               "EditorCaption": ""
             }
           ]

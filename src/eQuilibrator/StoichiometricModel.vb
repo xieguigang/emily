@@ -93,7 +93,7 @@ Namespace Core.Models
         ''' <summary>
         ''' Creates a new StoichiometricModel
         ''' </summary>
-        ''' <paramname="compContrib">The ComponentContribution instance</param>
+        ''' <param name="compContrib">The ComponentContribution instance</param>
         Public Sub New(compContrib As ComponentContribution)
             Me.CompContrib = compContrib
             Bounds = New Bounds()
@@ -109,7 +109,7 @@ Namespace Core.Models
         ''' <summary>
         ''' Adds a reaction to the model
         ''' </summary>
-        ''' <paramname="reaction">The reaction to add</param>
+        ''' <param name="reaction">The reaction to add</param>
         Public Sub AddReaction(reaction As PhasedReaction)
             _reactions.Add(reaction)
 
@@ -124,8 +124,8 @@ Namespace Core.Models
         ''' <summary>
         ''' Adds a reaction from a formula string
         ''' </summary>
-        ''' <paramname="formula">The reaction formula</param>
-        ''' <paramname="reactionId">Optional reaction identifier</param>
+        ''' <param name="formula">The reaction formula</param>
+        ''' <param name="reactionId">Optional reaction identifier</param>
         Public Sub AddReaction(formula As String, Optional reactionId As String = Nothing)
             Dim reaction = CompContrib.Reaction(formula)
             If reaction Is Nothing Then
@@ -142,7 +142,7 @@ Namespace Core.Models
         ''' <summary>
         ''' Adds multiple reactions to the model
         ''' </summary>
-        ''' <paramname="reactions">The reactions to add</param>
+        ''' <param name="reactions">The reactions to add</param>
         Public Sub AddReactions(reactions As IEnumerable(Of PhasedReaction))
             For Each reaction In reactions
                 AddReaction(reaction)
@@ -152,7 +152,7 @@ Namespace Core.Models
         ''' <summary>
         ''' Gets a reaction by its identifier
         ''' </summary>
-        ''' <paramname="reactionId">The reaction identifier</param>
+        ''' <param name="reactionId">The reaction identifier</param>
         ''' <returns>The reaction, or null if not found</returns>
         Public Function GetReaction(reactionId As String) As PhasedReaction
             Return _reactions.FirstOrDefault(Function(r) Equals(r.ReactionId, reactionId))
@@ -161,7 +161,7 @@ Namespace Core.Models
         ''' <summary>
         ''' Gets a compound by its identifier
         ''' </summary>
-        ''' <paramname="compoundId">The compound identifier</param>
+        ''' <param name="compoundId">The compound identifier</param>
         ''' <returns>The compound, or null if not found</returns>
         Public Function GetCompound(compoundId As String) As PhasedCompound
             Dim compound As PhasedCompound = Nothing
@@ -284,8 +284,8 @@ Namespace Core.Models
         ''' <summary>
         ''' Sets the concentration for a compound
         ''' </summary>
-        ''' <paramname="compoundId">The compound identifier</param>
-        ''' <paramname="concentration">The concentration in molar</param>
+        ''' <param name="compoundId">The compound identifier</param>
+        ''' <param name="concentration">The concentration in molar</param>
         Public Sub SetConcentration(compoundId As String, concentration As Double)
             Dim compound As PhasedCompound = Nothing
 
@@ -297,7 +297,7 @@ Namespace Core.Models
         ''' <summary>
         ''' Sets concentrations for multiple compounds
         ''' </summary>
-        ''' <paramname="concentrations">Dictionary mapping compound IDs to concentrations</param>
+        ''' <param name="concentrations">Dictionary mapping compound IDs to concentrations</param>
         Public Sub SetConcentrations(concentrations As Dictionary(Of String, Double))
             For Each compoundIdConcentration In concentrations
                 Dim compoundId = compoundIdConcentration.Key

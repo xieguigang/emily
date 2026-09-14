@@ -26,7 +26,7 @@
 Imports System.Globalization
 Imports System.IO
 Imports System.Runtime.CompilerServices
-Imports eQuilibrator.EquilibratorApi.Core.Constants
+Imports Emily.eQuilibrator.Core.Constants
 Imports Microsoft.VisualBasic.Language
 
 Namespace Core.Models
@@ -59,8 +59,8 @@ Namespace Core.Models
         ''' <summary>
         ''' Creates a new Bounds instance with default values
         ''' </summary>
-        ''' <paramname="defaultLower">Default lower bound in molar</param>
-        ''' <paramname="defaultUpper">Default upper bound in molar</param>
+        ''' <param name="defaultLower">Default lower bound in molar</param>
+        ''' <param name="defaultUpper">Default upper bound in molar</param>
         Public Sub New(Optional defaultLower As Double = DefaultConcentrationLowerBound, Optional defaultUpper As Double = ThermodynamicConstants.DefaultConcentrationUpperBound)
             If defaultLower < 0 Then Throw New ArgumentException("Lower bound cannot be negative", NameOf(defaultLower))
             If defaultUpper <= defaultLower Then Throw New ArgumentException("Upper bound must be greater than lower bound", NameOf(defaultUpper))
@@ -72,7 +72,7 @@ Namespace Core.Models
         ''' <summary>
         ''' Gets the lower bound for a compound
         ''' </summary>
-        ''' <paramname="compoundId">The compound identifier</param>
+        ''' <param name="compoundId">The compound identifier</param>
         ''' <returns>The lower bound in molar</returns>
         Public Function GetLowerBound(compoundId As String) As Double
             Dim bound As Double = Nothing
@@ -82,7 +82,7 @@ Namespace Core.Models
         ''' <summary>
         ''' Gets the upper bound for a compound
         ''' </summary>
-        ''' <paramname="compoundId">The compound identifier</param>
+        ''' <param name="compoundId">The compound identifier</param>
         ''' <returns>The upper bound in molar</returns>
         Public Function GetUpperBound(compoundId As String) As Double
             Dim bound As Double = Nothing
@@ -92,7 +92,7 @@ Namespace Core.Models
         ''' <summary>
         ''' Gets the bounds for a compound as a tuple
         ''' </summary>
-        ''' <paramname="compoundId">The compound identifier</param>
+        ''' <param name="compoundId">The compound identifier</param>
         ''' <returns>A tuple of (lower, upper) bounds in molar</returns>
         Public Function GetBounds(compoundId As String) As (Double, Double)
             Return (GetLowerBound(compoundId), GetUpperBound(compoundId))
@@ -101,8 +101,8 @@ Namespace Core.Models
         ''' <summary>
         ''' Sets the lower bound for a compound
         ''' </summary>
-        ''' <paramname="compoundId">The compound identifier</param>
-        ''' <paramname="bound">The lower bound in molar</param>
+        ''' <param name="compoundId">The compound identifier</param>
+        ''' <param name="bound">The lower bound in molar</param>
         Public Sub SetLowerBound(compoundId As String, bound As Double)
             If bound < 0 Then Throw New ArgumentException("Lower bound cannot be negative", NameOf(bound))
 
@@ -119,8 +119,8 @@ Namespace Core.Models
         ''' <summary>
         ''' Sets the upper bound for a compound
         ''' </summary>
-        ''' <paramname="compoundId">The compound identifier</param>
-        ''' <paramname="bound">The upper bound in molar</param>
+        ''' <param name="compoundId">The compound identifier</param>
+        ''' <param name="bound">The upper bound in molar</param>
         Public Sub SetUpperBound(compoundId As String, bound As Double)
             If bound <= 0 Then Throw New ArgumentException("Upper bound must be positive", NameOf(bound))
 
@@ -137,9 +137,9 @@ Namespace Core.Models
         ''' <summary>
         ''' Sets both bounds for a compound
         ''' </summary>
-        ''' <paramname="compoundId">The compound identifier</param>
-        ''' <paramname="lower">The lower bound in molar</param>
-        ''' <paramname="upper">The upper bound in molar</param>
+        ''' <param name="compoundId">The compound identifier</param>
+        ''' <param name="lower">The lower bound in molar</param>
+        ''' <param name="upper">The upper bound in molar</param>
         Public Sub SetBounds(compoundId As String, lower As Double, upper As Double)
             If lower < 0 Then Throw New ArgumentException("Lower bound cannot be negative", NameOf(lower))
             If upper <= lower Then Throw New ArgumentException("Upper bound must be greater than lower bound", NameOf(upper))
@@ -151,9 +151,9 @@ Namespace Core.Models
         ''' <summary>
         ''' Sets the same bounds for multiple compounds
         ''' </summary>
-        ''' <paramname="compoundIds">The compound identifiers</param>
-        ''' <paramname="lower">The lower bound in molar</param>
-        ''' <paramname="upper">The upper bound in molar</param>
+        ''' <param name="compoundIds">The compound identifiers</param>
+        ''' <param name="lower">The lower bound in molar</param>
+        ''' <param name="upper">The upper bound in molar</param>
         Public Sub SetBoundsForAll(compoundIds As IEnumerable(Of String), lower As Double, upper As Double)
             For Each compoundId In compoundIds
                 SetBounds(compoundId, lower, upper)
@@ -171,8 +171,8 @@ Namespace Core.Models
         ''' <summary>
         ''' Checks if a concentration is within bounds for a compound
         ''' </summary>
-        ''' <paramname="compoundId">The compound identifier</param>
-        ''' <paramname="concentration">The concentration to check</param>
+        ''' <param name="compoundId">The compound identifier</param>
+        ''' <param name="concentration">The concentration to check</param>
         ''' <returns>True if the concentration is within bounds</returns>
         Public Function IsWithinBounds(compoundId As String, concentration As Double) As Boolean
             Dim lowerUpper As (lower As Double, upper As Double) = Nothing
@@ -183,7 +183,7 @@ Namespace Core.Models
         ''' <summary>
         ''' Gets the logarithm of the bounds (useful for thermodynamic calculations)
         ''' </summary>
-        ''' <paramname="compoundId">The compound identifier</param>
+        ''' <param name="compoundId">The compound identifier</param>
         ''' <returns>A tuple of (ln(lower), ln(upper))</returns>
         Public Function GetLogBounds(compoundId As String) As (Double, Double)
             Dim lowerUpper As (lower As Double, upper As Double) = Nothing
@@ -213,7 +213,7 @@ Namespace Core.Models
         ''' <summary>
         ''' Creates Bounds from a CSV file
         ''' </summary>
-        ''' <paramname="filePath">Path to the CSV file</param>
+        ''' <param name="filePath">Path to the CSV file</param>
         ''' <returns>A new Bounds instance</returns>
         Public Shared Function FromCsv(filePath As String) As Bounds
             Dim bounds = New Bounds()
@@ -260,8 +260,8 @@ Namespace Core.Models
         ''' <summary>
         ''' Saves bounds to a CSV file
         ''' </summary>
-        ''' <paramname="filePath">Path to the CSV file</param>
-        ''' <paramname="compoundIds">Compound IDs to include</param>
+        ''' <param name="filePath">Path to the CSV file</param>
+        ''' <param name="compoundIds">Compound IDs to include</param>
         Public Sub ToCsv(filePath As String, Optional compoundIds As IEnumerable(Of String) = Nothing)
             Dim writer = New StreamWriter(filePath)
 

@@ -155,7 +155,7 @@ Namespace SmilesChem
 
         ''' <summary>
         ''' 解析方括号原子 [...]。
-        ''' 格式：[<同位素><元素符号><手性><H数><电荷>]
+        ''' 格式：[&lt;同位素>&lt;元素符号>&lt;手性>&lt;H数>&lt;电荷>]
         ''' 示例：[Na], [nH], [CH3], [N+], [O-], [15NH2], [Fe+3]
         ''' </summary>
         Private Sub ParseBracketAtom()

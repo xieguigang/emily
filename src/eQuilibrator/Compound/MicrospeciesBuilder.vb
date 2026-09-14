@@ -15,10 +15,8 @@
 '   最强碱/最弱酸位点（与真实宏观解离顺序一致）。
 ' ============================================================================
 
-Imports System.Collections.Generic
-Imports System.Linq
-Imports eQuilibrator.EquilibratorApi.Core.Models
-Imports eQuilibrator.SmilesChem
+Imports Emily.eQuilibrator.Core.Models
+Imports Emily.eQuilibrator.SmilesChem
 
 Namespace EquilibratorThermodynamics
 

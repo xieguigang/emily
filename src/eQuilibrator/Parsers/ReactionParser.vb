@@ -61,9 +61,9 @@ Namespace Core.Parsers
         ''' <summary>
         ''' Parses a reaction formula string into a ParsedReaction object
         ''' </summary>
-        ''' <paramname="formula">The reaction formula string (e.g., "glucose + ATP => glucose-6-phosphate + ADP")</param>
+        ''' <param name="formula">The reaction formula string (e.g., "glucose + ATP => glucose-6-phosphate + ADP")</param>
         ''' <returns>A ParsedReaction object containing the parsed reaction data</returns>
-        ''' <exceptioncref="ArgumentException">Thrown when the formula cannot be parsed</exception>
+        ''' <exception cref="ArgumentException">Thrown when the formula cannot be parsed</exception>
         Public Function Parse(formula As String) As ParsedReaction
             If String.IsNullOrWhiteSpace(formula) Then
                 Throw New ArgumentException("Reaction formula cannot be empty", NameOf(formula))
@@ -91,8 +91,8 @@ Namespace Core.Parsers
         ''' <summary>
         ''' Tries to parse a reaction formula string
         ''' </summary>
-        ''' <paramname="formula">The reaction formula string</param>
-        ''' <paramname="result">The parsed reaction if successful</param>
+        ''' <param name="formula">The reaction formula string</param>
+        ''' <param name="result">The parsed reaction if successful</param>
         ''' <returns>True if parsing succeeded, false otherwise</returns>
         Public Function TryParse(formula As String, <Out> ByRef result As ParsedReaction) As Boolean
             Try
@@ -107,7 +107,7 @@ Namespace Core.Parsers
         ''' <summary>
         ''' Parses a reaction formula and returns the stoichiometry as a dictionary
         ''' </summary>
-        ''' <paramname="formula">The reaction formula string</param>
+        ''' <param name="formula">The reaction formula string</param>
         ''' <returns>A dictionary mapping compound IDs to their stoichiometric coefficients</returns>
         Public Function ParseFormula(formula As String) As Dictionary(Of String, Double)
             Return Parse(formula).GetStoichiometry()
@@ -232,7 +232,7 @@ Namespace Core.Parsers
         ''' <summary>
         ''' Normalizes a reaction formula by standardizing whitespace and arrow format
         ''' </summary>
-        ''' <paramname="formula">The reaction formula to normalize</param>
+        ''' <param name="formula">The reaction formula to normalize</param>
         ''' <returns>The normalized formula</returns>
         Public Function Normalize(formula As String) As String
             Dim reaction = Parse(formula)

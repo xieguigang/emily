@@ -23,7 +23,7 @@
 ' OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 ' THE SOFTWARE.
 
-Imports eQuilibrator.EquilibratorApi.Core.Models
+Imports Emily.eQuilibrator.Core.Models
 
 Namespace Core.Constants
 
@@ -198,12 +198,6 @@ Namespace Core.Constants
         Public Const FaradayConstant As Double = 96.48533212 ' kJ/(V·mol)
 
         ''' <summary>
-        ''' Gas constant in kJ/(K·mol)
-        ''' R = 8.314462618 J/(K·mol) = 0.008314462618 kJ/(K·mol)
-        ''' </summary>
-       ' Public Const R As Double = 0.008314462618 ' kJ/(K·mol)
-
-        ''' <summary>
         ''' Default pH value for physiological conditions
         ''' </summary>
         Public Const DefaultPH As Double = 7.5
@@ -264,8 +258,8 @@ Namespace Core.Constants
         ''' Calculates the natural logarithm of the concentration ratio.
         ''' ln(Q) where Q is the reaction quotient
         ''' </summary>
-        ''' <paramname="concentration">Concentration in molar</param>
-        ''' <paramname="standardConcentration">Standard concentration (default 1 M)</param>
+        ''' <param name="concentration">Concentration in molar</param>
+        ''' <param name="standardConcentration">Standard concentration (default 1 M)</param>
         ''' <returns>Natural logarithm of the concentration ratio</returns>
         Public Function LnConcentrationRatio(concentration As Double, Optional standardConcentration As Double = StandardConcentration) As Double
             Return Math.Log(concentration / standardConcentration)
@@ -274,7 +268,7 @@ Namespace Core.Constants
         ''' <summary>
         ''' Converts pH to hydrogen ion concentration
         ''' </summary>
-        ''' <paramname="pH">pH value</param>
+        ''' <param name="pH">pH value</param>
         ''' <returns>Hydrogen ion concentration in molar</returns>
         Public Function PHToHydrogenConcentration(pH As Double) As Double
             Return Math.Pow(10, -pH)
@@ -283,7 +277,7 @@ Namespace Core.Constants
         ''' <summary>
         ''' Converts pMg to magnesium ion concentration
         ''' </summary>
-        ''' <paramname="pMg">pMg value</param>
+        ''' <param name="pMg">pMg value</param>
         ''' <returns>Magnesium ion concentration in molar</returns>
         Public Function PMgToMagnesiumConcentration(pMg As Double) As Double
             Return Math.Pow(10, -pMg)
@@ -292,7 +286,7 @@ Namespace Core.Constants
         ''' <summary>
         ''' Calculates RT at a given temperature
         ''' </summary>
-        ''' <paramname="temperatureK">Temperature in Kelvin</param>
+        ''' <param name="temperatureK">Temperature in Kelvin</param>
         ''' <returns>RT in kJ/mol</returns>
         Public Function RT(Optional temperatureK As Double = DefaultTemperature) As Double
             Return R * temperatureK
@@ -301,7 +295,7 @@ Namespace Core.Constants
         ''' <summary>
         ''' Calculates 2.303 * RT at a given temperature (for pH calculations)
         ''' </summary>
-        ''' <paramname="temperatureK">Temperature in Kelvin</param>
+        ''' <param name="temperatureK">Temperature in Kelvin</param>
         ''' <returns>2.303 * RT in kJ/mol</returns>
         Public Function Ln10RT(Optional temperatureK As Double = DefaultTemperature) As Double
             Return Math.Log(10) * R * temperatureK
