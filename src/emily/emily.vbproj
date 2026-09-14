@@ -16,8 +16,8 @@
     <SymbolPackageFormat>snupkg</SymbolPackageFormat>
     <PackageReadmeFile>README.md</PackageReadmeFile>
     <OutputPath>../../assembly\</OutputPath>
-    <Version>1.0.9753.38760</Version>
-    <AssemblyVersion>1.0.9753.38760</AssemblyVersion>
+    <Version>1.0.9753.39109</Version>
+    <AssemblyVersion>1.0.9753.39109</AssemblyVersion>
   </PropertyGroup>
 
   <PropertyGroup Condition="'$(Configuration)|$(TargetFramework)|$(Platform)'=='Debug|net8.0-windows|AnyCPU'">
@@ -132,6 +132,7 @@
     <RemoveIntegerChecks>True</RemoveIntegerChecks>
     <DefineTrace>True</DefineTrace>
     <DebugType>full</DebugType>
+    <OutputPath>../../.nuget/</OutputPath>
   </PropertyGroup>
 
   <PropertyGroup Condition="'$(Configuration)|$(TargetFramework)|$(Platform)'=='Rsharp_app_release|net8.0|x64'">
@@ -144,6 +145,7 @@
     <RemoveIntegerChecks>True</RemoveIntegerChecks>
     <DefineTrace>True</DefineTrace>
     <DebugType>full</DebugType>
+    <OutputPath>../../.nuget/</OutputPath>
   </PropertyGroup>
 
   <PropertyGroup Condition="'$(Configuration)|$(TargetFramework)|$(Platform)'=='Rsharp_app_release|net48|x64'">
@@ -156,6 +158,7 @@
     <RemoveIntegerChecks>True</RemoveIntegerChecks>
     <DefineTrace>True</DefineTrace>
     <DebugType>full</DebugType>
+    <OutputPath>../../.nuget/</OutputPath>
   </PropertyGroup>
 
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='nuget_release|x64'">
