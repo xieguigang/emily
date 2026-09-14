@@ -1,6 +1,6 @@
 Imports System.Text.RegularExpressions
 
-Namespace EquilibratorApi.Core.Models
+Namespace Core.Models
 
     ''' <summary>
     ''' 化合物注册表模型（MIRIAM 注册表，如 KEGG、BiGG、ChEBI 等）。

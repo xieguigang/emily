@@ -27,7 +27,7 @@ Imports System.Runtime.InteropServices
 Imports System.Runtime.CompilerServices
 Imports System.Text
 
-Namespace EquilibratorApi.Core.Parsers
+Namespace Core.Parsers
 
     ''' <summary>
     ''' A parser for chemical reaction formulae.

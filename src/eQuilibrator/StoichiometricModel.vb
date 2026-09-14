@@ -26,7 +26,7 @@
 
 Imports System.Text
 
-Namespace EquilibratorApi.Core.Models
+Namespace Core.Models
 
     ''' <summary>
     ''' A basic stoichiometric model with thermodynamic constraints.

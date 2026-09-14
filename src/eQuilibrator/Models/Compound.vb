@@ -3,7 +3,7 @@ Imports System.Collections
 Imports Microsoft.VisualBasic.Data.IO.Pickle
 Imports eQuilibrator.EquilibratorApi.Core.Constants
 
-Namespace EquilibratorApi.Core.Models
+Namespace Core.Models
 
     ''' <summary>
     ''' 统一的生化化合物模型（合并 EquilibratorApi.Core 与 EquilibratorCache 两套重复定义）。

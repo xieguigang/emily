@@ -1,4 +1,4 @@
-Namespace EquilibratorApi.Core.Models
+Namespace Core.Models
 
     ''' <summary>
     ''' 镁离子解离常数模型。

@@ -1,4 +1,4 @@
-Namespace EquilibratorApi.Core
+Namespace Core
 
     ''' <summary>
     ''' 数值计算辅助模块，替代被删除的 Python NumPy 桩代码。

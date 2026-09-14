@@ -1,6 +1,6 @@
 ﻿Imports eQuilibrator.EquilibratorApi.Core.Constants
 
-Namespace EquilibratorApi.Core.Models
+Namespace Core.Models
 
     ''' <summary>
     ''' 反应在给定条件下自发进行的方向。

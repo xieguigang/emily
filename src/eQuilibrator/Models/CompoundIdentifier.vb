@@ -1,4 +1,4 @@
-Namespace EquilibratorApi.Core.Models
+Namespace Core.Models
 
     ''' <summary>
     ''' 化合物标识符模型。

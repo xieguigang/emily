@@ -27,7 +27,7 @@ Imports System.Runtime.CompilerServices
 Imports System.Text
 Imports eQuilibrator.EquilibratorApi.Core.Constants
 
-Namespace EquilibratorApi.Core.Extensions
+Namespace Core.Extensions
 
     ''' <summary>
     ''' Extension methods for thermodynamic calculations

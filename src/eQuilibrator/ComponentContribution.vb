@@ -29,7 +29,7 @@ Imports eQuilibrator.EquilibratorApi.Core.Parsers
 Imports eQuilibrator.EquilibratorThermodynamics
 Imports SMRUCC.genomics.ComponentModel.EquaionModel
 
-Namespace EquilibratorApi.Core
+Namespace Core
 
     ''' <summary>
     ''' Main class for predicting Gibbs free energies of biochemical reactions.

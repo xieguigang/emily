@@ -4,7 +4,7 @@ Imports eQuilibrator.EquilibratorApi.Core.Constants
 Imports eQuilibrator.EquilibratorApi.Core.Models
 Imports eQuilibrator.EquilibratorThermodynamics
 
-Namespace EquilibratorApi.Core.Data
+Namespace Core.Data
 
     ''' <summary>
     ''' eQuilibrator CSV 数据源加载器。

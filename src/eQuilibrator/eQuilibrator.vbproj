@@ -8,6 +8,9 @@
     <AssemblyTitle>eQuilibrator api</AssemblyTitle>
     <DefaultItemExcludes>$(DefaultItemExcludes);$(ProjectDir)**\*.cs</DefaultItemExcludes>
     <Platforms>AnyCPU;x64</Platforms>
+    <RootNamespace>Emily.eQuilibrator</RootNamespace>
+    <GenerateDocumentationFile>True</GenerateDocumentationFile>
+    <GeneratePackageOnBuild>True</GeneratePackageOnBuild>
   </PropertyGroup>
   <ItemGroup>
     <Compile Remove="test\**" />

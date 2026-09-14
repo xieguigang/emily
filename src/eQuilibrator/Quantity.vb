@@ -26,7 +26,7 @@
 Imports System.Runtime.InteropServices
 Imports System.Runtime.CompilerServices
 
-Namespace EquilibratorApi.Core.Models
+Namespace Core.Models
 
     ''' <summary>
     ''' Represents a quantity with a unit of measurement.

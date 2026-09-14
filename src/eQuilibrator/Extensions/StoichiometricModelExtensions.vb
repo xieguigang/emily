@@ -1,4 +1,4 @@
-﻿Namespace EquilibratorApi.Core.Models
+﻿Namespace Core.Models
 
     ''' <summary>
     ''' Extension methods for StoichiometricModel

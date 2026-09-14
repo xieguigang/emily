@@ -2,7 +2,7 @@
 Imports eQuilibrator.EquilibratorApi.Core.Models
 Imports eQuilibrator.EquilibratorApi.Core.Data
 
-Namespace EquilibratorApi.Core
+Namespace Core
 
     ''' <summary>
     ''' 化合物缓存。内置质子/水，并可按需从 eQuilibrator CSV 数据源懒加载化合物

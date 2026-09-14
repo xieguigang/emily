@@ -23,7 +23,7 @@
 ' OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 ' THE SOFTWARE.
 
-Namespace EquilibratorApi.Core.Exceptions
+Namespace Core.Exceptions
 
     ''' <summary>
     ''' Exception thrown when a reaction cannot be parsed

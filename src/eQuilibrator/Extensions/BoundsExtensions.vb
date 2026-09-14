@@ -1,6 +1,6 @@
 ﻿Imports System.Runtime.CompilerServices
 
-Namespace EquilibratorApi.Core.Models
+Namespace Core.Models
 
     ''' <summary>
     ''' Extension methods for Bounds

@@ -25,7 +25,7 @@
 
 Imports eQuilibrator.EquilibratorApi.Core.Constants
 
-Namespace EquilibratorApi.Core.Models
+Namespace Core.Models
 
     ''' <summary>
     ''' Represents a compound with phase information for thermodynamic calculations.

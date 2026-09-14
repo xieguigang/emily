@@ -29,7 +29,7 @@ Imports System.Runtime.CompilerServices
 Imports eQuilibrator.EquilibratorApi.Core.Constants
 Imports Microsoft.VisualBasic.Language
 
-Namespace EquilibratorApi.Core.Models
+Namespace Core.Models
 
     ''' <summary>
     ''' Defines lower and upper bounds on compound concentrations.

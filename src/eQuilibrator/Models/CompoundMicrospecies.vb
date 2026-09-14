@@ -1,6 +1,6 @@
 Imports eQuilibrator.EquilibratorApi.Core.Constants
 
-Namespace EquilibratorApi.Core.Models
+Namespace Core.Models
 
     ''' <summary>
     ''' 化合物微物种模型。

@@ -25,7 +25,7 @@
 
 Imports eQuilibrator.EquilibratorApi.Core.Models
 
-Namespace EquilibratorApi.Core.Constants
+Namespace Core.Constants
 
     ''' <summary>
     ''' Thermodynamic constants used in Gibbs free energy calculations.

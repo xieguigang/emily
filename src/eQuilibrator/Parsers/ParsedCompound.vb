@@ -1,6 +1,6 @@
 ﻿Imports SMRUCC.genomics.ComponentModel.EquaionModel
 
-Namespace EquilibratorApi.Core.Parsers
+Namespace Core.Parsers
 
     ''' <summary>
     ''' Represents a parsed compound with its coefficient and optional phase information

@@ -26,7 +26,7 @@
 Imports eQuilibrator.EquilibratorApi.Core.Constants
 Imports eQuilibrator.EquilibratorApi.Core.Parsers
 
-Namespace EquilibratorApi.Core.Models
+Namespace Core.Models
 
     ''' <summary>
     ''' Represents a chemical reaction with phase information for thermodynamic calculations.

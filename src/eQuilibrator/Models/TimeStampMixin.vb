@@ -1,4 +1,4 @@
-Namespace EquilibratorApi.Core.Models
+Namespace Core.Models
 
     ''' <summary>
     ''' 时间戳混入模块。

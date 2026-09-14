@@ -1,4 +1,4 @@
-﻿Namespace EquilibratorApi.Core.Parsers
+﻿Namespace Core.Parsers
 
     ''' <summary>
     ''' Represents a parsed reaction with reactants, products, and arrow type
