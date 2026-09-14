@@ -9,8 +9,8 @@
     <GeneratePackageOnBuild>True</GeneratePackageOnBuild>
     <PackageIcon>icons8-protein-96.png</PackageIcon>
     <PackageOutputPath>..\..\.nuget</PackageOutputPath>
-    <Version>1.0.9753.39109</Version>
-    <AssemblyVersion>1.0.9753.39109</AssemblyVersion>
+    <Version>1.0.9753.39349</Version>
+    <AssemblyVersion>1.0.9753.39349</AssemblyVersion>
     <Configurations>nuget_release</Configurations>
     <PackageTags>pdb;protein;molecule;dock;z-dock</PackageTags>
   </PropertyGroup>

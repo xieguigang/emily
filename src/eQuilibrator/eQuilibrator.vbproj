@@ -11,8 +11,8 @@
     <RootNamespace>Emily.eQuilibrator</RootNamespace>
     <GenerateDocumentationFile>True</GenerateDocumentationFile>
     <GeneratePackageOnBuild>True</GeneratePackageOnBuild>
-    <Version>1.0.9753.39109</Version>
-    <AssemblyVersion>1.0.9753.39109</AssemblyVersion>
+    <Version>1.0.9753.39349</Version>
+    <AssemblyVersion>1.0.9753.39349</AssemblyVersion>
     <Configurations>nuget_release</Configurations>
     <AssemblyName>Emily.eQuilibrator</AssemblyName>
     <PackageTags>chemical;reaction;eQuilibrator;gibbs energy;Thermo-dynamic;molecule;metabolite;enzyme</PackageTags>
