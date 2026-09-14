@@ -1,0 +1,91 @@
+<Solution>
+  <Configurations>
+    <BuildType Name="Debug" />
+    <BuildType Name="Release" />
+    <BuildType Name="Rsharp_app_release" />
+    <Platform Name="Any CPU" />
+    <Platform Name="x64" />
+  </Configurations>
+  <Folder Name="/framework/">
+    <Project Path="../GCModeller/src/runtime/sciBASIC#/Data/BinaryData/BinaryData/binarydata-netcore5.vbproj">
+      <Platform Solution="*|x64" Project="x64" />
+    </Project>
+    <Project Path="../GCModeller/src/runtime/sciBASIC#/Data/BinaryData/SQLite3/SQLite3.vbproj">
+      <Platform Solution="*|x64" Project="x64" />
+    </Project>
+    <Project Path="../GCModeller/src/runtime/sciBASIC#/Data/DataFrame/dataframework-netcore5.vbproj">
+      <Platform Solution="*|x64" Project="x64" />
+    </Project>
+    <Project Path="../GCModeller/src/runtime/sciBASIC#/Data_science/Mathematica/Math/Math/Math.NET5.vbproj">
+      <Platform Solution="*|x64" Project="x64" />
+    </Project>
+    <Project Path="../GCModeller/src/runtime/sciBASIC#/Data_science/Visualization/Plots/plots-netcore5.vbproj">
+      <Platform Solution="*|x64" Project="x64" />
+    </Project>
+    <Project Path="../GCModeller/src/runtime/sciBASIC#/gr/Drawing-net4.8/Drawing-net4.8.vbproj">
+      <Platform Solution="*|x64" Project="x64" />
+    </Project>
+    <Project Path="../GCModeller/src/runtime/sciBASIC#/gr/Microsoft.VisualBasic.Imaging/imaging.NET5.vbproj">
+      <Platform Solution="*|x64" Project="x64" />
+    </Project>
+    <Project Path="../GCModeller/src/runtime/sciBASIC#/Microsoft.VisualBasic.Core/src/Core.vbproj">
+      <Platform Solution="*|x64" Project="x64" />
+    </Project>
+    <Project Path="../GCModeller/src/runtime/sciBASIC#/mime/text%html/html_netcore5.vbproj">
+      <Platform Solution="*|x64" Project="x64" />
+    </Project>
+    <Project Path="../Microsoft.VisualBasic.Drawing/src/Microsoft.VisualBasic.Drawing/Microsoft.VisualBasic.Drawing.vbproj">
+      <BuildType Solution="Rsharp_app_release|Any CPU" Project="Release" />
+      <Platform Solution="*|x64" Project="x64" />
+    </Project>
+  </Folder>
+  <Folder Name="/libraries/" />
+  <Folder Name="/libraries/gcmodeller/">
+    <Project Path="../GCModeller/src/GCModeller/core/Bio.Assembly/biocore-netcore5.vbproj">
+      <Platform Solution="*|x64" Project="x64" />
+    </Project>
+    <Project Path="../GCModeller/src/GCModeller/data/RCSB PDB/RCSB PDB.vbproj">
+      <Platform Solution="*|x64" Project="x64" />
+    </Project>
+  </Folder>
+  <Folder Name="/libraries/mzkit/" />
+  <Folder Name="/molecule_toolkit/">
+    <Project Path="src/eQuilibrator/eQuilibrator.vbproj">
+      <BuildType Solution="Rsharp_app_release|*" Project="Release" />
+      <Platform Solution="*|x64" Project="x64" />
+    </Project>
+    <Project Path="src/PDB_canvas/PDB_canvas.vbproj">
+      <BuildType Solution="Rsharp_app_release|Any CPU" Project="GCModeller(UNIX-Release_X64)" />
+      <BuildType Solution="Rsharp_app_release|x64" Project="Release" />
+      <Platform Solution="*|x64" Project="x64" />
+    </Project>
+    <Project Path="src/zdock/zdock.vbproj">
+      <BuildType Solution="Rsharp_app_release|*" Project="Release" />
+      <Platform Solution="Debug|x64" Project="x64" />
+      <Platform Solution="Rsharp_app_release|x64" Project="x64" />
+    </Project>
+  </Folder>
+  <Folder Name="/renv/">
+    <Project Path="../GCModeller/src/R-sharp/Library/shares/graphics.common_runtime/R_graphics.common_runtime.vbproj">
+      <BuildType Solution="Rsharp_app_release|Any CPU" Project="Release" />
+      <Platform Solution="*|x64" Project="x64" />
+    </Project>
+    <Project Path="../GCModeller/src/R-sharp/Library/shares/R_graphic.interop/R_graphic.interop.shproj" />
+    <Project Path="../GCModeller/src/R-sharp/Library/shares/R_plot.interop/R_plot.interop.shproj" />
+    <Project Path="../GCModeller/src/R-sharp/R#/Rsharp-netcore5.vbproj">
+      <Platform Solution="*|x64" Project="x64" />
+    </Project>
+    <Project Path="../GCModeller/src/R-sharp/studio/R-terminal/R-cmd.NET5.vbproj">
+      <Platform Solution="*|x64" Project="x64" />
+    </Project>
+  </Folder>
+  <Project Path="src/emily/emily.vbproj">
+    <Platform Solution="*|x64" Project="x64" />
+  </Project>
+  <Project Path="src/test/test.vbproj">
+    <BuildType Solution="Rsharp_app_release|Any CPU" Project="Release" />
+    <BuildType Solution="Rsharp_app_release|x64" Project="Debug" />
+    <Platform Solution="Debug|x64" Project="x64" />
+    <Platform Solution="Rsharp_app_release|x64" Project="x64" />
+  </Project>
+</Solution>
