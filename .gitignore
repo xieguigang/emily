@@ -10,7 +10,7 @@ assembly/
 *.v2
 *.bin
 /src/.vs/PDB_molViews/v17/.suo
-
+.nuget/net10.0
 
 tools/
 *.log
@@ -64,3 +64,4 @@ src/eQuilibrator/test_build_log.txt
 src/eQuilibrator/demo_out.txt
 .vs/emily.slnx/v18/DocumentLayout.backup.json
 .vs/emily.slnx/v18/DocumentLayout.json
+*.snupkg
